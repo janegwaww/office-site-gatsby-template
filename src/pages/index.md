@@ -3,7 +3,6 @@ templateKey: index-page
 title: 
 image: /img/home-jumbotron.jpg
 heading: 公司简介
-subheading: 
 mainpitch:
   title: Why Heatex
   description: >
