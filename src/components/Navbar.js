@@ -1,39 +1,38 @@
-import React from "react";
-import { Link } from "gatsby";
-import logo from "../img/logo.png";
-import { withTranslation } from "react-i18next";
+import React from 'react'
+import { Link } from 'gatsby'
+import github from '../img/github-icon.svg'
+import logo from '../img/logo.svg'
 
-class Navbar extends React.Component {
+const Navbar = class extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       active: false,
-      navBarActiveClass: ""
-    };
+      navBarActiveClass: '',
+    }
   }
 
   toggleHamburger = () => {
     // toggle the active boolean in the state
     this.setState(
       {
-        active: !this.state.active
+        active: !this.state.active,
       },
       // after state has been updated,
       () => {
         // set the class in state for the navbar accordingly
         this.state.active
           ? this.setState({
-              navBarActiveClass: "is-active"
+              navBarActiveClass: 'is-active',
             })
           : this.setState({
-              navBarActiveClass: ""
-            });
+              navBarActiveClass: '',
+            })
       }
-    );
-  };
+    )
+  }
 
   render() {
-    const { t } = this.props;
     return (
       <nav
         className="navbar is-transparent"
@@ -43,7 +42,7 @@ class Navbar extends React.Component {
         <div className="container">
           <div className="navbar-brand">
             <Link to="/" className="navbar-item" title="Logo">
-              <img src={logo} alt="Haetex" style={{ width: "88px" }} />
+              <img src={logo} alt="Kaldi" style={{ width: '88px' }} />
             </Link>
             {/* Hamburger menu */}
             <div
@@ -62,19 +61,19 @@ class Navbar extends React.Component {
           >
             <div className="navbar-start has-text-centered">
               <Link className="navbar-item" to="/about">
-                {t("about")}
+                About
               </Link>
               <Link className="navbar-item" to="/products">
-                {t("products")}
+                Products
               </Link>
               <Link className="navbar-item" to="/blog">
-                {t("blog")}
+                Blog
               </Link>
               <Link className="navbar-item" to="/contact">
-                {t("contact")}
+                Contact
               </Link>
               <Link className="navbar-item" to="/contact/examples">
-                {t("example")}
+                Form Examples
               </Link>
             </div>
             <div className="navbar-end has-text-centered">
@@ -84,14 +83,16 @@ class Navbar extends React.Component {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <span className="icon">{t("login")}</span>
+                <span className="icon">
+                  <img src={github} alt="Github" />
+                </span>
               </a>
             </div>
           </div>
         </div>
       </nav>
-    );
+    )
   }
 }
 
-export default withTranslation("navbar")(Navbar);
+export default Navbar
