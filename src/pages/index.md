@@ -1,21 +1,15 @@
 ---
 templateKey: index-page
-title: Great coffee with a conscience
+title: 
 image: /img/home-jumbotron.jpg
-heading: Great coffee with a conscience
-subheading: Support sustainable farming while enjoying a cup
+heading: 公司简介
+subheading: 
 mainpitch:
-  title: Why Kaldi
+  title: Why Heatex
   description: >
-    Kaldi is the coffee store for everyone who believes that great coffee
-    shouldn't just taste good, it should do good too. We source all of our beans
-    directly from small scale sustainable farmers and make sure part of the
-    profits are reinvested in their communities.
+    AR团队自主研发的基于移动设备的AR平台, 一款增强现实互动投影模块, 可以将虚拟信息
 description: >-
-  Kaldi is the ultimate spot for coffee lovers who want to learn about their
-  java’s origin and support the farmers that grew it. We take coffee production,
-  roasting and brewing seriously and we’re glad to pass that knowledge to
-  anyone.
+  深圳前海黑顿科技有限公司(简称“黑顿科技”)，团队于2019年8月1日 入驻深圳前海区，注册资本3000万元，致力于搭建面向信息化、智能化、万物 互联的智能操作生态，涉及领域包括物流、金融、教育、智慧城市、语言、销 售、体育、大健康等等。创始团队来自多伦多大学(深度学习发源地)、卡耐 基梅隆大学(人工智能专业世界第一)、北大、浙大、哈工大等国际名校。 曾在国际智能语法检测大赛(CGED)中以绝对优势从社科院、阿里巴巴 、北大等团队中夺冠。 始 成果，拥有多项国际或国家专利、著作权、顶会论文，并与VectorInstitute、 中科院计算所等学术机构拥有学术合作关系。 公司致力于将人工智能算法结合实际应用场景进行落地，消除学术界与实业 界之间的代沟，为众多有智能化需求的企业提供技术支持，为广大致力于智能化 建设的企业及开发者提供稳健灵活简约的平台型算法生态，让智能塑造生活。
 intro:
   blurbs:
     - image: /img/coffee.png
