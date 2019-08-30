@@ -93,10 +93,25 @@ const Footer = class extends React.Component {
           </div>
         </div>
         <div
-          className="version content has-background-block has-text-center"
+          className="version content has-background-block"
           style={{ height: "50px" }}
         >
-          <div>IT支持</div>
+          <div className="columns">
+            <div
+              className="column is-half has-text-dark"
+              style={{ textAlign: "center" }}
+            >
+              <p className="bd-notification is-primary">IT支持</p>
+            </div>
+            <div
+              className="column is-half has-text-center has-text-dark"
+              style={{ textAlign: "center" }}
+            >
+              <p className="bd-notification is-primary">
+                版权所有@黑顿科技有限公司 2019 保留一切权利
+              </p>
+            </div>
+          </div>
         </div>
       </footer>
     );
