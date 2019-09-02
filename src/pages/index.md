@@ -3,7 +3,7 @@ templateKey: index-page
 image: /img/home-jumbotron.jpg
 heading: 公司简介
 mainpitch:
-  title: Why Heatex
+  title: Why Heatek
   description: >
     AR团队自主研发的基于移动设备的AR平台包括产品：AR内容浏览、互联网应用引擎、AR游戏引擎
     一款增强现实互动投影模块，可以将虚拟信息通过投影的方式投射到现实空间中一款增强现实互动投影模块，可以将虚拟信息通过投影的方式投射到现实 中一 增强现实互动投影模块，可以将虚拟信息通过投影的方式投射到现实空间中

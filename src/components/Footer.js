@@ -94,7 +94,7 @@ const Footer = class extends React.Component {
         </div>
         <div
           className="version content has-background-block"
-          style={{ height: "50px" }}
+          style={{ padding: "0.5em" }}
         >
           <div className="columns">
             <div
