@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 import { Link, graphql } from "gatsby";
 
 import Layout from "../components/Layout";
-import Features from "../components/Features";
-import BlogRoll from "../components/BlogRoll";
+// import Features from "../components/Features";
+// import BlogRoll from "../components/BlogRoll";
 
 export const IndexPageTemplate = ({
   image,
@@ -19,11 +19,10 @@ export const IndexPageTemplate = ({
     <div
       className="full-width-image margin-top-0"
       style={{
-        backgroundImage: `url(${
-          !!image.childImageSharp ? image.childImageSharp.fluid.src : image
-        })`,
+        backgroundImage: `url(${""})`,
         backgroundPosition: `top left`,
-        backgroundAttachment: `fixed`
+        backgroundAttachment: `fixed`,
+        backgroundColor: `gray`
       }}
     >
       <div
@@ -158,7 +157,6 @@ export const pageQuery = graphql`
   query IndexPageTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
-        title
         image {
           childImageSharp {
             fluid(maxWidth: 2048, quality: 100) {
