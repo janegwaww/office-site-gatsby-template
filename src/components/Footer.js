@@ -10,8 +10,10 @@ const Footer = class extends React.Component {
         <div className="content has-text-centered has-background-black has-text-white-ter">
           <div className="container has-background-black has-text-white-ter">
             <div className="columns is-gapless is-centered">
+              {/* <div className="column is-3"></div> */}
               <div className="column is-3">
                 <section className="menu">
+                  <p className="menu-label">使用指南</p>
                   <ul className="menu-list">
                     <li>
                       <Link to="/" className="navbar-item">
@@ -33,6 +35,7 @@ const Footer = class extends React.Component {
               </div>
               <div className="column is-3">
                 <section>
+                  <p className="menu-label">友情链接</p>
                   <ul className="menu-list">
                     <li>
                       <Link className="navbar-item" to="/blog">
@@ -59,6 +62,7 @@ const Footer = class extends React.Component {
               </div>
               <div className="column is-3">
                 <section>
+                  <p className="menu-label">联系我们</p>
                   <ul className="menu-list">
                     <li>
                       <Link className="navbar-item" to="/blog">
@@ -92,10 +96,7 @@ const Footer = class extends React.Component {
             </div>
           </div>
         </div>
-        <div
-          className="version content has-background-block"
-          style={{ padding: "0.5em" }}
-        >
+        <div className="version content has-background-block">
           <div className="columns">
             <div
               className="column is-half has-text-dark"
