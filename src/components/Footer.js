@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
 
+import "./footer.sass";
 import qr from "../img/qrcode.png";
 
 const Footer = class extends React.Component {
@@ -9,10 +10,13 @@ const Footer = class extends React.Component {
       <footer className="footer has-background-black has-text-white-ter">
         <div className="content has-text-centered has-background-black has-text-white-ter">
           <div className="container has-background-black has-text-white-ter">
-            <div className="columns is-gapless is-centered">
+            <div className="footer-guide columns is-gapless is-centered">
               <div className="column is-3">
                 <section className="menu">
                   <ul className="menu-list">
+                    <li>
+                      <p className="menu-label">使用指南</p>
+                    </li>
                     <li>
                       <Link to="/" className="navbar-item">
                         新手指引
@@ -34,6 +38,9 @@ const Footer = class extends React.Component {
               <div className="column is-3">
                 <section>
                   <ul className="menu-list">
+                    <li>
+                      <p className="menu-label">友情链接</p>
+                    </li>
                     <li>
                       <Link className="navbar-item" to="/blog">
                         行政大家谈
@@ -61,41 +68,40 @@ const Footer = class extends React.Component {
                 <section>
                   <ul className="menu-list">
                     <li>
-                      <Link className="navbar-item" to="/blog">
-                        联系客服：
-                      </Link>
-                      <Link className="navbar-item" to="/blog">
-                        0755-28561111
-                      </Link>
+                      <p className="menu-label">联系我们</p>
                     </li>
                     <li>
-                      <Link className="navbar-item" to="/contact">
+                      <Link className="navbar-item" to="/">
+                        联系客服：
+                      </Link>
+                      0755-28561111
+                    </li>
+                    <li>
+                      <Link className="navbar-item" to="/">
                         反馈意见：
                       </Link>
-                      <Link className="navbar-item" to="/contact">
-                        amux@huawei.com
-                      </Link>
+                      amux@huawei.com
                     </li>
                   </ul>
                 </section>
               </div>
-              <div className="column is-4 social">
-                <div className="content has-text-center">
+              <div className="column is-4 qr-code">
+                <div className="content">
                   <img
                     src={qr}
                     alt="heatex-qrcode"
-                    style={{ width: "8em", height: "8em" }}
-                  ></img>
-                  <div>黑顿科技</div>
+                    style={{ width: "6.8em", height: "6.8em" }}
+                  />
+                  <p className="code-name" style={{ marginTop: ".3em" }}>
+                    黑顿科技
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div
-          className="version content has-background-block"
-          style={{ padding: "0.5em" }}
-        >
+        <div className="seperator"></div>
+        <div className="version content has-background-block">
           <div className="columns">
             <div
               className="column is-half has-text-dark"
