@@ -59,26 +59,26 @@ const Navbar = class extends React.Component {
             className={`navbar-menu ${this.state.navBarActiveClass}`}
           >
             <div className="navbar-start has-text-centered">
-              <Link className="navbar-item" to="/about">
+              <Link className="navbar-item" to="/">
                 关于我们
               </Link>
-              <Link className="navbar-item" to="/products">
+              <Link className="navbar-item" to="/">
                 产品服务
               </Link>
-              <Link className="navbar-item" to="/blog">
+              <Link className="navbar-item" to="/">
                 博客
               </Link>
-              <Link className="navbar-item" to="/contact">
+              <Link className="navbar-item" to="/">
                 联系我们
               </Link>
-              <Link className="navbar-item" to="/contact/examples">
+              <Link className="navbar-item" to="/">
                 案例
               </Link>
             </div>
             <div className="navbar-end has-text-centered">
               <a
                 className="navbar-item"
-                href="https://github.com/netlify-templates/gatsby-starter-netlify-cms"
+                href="/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
