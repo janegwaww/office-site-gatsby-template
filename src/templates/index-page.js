@@ -19,7 +19,7 @@ export const IndexPageTemplate = ({
     <div
       className="full-width-image margin-top-0"
       style={{
-        backgroundImage: `url(${""})`,
+        backgroundImage: `url(${"https://pytorch.org/assets/images/home-background.jpg"})`,
         backgroundPosition: `top left`,
         backgroundAttachment: `fixed`,
         backgroundColor: `gray`
