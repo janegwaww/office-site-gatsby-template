@@ -60,19 +60,25 @@ const Navbar = class extends React.Component {
           >
             <div className="navbar-start has-text-centered">
               <Link className="navbar-item" to="/">
-                关于我们
+                首页
               </Link>
               <Link className="navbar-item" to="/">
-                产品服务
+                核心技术
               </Link>
               <Link className="navbar-item" to="/">
-                博客
+                产品中心
               </Link>
               <Link className="navbar-item" to="/">
-                联系我们
+                解决方案
               </Link>
               <Link className="navbar-item" to="/">
-                案例
+                核心案例
+              </Link>
+              <Link className="navbar-item" to="/">
+                关于黑顿
+              </Link>
+              <Link className="navbar-item" to="/">
+                加入我们
               </Link>
             </div>
             <div className="navbar-end has-text-centered">
