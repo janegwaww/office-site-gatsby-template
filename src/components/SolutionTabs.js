@@ -11,19 +11,22 @@ function SolutionTabs({ scrollItems }) {
       <div className="tabs is-centered is-fullwidth">
         <ul>
           <li className="is-active">
-            <a href="/">Pictures</a>
+            <a href="/">视频智能应用</a>
           </li>
           <li>
-            <a href="/">Music</a>
+            <a href="/">智能楼盘</a>
           </li>
           <li>
-            <a href="/">Videos</a>
+            <a href="/">大健康</a>
           </li>
           <li>
-            <a href="/">Documents</a>
+            <a href="/">教育行业</a>
           </li>
           <li>
-            <a href="/">Documents</a>
+            <a href="/">数据仓储</a>
+          </li>
+          <li>
+            <a href="/">体育</a>
           </li>
         </ul>
       </div>
