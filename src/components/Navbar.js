@@ -62,9 +62,6 @@ const Navbar = class extends React.Component {
               <Link className="navbar-item" to="/">
                 首页
               </Link>
-              <Link className="navbar-item" to="/">
-                核心技术
-              </Link>
               <Link className="navbar-item" to="/product-center">
                 产品中心
               </Link>
@@ -76,6 +73,9 @@ const Navbar = class extends React.Component {
               </Link>
               <Link className="navbar-item" to="/about-us">
                 关于黑顿
+              </Link>
+              <Link className="navbar-item" to="/college">
+                黑顿研究院
               </Link>
               <Link className="navbar-item" to="/join">
                 加入我们
