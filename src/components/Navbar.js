@@ -60,19 +60,25 @@ const Navbar = class extends React.Component {
           >
             <div className="navbar-start has-text-centered">
               <Link className="navbar-item" to="/">
-                关于我们
+                首页
               </Link>
               <Link className="navbar-item" to="/">
-                产品服务
+                核心技术
               </Link>
               <Link className="navbar-item" to="/">
-                博客
+                产品中心
               </Link>
               <Link className="navbar-item" to="/">
-                联系我们
+                解决方案
               </Link>
               <Link className="navbar-item" to="/">
-                案例
+                核心案例
+              </Link>
+              <Link className="navbar-item" to="/aboutus">
+                关于黑顿
+              </Link>
+              <Link className="navbar-item" to="/">
+                加入我们
               </Link>
             </div>
             <div className="navbar-end has-text-centered">
@@ -83,6 +89,14 @@ const Navbar = class extends React.Component {
                 rel="noopener noreferrer"
               >
                 登录
+              </a>
+              <a
+                className="navbar-item"
+                href="/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                注册
               </a>
             </div>
           </div>
