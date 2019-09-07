@@ -83,28 +83,44 @@ const ProductCenterTemplate = ({ itemInfo }) => (
       <div className="tabs is-centered ">
         <ul>
           <li className=" is-active">
-            <a className="">产品功能</a>
+            <a href="/" className="">
+              产品功能
+            </a>
           </li>
           <li className="">
-            <a className="has-text-white">产品优势</a>
+            <a href="/" className="has-text-white">
+              产品优势
+            </a>
           </li>
           <li className="">
-            <a className="has-text-white">解决方案架构</a>
+            <a href="/" className="has-text-white">
+              解决方案架构
+            </a>
           </li>
           <li className="">
-            <a className="has-text-white">多项架构图</a>
+            <a href="/" className="has-text-white">
+              多项架构图
+            </a>
           </li>
           <li className="">
-            <a className="has-text-white">应用场景</a>
+            <a href="/" className="has-text-white">
+              应用场景
+            </a>
           </li>
           <li className="">
-            <a className="has-text-white">内部实践</a>
+            <a href="/" className="has-text-white">
+              内部实践
+            </a>
           </li>
           <li className="">
-            <a className="has-text-white">荣誉与成就</a>
+            <a href="/" className="has-text-white">
+              荣誉与成就
+            </a>
           </li>
           <li className="">
-            <a className="has-text-white">使用步骤</a>
+            <a href="/" className="has-text-white">
+              使用步骤
+            </a>
           </li>
         </ul>
       </div>
