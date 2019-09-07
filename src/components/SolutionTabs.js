@@ -14,19 +14,29 @@ function SolutionTabs({ scrollItems }) {
             <a href="/">视频智能应用</a>
           </li>
           <li>
-            <a href="/">智能楼盘</a>
+            <a href="/" className="has-text-white">
+              智能楼盘
+            </a>
           </li>
           <li>
-            <a href="/">大健康</a>
+            <a href="/" className="has-text-white">
+              大健康
+            </a>
           </li>
           <li>
-            <a href="/">教育行业</a>
+            <a href="/" className="has-text-white">
+              教育行业
+            </a>
           </li>
           <li>
-            <a href="/">数据仓储</a>
+            <a href="/" className="has-text-white">
+              数据仓储
+            </a>
           </li>
           <li>
-            <a href="/">体育</a>
+            <a href="/" className="has-text-white">
+              体育
+            </a>
           </li>
         </ul>
       </div>

@@ -20,8 +20,8 @@ export const IndexPageTemplate = ({
     <div
       className="full-width-image margin-top-0"
       style={{
-        backgroundImage: `url(${"https://pytorch.org/assets/images/home-background.jpg"})`,
-        backgroundPosition: `top left`,
+        backgroundImage: `url(${"/img/banner.png"})`,
+        backgroundPosition: `center`,
         backgroundAttachment: `fixed`,
         backgroundColor: `gray`
       }}
@@ -122,9 +122,18 @@ export const IndexPageTemplate = ({
                   justifyContent: "space-between"
                 }}
               >
-                <div>99.99</div>
-                <div>1V1</div>
-                <div>7X24</div>
+                <div className="has-text-centered">
+                  <h3 className="has-text-white is-size-4">99.999999%</h3>
+                  <p className="has-text-white">数据可靠性</p>
+                </div>
+                <div className="has-text-centered">
+                  <h3 className="has-text-white is-size-4">1V1</h3>
+                  <p className="has-text-white">大客户专享</p>
+                </div>
+                <div className="has-text-centered">
+                  <h3 className="has-text-white is-size-4">7X24</h3>
+                  <p className="has-text-white">客户服务支持</p>
+                </div>
               </div>
             </div>
           </div>
