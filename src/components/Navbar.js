@@ -65,12 +65,12 @@ const Navbar = class extends React.Component {
               <Link className="navbar-item" to="/product-center">
                 产品中心
               </Link>
-              <Link className="navbar-item" to="/">
-                解决方案
-              </Link>
-              <Link className="navbar-item" to="/">
-                核心案例
-              </Link>
+              {/* <Link className="navbar-item" to="/"> */}
+              {/*   解决方案 */}
+              {/* </Link> */}
+              {/* <Link className="navbar-item" to="/"> */}
+              {/*   核心案例 */}
+              {/* </Link> */}
               <Link className="navbar-item" to="/about-us">
                 关于黑顿
               </Link>

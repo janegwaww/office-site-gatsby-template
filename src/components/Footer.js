@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
 
-import "./footer.sass";
+// import "./footer.sass";
 import qr from "../img/qrcode.png";
 
 const Footer = class extends React.Component {
