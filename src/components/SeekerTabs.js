@@ -8,19 +8,19 @@ function SeekerTabs({ scrollItems }) {
       <div className="tabs is-centered is-fullwidth">
         <ul>
           <li className="is-active">
-            <a href="/">变量引擎</a>
+            <a href="#">变量引擎</a>
           </li>
           <li>
-            <a href="/">匹配规划</a>
+            <a href="#">匹配规划</a>
           </li>
           <li>
-            <a href="/">信息智能</a>
+            <a href="#">信息智能</a>
           </li>
           <li>
-            <a href="/">数据协议</a>
+            <a href="#">数据协议</a>
           </li>
           <li>
-            <a href="/">智能操作生态</a>
+            <a href="#">智能操作生态</a>
           </li>
         </ul>
       </div>
