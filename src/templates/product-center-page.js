@@ -57,17 +57,17 @@ const ProductCenterTemplate = ({ itemInfo }) => (
             </h6>
             <div className="columns" style={{ padding: "0.25em" }}>
               <div className="column is-4">
-                <a className="button" href="/">
+                <a className="button" href="#">
                   立即使用
                 </a>
               </div>
               <div className="column is-4">
-                <a className="button" href="/">
+                <a className="button" href="#">
                   业务方案咨询
                 </a>
               </div>
               <div className="column is-4">
-                <a className="has-text-white" href="/">
+                <a className="has-text-white" href="#">
                   帮助文档{">"}
                 </a>
               </div>
@@ -83,42 +83,42 @@ const ProductCenterTemplate = ({ itemInfo }) => (
       <div className="tabs is-centered ">
         <ul>
           <li className=" is-active">
-            <a href="/" className="">
+            <a href="#" className="">
               产品功能
             </a>
           </li>
           <li className="">
-            <a href="/" className="has-text-white">
+            <a href="#" className="has-text-white">
               产品优势
             </a>
           </li>
           <li className="">
-            <a href="/" className="has-text-white">
+            <a href="#" className="has-text-white">
               解决方案架构
             </a>
           </li>
           <li className="">
-            <a href="/" className="has-text-white">
+            <a href="#" className="has-text-white">
               多项架构图
             </a>
           </li>
           <li className="">
-            <a href="/" className="has-text-white">
+            <a href="#" className="has-text-white">
               应用场景
             </a>
           </li>
           <li className="">
-            <a href="/" className="has-text-white">
+            <a href="#" className="has-text-white">
               内部实践
             </a>
           </li>
           <li className="">
-            <a href="/" className="has-text-white">
+            <a href="#" className="has-text-white">
               荣誉与成就
             </a>
           </li>
           <li className="">
-            <a href="/" className="has-text-white">
+            <a href="#" className="has-text-white">
               使用步骤
             </a>
           </li>
