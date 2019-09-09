@@ -35,12 +35,14 @@ function SeekerTabs({ scrollItems }) {
         </div>
         <div className="column is-7 has-text-justified">
           <h3 className="has-text-weight-bold is-size-6">变量引擎</h3>
+          <br />
           <p>
             全面闭环的自动化机器学习引擎。给定某业务场景，输入该
             场景各个变量的历史数据，变量引擎即能根据历史数据进行自主学习，挖掘出深
             层次的场景知识，形成变量之间的关联图谱。依托关联图谱，客户可对部分变量
             进行赋值，图谱便可对未被赋值的变量进行实时预测，实现渗透式的场景数据/变量深度挖掘。
           </p>
+          <br />
           <a className="button">了解更多</a>
         </div>
       </div>
