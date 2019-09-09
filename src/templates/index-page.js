@@ -18,7 +18,7 @@ export const IndexPageTemplate = ({
 }) => (
   <div>
     <div>
-      <img src={`/img/index-banner.png`} />
+      <img src={`./img/index-banner.png`} />
     </div>
     <section className="section section--gradient">
       <div className="container">
@@ -46,15 +46,16 @@ export const IndexPageTemplate = ({
       </div>
     </section>
     <section className="section section--gradient">
-      <div className="container">
-        <div className="section">
-          <div className="columns">
-            <div className="column is-10 is-offset-1">
-              <BusinessCase />
-            </div>
-          </div>
-        </div>
-      </div>
+      {/* <div className="container"> */}
+      {/*   <div className="section"> */}
+      {/*     <div className="columns"> */}
+      {/*       <div className="column is-10 is-offset-1"> */}
+      {/*         <BusinessCase /> */}
+      {/*       </div> */}
+      {/*     </div> */}
+      {/*   </div> */}
+      {/* </div> */}
+      <img src={`./img/cooperate.png`} />
     </section>
     <section
       className="section section--gradient"
