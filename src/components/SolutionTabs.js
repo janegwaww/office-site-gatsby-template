@@ -11,30 +11,30 @@ function SolutionTabs({ scrollItems }) {
       <div className="tabs is-centered is-fullwidth">
         <ul>
           <li className="is-active">
-            <a href="/">视频智能应用</a>
+            <a href="#">视频智能应用</a>
           </li>
           <li>
-            <a href="/" className="has-text-white">
+            <a href="#" className="has-text-white">
               智能楼盘
             </a>
           </li>
           <li>
-            <a href="/" className="has-text-white">
+            <a href="#" className="has-text-white">
               大健康
             </a>
           </li>
           <li>
-            <a href="/" className="has-text-white">
+            <a href="#" className="has-text-white">
               教育行业
             </a>
           </li>
           <li>
-            <a href="/" className="has-text-white">
+            <a href="#" className="has-text-white">
               数据仓储
             </a>
           </li>
           <li>
-            <a href="/" className="has-text-white">
+            <a href="#" className="has-text-white">
               体育
             </a>
           </li>
