@@ -55,7 +55,7 @@ export const IndexPageTemplate = ({
     {/*     </div> */}
     {/*   </div> */}
     {/* </div> */}
-    <img src={`./img/cooperate.png`} />
+    <img src={`./img/coop.png`} />
     {/* </section> */}
     <section
       className="section section--gradient"

@@ -34,7 +34,7 @@ const Navbar = class extends React.Component {
   render() {
     return (
       <nav
-        className="navbar is-transparent"
+        className="navbar is-transparent is-fixed-top"
         role="navigation"
         aria-label="main-navigation"
       >
@@ -71,6 +71,7 @@ const Navbar = class extends React.Component {
               {/* <Link className="navbar-item" to="/"> */}
               {/*   核心案例 */}
               {/* </Link> */}
+
               <Link className="navbar-item" to="/about-us">
                 关于黑顿
               </Link>
