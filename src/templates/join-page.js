@@ -32,7 +32,7 @@ const joinObj = [
 ];
 const JoinTemplate = ({ itemInfo }) => (
   <div>
-    <img src={`/img/join.png`} />
+    <img src={`./img/join.png`} />
     <div className="panel">
       <div
         className="field"

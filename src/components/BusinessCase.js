@@ -31,7 +31,7 @@ function BusinessCase() {
               >
                 <PreviewCompatibleImage
                   imageInfo={{
-                    image: `/img/case${o}.png`,
+                    image: `./img/case${o}.png`,
                     alt: "case"
                   }}
                 />

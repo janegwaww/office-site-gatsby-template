@@ -6,22 +6,22 @@ import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 
 const colObje = [
   {
-    img: "/img/college2.png",
+    img: "./img/college2.png",
     dir: "方向一：神经网络架构搜索（Neural Search Architecture）",
     list: "1.网络结构进化策略： 2.模型融合："
   },
   {
-    img: "/img/college2.png",
+    img: "./img/college2.png",
     dir: "方向二：信息智能（InfoPlus）",
     list: "1.文本解析： 2.语法纠错： 3.语义理解："
   },
   {
-    img: "/img/college2.png",
+    img: "./img/college2.png",
     dir: "方向三：推理引擎（Inference Engine）",
     list: "1.逻辑图谱 2.知识表征"
   },
   {
-    img: "/img/college2.png",
+    img: "./img/college2.png",
     dir: "方向四：信息智能（InfoPlus）",
     list: "1.网络结构进化策略：2.模型融合："
   }
@@ -31,7 +31,7 @@ const CollegeTemplate = ({ itemInfo }) => (
     <div
       className="full-width-image margin-top-0"
       style={{
-        backgroundImage: `url(${"/img/college.png"})`,
+        backgroundImage: `url(${"./img/college.png"})`,
         backgroundPosition: `0 55px`,
         backgroundAttachment: `fixed`,
         backgroundColor: `gray`,
