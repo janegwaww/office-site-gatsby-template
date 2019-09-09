@@ -9,7 +9,7 @@ const ProductCenterTemplate = ({ itemInfo }) => (
     <div
       className="full-width-image margin-top-0"
       style={{
-        backgroundImage: `url(${"/img/product-center.png"})`,
+        backgroundImage: `url(${"./img/product-center.png"})`,
         backgroundPosition: `0 55px`,
         backgroundAttachment: `fixed`,
         backgroundColor: `gray`,
@@ -136,7 +136,7 @@ const ProductCenterTemplate = ({ itemInfo }) => (
                     <h4 className="has-text-centered">产品功能</h4>
                     <PreviewCompatibleImage
                       imageInfo={{
-                        image: "/img/pro1.png",
+                        image: "./img/pro1.png",
                         alt: "product features"
                       }}
                     />
@@ -161,7 +161,7 @@ const ProductCenterTemplate = ({ itemInfo }) => (
                       <div className="column is-4 has-text-centered">
                         <PreviewCompatibleImage
                           imageInfo={{
-                            image: "/img/pre1.png",
+                            image: "./img/pre1.png",
                             alt: "preview 1"
                           }}
                         />
@@ -173,7 +173,7 @@ const ProductCenterTemplate = ({ itemInfo }) => (
                       <div className="column is-4 has-text-centered">
                         <PreviewCompatibleImage
                           imageInfo={{
-                            image: "/img/pre2.png",
+                            image: "./img/pre2.png",
                             alt: "preview 1"
                           }}
                         />
@@ -185,7 +185,7 @@ const ProductCenterTemplate = ({ itemInfo }) => (
                       <div className="column is-4 has-text-centered">
                         <PreviewCompatibleImage
                           imageInfo={{
-                            image: "/img/pre3.png",
+                            image: "./img/pre3.png",
                             alt: "preview 1"
                           }}
                         />
@@ -197,7 +197,7 @@ const ProductCenterTemplate = ({ itemInfo }) => (
                       <div className="column is-4 has-text-centered">
                         <PreviewCompatibleImage
                           imageInfo={{
-                            image: "/img/pre4.png",
+                            image: "./img/pre4.png",
                             alt: "preview 1"
                           }}
                         />
@@ -209,7 +209,7 @@ const ProductCenterTemplate = ({ itemInfo }) => (
                       <div className="column is-4 has-text-centered">
                         <PreviewCompatibleImage
                           imageInfo={{
-                            image: "/img/pre5.png",
+                            image: "./img/pre5.png",
                             alt: "preview 1"
                           }}
                         />
@@ -221,7 +221,7 @@ const ProductCenterTemplate = ({ itemInfo }) => (
                       <div className="column is-4 has-text-centered">
                         <PreviewCompatibleImage
                           imageInfo={{
-                            image: "/img/pre6.png",
+                            image: "./img/pre6.png",
                             alt: "preview 1"
                           }}
                         />
@@ -250,7 +250,7 @@ const ProductCenterTemplate = ({ itemInfo }) => (
                     <h4 className="has-text-centered">方案架构</h4>
                     <PreviewCompatibleImage
                       imageInfo={{
-                        image: "/img/pro2.png",
+                        image: "./img/pro2.png",
                         alt: "product features"
                       }}
                     />
@@ -273,7 +273,7 @@ const ProductCenterTemplate = ({ itemInfo }) => (
                     <h4 className="has-text-centered">解决方案</h4>
                     <PreviewCompatibleImage
                       imageInfo={{
-                        image: "/img/pro3.png",
+                        image: "./img/pro3.png",
                         alt: "product features"
                       }}
                     />
@@ -296,7 +296,7 @@ const ProductCenterTemplate = ({ itemInfo }) => (
                     <h4 className="has-text-centered">应用场景</h4>
                     <PreviewCompatibleImage
                       imageInfo={{
-                        image: "/img/pro4.png",
+                        image: "./img/pro4.png",
                         alt: "product features"
                       }}
                     />
@@ -319,7 +319,7 @@ const ProductCenterTemplate = ({ itemInfo }) => (
                     <h4 className="has-text-centered">产品功能</h4>
                     <PreviewCompatibleImage
                       imageInfo={{
-                        image: "/img/pro5.png",
+                        image: "./img/pro5.png",
                         alt: "product features"
                       }}
                     />

@@ -28,7 +28,7 @@ function SeekerTabs({ scrollItems }) {
         <div className="column is-5">
           <PreviewCompatibleImage
             imageInfo={{
-              image: "/img/seeker.png",
+              image: "./img/seeker.png",
               alt: `seeler`
             }}
           />

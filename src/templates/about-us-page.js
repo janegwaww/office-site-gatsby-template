@@ -6,36 +6,36 @@ import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 
 const aboutObj = [
   {
-    image: "/img/a1.png",
+    image: "./img/a1.png",
     title: "数据建模",
     des:
       "借助传感平台，业务场景被解析为量化的数学 模型，无论是客户信息隐私，还是场景数据精 准度与全面度，均能得到系统的整合。"
   },
   {
-    image: "/img/a2.png",
+    image: "./img/a2.png",
     title: "智能操作生态",
     des: "为万物互联打造的 操作生态"
   },
   {
-    image: "/img/a3.png",
+    image: "./img/a3.png",
     title: "核心算法",
     des:
       "模块化的核心算法，用于将场景建模得到的数学 问题进行高效解决，支持灵活弹性的算力维护。"
   },
   {
-    image: "/img/a4.png",
+    image: "./img/a4.png",
     title: "数据建模",
     des:
       "借助传感平台，业务场景被解析为量化的数学 模型，无论是客户信息隐私，还是场景数据精 准度与全面度，均能得到系统的整合。"
   },
   {
-    image: "/img/a5.png",
+    image: "./img/a5.png",
     title: "数据建模",
     des:
       "生态根据获取到的客户行为给出实时的智能化决 策(解决方案)，客户可第一时间获取，场景随 后会刷新、重新建模。"
   },
   {
-    image: "/img/a6.png",
+    image: "./img/a6.png",
     title: "数据建模",
     des:
       "客户可自行搭建信息化载体，如手机App，在 此载体之上进行操作，客户的行为与场景均会 被生态获取并解读。"
@@ -46,7 +46,7 @@ const AboutUsTemplate = ({ itemInfo }) => (
     <div
       className="full-width-image margin-top-0"
       style={{
-        backgroundImage: `url(${"/img/aboutus.png"})`,
+        backgroundImage: `url(${"./img/aboutus.png"})`,
         backgroundPosition: `center top`,
         backgroundAttachment: `fixed`,
         backgroundColor: `lightgray`,
@@ -112,7 +112,9 @@ const AboutUsTemplate = ({ itemInfo }) => (
         <div className="columns">
           <div className="column is-10 is-offset-1 has-text-centered">
             <h3 className="has-text-weight-bold is-size-4">创始团队</h3>
-            <PreviewCompatibleImage imageInfo={{ image: "/img/creater.jpg" }} />
+            <PreviewCompatibleImage
+              imageInfo={{ image: "./img/creater.jpg" }}
+            />
           </div>
         </div>
       </div>

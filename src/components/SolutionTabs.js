@@ -46,7 +46,7 @@ function SolutionTabs({ scrollItems }) {
             <div className="column is-6">
               <PreviewCompatibleImage
                 imageInfo={{
-                  image: "/img/solution.png",
+                  image: "./img/solution.png",
                   alt: `seeler`
                 }}
               />
