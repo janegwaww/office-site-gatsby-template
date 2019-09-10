@@ -19,16 +19,6 @@ const Footer = class extends React.Component {
                     </li>
                     <li>
                       <Link to="/" className="navbar-item">
-                        新手指引
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/">
-                        社区规则
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/">
                         帮助中心
                       </Link>
                     </li>
@@ -43,22 +33,17 @@ const Footer = class extends React.Component {
                     </li>
                     <li>
                       <Link className="navbar-item" to="/">
-                        行政大家谈
+                        中科院
                       </Link>
                     </li>
                     <li>
                       <Link className="navbar-item" to="/">
-                        行政服务中心
+                        阿里云
                       </Link>
                     </li>
                     <li>
                       <Link className="navbar-item" to="/">
-                        行政案例中心
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/">
-                        行政从业人员频道
+                        腾讯云
                       </Link>
                     </li>
                   </ul>
@@ -80,7 +65,7 @@ const Footer = class extends React.Component {
                       <Link className="navbar-item" to="/">
                         反馈意见：
                       </Link>
-                      amux@huawei.com
+                      www.haetek.com
                     </li>
                   </ul>
                 </section>
