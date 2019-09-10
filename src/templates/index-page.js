@@ -58,8 +58,13 @@ export const IndexPageTemplate = ({
     <img src={`./img/coop.png`} />
     {/* </section> */}
     <section
-      className="section section--gradient"
-      style={{ backgroundColor: "blue" }}
+      className="section"
+      style={{
+        backgroundColor: "blue",
+        backgroundImage: `url(${"./img/persent.svg"})`,
+        height: "184px",
+        padding: "1.5em 1.5em"
+      }}
     >
       <div className="container">
         <div className="section">
