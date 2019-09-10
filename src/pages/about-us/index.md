@@ -2,15 +2,16 @@
 templateKey: about-us-page
 path: /about-us
 tags: ['haetek', 'aboutus']
+image: /img/aboutus.png
 title: about haetek
-descritiop: >-
+description: >-
     about heatek company
 main:
     heading: 黑顿公司介绍
     description: >
-    深圳前海黑顿科技有限公司（简称“黑顿科技”），团队于2019年8月1日入驻深圳前海区，注册资本3000万元，致力于搭建面向信息化、智能化、万物互联的智能操作生态，涉及领域包括物流、金融、教育、智慧城市、语言、销售、体育、大健康等等。
-    创始团队来自多伦多大学（深度学习发源地）、卡耐基梅隆大学（人工智能专业世界第一）、浙大、哈工大、华南理工等国际名校，曾在国际智能语法检测大赛（CGED）中以绝对优势从社科院、阿里巴巴、北大等团队中夺冠，并曾在华为、IBM、科大讯飞等国际知名企业担任高级技术或研发岗位。
-    公司研究团队在自然语言处理、机器学习、知识图谱、路径规划等热门领域均有成果，拥有多项国际或国家专利、著作权，已发表各类学术论文并被ACL、EMNLP、CoNLL等国际顶级学术会议录用，并与Vector Institute、中科院计算所等学术机构拥有学术合作关系，并在中科院计算所设有研究型工作站，站内常驻研究人员十余人，集结学术界权威，致力于将人工智能算法结合实际应用场景进行落地，消除学术界与实业界之间的代沟，为众多有智能化需求的企业提供技术支持及数据变现，为广大致力于智能化建设的企业及开发者提供稳健灵活简约的平台型算法生态，让智能塑造生活。
+        深圳前海黑顿科技有限公司（简称“黑顿科技”），团队于2019年8月1日入驻深圳前海区，注册资本3000万元，致力于搭建面向信息化、智能化、万物互联的智能操作生态，涉及领域包括物流、金融、教育、智慧城市、语言、销售、体育、大健康等等。
+        创始团队来自多伦多大学（深度学习发源地）、卡耐基梅隆大学（人工智能专业世界第一）、浙大、哈工大、华南理工等国际名校，曾在国际智能语法检测大赛（CGED）中以绝对优势从社科院、阿里巴巴、北大等团队中夺冠，并曾在华为、IBM、科大讯飞等国际知名企业担任高级技术或研发岗位。
+        公司研究团队在自然语言处理、机器学习、知识图谱、路径规划等热门领域均有成果，拥有多项国际或国家专利、著作权，已发表各类学术论文并被ACL、EMNLP、CoNLL等国际顶级学术会议录用，并与Vector Institute、中科院计算所等学术机构拥有学术合作关系，并在中科院计算所设有研究型工作站，站内常驻研究人员十余人，集结学术界权威，致力于将人工智能算法结合实际应用场景进行落地，消除学术界与实业界之间的代沟，为众多有智能化需求的企业提供技术支持及数据变现，为广大致力于智能化建设的企业及开发者提供稳健灵活简约的平台型算法生态，让智能塑造生活。
     blurbs:
         - image: /img/a1.png
           alt: module
@@ -42,19 +43,19 @@ main:
           heading: 客户行为
           text: >
               客户可自行搭建信息化载体，如手机App，在 此载体之上进行操作，客户的行为与场景均会 被生态获取并解读。
-    creaeter:
-        haeding: 创始团队
-        description: craete the company
-        image1:
-            alt: people
-            image: /img/creater.png
-        image2:
-            alt: people
-            image: /img/creater.png
-        image3:
-            alt: people
-            image: /img/creater.png
-    timeline:
-        heading: company time line
-        description: company start at 2019
+creaters:
+    heading: 创始团队
+    description: craete the company
+    image1:
+        alt: people
+        image: /img/creater.jpg
+    image2:
+        alt: people
+        image: /img/creater.jpg
+    image3:
+        alt: people
+        image: /img/creater.jpg
+timeline:
+    heading: company time line
+    description: company start at 2019
 ---
