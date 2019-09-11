@@ -2,7 +2,7 @@
 templateKey: about-us-page
 path: /about-us
 tags: ['haetek', 'aboutus']
-image: /img/aboutus.png
+image: /img/aboutus1.png
 title: about haetek
 description: >-
     about heatek company

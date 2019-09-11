@@ -38,7 +38,8 @@ const AboutUsTemplate = ({ image, intro, creaters }) => {
           backgroundImage: `url(${
             !!image ? image.childImageSharp.fluid.src : image
           })`,
-          backgroundPosition: "center",
+          backgroundAttachment: "fixed",
+          backgroundPosition: "left 52px",
           backgroundSize: "contain",
           backgroundRepeat: "no-repeat"
         }}
