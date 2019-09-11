@@ -32,12 +32,17 @@ const AboutUsTemplate = ({ image, intro, creaters }) => {
 
   return (
     <div className="about-us">
-      <div className="full-width-image margin-top-0">
-        <img
-          src={!!image ? image.childImageSharp.fluid.src : image}
-          alt="about us"
-        />
-      </div>
+      <div
+        className="full-width-image margin-top-0"
+        style={{
+          backgroundImage: `url(${
+            !!image ? image.childImageSharp.fluid.src : image
+          })`,
+          backgroundPosition: "center",
+          backgroundSize: "contain",
+          backgroundRepeat: "no-repeat"
+        }}
+      />
       <div className="section section--gradient">
         <div className="container">
           <div className="section">
