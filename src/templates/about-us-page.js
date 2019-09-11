@@ -86,6 +86,19 @@ const AboutUsTemplate = ({ image, intro, creaters }) => {
   );
 };
 
+AboutUsTemplate.propTypes = {
+  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  intro: PropTypes.shape({
+    blurbs: PropTypes.array,
+    description: PropTypes.string,
+    heading: PropTypes.string
+  }),
+  creaters: PropTypes.shape({
+    heading: PropTypes.string,
+    image: PropTypes.oneOfType([PropTypes.object, PropTypes.string])
+  })
+};
+
 const AboutUs = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
 
@@ -98,19 +111,6 @@ const AboutUs = ({ data }) => {
       />
     </Layout>
   );
-};
-
-AboutUs.propTypes = {
-  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  intro: PropTypes.shape({
-    blurbs: PropTypes.array,
-    description: PropTypes.string,
-    heading: PropTypes.string
-  }),
-  creaters: PropTypes.shape({
-    heading: PropTypes.string,
-    image: PropTypes.oneOfType([PropTypes.object, PropTypes.string])
-  })
 };
 
 export default AboutUs;
