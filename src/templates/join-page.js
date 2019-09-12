@@ -32,22 +32,36 @@ const joinObj = [
 ];
 const JoinTemplate = ({ itemInfo }) => (
   <div>
-    <img src={`./img/join.png`} />
-    <div className="panel">
-      <div
-        className="field"
-        style={{ width: "60em", margin: "auto", padding: "1em 1em" }}
-      >
-        <div className="control has-icons-left">
-          <input
-            className="input is-medium"
-            type="email"
-            style={{ backgroundColor: "#E8E8E8" }}
-            placeholder="搜索工作岗位"
-          />
-          <span className="icon is-medium is-left">
-            <i className="fas fa-envelope"></i>
-          </span>
+    <div
+      className="full-width-image margin-top-0"
+      style={{
+        height: "450px",
+        backgroundImage: `url(${
+          /* !!image ? image.childImageSharp.fluid.src : image */
+          `/img/join.png`
+        })`,
+        backgroundAttachment: `fixed`,
+        backgroundSize: "contain"
+      }}
+    />
+    <div className="section">
+      <div className="container">
+        <div className="columns is-centered">
+          <div className="column is-10">
+            <div className="field">
+              <div className="control has-icons-left">
+                <input
+                  className="input is-medium"
+                  type="email"
+                  style={{ backgroundColor: "#E8E8E8" }}
+                  placeholder="搜索工作岗位"
+                />
+                {/* <span className="icon is-medium is-left"> */}
+                {/*   <i className="fas fa-envelope"></i> */}
+                {/* </span> */}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -58,7 +72,7 @@ const JoinTemplate = ({ itemInfo }) => (
             <div className="content">
               <div className="columns">
                 <div className="column is-4">
-                  <p>过滤条件</p>
+                  <p className="has-text-weight-bold">过滤条件</p>
                   <div
                     style={{
                       width: "280px",
@@ -137,7 +151,7 @@ const JoinTemplate = ({ itemInfo }) => (
                   </div>
                 </div>
                 <div className="column is-8">
-                  <p>最新发布</p>
+                  <p className="has-text-weight-bold">最新发布</p>
                   {joinObj.map((o, i) => (
                     <div
                       style={{
