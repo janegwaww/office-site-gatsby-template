@@ -66,10 +66,7 @@ const CollegeTemplate = ({ image, background, direction }) => {
           backgroundSize: "contain"
         }}
       />
-      <div
-        className="section section--gradient"
-        style={{ background: "rgba(245,245,245,1)" }}
-      >
+      <div className="section section--gradient has-background-white-ter">
         <div className="container">
           <div className="section">
             <BackgroundInfo heading={background.heading} bakPara={bakPara} />
