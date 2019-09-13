@@ -9,17 +9,23 @@ import BusinessCase from "../components/BusinessCase.js";
 
 export const IndexPageTemplate = ({
   image,
-  title,
-  heading,
-  subheading,
-  mainpitch,
-  description,
-  intro
+  services,
+  features,
+  solution,
+  business,
+  rate
 }) => (
   <div>
-    <div>
-      <img src={`./img/index-banner.png`} />
-    </div>
+    <div
+      className="full-width-image margin-top-0"
+      style={{
+        backgroundImage: `url(${
+          !!image ? image.childImageSharp.fluid.src : image
+        })`,
+        backgroundAttachment: `fixed`,
+        backgroundSize: "contain"
+      }}
+    ></div>
     <section className="section section--gradient">
       <div className="container">
         <div className="section">
@@ -100,29 +106,35 @@ export const IndexPageTemplate = ({
 
 IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  title: PropTypes.string,
-  heading: PropTypes.string,
-  subheading: PropTypes.string,
-  mainpitch: PropTypes.object,
-  description: PropTypes.string,
-  intro: PropTypes.shape({
+  services: PropTypes.array,
+  features: PropTypes.shape({
+    blurbs: PropTypes.array
+  }),
+  solution: PropTypes.shape({
+    heading: PropTypes.string,
+    blurbs: PropTypes.array
+  }),
+  business: PropTypes.shape({
+    blurbs: PropTypes.array
+  }),
+  rate: PropTypes.shape({
     blurbs: PropTypes.array
   })
 };
 
 const IndexPage = ({ data }) => {
+  console.log(data);
   const { frontmatter } = data.markdownRemark;
 
   return (
     <Layout>
       <IndexPageTemplate
         image={frontmatter.image}
-        title={frontmatter.title}
-        heading={frontmatter.heading}
-        subheading={frontmatter.subheading}
-        mainpitch={frontmatter.mainpitch}
-        description={frontmatter.description}
-        intro={frontmatter.intro}
+        services={frontmatter.services}
+        features={frontmatter.features}
+        solution={frontmatter.solution}
+        business={frontmatter.business}
+        rate={frontmatter.rate}
       />
     </Layout>
   );
@@ -151,7 +163,18 @@ export const pageQuery = graphql`
         }
         heading
         description
-        intro {
+        services {
+          image {
+            childImageSharp {
+              fluid(maxWidth: 240, quality: 64) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+          heading
+          description
+        }
+        features {
           blurbs {
             image {
               childImageSharp {
@@ -160,10 +183,41 @@ export const pageQuery = graphql`
                 }
               }
             }
-            text
+            heading
+            subHeading
+            description
           }
+        }
+        solution {
           heading
-          description
+          blurbs {
+            heading
+            image {
+              childImageSharp {
+                fluid(maxWidth: 240, quality: 64) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            description
+          }
+        }
+        business {
+          blurbs {
+            image {
+              childImageSharp {
+                fluid(maxWidth: 240, quality: 64) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+        }
+        rate {
+          blurbs {
+            heading
+            description
+          }
         }
       }
     }
