@@ -1,16 +1,35 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import ContainCard from "../components/ContainCard";
+import "./seeker-tabs.sass";
 
 function SeekerTabs({ scrollItems = [] }) {
+  let [items, setItems] = useState(
+    scrollItems.map((o, i) => (i === 0 ? { ...o, className: "is-active" } : o))
+  );
+  const _tabSelect = tab => {
+    setItems(
+      items.map(o => {
+        if (o.heading === tab) {
+          return { ...o, className: "is-active" };
+        } else {
+          return { ...o, className: "" };
+        }
+      })
+    );
+  };
   return (
     <div>
-      <div className="tabs is-centered is-fullwidth">
+      <div className="tabs is-centered is-fullwidth" id="tabs">
         <ul>
-          {scrollItems.map((o, i) => (
-            <li key={i} className="has-text-centered">
-              <div className="is-size-7 has-text-grey-light">{o.heading}</div>
-              <a href="#top">{o.subHeading}</a>
+          {[...items].map((o, i) => (
+            <li
+              key={i}
+              className={`has-text-centered ${o.className}`}
+              data-tab={o.heading}
+            >
+              <p className="is-size-7 has-text-grey-light">{o.heading}</p>
+              <a onClick={() => _tabSelect(o.heading)}>{o.subHeading}</a>
             </li>
           ))}
         </ul>
@@ -18,7 +37,13 @@ function SeekerTabs({ scrollItems = [] }) {
       <br />
       <br />
       <div className="container">
-        <ContainCard cardInfo={[]} />
+        <div id="tab-content">
+          {[...items].map((o, i) => (
+            <div data-content={o.heading} key={i} className={o.className}>
+              <ContainCard info={{ ...o, button: `了解更多` }} />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
