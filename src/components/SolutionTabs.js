@@ -10,17 +10,22 @@ function SolutionTabs({ solutionItems }) {
         {solutionItems.heading}
       </h3>
       <br />
-      <div className="tabs is-centered is-fullwidth">
-        <ul>
-          {items.map((o, i) => (
-            <li key={i}>
-              <a href="#top" className="has-text-white">
-                {o.heading}
-              </a>
-            </li>
-          ))}
-        </ul>
+      <div className="columns">
+        <div className="column is-10 is-offset-1">
+          <div className="tabs is-centered is-fullwidth">
+            <ul>
+              {items.map((o, i) => (
+                <li key={i}>
+                  <a href="#top" className="has-text-white">
+                    {o.heading}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </div>
+
       <br />
       <div className="container">
         <ContainCard info={{}} />

@@ -16,27 +16,33 @@ const ContainCard = ({ info = {} }) => {
         };
   return (
     <div className="has-background-white">
-      <article className="media">
-        <figure className="media-left">
-          <p className="image is-256x256">
-            <PreviewCompatibleImage imageInfo={info} />
-          </p>
-        </figure>
-        <div className="media-content">
-          <div className="content">
-            <p>
-              <strong className="is-size-3">{info.heading}</strong>
-              <br />
-              <br />
-              {info.description}
-            </p>
-          </div>
-          <br />
-          <a href="./" className="button">
-            {info.button}
-          </a>
+      <div
+        className="card is-horizontal"
+        style={{ display: "flex", boxShadow: "unset" }}
+      >
+        <div className="card-image" style={{ width: "100%", height: "100%" }}>
+          <figure className="image">
+            <PreviewCompatibleImage
+              imageInfo={{ ...info, style: { borderRadius: "unset" } }}
+            />
+          </figure>
         </div>
-      </article>
+        <div className="card-stacked">
+          <div className="card-content">
+            <div className="media">
+              <div className="media-content">
+                <p className="title is-size-3">{info.heading}</p>
+              </div>
+            </div>
+            <div className="content is-size-6 has-text-grey-light">
+              {info.description}
+            </div>
+            <a href="#top" className="button">
+              {info.button}
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

@@ -6,19 +6,19 @@ heading: home page
 description: >-
     company office website home
 services:
-    - image: /img/coffee.png
+    - image: /img/module.jpg
       alt: model
       heading: 数据建模
       description: 辅助理性决策使利益最优
-    - image: /img/coffee.png
+    - image: /img/algorith.jpg
       alt: argrithem
       heading: 计算架构&算法平台
       description: 可嫁接实体及传感设备
-    - image: /img/coffee.png
+    - image: /img/envi.jpg
       alt: environment
       heading: 操作生态
       description: 为即将到来的万物互联潮流量身定制
-    - image: /img/coffee.png
+    - image: /img/solution.jpg
       alt: solution
       heading: 智能产业解决方案
       description: 全面覆盖零门槛
