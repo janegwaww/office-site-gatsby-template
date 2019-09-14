@@ -7,15 +7,19 @@ description: >-
     company office website home
 services:
     - image: /img/coffee.png
+      alt: model
       heading: 数据建模
       description: 辅助理性决策使利益最优
     - image: /img/coffee.png
+      alt: argrithem
       heading: 计算架构&算法平台
       description: 可嫁接实体及传感设备
     - image: /img/coffee.png
+      alt: environment
       heading: 操作生态
       description: 为即将到来的万物互联潮流量身定制
     - image: /img/coffee.png
+      alt: solution
       heading: 智能产业解决方案
       description: 全面覆盖零门槛
 features:
@@ -35,20 +39,20 @@ features:
           description: >
               全面闭环的自动化机器学习引擎。给定某业务场景，输入该 场景各个变量的历史数据，变量引擎即能根据历史数据进行自主学习，挖掘出深 层次的场景知识，形成变量之间的关联图谱。依托关联图谱，客户可对部分变量 进行赋值，图谱便可对未被赋值的变量进行实时预测，实现渗透式的场景数据/变量深度挖掘。
           more: https://tiglapiles.gitlab.io/gatsby-starter-netlify-cms/
-        - heading: 信息智能
-          subHeading: InfoPlus
+        - heading: InfoPlus
+          subHeading: 信息智能
           image: /img/info.png
           description: >
               全面闭环的自动化机器学习引擎。给定某业务场景，输入该 场景各个变量的历史数据，变量引擎即能根据历史数据进行自主学习，挖掘出深 层次的场景知识，形成变量之间的关联图谱。依托关联图谱，客户可对部分变量 进行赋值，图谱便可对未被赋值的变量进行实时预测，实现渗透式的场景数据/变量深度挖掘。
           more: https://tiglapiles.gitlab.io/gatsby-starter-netlify-cms/
-        - heading: 数据协议
-          subHeading: HDPP
+        - heading: HDPP
+          subHeading: 数据协议
           image: /img/hdpp.png
           description: >
               全面闭环的自动化机器学习引擎。给定某业务场景，输入该 场景各个变量的历史数据，变量引擎即能根据历史数据进行自主学习，挖掘出深 层次的场景知识，形成变量之间的关联图谱。依托关联图谱，客户可对部分变量 进行赋值，图谱便可对未被赋值的变量进行实时预测，实现渗透式的场景数据/变量深度挖掘。
           more: https://tiglapiles.gitlab.io/gatsby-starter-netlify-cms/
-        - heading: 智能操作生态
-          subHeading: IOE
+        - heading: IOE
+          subHeading: 智能操作生态
           image: /img/ioe.png
           description: >
               全面闭环的自动化机器学习引擎。给定某业务场景，输入该 场景各个变量的历史数据，变量引擎即能根据历史数据进行自主学习，挖掘出深 层次的场景知识，形成变量之间的关联图谱。依托关联图谱，客户可对部分变量 进行赋值，图谱便可对未被赋值的变量进行实时预测，实现渗透式的场景数据/变量深度挖掘。
@@ -89,25 +93,45 @@ business:
         business connect
     blurbs:
         - image: /img/case/1.png
+          alt: cooperate business
         - image: /img/case/2.png
+          alt: cooperate business
         - image: /img/case/3.png
+          alt: cooperate business
         - image: /img/case/4.png
+          alt: cooperate business
         - image: /img/case/5.png
+          alt: cooperate business
         - image: /img/case/6.png
+          alt: cooperate business
         - image: /img/case/7.png
+          alt: cooperate business
         - image: /img/case/8.png
+          alt: cooperate business
         - image: /img/case/9.png
+          alt: cooperate business
         - image: /img/case/10.png
+          alt: cooperate business
         - image: /img/case/11.png
+          alt: cooperate business
         - image: /img/case/12.png
+          alt: cooperate business
         - image: /img/case/13.png
+          alt: cooperate business
         - image: /img/case/14.png
+          alt: cooperate business
         - image: /img/case/15.png
+          alt: cooperate business
         - image: /img/case/16.png
+          alt: cooperate business
         - image: /img/case/17.png
+          alt: cooperate business
         - image: /img/case/18.png
+          alt: cooperate business
         - image: /img/case/19.png
+          alt: cooperate business
         - image: /img/case/20.png
+          alt: cooperate business
 
 rate:
     heading: rating
