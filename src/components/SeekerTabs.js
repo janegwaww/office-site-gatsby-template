@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import ContainCard from "../components/ContainCard";
-import "./seeker-tabs.sass";
 
 function SeekerTabs({ scrollItems = [] }) {
-  let [items, setItems] = useState(
+  const [items, setItems] = useState(
     scrollItems.map((o, i) => (i === 0 ? { ...o, className: "is-active" } : o))
   );
+  const [contentItem, setContentItem] = useState(items[0]);
   const _tabSelect = tab => {
     setItems(
       items.map(o => {
@@ -17,17 +17,14 @@ function SeekerTabs({ scrollItems = [] }) {
         }
       })
     );
+    setContentItem(items.filter(o => o.heading === tab)[0]);
   };
   return (
     <div>
       <div className="tabs is-centered is-fullwidth" id="tabs">
         <ul>
           {[...items].map((o, i) => (
-            <li
-              key={i}
-              className={`has-text-centered ${o.className}`}
-              data-tab={o.heading}
-            >
+            <li key={i} className={`has-text-centered ${o.className}`}>
               <p className="is-size-7 has-text-grey-light">{o.heading}</p>
               <a onClick={() => _tabSelect(o.heading)}>{o.subHeading}</a>
             </li>
@@ -37,13 +34,7 @@ function SeekerTabs({ scrollItems = [] }) {
       <br />
       <br />
       <div className="container">
-        <div id="tab-content">
-          {[...items].map((o, i) => (
-            <div data-content={o.heading} key={i} className={o.className}>
-              <ContainCard info={{ ...o, button: `了解更多` }} />
-            </div>
-          ))}
-        </div>
+        <ContainCard info={{ ...contentItem, button: `了解更多` }} />
       </div>
     </div>
   );
