@@ -38,9 +38,7 @@ const AboutUsTemplate = ({ image, intro, creaters }) => {
           backgroundImage: `url(${
             !!image ? image.childImageSharp.fluid.src : image
           })`,
-          backgroundAttachment: "fixed",
-          backgroundSize: "contain",
-          backgroundRepeat: "no-repeat"
+          backgroundSize: "cover"
         }}
       />
       <div className="section section--gradient">

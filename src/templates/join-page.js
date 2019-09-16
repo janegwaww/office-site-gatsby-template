@@ -16,8 +16,7 @@ const JoinTemplate = ({ image, filterJobs, newJobs }) => {
           backgroundImage: `url(${
             !!image ? image.childImageSharp.fluid.src : image
           })`,
-          backgroundAttachment: `fixed`,
-          backgroundSize: "contain"
+          backgroundSize: "cover"
         }}
       />
       <div className="section">

@@ -62,8 +62,7 @@ const CollegeTemplate = ({ image, background, direction }) => {
           backgroundImage: `url(${
             !!image ? image.childImageSharp.fluid.src : image
           })`,
-          backgroundAttachment: `fixed`,
-          backgroundSize: "contain"
+          backgroundSize: "cover"
         }}
       />
       <div className="section section--gradient has-background-white-ter">
