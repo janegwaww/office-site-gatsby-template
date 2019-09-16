@@ -3,12 +3,19 @@ import PropTypes from "prop-types";
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 
 function ProductTabCard({ cardInfo = [] }) {
-  const [items, setItems] = useState(cardInfo);
+  const [items, setItems] = useState(
+    cardInfo.map((o, i) => (i === 0 ? { ...o, className: "is-active" } : o))
+  );
   const [item, setItem] = useState(items[0]);
   const tabSelect = tab => {
-    console.log(`product card click`);
-    // setItems();
-    // setItem(items.filter(o => o.heading === tab)[0]);
+    setItems(
+      items.map(o =>
+        o.heading === tab
+          ? { ...o, className: "is-active" }
+          : { ...o, className: "" }
+      )
+    );
+    setItem(items.filter(o => o.heading === tab)[0]);
   };
   return (
     <div

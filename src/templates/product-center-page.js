@@ -187,7 +187,6 @@ ProductCenterTemplate.propTypes = {
 
 const ProductCenter = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
-  console.log(frontmatter);
   return (
     <Layout>
       <ProductCenterTemplate
