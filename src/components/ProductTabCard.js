@@ -6,8 +6,9 @@ function ProductTabCard({ cardInfo = [] }) {
   const [items, setItems] = useState(cardInfo);
   const [item, setItem] = useState(items[0]);
   const tabSelect = tab => {
-    setItems();
-    setItem(items.filter(o => o.heading === tab)[0]);
+    console.log(`product card click`);
+    // setItems();
+    // setItem(items.filter(o => o.heading === tab)[0]);
   };
   return (
     <div
@@ -32,10 +33,22 @@ function ProductTabCard({ cardInfo = [] }) {
         <div className="is-divider-vertical" style={{ padding: 0 }}></div>
         <div className="column is-one-quarters">
           <div className="content" style={{ padding: "1.5rem 1.5rem" }}>
-            <p className="is-size-6 has-text-weight-bold">
-              {item.description.heading}
-            </p>
-            <p className="is-size-7">{item.description.description}</p>
+            {Array.isArray(item.description) ? (
+              item.description.map((o, i) => (
+                <div key={i} style={{ marginBottom: "1em" }}>
+                  <p className="is-size-6 has-text-weight-bold">{o.heading}</p>
+                  <p className="is-size-7">{o.description}</p>
+                </div>
+              ))
+            ) : (
+              <div>
+                {" "}
+                <p className="is-size-6 has-text-weight-bold">
+                  {item.description.heading}
+                </p>
+                <p className="is-size-7">{item.description.description}</p>
+              </div>
+            )}
           </div>
         </div>
       </div>

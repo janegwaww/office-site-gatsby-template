@@ -19,7 +19,14 @@ const tabItems = [
   { index: "step", name: "使用步骤", className: "" }
 ];
 
-const ProductCenterTemplate = ({ image, methods, advantages }) => {
+const ProductCenterTemplate = ({
+  image,
+  methods,
+  advantages,
+  structure,
+  solutions,
+  scenario
+}) => {
   const [tabs, setTabs] = useState(tabItems);
   const tabSelect = tab => {
     setTabs(
@@ -98,7 +105,7 @@ const ProductCenterTemplate = ({ image, methods, advantages }) => {
           <div className="columns">
             <div className="column is-10 is-offset-1">
               <div className="content">
-                <h3 className="has-text-centered">方案架构</h3>
+                <h3 className="has-text-centered">{structure.heading}</h3>
                 <br />
                 <div
                   className="container has-background-white"
@@ -107,12 +114,7 @@ const ProductCenterTemplate = ({ image, methods, advantages }) => {
                     padding: "1.5rem 1.5rem"
                   }}
                 >
-                  <PreviewCompatibleImage
-                    imageInfo={{
-                      image: "./img/product/structure.png",
-                      alt: "structure"
-                    }}
-                  />
+                  <PreviewCompatibleImage imageInfo={structure} />
                 </div>
               </div>
             </div>
@@ -128,9 +130,9 @@ const ProductCenterTemplate = ({ image, methods, advantages }) => {
           <div className="columns">
             <div className="column is-10 is-offset-1">
               <div className="content">
-                <h3 className="has-text-centered">解决方案</h3>
+                <h3 className="has-text-centered">{solutions.heading}</h3>
                 <br />
-                <ProductTabCard cardInfo={methods.blurbs} />
+                <ProductTabCard cardInfo={solutions.blurbs} />
               </div>
             </div>
           </div>
@@ -145,9 +147,9 @@ const ProductCenterTemplate = ({ image, methods, advantages }) => {
           <div className="columns">
             <div className="column is-10 is-offset-1">
               <div className="content">
-                <h3 className="has-text-centered">应用场景</h3>
+                <h3 className="has-text-centered">{scenario.heading}</h3>
                 <br />
-                <ProductTabCard cardInfo={methods.blurbs} />
+                <ProductTabCard cardInfo={scenario.blurbs} />
               </div>
             </div>
           </div>
@@ -177,7 +179,10 @@ const ProductCenterTemplate = ({ image, methods, advantages }) => {
 ProductCenterTemplate.propTypes = {
   image: PropTypes.object,
   methods: PropTypes.object,
-  advantages: PropTypes.object
+  advantages: PropTypes.object,
+  structure: PropTypes.object,
+  solutions: PropTypes.object,
+  scenario: PropTypes.object
 };
 
 const ProductCenter = ({ data }) => {
@@ -189,6 +194,9 @@ const ProductCenter = ({ data }) => {
         image={frontmatter.image}
         methods={frontmatter.methods}
         advantages={frontmatter.advantages}
+        structure={frontmatter.structure}
+        solutions={frontmatter.solutions}
+        scenario={frontmatter.scenario}
       />
     </Layout>
   );
@@ -246,6 +254,57 @@ export const productCenterQuery = graphql`
             alt
             heading
             description
+          }
+        }
+        structure {
+          heading
+          image {
+            childImageSharp {
+              fluid(maxWidth: 2048, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+          alt
+        }
+        solutions {
+          heading
+          blurbs {
+            heading
+            image {
+              childImageSharp {
+                fluid(maxWidth: 2048, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            alt
+            title
+            explanation
+            description {
+              heading
+              description
+            }
+          }
+        }
+        scenario {
+          heading
+          blurbs {
+            heading
+            image {
+              childImageSharp {
+                fluid(maxWidth: 2048, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            alt
+            title
+            explanation
+            description {
+              heading
+              description
+            }
           }
         }
       }
