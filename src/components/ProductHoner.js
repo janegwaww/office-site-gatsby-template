@@ -8,7 +8,7 @@ function ProductHoner() {
         <div className="column is-12">
           <PreviewCompatibleImage
             imageInfo={{
-              image: "./img/pro5.png",
+              image: "./img/product/pro5.png",
               alt: "product features"
             }}
           />

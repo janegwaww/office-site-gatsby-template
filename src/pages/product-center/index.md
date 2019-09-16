@@ -2,7 +2,51 @@
 templateKey: product-center-page
 path: /product-center
 tags: ['haetek', 'product-center']
-title: about haetek
+image: /img/product-center.png
+title: haetek product center
 descritiop: >-
     about heatek company products
+methods:
+    heading: 产品功能
+    blurbs:
+        - heading: 私有化部署
+          image: /img/product/deployment.png
+          description:
+              heading: 私有化部署
+              description: >
+                  用于管理事物(包括物理对象)与算力资源的可维护的开放式人工智能资源整合平台。可嫁接各类实体及传感设备，借助核心算法平台，开发者可以自主开发各式各样的面向事物的智能化应用，涉及诸如家居、餐饮、仓储、能源、娱乐、医疗、健身、自动化等应用场景。让AI塑造生活，让万物以更聪明、更透彻的方式互联。
+        - heading: 高性能高吞吐
+          image: /img/product/deployment.png
+          description:
+              heading: 高性能高吞吐
+              description: >
+                  用于管理事物(包括物理对象)与算力资源的可维护的开放式人工智能资源整合平台。可嫁接各类实体 及传感设备，借助核心算法平台，开发者可以自主开发各式各样的面向事物的智能化应用，涉及诸如家居、餐饮、仓储、能源、娱乐、医疗、健身、自动化等应用场景。让AI塑造生活，让万物以更聪明、更透彻的方式互联。
+        - heading: 合约安全审计
+          image: /img/product/deployment.png
+          description:
+              heading: 合约安全审计
+              description: >
+                  用于管理事物(包括物理对象)与算力资源的可维护的开放式人工智能资源整合平台。可嫁接各类实体 及传感设备，借助核心算法平台，开发者可以自主开发各式各样的面向事物的智能化应用，涉及诸如家居、餐饮、仓储、能源、娱乐、医疗、健身、自动化等应用场景。让AI塑造生活，让万物以更聪明、更透彻的方式互联。
+advantages:
+    heading: 产品优势
+    blurbs:
+        - image: /img/product/pre1.png
+          heading: 优势1号
+          description: 训练集源于黑顿核心业务，精细标注、多轮迭代，覆盖多种场景，服务更可靠
+        - image: /img/product/pre2.png
+          heading: 优势2号
+          description: 训练集源于黑顿核心业务，精细标注、多轮迭代，覆盖多种场景，服务更可靠
+        - image: /img/product/pre3.png
+          heading: 优势3号
+          description: 训练集源于黑顿核心业务，精细标注、多轮迭代，覆盖多种场景，服务更可靠
+        - image: /img/product/pre4.png
+          heading: 优势4号
+          description: 训练集源于黑顿核心业务，精细标注、多轮迭代，覆盖多种场景，服务更可靠
+        - image: /img/product/pre5.png
+          heading: 优势5号
+          description: 训练集源于黑顿核心业务，精细标注、多轮迭代，覆盖多种场景，服务更可靠
+        - image: /img/product/pre6.png
+          heading: 优势6号
+          description: 训练集源于黑顿核心业务，精细标注、多轮迭代，覆盖多种场景，服务更可靠
+
 ---

@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 
-function ProductTabCard() {
+function ProductTabCard({ cardInfo = [] }) {
+  const [items, setItems] = useState(cardInfo);
+  const [item, setItem] = useState(items[0]);
+  const tabSelect = tab => {
+    setItems();
+    setItem(items.filter(o => o.heading === tab)[0]);
+  };
   return (
     <div
       className="has-background-white"
@@ -10,32 +16,26 @@ function ProductTabCard() {
     >
       <div className="tabs has-text-weight-bold" style={{ marginBottom: 0 }}>
         <ul>
-          <li class="is-active">
-            <a>私有化部署</a>
-          </li>
-          <li>
-            <a>高性能高吞吐</a>
-          </li>
-          <li>
-            <a>合约安全审计</a>
-          </li>
+          {items.map((o, i) => (
+            <li key={i} className={o.className}>
+              <a onClick={() => tabSelect(o.heading)}>{o.heading}</a>
+            </li>
+          ))}
         </ul>
       </div>
       <div className="columns">
         <div className="column is-three-quarters">
           <div className="content " style={{ padding: "1.5rem 1.5rem" }}>
-            <PreviewCompatibleImage
-              imageInfo={{
-                image: "./img/deployment.png",
-                alt: "product features"
-              }}
-            />
+            <PreviewCompatibleImage imageInfo={item} />
           </div>
         </div>
-        <div class="is-divider-vertical" style={{ padding: 0 }}></div>
+        <div className="is-divider-vertical" style={{ padding: 0 }}></div>
         <div className="column is-one-quarters">
           <div className="content" style={{ padding: "1.5rem 1.5rem" }}>
-            hello
+            <p className="is-size-6 has-text-weight-bold">
+              {item.description.heading}
+            </p>
+            <p className="is-size-7">{item.description.description}</p>
           </div>
         </div>
       </div>

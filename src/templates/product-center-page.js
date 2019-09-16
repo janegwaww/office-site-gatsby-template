@@ -19,7 +19,7 @@ const tabItems = [
   { index: "step", name: "使用步骤", className: "" }
 ];
 
-const ProductCenterTemplate = ({ itemInfo }) => {
+const ProductCenterTemplate = ({ image, methods, advantages }) => {
   const [tabs, setTabs] = useState(tabItems);
   const tabSelect = tab => {
     setTabs(
@@ -36,11 +36,17 @@ const ProductCenterTemplate = ({ itemInfo }) => {
         className="full-width-image margin-top-0"
         style={{
           height: "580px",
-          backgroundImage: `url(${"./img/product-center.png"})`,
+          backgroundImage: `url(${
+            !!image ? image.childImageSharp.fluid.src : image
+          })`,
           backgroundSize: `cover`
         }}
       >
-        <ProductTitle />
+        <div className="columns">
+          <div className="column is-10 is-offset-1">
+            <ProductTitle />
+          </div>
+        </div>
       </div>
       <section style={{ backgroundColor: "black" }}>
         <div className="tabs is-centered ">
@@ -64,9 +70,9 @@ const ProductCenterTemplate = ({ itemInfo }) => {
           <div className="columns">
             <div className="column is-10 is-offset-1">
               <div className="content">
-                <h3 className="has-text-centered">产品功能</h3>
+                <h3 className="has-text-centered">{methods.heading}</h3>
                 <br />
-                <ProductTabCard />
+                <ProductTabCard cardInfo={methods.blurbs} />
               </div>
             </div>
           </div>
@@ -103,7 +109,7 @@ const ProductCenterTemplate = ({ itemInfo }) => {
                 >
                   <PreviewCompatibleImage
                     imageInfo={{
-                      image: "./img/structure.png",
+                      image: "./img/product/structure.png",
                       alt: "structure"
                     }}
                   />
@@ -124,7 +130,7 @@ const ProductCenterTemplate = ({ itemInfo }) => {
               <div className="content">
                 <h3 className="has-text-centered">解决方案</h3>
                 <br />
-                <ProductTabCard />
+                <ProductTabCard cardInfo={methods.blurbs} />
               </div>
             </div>
           </div>
@@ -141,7 +147,7 @@ const ProductCenterTemplate = ({ itemInfo }) => {
               <div className="content">
                 <h3 className="has-text-centered">应用场景</h3>
                 <br />
-                <ProductTabCard />
+                <ProductTabCard cardInfo={methods.blurbs} />
               </div>
             </div>
           </div>
@@ -168,16 +174,27 @@ const ProductCenterTemplate = ({ itemInfo }) => {
   );
 };
 
-const ProductCenter = () => (
-  <Layout>
-    <ProductCenterTemplate />
-  </Layout>
-);
+ProductCenterTemplate.propTypes = {
+  image: PropTypes.object,
+  methods: PropTypes.object
+};
+
+const ProductCenter = ({ data }) => {
+  const { frontmatter } = data.markdownRemark;
+  console.log(frontmatter);
+  return (
+    <Layout>
+      <ProductCenterTemplate
+        image={frontmatter.image}
+        methods={frontmatter.methods}
+      />
+    </Layout>
+  );
+};
 
 ProductCenter.propTypes = {
-  itemInfo: PropTypes.shape({
-    heading: PropTypes.string,
-    description: PropTypes.string
+  data: PropTypes.shape({
+    frontmatter: PropTypes.object
   })
 };
 
@@ -193,6 +210,23 @@ export const productCenterQuery = graphql`
           childImageSharp {
             fluid(maxWidth: 2048, quality: 100) {
               ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        methods {
+          heading
+          blurbs {
+            heading
+            image {
+              childImageSharp {
+                fluid(maxWidth: 2048, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            description {
+              heading
+              description
             }
           }
         }
