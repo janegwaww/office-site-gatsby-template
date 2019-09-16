@@ -26,7 +26,7 @@ function ProductTabCard() {
           <div className="content " style={{ padding: "1.5rem 1.5rem" }}>
             <PreviewCompatibleImage
               imageInfo={{
-                image: "./img/pro1.png",
+                image: "./img/deployment.png",
                 alt: "product features"
               }}
             />

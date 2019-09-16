@@ -2,20 +2,21 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
+import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 import ProductTitle from "../components/ProductTitle";
 import ProductAdvantages from "../components/ProductAdvantages";
 import ProductTabCard from "../components/ProductTabCard";
 import ProductHoner from "../components/ProductHoner";
 
 const tabItems = [
-  { index: "0", name: "产品功能", className: "is-active" },
-  { index: "1", name: "产品优势", className: "" },
-  { index: "2", name: "解决方案架构", className: "" },
-  { index: "3", name: "多项架构图", className: "" },
-  { index: "4", name: "应用场景", className: "" },
-  { index: "5", name: "内部实践", className: "" },
-  { index: "6", name: "荣誉与成就", className: "" },
-  { index: "7", name: "使用步骤", className: "" }
+  { index: "features", name: "产品功能", className: "is-active" },
+  { index: "advantages", name: "产品优势", className: "" },
+  { index: "structure", name: "解决方案架构", className: "" },
+  { index: "multiple", name: "多项架构图", className: "" },
+  { index: "scenario", name: "应用场景", className: "" },
+  { index: "practice", name: "内部实践", className: "" },
+  { index: "honor", name: "荣誉与成就", className: "" },
+  { index: "step", name: "使用步骤", className: "" }
 ];
 
 const ProductCenterTemplate = ({ itemInfo }) => {
@@ -46,7 +47,7 @@ const ProductCenterTemplate = ({ itemInfo }) => {
           <ul>
             {tabs.map((o, i) => (
               <li className={o.className} key={i}>
-                <a onClick={() => tabSelect(o.index)} className="">
+                <a href={`#${o.index}`} onClick={() => tabSelect(o.index)}>
                   {o.name}
                 </a>
               </li>
@@ -54,7 +55,11 @@ const ProductCenterTemplate = ({ itemInfo }) => {
           </ul>
         </div>
       </section>
-      <section className="section" style={{ backgroundColor: "#F5F5F5" }}>
+      <section
+        id="features"
+        className="section"
+        style={{ backgroundColor: "#F5F5F5" }}
+      >
         <div className="container">
           <div className="columns">
             <div className="column is-10 is-offset-1">
@@ -67,7 +72,7 @@ const ProductCenterTemplate = ({ itemInfo }) => {
           </div>
         </div>
       </section>
-      <section className="section section--gradient">
+      <section id="advantages" className="section section--gradient">
         <div className="container">
           <div className="columns">
             <div className="column is-10 is-offset-1">
@@ -78,20 +83,41 @@ const ProductCenterTemplate = ({ itemInfo }) => {
           </div>
         </div>
       </section>
-      <section className="section" style={{ backgroundColor: "#F5F5F5" }}>
+      <section
+        id="structure"
+        className="section"
+        style={{ backgroundColor: "#F5F5F5" }}
+      >
         <div className="container">
           <div className="columns">
             <div className="column is-10 is-offset-1">
               <div className="content">
                 <h3 className="has-text-centered">方案架构</h3>
                 <br />
-                <ProductTabCard />
+                <div
+                  className="container has-background-white"
+                  style={{
+                    boxShadow: "0px 2px 10px 2px rgba(0,0,0,0.15)",
+                    padding: "1.5rem 1.5rem"
+                  }}
+                >
+                  <PreviewCompatibleImage
+                    imageInfo={{
+                      image: "./img/structure.png",
+                      alt: "structure"
+                    }}
+                  />
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <section className="section" style={{ backgroundColor: "white" }}>
+      <section
+        id="solution"
+        className="section"
+        style={{ backgroundColor: "white" }}
+      >
         <div className="container">
           <div className="columns">
             <div className="column is-10 is-offset-1">
@@ -104,7 +130,11 @@ const ProductCenterTemplate = ({ itemInfo }) => {
           </div>
         </div>
       </section>
-      <section className="section" style={{ backgroundColor: "#F5F5F5" }}>
+      <section
+        id="scenario"
+        className="section"
+        style={{ backgroundColor: "#F5F5F5" }}
+      >
         <div className="container">
           <div className="columns">
             <div className="column is-10 is-offset-1">
@@ -117,7 +147,11 @@ const ProductCenterTemplate = ({ itemInfo }) => {
           </div>
         </div>
       </section>
-      <section className="section" style={{ backgroundColor: "white" }}>
+      <section
+        id="honor"
+        className="section"
+        style={{ backgroundColor: "white" }}
+      >
         <div className="container">
           <div className="columns">
             <div className="column is-10 is-offset-1">
