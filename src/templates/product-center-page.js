@@ -83,7 +83,7 @@ const ProductCenterTemplate = ({ image, methods, advantages }) => {
           <div className="columns">
             <div className="column is-10 is-offset-1">
               <div className="content">
-                <ProductAdvantages />
+                <ProductAdvantages advInfo={advantages} />
               </div>
             </div>
           </div>
@@ -176,7 +176,8 @@ const ProductCenterTemplate = ({ image, methods, advantages }) => {
 
 ProductCenterTemplate.propTypes = {
   image: PropTypes.object,
-  methods: PropTypes.object
+  methods: PropTypes.object,
+  advantages: PropTypes.object
 };
 
 const ProductCenter = ({ data }) => {
@@ -187,6 +188,7 @@ const ProductCenter = ({ data }) => {
       <ProductCenterTemplate
         image={frontmatter.image}
         methods={frontmatter.methods}
+        advantages={frontmatter.advantages}
       />
     </Layout>
   );
@@ -217,6 +219,7 @@ export const productCenterQuery = graphql`
           heading
           blurbs {
             heading
+            alt
             image {
               childImageSharp {
                 fluid(maxWidth: 2048, quality: 100) {
@@ -228,6 +231,21 @@ export const productCenterQuery = graphql`
               heading
               description
             }
+          }
+        }
+        advantages {
+          heading
+          blurbs {
+            image {
+              childImageSharp {
+                fluid(maxWidth: 2048, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            alt
+            heading
+            description
           }
         }
       }
