@@ -2,7 +2,7 @@
 templateKey: product-center-page
 path: /product-center
 tags: ['haetek', 'product-center']
-image: /img/product-center.png
+image: /img/product/product-center.png
 title: haetek product center
 descritiop: >-
     about heatek company products
