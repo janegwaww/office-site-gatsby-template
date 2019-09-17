@@ -25,7 +25,8 @@ const ProductCenterTemplate = ({
   advantages,
   structure,
   solutions,
-  scenario
+  scenario,
+  honer
 }) => {
   const [tabs, setTabs] = useState(tabItems);
   const tabSelect = tab => {
@@ -164,9 +165,9 @@ const ProductCenterTemplate = ({
           <div className="columns">
             <div className="column is-10 is-offset-1">
               <div className="content">
-                <h3 className="has-text-centered">荣誉与成就</h3>
+                <h3 className="has-text-centered">{honer.heading}</h3>
                 <br />
-                <ProductHoner />
+                <ProductHoner honerInfo={honer.image1} />
               </div>
             </div>
           </div>
@@ -182,7 +183,8 @@ ProductCenterTemplate.propTypes = {
   advantages: PropTypes.object,
   structure: PropTypes.object,
   solutions: PropTypes.object,
-  scenario: PropTypes.object
+  scenario: PropTypes.object,
+  honer: PropTypes.object
 };
 
 const ProductCenter = ({ data }) => {
@@ -196,6 +198,7 @@ const ProductCenter = ({ data }) => {
         structure={frontmatter.structure}
         solutions={frontmatter.solutions}
         scenario={frontmatter.scenario}
+        honer={frontmatter.honer}
       />
     </Layout>
   );
@@ -304,6 +307,19 @@ export const productCenterQuery = graphql`
               heading
               description
             }
+          }
+        }
+        honer {
+          heading
+          image1 {
+            image {
+              childImageSharp {
+                fluid(maxWidth: 2048, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            alt
           }
         }
       }

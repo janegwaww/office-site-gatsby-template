@@ -119,4 +119,9 @@ scenario:
               - heading: 场景案例
                 description: >
                     健康+AI\养老院+AI\智能仓储+AI\房产交易+AI\餐饮+AI
+honer:
+    heading: 荣誉与成就
+    image1:
+        image: /img/product/pro5.png
+        alt: honer
 ---
