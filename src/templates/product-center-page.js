@@ -56,7 +56,7 @@ const ProductCenterTemplate = ({
           </div>
         </div>
       </div>
-      <section style={{ backgroundColor: "black" }}>
+      <section className="has-background-black">
         <div className="tabs is-centered ">
           <ul>
             {tabs.map((o, i) => (
@@ -69,11 +69,7 @@ const ProductCenterTemplate = ({
           </ul>
         </div>
       </section>
-      <section
-        id="features"
-        className="section"
-        style={{ backgroundColor: "#F5F5F5" }}
-      >
+      <section id="features" className="section has-background-grey-lighter">
         <div className="container">
           <div className="columns">
             <div className="column is-10 is-offset-1">
@@ -97,11 +93,7 @@ const ProductCenterTemplate = ({
           </div>
         </div>
       </section>
-      <section
-        id="structure"
-        className="section"
-        style={{ backgroundColor: "#F5F5F5" }}
-      >
+      <section id="structure" className="section has-background-grey-lighter">
         <div className="container">
           <div className="columns">
             <div className="column is-10 is-offset-1">
@@ -122,11 +114,7 @@ const ProductCenterTemplate = ({
           </div>
         </div>
       </section>
-      <section
-        id="solution"
-        className="section"
-        style={{ backgroundColor: "white" }}
-      >
+      <section id="solution" className="section has-background-white">
         <div className="container">
           <div className="columns">
             <div className="column is-10 is-offset-1">
@@ -139,11 +127,7 @@ const ProductCenterTemplate = ({
           </div>
         </div>
       </section>
-      <section
-        id="scenario"
-        className="section"
-        style={{ backgroundColor: "#F5F5F5" }}
-      >
+      <section id="scenario" className="section has-background-grey-lighter">
         <div className="container">
           <div className="columns">
             <div className="column is-10 is-offset-1">
@@ -156,11 +140,7 @@ const ProductCenterTemplate = ({
           </div>
         </div>
       </section>
-      <section
-        id="honor"
-        className="section"
-        style={{ backgroundColor: "white" }}
-      >
+      <section id="honor" className="section has-background-white">
         <div className="container">
           <div className="columns">
             <div className="column is-10 is-offset-1">
