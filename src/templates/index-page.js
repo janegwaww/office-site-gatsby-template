@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
+import bulmaCarousel from "../../node_modules/bulma-extensions/bulma-carousel/dist/js/bulma-carousel.min.js";
 
 import Layout from "../components/Layout";
 import SeekerTabs from "../components/SeekerTabs";
@@ -39,84 +40,102 @@ const RatePanel = ({ rateItems = [] }) => (
   </div>
 );
 
-export const IndexPageTemplate = ({
+export function IndexPageTemplate({
   image,
   services,
   features,
   solution,
   business,
   rate
-}) => (
-  <div>
-    <div
-      className="full-width-image margin-top-0"
-      style={{
-        backgroundImage: `url(${
-          !!image ? image.childImageSharp.fluid.src : image
-        })`,
-        backgroundPosition: "left top",
-        backgroundSize: "cover"
-      }}
-    ></div>
-    <div className="container" style={{ position: "relative", top: "-45px" }}>
-      <div className="columns">
-        <div className="column is-10 is-offset-1">
-          <ServiceBox services={services} />
+}) {
+  useEffect(() => {
+    const carousels = bulmaCarousel.attach("#carousel-haetek", {
+      slidesToScroll: 1,
+      slidesToShow: 1,
+      autoplay: true,
+      effect: "fade",
+      loop: true,
+      pagination: false
+    });
+  });
+  return (
+    <div>
+      <section className="hero is-medium has-carousel full-width-image">
+        <div id="carousel-haetek" className="hero-carousel">
+          <div className="item-1">
+            <div>
+              <img src={!!image ? image.childImageSharp.fluid.src : image} />
+            </div>
+          </div>
+          <div className="item-2">
+            <img src={`./img/banner.png`} alt="banner" />
+          </div>
+        </div>
+        <div className="hero-head"></div>
+        <div className="hero-body"></div>
+        <div className="hero-foot"></div>
+      </section>
+
+      <div className="container" style={{ position: "relative", top: "-45px" }}>
+        <div className="columns">
+          <div className="column is-10 is-offset-1">
+            <ServiceBox services={services} />
+          </div>
         </div>
       </div>
+      <section className="section section--gradient">
+        <div className="container">
+          <div className="columns">
+            <div className="column is-10 is-offset-1">
+              <SeekerTabs scrollItems={features} />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        className="section section--gradient"
+        style={{ backgroundColor: "#333B59" }}
+      >
+        <div className="container">
+          <div className="columns">
+            <div className="column is-10 is-offset-1">
+              <SolutionTabs solutionItems={solution} />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        className="section section--gradient"
+        style={{
+          background:
+            "linear-gradient(270deg,rgba(185,211,255,0.2) 0%,rgba(214,229,255,0.1) 100%)"
+        }}
+      >
+        <div className="container">
+          <div className="columns">
+            <div className="column is-10 is-offset-1">
+              <BusinessIcon iconItems={business} />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        className="section has-background-link"
+        style={{
+          backgroundImage: `url(${"./img/persent.svg"})`
+        }}
+      >
+        <div className="container">
+          <div className="columns">
+            <div className="column is-10 is-offset-1">
+              <RatePanel rateItems={rate} />
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
-    <section className="section section--gradient">
-      <div className="container">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <SeekerTabs scrollItems={features} />
-          </div>
-        </div>
-      </div>
-    </section>
-    <section
-      className="section section--gradient"
-      style={{ backgroundColor: "#333B59" }}
-    >
-      <div className="container">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <SolutionTabs solutionItems={solution} />
-          </div>
-        </div>
-      </div>
-    </section>
-    <section
-      className="section section--gradient"
-      style={{
-        background:
-          "linear-gradient(270deg,rgba(185,211,255,0.2) 0%,rgba(214,229,255,0.1) 100%)"
-      }}
-    >
-      <div className="container">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <BusinessIcon iconItems={business} />
-          </div>
-        </div>
-      </div>
-    </section>
-    <section
-      className="section has-background-link"
-      style={{
-        backgroundImage: `url(${"./img/persent.svg"})`
-      }}
-    >
-      <div className="container">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <RatePanel rateItems={rate} />
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
-);
+  );
+}
 
 IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
