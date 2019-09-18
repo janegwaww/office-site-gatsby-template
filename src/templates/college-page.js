@@ -37,7 +37,7 @@ const Direction = ({ heading = "", dir = [] }) => (
               <div className="column is-7 has-text-left">
                 <p className="is-size-6">{o.heading}</p>
                 <br />
-                {o.description.split(/\：/).map((o, i) => (
+                {o.description.split(":").map((o, i) => (
                   <p className="is-size-7" key={i}>
                     {o}
                   </p>
