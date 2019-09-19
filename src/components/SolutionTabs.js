@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import bulmaCarousel from "../../node_modules/bulma-extensions/bulma-carousel/dist/js/bulma-carousel.min.js";
 import ContainCard from "../components/ContainCard";
-import "./solution-tabs.sass";
 
 function SolutionTabs({ solutionItems }) {
   const [items, setItems] = useState(
