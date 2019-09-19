@@ -5,20 +5,8 @@ import Loadable from "react-loadable";
 
 import Layout from "../components/Layout";
 import SeekerTabs from "../components/SeekerTabs";
-import SolutionTabs from "../components/SolutionTabs";
 import BusinessIcon from "../components/BusinessIcon";
 import ServiceBox from "../components/ServiceBox";
-
-const Seperate = () => (
-  <div
-    style={{
-      width: "30px",
-      height: "3px",
-      background: "white",
-      margin: "auto"
-    }}
-  />
-);
 
 const RatePanel = ({ rateItems = [] }) => (
   <div
@@ -33,7 +21,14 @@ const RatePanel = ({ rateItems = [] }) => (
       : rateItems.map((o, i) => (
           <div className="has-text-centered" key={i}>
             <h3 className="has-text-white is-size-4">{o.description}</h3>
-            <Seperate />
+            <div
+              style={{
+                width: "30px",
+                height: "3px",
+                background: "white",
+                margin: "auto"
+              }}
+            />
             <p className="has-text-white">{o.heading}</p>
           </div>
         ))}
@@ -42,6 +37,13 @@ const RatePanel = ({ rateItems = [] }) => (
 
 const LoadableCarousel = Loadable({
   loader: () => import("../components/BannerCarousel"),
+  loading() {
+    return <div>Loading...</div>;
+  }
+});
+
+const LoadableSolution = Loadable({
+  loader: () => import("../components/SolutionTabs"),
   loading() {
     return <div>Loading...</div>;
   }
@@ -81,7 +83,7 @@ export function IndexPageTemplate({
         <div className="container">
           <div className="columns">
             <div className="column is-10 is-offset-1">
-              <SolutionTabs solutionItems={solution} />
+              <LoadableSolution solutionItems={solution} />
             </div>
           </div>
         </div>
