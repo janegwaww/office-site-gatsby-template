@@ -85,11 +85,11 @@ const Footer = class extends React.Component {
           <div className="container">
             <div className="columns">
               <div className="column is-10 is-offset-1">
-                <div className="columns">
-                  <div className="column is-half">
+                <div className="level">
+                  <div className="level-left">
                     <p className="bd-notification is-primary">IT支持</p>
                   </div>
-                  <div className="column is-half  has-text-grey">
+                  <div className="level-right">
                     <p className="bd-notification is-primary">
                       版权所有@黑顿科技有限公司 2019 保留一切权利
                     </p>
