@@ -32,8 +32,8 @@ function SolutionTabs({ solutionItems }) {
         {solutionItems.heading}
       </h3>
       <br />
-      <div className="columns">
-        <div className="column is-10 is-offset-1">
+      <div className="columns is-centered">
+        <div className="column is-8 ">
           <div className="tabs is-centered is-fullwidth">
             <ul>
               {[...items].map((o, i) => (

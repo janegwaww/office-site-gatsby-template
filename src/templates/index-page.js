@@ -41,14 +41,26 @@ const RatePanel = ({ rateItems = [] }) => {
 const LoadableCarousel = Loadable({
   loader: () => import("../components/BannerCarousel"),
   loading() {
-    return <div>Loading...</div>;
+    return (
+      <div className="full-width-image">
+        <div className="pageloader">
+          <div className="title">Loading...</div>
+        </div>
+      </div>
+    );
   }
 });
 
 const LoadableSolution = Loadable({
   loader: () => import("../components/SolutionTabs"),
   loading() {
-    return <div>Loading...</div>;
+    return (
+      <div className="full-width-image">
+        <div className="pageloader">
+          <div className="title">Loading...</div>
+        </div>
+      </div>
+    );
   }
 });
 
@@ -62,13 +74,6 @@ export function IndexPageTemplate({
   return (
     <div>
       <LoadableCarousel />
-      <div className="container" style={{ position: "relative", top: "-45px" }}>
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <ServiceBox services={services} />
-          </div>
-        </div>
-      </div>
       <section className="section section--gradient">
         <div className="container">
           <div className="columns">
