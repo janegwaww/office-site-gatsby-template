@@ -89,7 +89,7 @@ const Footer = class extends React.Component {
                   <div className="column is-half">
                     <p className="bd-notification is-primary">IT支持</p>
                   </div>
-                  <div className="column is-half  has-text-grey has-text-right">
+                  <div className="column is-half  has-text-grey">
                     <p className="bd-notification is-primary">
                       版权所有@黑顿科技有限公司 2019 保留一切权利
                     </p>
