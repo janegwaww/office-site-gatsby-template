@@ -50,7 +50,6 @@ const LoadableSolution = Loadable({
 });
 
 export function IndexPageTemplate({
-  image,
   services,
   features,
   solution,
@@ -122,7 +121,6 @@ export function IndexPageTemplate({
 }
 
 IndexPageTemplate.propTypes = {
-  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   services: PropTypes.array,
   features: PropTypes.array,
   solution: PropTypes.shape({
@@ -139,7 +137,6 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <IndexPageTemplate
-        image={frontmatter.image}
         services={frontmatter.services}
         features={frontmatter.features.blurbs}
         solution={frontmatter.solution}
@@ -164,15 +161,6 @@ export const pageQuery = graphql`
   query IndexPageTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
-        image {
-          childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-        heading
-        description
         services {
           image {
             childImageSharp {
