@@ -8,26 +8,35 @@ import SeekerTabs from "../components/SeekerTabs";
 import BusinessIcon from "../components/BusinessIcon";
 import ServiceBox from "../components/ServiceBox";
 
-const RatePanel = ({ rateItems = [] }) => (
-  <div className="level is-mobile">
-    {rateItems.map((o, i) => (
-      <div className="level-item has-text-centered" key={i}>
-        <div>
-          <p className="title has-text-white">{o.description}</p>
-          <div
-            style={{
-              width: "30px",
-              borderTop: "solid .3rem white",
-              padding: "0 0 .6em 0",
-              margin: "auto"
-            }}
-          />
-          <p className="heading has-text-white is-size-6">{o.heading}</p>
-        </div>
+const RatePanel = ({ rateItems = [] }) => {
+  const Item = ({ info = {} }) => (
+    <div>
+      <p className="is-size-3 has-text-white">{info.description}</p>
+      <div
+        style={{
+          width: "30px",
+          borderTop: "solid .3rem white",
+          padding: "0 0 .6em 0",
+          margin: "auto"
+        }}
+      />
+      <p className="heading has-text-white is-size-6">{info.heading}</p>
+    </div>
+  );
+  return (
+    <div className="level is-mobile">
+      <div className="level-left has-text-centered">
+        <Item info={rateItems[0]} />
       </div>
-    ))}
-  </div>
-);
+      <div className="level-item has-text-centered">
+        <Item info={rateItems[1]} />
+      </div>
+      <div className="level-right has-text-centered">
+        <Item info={rateItems[2]} />
+      </div>
+    </div>
+  );
+};
 
 const LoadableCarousel = Loadable({
   loader: () => import("../components/BannerCarousel"),

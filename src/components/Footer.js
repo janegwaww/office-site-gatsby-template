@@ -11,7 +11,8 @@ const Footer = class extends React.Component {
             <div className="columns">
               <div className="column is-10 is-offset-1">
                 <div className="footer-guide columns is-gapless is-centered">
-                  <div className="column is-3">
+                  {/* 使用指南 */}
+                  <div className="column is-4">
                     <section className="menu">
                       <ul className="menu-list">
                         <li>
@@ -24,8 +25,7 @@ const Footer = class extends React.Component {
                         </li>
                       </ul>
                     </section>
-                  </div>
-                  <div className="column is-3">
+                    <br />
                     <section>
                       <ul className="menu-list">
                         <li>
@@ -33,7 +33,7 @@ const Footer = class extends React.Component {
                         </li>
                         <li>
                           <Link className="navbar-item" to="/">
-                            中科院
+                            中科院计算所
                           </Link>
                         </li>
                         <li>
@@ -49,7 +49,8 @@ const Footer = class extends React.Component {
                       </ul>
                     </section>
                   </div>
-                  <div className="column is-3">
+                  {/* 联系我们 */}
+                  <div className="column is-5">
                     <section>
                       <ul className="menu-list">
                         <li>
@@ -57,24 +58,58 @@ const Footer = class extends React.Component {
                         </li>
                         <li>
                           <Link className="navbar-item" to="/">
-                            联系客服：
+                            <div style={{ display: "flex" }}>
+                              <span className="image is-24x24">
+                                <img src={"./img/mobile-icon.png"} />
+                              </span>
+                              &ensp; 155-2412-0109（市场部 刘经理）
+                            </div>
                           </Link>
-                          0755-28713646
                         </li>
                         <li>
                           <Link className="navbar-item" to="/">
-                            反馈意见：
+                            <div style={{ display: "flex" }}>
+                              <span className="image is-24x24">
+                                <img src={"./img/wechat-icon.png"} />
+                              </span>
+                              &ensp; haetek_20190801
+                            </div>
                           </Link>
-                          www.haetek.com
+                        </li>
+                        <li>
+                          <Link className="navbar-item" to="/">
+                            <div style={{ display: "flex" }}>
+                              <span className="image is-24x24">
+                                <img src={"./img/mail-icon.png"} />
+                              </span>
+                              &ensp; peizhengqi@kc-group.com.cn
+                            </div>
+                          </Link>
+                        </li>
+                        <li>
+                          <Link className="navbar-item" to="/">
+                            <div style={{ display: "flex" }}>
+                              <span className="image is-24x24">
+                                <img src={"./img/address-icon.png"} />
+                              </span>
+                              &ensp;
+                              广东省深圳市龙岗区龙翔大道7188号万科大厦3109
+                            </div>
+                          </Link>
                         </li>
                       </ul>
                     </section>
                   </div>
-                  <div className="column is-4">
-                    <p className="image is-128x128" style={{ margin: "auto" }}>
-                      <img src={qr} alt="heatex-qrcode" />
-                    </p>
-                    <p>黑顿科技</p>
+                  <div className="column is-3 has-text-right">
+                    <div
+                      className="has-text-centered"
+                      style={{ float: "right" }}
+                    >
+                      <p className="image is-128x128">
+                        <img src={qr} alt="heatex-qrcode" />
+                        <p>黑顿科技</p>
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
