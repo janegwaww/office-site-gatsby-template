@@ -9,19 +9,21 @@ import BusinessIcon from "../components/BusinessIcon";
 import ServiceBox from "../components/ServiceBox";
 
 const RatePanel = ({ rateItems = [] }) => (
-  <div className="level">
+  <div className="level is-mobile">
     {rateItems.map((o, i) => (
       <div className="level-item has-text-centered" key={i}>
-        <h3 className="has-text-white is-size-4">{o.description}</h3>
-        <div
-          style={{
-            width: "30px",
-            height: "3px",
-            background: "white",
-            margin: "auto"
-          }}
-        />
-        <p className="has-text-white">{o.heading}</p>
+        <div>
+          <p className="title has-text-white">{o.description}</p>
+          <div
+            style={{
+              width: "30px",
+              borderTop: "solid .3rem white",
+              padding: "0 0 .6em 0",
+              margin: "auto"
+            }}
+          />
+          <p className="heading has-text-white is-size-6">{o.heading}</p>
+        </div>
       </div>
     ))}
   </div>
