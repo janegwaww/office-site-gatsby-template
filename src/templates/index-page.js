@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
-import bulmaCarousel from "../../node_modules/bulma-extensions/bulma-carousel/dist/js/bulma-carousel.min.js";
+import Loadable from "react-loadable";
 
 import Layout from "../components/Layout";
 import SeekerTabs from "../components/SeekerTabs";
@@ -40,6 +40,13 @@ const RatePanel = ({ rateItems = [] }) => (
   </div>
 );
 
+const LoadableCarousel = Loadable({
+  loader: () => import("../components/BannerCarousel"),
+  loading() {
+    return <div>Loading...</div>;
+  }
+});
+
 export function IndexPageTemplate({
   image,
   services,
@@ -48,34 +55,9 @@ export function IndexPageTemplate({
   business,
   rate
 }) {
-  useEffect(() => {
-    const carousels = bulmaCarousel.attach("#carousel-haetek", {
-      slidesToScroll: 1,
-      slidesToShow: 1,
-      autoplay: true,
-      effect: "fade",
-      loop: true,
-      pagination: false
-    });
-  });
   return (
     <div>
-      <section className="hero is-medium has-carousel full-width-image">
-        <div id="carousel-haetek" className="hero-carousel">
-          <div className="item-1">
-            <div>
-              <img src={!!image ? image.childImageSharp.fluid.src : image} />
-            </div>
-          </div>
-          <div className="item-2">
-            <img src={`./img/banner.png`} alt="banner" />
-          </div>
-        </div>
-        <div className="hero-head"></div>
-        <div className="hero-body"></div>
-        <div className="hero-foot"></div>
-      </section>
-
+      <LoadableCarousel />
       <div className="container" style={{ position: "relative", top: "-45px" }}>
         <div className="columns">
           <div className="column is-10 is-offset-1">
