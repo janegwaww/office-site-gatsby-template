@@ -13,24 +13,19 @@ background:
 direction:
     heading: 研究方向
     blurbs:
-        - image: /img/college2.png
+        - image: /img/study1.png
           alt: direction
-          heading: 方向一：神经网络架构搜索（Neural Search Architecture）
+          heading: 神经网络架构搜索
           description: >
               1.网络结构进化策略： 2.模型融合：
         - image: /img/college2.png
           alt: direction
-          heading: 方向二：信息智能（InfoPlus）
+          heading: 信息智能
           description: >
               1.文本解析： 2.语法纠错： 3.语义理解：
         - image: /img/college2.png
           alt: direction
-          heading: 方向三：推理引擎（Inference Engine）
+          heading: 推理引擎
           description: >
               1.逻辑图谱： 2.知识表征：
-        - image: /img/college2.png
-          alt: direction
-          heading: 方向四：信息智能（InfoPlus）
-          description: >
-              1.网络结构进化策略： 2.模型融合：
 ---
