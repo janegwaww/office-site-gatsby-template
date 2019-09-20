@@ -28,4 +28,9 @@ direction:
           heading: 方向三：推理引擎（Inference Engine）
           description: >
               1.逻辑图谱： 2.知识表征：
+        - image: /img/college2.png
+          alt: direction
+          heading: 方向四：信息智能（InfoPlus）
+          description: >
+              1.网络结构进化策略： 2.模型融合：
 ---
