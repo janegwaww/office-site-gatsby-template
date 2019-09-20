@@ -93,8 +93,7 @@ export function IndexPageTemplate({ features, solution, business, rate }) {
       <section
         className="section section--gradient"
         style={{
-          background:
-            "linear-gradient(270deg,rgba(185,211,255,0.2) 0%,rgba(214,229,255,0.1) 100%)"
+          backgroundImage: `url('./img/coop-background.png')`
         }}
       >
         <div className="container">
@@ -108,7 +107,8 @@ export function IndexPageTemplate({ features, solution, business, rate }) {
       <section
         className="section has-background-link"
         style={{
-          backgroundImage: `url(${"./img/persent.svg"})`
+          backgroundImage: `url(${"./img/persent.png"})`,
+          backgroundSize: "cover"
         }}
       >
         <div className="container">
