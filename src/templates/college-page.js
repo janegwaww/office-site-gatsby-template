@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
+import StudyDirection from "../components/StudyDirection";
 
 const BackgroundInfo = ({ heading = "", bakPara = [] }) => (
   <div className="columns">
@@ -12,39 +13,6 @@ const BackgroundInfo = ({ heading = "", bakPara = [] }) => (
       <div className="is-size-6">
         {bakPara.map((o, i) => (
           <p key={i}>{o}</p>
-        ))}
-      </div>
-    </div>
-  </div>
-);
-
-const Direction = ({ heading = "", dir = [] }) => (
-  <div className="columns">
-    <div className="column is-10 is-offset-1 has-text-centered">
-      <h3 className=" is-size-2 has-text-weight-bold">{heading}</h3>
-      <br />
-      <br />
-      <div className="columns is-multiline">
-        {dir.map((o, i) => (
-          <div className="column is-half" key={i}>
-            <div className="columns">
-              <div
-                className="column is-5"
-                style={{ width: "120px", height: "120px" }}
-              >
-                <PreviewCompatibleImage imageInfo={o} />
-              </div>
-              <div className="column is-7 has-text-left">
-                <p className="is-size-6">{o.heading}</p>
-                <br />
-                {o.description.split(":").map((o, i) => (
-                  <p className="is-size-7" key={i}>
-                    {o}
-                  </p>
-                ))}
-              </div>
-            </div>
-          </div>
         ))}
       </div>
     </div>
@@ -75,7 +43,10 @@ const CollegeTemplate = ({ image, background, direction }) => {
       <div className="section section--gradient">
         <div className="container">
           <div className="section">
-            <Direction heading={direction.heading} dir={direction.blurbs} />
+            <StudyDirection
+              heading={direction.heading}
+              dir={direction.blurbs}
+            />
           </div>
         </div>
       </div>
