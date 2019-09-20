@@ -6,7 +6,6 @@ import Loadable from "react-loadable";
 import Layout from "../components/Layout";
 import SeekerTabs from "../components/SeekerTabs";
 import BusinessIcon from "../components/BusinessIcon";
-import ServiceBox from "../components/ServiceBox";
 
 const RatePanel = ({ rateItems = [] }) => {
   const Item = ({ info = {} }) => (
@@ -42,10 +41,8 @@ const LoadableCarousel = Loadable({
   loader: () => import("../components/BannerCarousel"),
   loading() {
     return (
-      <div className="full-width-image">
-        <div className="pageloader">
-          <div className="title">Loading...</div>
-        </div>
+      <div className="pageloader is-active">
+        <div className="title">Loading...</div>
       </div>
     );
   }
@@ -55,22 +52,31 @@ const LoadableSolution = Loadable({
   loader: () => import("../components/SolutionTabs"),
   loading() {
     return (
-      <div className="full-width-image">
-        <div className="pageloader">
-          <div className="title">Loading...</div>
-        </div>
+      <div className="pageloader is-active">
+        <div className="title">Loading...</div>
       </div>
+    );
+  },
+  render(loaded, props) {
+    let SolutionTabs = loaded.default;
+    return (
+      <section
+        className="section section--gradient"
+        style={{ backgroundColor: "#333B59" }}
+      >
+        <div className="container">
+          <div className="columns">
+            <div className="column is-10 is-offset-1">
+              <SolutionTabs {...props} />
+            </div>
+          </div>
+        </div>
+      </section>
     );
   }
 });
 
-export function IndexPageTemplate({
-  services,
-  features,
-  solution,
-  business,
-  rate
-}) {
+export function IndexPageTemplate({ features, solution, business, rate }) {
   return (
     <div>
       <LoadableCarousel />
@@ -83,18 +89,7 @@ export function IndexPageTemplate({
           </div>
         </div>
       </section>
-      <section
-        className="section section--gradient"
-        style={{ backgroundColor: "#333B59" }}
-      >
-        <div className="container">
-          <div className="columns">
-            <div className="column is-10 is-offset-1">
-              <LoadableSolution solutionItems={solution} />
-            </div>
-          </div>
-        </div>
-      </section>
+      <LoadableSolution solutionItems={solution} />
       <section
         className="section section--gradient"
         style={{
@@ -129,7 +124,6 @@ export function IndexPageTemplate({
 }
 
 IndexPageTemplate.propTypes = {
-  services: PropTypes.array,
   features: PropTypes.array,
   solution: PropTypes.shape({
     heading: PropTypes.string,
@@ -145,7 +139,6 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <IndexPageTemplate
-        services={frontmatter.services}
         features={frontmatter.features.blurbs}
         solution={frontmatter.solution}
         business={frontmatter.business.blurbs}
@@ -169,17 +162,6 @@ export const pageQuery = graphql`
   query IndexPageTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
-        services {
-          image {
-            childImageSharp {
-              fluid(maxWidth: 240, quality: 64) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-          heading
-          description
-        }
         features {
           blurbs {
             image {
