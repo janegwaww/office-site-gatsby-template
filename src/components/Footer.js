@@ -10,7 +10,7 @@ const Footer = class extends React.Component {
           <div className="container has-background-dark has-text-white-ter">
             <div className="columns">
               <div className="column is-10 is-offset-1">
-                <div className="footer-guide columns is-gapless is-centered">
+                <div className="columns">
                   {/* 使用指南 */}
                   <div className="column is-4">
                     <section className="menu">
@@ -101,14 +101,14 @@ const Footer = class extends React.Component {
                     </section>
                   </div>
                   <div className="column is-3 has-text-right">
-                    <div
-                      className="has-text-centered"
-                      style={{ float: "right" }}
-                    >
-                      <p className="image is-128x128">
+                    <div className="has-text-centered">
+                      <div
+                        className="image is-128x128"
+                        style={{ margin: "auto" }}
+                      >
                         <img src={qr} alt="heatex-qrcode" />
                         <p>黑顿科技</p>
-                      </p>
+                      </div>
                     </div>
                   </div>
                 </div>
