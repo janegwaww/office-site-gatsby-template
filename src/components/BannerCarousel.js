@@ -19,6 +19,9 @@ function BannerCarousel({ bannerInfo = [] }) {
       "slider-navigation-previous"
     )[0];
     const next = element.getElementsByClassName("slider-navigation-next")[0];
+    if (!prev || !next) {
+      return;
+    }
     if (side === "in") {
       prev.style.display = "flex";
       next.style.display = "flex";

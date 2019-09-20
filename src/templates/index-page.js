@@ -60,10 +60,7 @@ const LoadableSolution = Loadable({
   render(loaded, props) {
     let SolutionTabs = loaded.default;
     return (
-      <section
-        className="section section--gradient"
-        style={{ backgroundColor: "#333B59" }}
-      >
+      <section className="section section--gradient has-background-white-ter">
         <div className="container">
           <div className="columns">
             <div className="column is-10 is-offset-1">

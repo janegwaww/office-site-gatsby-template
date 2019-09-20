@@ -28,7 +28,7 @@ function SolutionTabs({ solutionItems }) {
 
   return (
     <div className="solution-tabs">
-      <h3 className="has-text-weight-bold is-size-3 has-text-white has-text-centered">
+      <h3 className="has-text-weight-bold is-size-3 has-text-black has-text-centered">
         {solutionItems.heading}
       </h3>
       <br />

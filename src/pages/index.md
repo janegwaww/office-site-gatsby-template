@@ -62,11 +62,14 @@ solution:
     description: >
         solution cases
     blurbs:
+        - heading: 智慧零售
+          image: /img/retail.png
+          description: >
+              基于大数据分析，深度学习等核心AI技术能力，赋能线下门店、商场、超市、品牌商等各类零售业。助力会员管理、货流分析、商品结算、货品陈列稽查、物流库存分配方案、客户画像、供货方渠道及广告精准投放等业务场景升级，形成智能化闭环商业模块，提升资金效率降低人力物力财力三重运作成本。
         - heading: 大健康
           image: /img/health.png
           description: >
               针对人体属性及特征，结合生活偏好画像，依靠海量权威医疗及营养学方面的文献构建健康知识图谱，对每个人的健康进行全周期的全面监护。包括结合人体症状进行智能诊断、根据生活现状生成智能食谱、嫁接权威人体属性采集设备以实现生理状况的全方位预测与解析。
-          detail: /index
         - heading: 智慧生活
           image: /img/life.png
           description: >
