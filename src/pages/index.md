@@ -131,11 +131,6 @@ business:
           alt: cooperate business
         - image: /img/case/18.png
           alt: cooperate business
-        - image: /img/case/19.png
-          alt: cooperate business
-        - image: /img/case/20.png
-          alt: cooperate business
-
 rate:
     heading: rating
     description: >
