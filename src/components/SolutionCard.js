@@ -28,7 +28,10 @@ const SolutionCard = ({ info = {} }) => {
               <p className="content is-size-6 has-text-grey">
                 {info.description}
               </p>
-              <a href="#top" className="button is-link is-medium">
+              <a
+                href="#top"
+                className="button is-link is-medium is-size-6-mobile"
+              >
                 查看详情
               </a>
             </div>
