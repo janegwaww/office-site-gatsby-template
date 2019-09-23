@@ -34,7 +34,7 @@ function SeekerTabs({ scrollItems = [] }) {
       <br />
       <br />
       <div className="container">
-        <ContainCard info={{ ...contentItem, button: `了解更多` }} />
+        <ContainCard info={contentItem} />
       </div>
     </div>
   );

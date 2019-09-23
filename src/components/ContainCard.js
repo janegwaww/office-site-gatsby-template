@@ -25,11 +25,9 @@ const ContainCard = ({ info = {} }) => {
           <div className="content is-size-6 has-text-grey-light">
             {info.description}
           </div>
-          {info.button && (
-            <a href="#top" className="button">
-              {info.button}
-            </a>
-          )}
+          <a href="#top" className="button">
+            了解更多
+          </a>
         </div>
       </div>
     </div>

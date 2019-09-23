@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import bulmaCarousel from "../../node_modules/bulma-extensions/bulma-carousel/dist/js/bulma-carousel.min.js";
-import ContainCard from "../components/ContainCard";
+import SolutionCard from "../components/SolutionCard";
 
 function SolutionTabs({ solutionItems }) {
   const [items, setItems] = useState(
@@ -28,12 +28,12 @@ function SolutionTabs({ solutionItems }) {
 
   return (
     <div className="solution-tabs">
-      <h3 className="has-text-weight-bold is-size-3 has-text-black has-text-centered">
+      <h3 className="has-text-weight-bold is-size-3 is-size-4-mobile has-text-black has-text-centered">
         {solutionItems.heading}
       </h3>
       <br />
       <div className="columns is-centered">
-        <div className="column is-8 ">
+        <div className="column is-8">
           <div className="tabs is-centered is-fullwidth">
             <ul>
               {[...items].map((o, i) => (
@@ -50,7 +50,7 @@ function SolutionTabs({ solutionItems }) {
         <div id="carousel-solution" className="carousel">
           {[...items].map((o, i) => (
             <div key={i} className={`item-${i}`} style={{ padding: "0 2rem" }}>
-              <ContainCard info={{ ...o, button: "查看详情" }} />
+              <SolutionCard info={o} />
             </div>
           ))}
         </div>
