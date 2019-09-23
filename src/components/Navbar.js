@@ -14,7 +14,12 @@ const Navbar = class extends React.Component {
   }
 
   componentDidMount() {
-    this.activeNavHandle(globalHistory.location.pathname);
+    this._activeNavHandle(
+      globalHistory.location.pathname
+        .split("/")
+        .pop()
+        .replace(/\-/, "")
+    );
   }
 
   toggleHamburger = () => {
@@ -37,11 +42,10 @@ const Navbar = class extends React.Component {
     );
   };
 
-  activeNavHandle = nav => {
-    const active = nav === "/" ? "home" : nav.replace(/[\/|\-]/g, "");
+  _activeNavHandle = nav => {
     this.setState({
       activeNav: {
-        [active]: "is-active"
+        [nav === "" ? "home" : nav]: "is-active"
       }
     });
   };
