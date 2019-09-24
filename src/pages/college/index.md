@@ -13,8 +13,8 @@ background:
 direction:
     heading: 研究方向
     blurbs:
-        - image1: /img/study1.png
-          image2: /img/study1-chosen.png
+        - image1: /img/college/study1.png
+          image2: /img/college/study1-chosen.png
           alt: direction
           heading: 神经网络架构搜索
           article:
@@ -26,8 +26,8 @@ direction:
               - heading: 模型融合
                 content: >
                     针对业务场景数据的特性，利用多种模型融合方式，例如：ensemble、voting等方式，最大化提升模型组合性能；针对不同的模型结构设计专属的模型融合方式，为机器学习算法的全面自动化做铺垫；除了考虑个体学习器之间是否相互依赖以制定模型融合的机制，也考虑场景模型的层次化逻辑以进行分层次的融合（Hierarchical Conceptual Model）从而实现场景针对性的模型融合方案。
-        - image1: /img/study2.png
-          image2: /img/study2-chosen.png
+        - image1: /img/college/study2.png
+          image2: /img/college/study2-chosen.png
           alt: direction
           heading: 信息智能
           article:
@@ -41,8 +41,8 @@ direction:
                 link: www.haetek.com
                 content: >
                     结合wide and deep神经网络实现多场景舆情分析；结合机器学习算法对非正规语言（e.g.，俗语、俚语）的识别与定位，以及进一步的解析包括诸如“Part-of-Speech迁移”等语义特征的探讨（Zhengqi_et_al 2019）；利用global conceptual units之间的层次化相互关联作为word representation，替代基于word2vec/GloVe等预训练方法得到的word embedding机制，构建具备能够囊括更多信息的拓扑结构的word map以替代典型的word vector，从而实现更高效的语言模型。
-        - image1: /img/study3.png
-          image2: /img/study3-chosen.png
+        - image1: /img/college/study3.png
+          image2: /img/college/study3-chosen.png
           alt: direction
           heading: 推理引擎
           article:

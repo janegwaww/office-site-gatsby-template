@@ -41,12 +41,7 @@ const CollegeTemplate = ({ image, background, direction }) => {
       </div>
       <div className="section section--gradient">
         <div className="container">
-          <div className="section">
-            <StudyDirection
-              heading={direction.heading}
-              dir={direction.blurbs}
-            />
-          </div>
+          <StudyDirection dirInfo={direction} />
         </div>
       </div>
     </div>
@@ -98,7 +93,14 @@ export const collegeQuery = graphql`
         direction {
           heading
           blurbs {
-            image {
+            image1 {
+              childImageSharp {
+                fluid(maxWidth: 2048, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            image2 {
               childImageSharp {
                 fluid(maxWidth: 2048, quality: 100) {
                   ...GatsbyImageSharpFluid
@@ -107,7 +109,12 @@ export const collegeQuery = graphql`
             }
             alt
             heading
-            description
+            article {
+              heading
+              label
+              link
+              content
+            }
           }
         }
       }
