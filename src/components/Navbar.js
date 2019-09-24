@@ -125,7 +125,9 @@ const Navbar = class extends React.Component {
                 className="navbar-item is-tab"
                 to="/join"
                 activeClassName={activeNav.join}
-              ></Link>
+              >
+                加入我们
+              </Link>
             </div>
 
             <div className="navbar-end has-text-centered">
