@@ -131,9 +131,6 @@ const Navbar = class extends React.Component {
             </div>
 
             <div className="navbar-end has-text-centered">
-              <div className="navbar-item is-expanded">
-                <a className="button is-white">注册</a>
-              </div>
               <div className="navbar-item">
                 <a href="#top" className="is-active">
                   中
