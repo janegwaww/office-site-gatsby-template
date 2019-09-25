@@ -46,7 +46,7 @@ const AboutUsTemplate = ({ image, intro, creaters }) => {
           <div className="section">
             <div className="columns">
               <div className="column is-10 is-offset-1">
-                <div style={headStyle()}>
+                <div style={headStyle(680)}>
                   <h3 className="has-text-black is-size-2 has-text-centered has-text-weight-bold is-size-3-mobile">
                     {intro.heading}
                   </h3>

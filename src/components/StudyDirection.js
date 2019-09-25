@@ -6,7 +6,7 @@ const Article = ({ article = {} }) => {
   const para1 = article.article[0];
   const para2 = article.article[1];
   return (
-    <div className="content is-small has-text-left">
+    <div className="content has-text-left">
       <h1>{article.heading}</h1>
       <h3>
         {para1.heading}

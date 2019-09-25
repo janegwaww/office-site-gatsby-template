@@ -39,7 +39,7 @@ const ProductCenterTemplate = ({
     );
   };
   return (
-    <div>
+    <div className="product-center">
       <div
         className="full-width-image margin-top-0"
         style={{
@@ -57,7 +57,7 @@ const ProductCenterTemplate = ({
         </div>
       </div>
       <section className="has-background-black">
-        <div className="tabs is-centered ">
+        <div className="tabs is-centered">
           <ul>
             {tabs.map((o, i) => (
               <li className={o.className} key={i}>
