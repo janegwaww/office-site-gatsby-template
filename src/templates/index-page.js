@@ -37,8 +37,8 @@ const RatePanel = ({ rateItems = [] }) => {
   );
 };
 
-const LoadableCarousel = Loadable({
-  loader: () => import("../components/BannerCarousel"),
+const LoadableBanner = Loadable({
+  loader: () => import("../components/Banner"),
   loading() {
     return (
       <div className="pageloader is-active">
@@ -62,7 +62,7 @@ const LoadableSolution = Loadable({
 export function IndexPageTemplate({ features, solution, business, rate }) {
   return (
     <div>
-      <LoadableCarousel />
+      <LoadableBanner />
       <section className="section section--gradient">
         <div className="container">
           <div className="columns">
