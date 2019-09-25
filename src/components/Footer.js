@@ -60,7 +60,10 @@ const Footer = class extends React.Component {
                           <Link className="navbar-item" to="/">
                             <div style={{ display: "flex" }}>
                               <span className="image is-24x24">
-                                <img src={"./img/mobile-icon.png"} />
+                                <img
+                                  src={"./img/mobile-icon.png"}
+                                  alt="mobile"
+                                />
                               </span>
                               &ensp; 155-2412-0109（市场部 刘经理）
                             </div>
@@ -70,7 +73,10 @@ const Footer = class extends React.Component {
                           <Link className="navbar-item" to="/">
                             <div style={{ display: "flex" }}>
                               <span className="image is-24x24">
-                                <img src={"./img/wechat-icon.png"} />
+                                <img
+                                  src={"./img/wechat-icon.png"}
+                                  alt="wechat"
+                                />
                               </span>
                               &ensp; haetek_20190801
                             </div>
@@ -80,7 +86,7 @@ const Footer = class extends React.Component {
                           <Link className="navbar-item" to="/">
                             <div style={{ display: "flex" }}>
                               <span className="image is-24x24">
-                                <img src={"./img/mail-icon.png"} />
+                                <img src={"./img/mail-icon.png"} alt="mail" />
                               </span>
                               &ensp; peizhengqi@kc-group.com.cn
                             </div>
@@ -90,7 +96,10 @@ const Footer = class extends React.Component {
                           <Link className="navbar-item" to="/">
                             <div style={{ display: "flex" }}>
                               <span className="image is-24x24">
-                                <img src={"./img/address-icon.png"} />
+                                <img
+                                  src={"./img/address-icon.png"}
+                                  alt="address"
+                                />
                               </span>
                               &ensp;
                               广东省深圳市龙岗区龙翔大道7188号万科大厦3109

@@ -6,6 +6,7 @@ function JobCategory({ jobCate = [] }) {
     <li>
       <label>
         <input type="checkbox" />
+        &ensp;
         {str}
       </label>
     </li>
@@ -16,6 +17,7 @@ function JobCategory({ jobCate = [] }) {
       <li>
         <label className="checkbox">
           <input type="checkbox" />
+          &ensp;
           {obj.item}
         </label>
         <ul style={{ listStyleType: "none" }}>
