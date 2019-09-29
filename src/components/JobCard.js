@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 function JobCard({ info = {} }) {
   return (
-    <div className="box" style={{ borderRadius: "4px" }}>
+    <div className="box" style={{ borderRadius: "4px", boxShadow: "unset" }}>
       <div className="" style={{ marginBottom: "6px" }}>
         <p className="is-size-5">{info.heading}</p>
       </div>
