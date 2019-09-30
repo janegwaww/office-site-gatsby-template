@@ -40,7 +40,7 @@ const JoinTemplate = ({ image, filterJobs, newJobs }) => {
                     style={{ height: "60px", width: "60px" }}
                   >
                     <i className="image is-20x20">
-                      <img src="./img/search.png" width="20" height="20" />
+                      <img src="/img/search.png" width="20" height="20" />
                     </i>
                   </span>
                 </div>

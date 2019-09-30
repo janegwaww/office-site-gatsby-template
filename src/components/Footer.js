@@ -56,7 +56,7 @@ const Footer = class extends React.Component {
                             <div style={{ display: "flex" }}>
                               <span className="image is-24x24">
                                 <img
-                                  src={"./img/mobile-icon.png"}
+                                  src={"/img/mobile-icon.png"}
                                   alt="mobile"
                                 />
                               </span>
@@ -69,7 +69,7 @@ const Footer = class extends React.Component {
                             <div style={{ display: "flex" }}>
                               <span className="image is-24x24">
                                 <img
-                                  src={"./img/wechat-icon.png"}
+                                  src={"/img/wechat-icon.png"}
                                   alt="wechat"
                                 />
                               </span>
@@ -81,7 +81,7 @@ const Footer = class extends React.Component {
                           <Link className="h-navbar-item" to="/">
                             <div style={{ display: "flex" }}>
                               <span className="image is-24x24">
-                                <img src={"./img/mail-icon.png"} alt="mail" />
+                                <img src={"/img/mail-icon.png"} alt="mail" />
                               </span>
                               &ensp; peizhengqi@kc-group.com.cn
                             </div>
@@ -92,7 +92,7 @@ const Footer = class extends React.Component {
                             <div style={{ display: "flex" }}>
                               <span className="image is-24x24">
                                 <img
-                                  src={"./img/address-icon.png"}
+                                  src={"/img/address-icon.png"}
                                   alt="address"
                                 />
                               </span>
