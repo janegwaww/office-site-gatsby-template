@@ -3,10 +3,8 @@ import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import JobCard from "../components/JobCard";
-import JobCategory from "../components/JobCategory";
 
-const JoinTemplate = ({ image, filterJobs, newJobs }) => {
-  const jobList = newJobs.blurbs;
+const JoinTemplate = ({ image, jobList = [] }) => {
   return (
     <div className="join">
       <div
@@ -54,17 +52,12 @@ const JoinTemplate = ({ image, filterJobs, newJobs }) => {
           <div className="columns">
             <div className="column is-10 is-offset-1">
               <div className="content">
-                <div className="columns">
-                  <div className="column is-4">
-                    <p className="has-text-grey-dark">{filterJobs.heading}</p>
-                    <JobCategory jobCate={filterJobs.blurbs} />
-                  </div>
-                  <div className="column is-8">
-                    <p className="has-text-grey-dark">{newJobs.heading}</p>
-                    {jobList.length === 0
-                      ? null
-                      : jobList.map((o, i) => <JobCard info={o} key={i} />)}
-                  </div>
+                <div className="columns is-multiline is-variable is-3">
+                  {jobList.map((o, i) => (
+                    <div className="column is-half">
+                      <JobCard info={o} key={i} />
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -77,14 +70,7 @@ const JoinTemplate = ({ image, filterJobs, newJobs }) => {
 
 JoinTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  filterJobs: PropTypes.shape({
-    heading: PropTypes.string,
-    blurbs: PropTypes.array
-  }),
-  newJobs: PropTypes.shape({
-    heading: PropTypes.string,
-    blurbs: PropTypes.array
-  })
+  jobList: PropTypes.array
 };
 
 const Join = ({ data }) => {
@@ -93,8 +79,7 @@ const Join = ({ data }) => {
     <Layout>
       <JoinTemplate
         image={frontmatter.image}
-        filterJobs={frontmatter.filterJobs}
-        newJobs={frontmatter.newJobs}
+        jobList={frontmatter.newJobs.blurbs}
       />
     </Layout>
   );

@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
+import LinesEllipsis from "react-lines-ellipsis";
 
 const ContainCard = ({ info = {} }) => {
   return (
@@ -23,7 +24,12 @@ const ContainCard = ({ info = {} }) => {
           <div className="content">
             <p className="is-size-4">{info.subHeading}</p>
           </div>
-          <p className=" is-size-6 has-text-grey">{info.description}</p>
+          <LinesEllipsis
+            className="is-size-6 has-text-grey"
+            text={`${info.description}`}
+            maxLine="5"
+            ellipsis="..."
+          />
         </div>
         <a
           href="#top"

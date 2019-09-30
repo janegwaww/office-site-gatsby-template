@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import LinesEllipsis from "react-lines-ellipsis";
 
 function JobCard({ info = {} }) {
   return (
@@ -8,7 +9,12 @@ function JobCard({ info = {} }) {
         <p className="is-size-5">{info.heading}</p>
       </div>
       <p>{info.date}</p>
-      <p>{info.description}</p>
+      <LinesEllipsis
+        style={{ height: "4.5em" }}
+        text={`${info.description}`}
+        maxLine="3"
+        ellipsis="..."
+      />
     </div>
   );
 }
