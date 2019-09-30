@@ -26,14 +26,6 @@ const Footer = class extends React.Component {
                             帮助中心
                           </Link>
                         </li>
-                      </ul>
-                    </section>
-                    <br />
-                    <section>
-                      <ul className="menu-list">
-                        <li>
-                          <p className="menu-label-f">友情链接</p>
-                        </li>
                         <li>
                           <Link className="h-navbar-item" to="/">
                             中科院计算所
@@ -42,6 +34,11 @@ const Footer = class extends React.Component {
                         <li>
                           <Link className="h-navbar-item" to="/">
                             阿里云
+                          </Link>
+                        </li>
+                        <li>
+                          <Link className="h-navbar-item" to="/">
+                            腾讯云
                           </Link>
                         </li>
                       </ul>
