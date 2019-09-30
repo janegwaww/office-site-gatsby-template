@@ -3,11 +3,6 @@ import PropTypes from "prop-types";
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 
 function AboutFeatures({ features = [] }) {
-  const imageStyle = {
-    width: "156px",
-    height: "156px",
-    margin: "auto"
-  };
   return (
     <div>
       <div className="columns is-multiline is-variable is-6">
@@ -17,11 +12,14 @@ function AboutFeatures({ features = [] }) {
               <div
                 className="column is-4 has-text-centered"
                 key={i}
-                style={{ padding: "0.5em 3em", marginTop: "2em" }}
+                style={{ padding: "0.75em 3em", marginTop: "2em" }}
               >
-                <div style={imageStyle}>
+                <figure
+                  className="image is-128x128 has-text-centered"
+                  style={{ margin: "auto" }}
+                >
                   <PreviewCompatibleImage imageInfo={o} />
-                </div>
+                </figure>
                 <p className="is-size-5" style={{ padding: "1em 0" }}>
                   {o.heading}
                 </p>

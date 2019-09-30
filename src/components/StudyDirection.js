@@ -45,18 +45,18 @@ const StudyDirection = ({ dirInfo = {} }) => {
           <div className="tabs is-around">
             <ul>
               {tabs.map((o, i) => (
-                <li key={i} className={o.className}>
+                <li
+                  onClick={() => tabSelect(i)}
+                  key={i}
+                  className={o.className}
+                  style={{ cursor: "pointer" }}
+                >
                   <div>
-                    <div
-                      className="image"
-                      style={{ margin: "auto", width: "80px" }}
-                    >
+                    <div className="image is-80x80" style={{ margin: "auto" }}>
                       <PreviewCompatibleImage imageInfo={o} />
                     </div>
                     <br />
-                    <a onClick={() => tabSelect(i)} style={{ width: "128px" }}>
-                      {o.heading}
-                    </a>
+                    <a style={{ width: "128px" }}>{o.heading}</a>
                   </div>
                 </li>
               ))}
