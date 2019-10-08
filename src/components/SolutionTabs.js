@@ -10,27 +10,13 @@ function SolutionTabs({ solutionItems }) {
     )
   );
   const [caro, setCaro] = useState({});
-  const [index, setIndex] = useState(0);
   const _tabSelect = key => {
-    if (Math.abs(key - index) > 1) return;
-    setIndex(key);
     setItems(
       items.map((o, i) =>
         i === key ? { ...o, className: "is-active" } : { ...o, className: "" }
       )
     );
-    // if (key !== caro.state.index) {
-    //   const minu = key - caro.state.index;
-    //   for (let i = 0; i < Math.abs(minu); i--) {
-    //     minu > 0 ? caro.next() : caro.previous();
-    //   }
-    // }
-    // console.log(caro.state.index);
-    if (key - index > 0) {
-      caro.next();
-    } else if (key - index < 0) {
-      caro.previous();
-    }
+    caro.show(key);
   };
   useEffect(() => {
     const carousels = bulmaCarousel.attach(`#carousel-solution`, {
@@ -43,7 +29,7 @@ function SolutionTabs({ solutionItems }) {
       pagination: false
     });
     setCaro(carousels[0]);
-  });
+  }, [caro]);
 
   return (
     <div className="solution-tabs">
