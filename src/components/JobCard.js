@@ -10,7 +10,7 @@ function JobCard({ info = {} }) {
       </div>
       <p>{info.date}</p>
       <LinesEllipsis
-        style={{ height: "4.5em" }}
+        style={{ height: "4.5em", overflow: "hidden" }}
         text={`${info.description}`}
         maxLine="3"
         ellipsis="..."

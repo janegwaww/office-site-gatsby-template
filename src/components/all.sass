@@ -4,7 +4,7 @@
 // Config vars
 $red-invert: #fff
 $tab-blue: #0c66ff
-$placeholder-color: #666666
+$placeholder-color: #BBBBBB
 
 $tabs-border-bottom-color: #e8e8e8
 $tabs-border-bottom-width: 1px
@@ -75,6 +75,30 @@ $input-placeholder-color: $placeholder-color
   &.is-80x80
     width: 80px
     height: 80px
+
+.input
+  &.h-input
+    border: unset
+    box-shadow: unset
+    border-radius: unset
+    border-bottom: 1px solid #BBBBBB
+    padding-left: 0
+
+.select
+  &.haetek-select
+    padding-right: 1rem
+    select
+      border: unset
+      border-radius: unset
+      border-bottom: solid 1px #bbbbbb
+      padding-left: 0
+      color: #bbbbbb
+      &:focus
+        outline: none !important
+        box-shadow: none
+        border-color: #bbbbbb
+    &:not(.is-multiple):not(.is-loading)::after
+      border-color: #666666
 
 .content .taglist
   list-style: none

@@ -21,22 +21,32 @@ const JoinTemplate = ({ image, jobList = [] }) => {
         <div className="container">
           <div className="columns is-centered">
             <div className="column is-10">
-              <div className="field">
-                <div className="control has-icons-left">
+              <div className="field is-grouped is-horizontal">
+                <div className="control is-expanded has-icons-right">
+                  <div className="select haetek-select is-fullwidth">
+                    <select defaultValue={{ value: 0 }}>
+                      <option>搜索地点</option>
+                      <option>深圳</option>
+                    </select>
+                  </div>
+                </div>
+                <div className="control is-expanded has-icons-right">
+                  <div className="select haetek-select is-fullwidth">
+                    <select defaultValue={{ value: 0 }}>
+                      <option style={{ color: "#BBBBBB" }}>搜索岗位</option>
+                      <option>开发部</option>
+                      <option>算法部</option>
+                      <option>市场部</option>
+                    </select>
+                  </div>
+                </div>
+                <div className="control is-expanded has-icons-right">
                   <input
-                    className="input"
+                    className="input h-input"
                     type="text"
-                    placeholder="搜索工作岗位"
-                    style={{
-                      backgroundColor: "#E8E8E8",
-                      height: "60px",
-                      paddingLeft: "60px"
-                    }}
+                    placeholder="搜索职位"
                   />
-                  <span
-                    className="icon is-medium is-left"
-                    style={{ height: "60px", width: "60px" }}
-                  >
+                  <span className="icon is-small is-right">
                     <i className="image is-20x20">
                       <img src="/img/search.png" width="20" height="20" />
                     </i>
@@ -54,8 +64,8 @@ const JoinTemplate = ({ image, jobList = [] }) => {
               <div className="content">
                 <div className="columns is-multiline is-variable is-3">
                   {jobList.map((o, i) => (
-                    <div className="column is-half">
-                      <JobCard info={o} key={i} />
+                    <div className="column is-half" key={i}>
+                      <JobCard info={o} />
                     </div>
                   ))}
                 </div>
