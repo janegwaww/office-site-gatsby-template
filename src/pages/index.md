@@ -136,7 +136,7 @@ rate:
     description: >
         blue background.
     blurbs:
-        - heading: 数据可靠性
+        - heading: 算法可靠性
           description: 99.98%
         - heading: 大客户专享
           description: 1V1
