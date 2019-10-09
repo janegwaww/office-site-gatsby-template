@@ -26,7 +26,9 @@ function SeekerTabs({ scrollItems = [] }) {
           {[...items].map((o, i) => (
             <li key={i} className={`has-text-centered ${o.className}`}>
               <div>
-                <div className="is-size-7 has-text-grey-light">{o.heading}</div>
+                <div className="is-size-7 has-text-grey-light is-hidden-mobile">
+                  {o.heading}
+                </div>
                 <a onClick={() => _tabSelect(o.heading)}>{o.subHeading}</a>
               </div>
             </li>

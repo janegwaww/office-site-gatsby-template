@@ -11,9 +11,9 @@ const Footer = class extends React.Component {
           style={{ marginBottom: "1.8rem" }}
         >
           <div className="container has-background-dark has-text-white-ter">
-            <div className="columns">
+            <div className="columns is-mobile">
               <div className="column is-10 is-offset-1">
-                <div className="columns">
+                <div className="columns is-hidden-mobile">
                   {/* 使用指南 */}
                   <div className="column is-4">
                     <section className="menu">
@@ -122,7 +122,7 @@ const Footer = class extends React.Component {
         </div>
         <div className="content  has-background-black is-size-6 has-text-grey">
           <div className="container">
-            <div className="columns">
+            <div className="columns is-mobile">
               <div className="column is-10 is-offset-1">
                 <div className="level">
                   <div className="level-left">

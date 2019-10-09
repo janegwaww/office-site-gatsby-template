@@ -39,7 +39,7 @@ function SolutionTabs({ solutionItems }) {
       <br />
       <div className="columns is-centered">
         <div className="column is-8">
-          <div className="tabs is-around">
+          <div className="tabs is-around is-hidden-mobile">
             <ul>
               {[...items].map((o, i) => (
                 <li key={i} className={o.className}>

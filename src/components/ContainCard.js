@@ -21,7 +21,7 @@ const ContainCard = ({ info = {} }) => {
         }}
       >
         <div className="content">
-          <div className="content">
+          <div className="content is-hidden-mobile">
             <p className="is-size-4">{info.subHeading}</p>
           </div>
           <LinesEllipsis
