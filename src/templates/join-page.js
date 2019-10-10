@@ -19,11 +19,14 @@ const JoinTemplate = ({ image, jobList = [] }) => {
       <div className="section">
         <div className="container">
           <div className="columns is-centered">
-            <div className="column is-10">
+            <div className="column is-10 is-paddingless-mobile">
               <div className="field is-grouped is-horizontal">
                 <div className="control is-expanded has-icons-right">
                   <div className="select haetek-select is-fullwidth">
-                    <select defaultValue={{ value: 0 }}>
+                    <select
+                      defaultValue={{ value: 0 }}
+                      className="is-size-6-5-mobile"
+                    >
                       <option>搜索地点</option>
                       <option>深圳</option>
                     </select>
@@ -31,7 +34,10 @@ const JoinTemplate = ({ image, jobList = [] }) => {
                 </div>
                 <div className="control is-expanded has-icons-right">
                   <div className="select haetek-select is-fullwidth">
-                    <select defaultValue={{ value: 0 }}>
+                    <select
+                      defaultValue={{ value: 0 }}
+                      className="is-size-6-5-mobile"
+                    >
                       <option style={{ color: "#BBBBBB" }}>搜索岗位</option>
                       <option>开发部</option>
                       <option>算法部</option>
@@ -41,12 +47,12 @@ const JoinTemplate = ({ image, jobList = [] }) => {
                 </div>
                 <div className="control is-expanded has-icons-right">
                   <input
-                    className="input h-input"
+                    className="input h-input is-size-6-5-mobile"
                     type="text"
                     placeholder="搜索职位"
                   />
                   <span className="icon is-small is-right">
-                    <i className="image is-20x20">
+                    <i className="image is-20x20 is-13x13-mobile">
                       <img src="/img/search.png" width="20" height="20" />
                     </i>
                   </span>
