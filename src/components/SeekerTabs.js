@@ -20,7 +20,7 @@ function SeekerTabs({ scrollItems = [] }) {
     setContentItem(items.filter(o => o.heading === tab)[0]);
   };
   return (
-    <div>
+    <div className="seeker-tabs">
       <div className="tabs is-around" id="tabs">
         <ul>
           {[...items].map((o, i) => (
@@ -35,7 +35,7 @@ function SeekerTabs({ scrollItems = [] }) {
           ))}
         </ul>
       </div>
-      <div className="section">
+      <div className="section is-paddingless-mobile">
         <ContainCard info={contentItem} />
       </div>
     </div>
