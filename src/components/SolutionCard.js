@@ -5,7 +5,7 @@ import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 const SolutionCard = ({ info = {} }) => {
   return (
     <div
-      className="box has-background-white"
+      className="solution-card box has-background-white"
       style={{
         padding: 0,
         overflow: "hidden",
@@ -30,29 +30,22 @@ const SolutionCard = ({ info = {} }) => {
             alignContent: "center"
           }}
         >
-          <div
-            className="section"
-            style={{
-              padding: "4rem 2.5rem",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-between"
-            }}
-          >
-            <div>
-              <p className="content is-size-4 is-size-5-mobile">
+          <div className="section solution-card-right">
+            <div className="content has-text-centered-mobile">
+              <p className="content is-size-4 is-size-5-5-mobile">
                 {info.heading}
               </p>
-              <p className="content is-size-6 has-text-grey">
+              <p className="content is-size-6 is-size-6-5-mobile has-text-grey has-text-left">
                 {info.description}
               </p>
+              <br className="is-hidden-mobile" />
+              <a
+                className="button is-blue is-size-6 is-size-7-mobile"
+                style={{ width: "132px" }}
+              >
+                查看详情
+              </a>
             </div>
-            <a
-              className="button is-blue is-size-6 is-size-6-mobile"
-              style={{ width: "132px" }}
-            >
-              查看详情
-            </a>
           </div>
         </div>
       </div>

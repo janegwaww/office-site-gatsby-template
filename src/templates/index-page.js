@@ -10,7 +10,9 @@ import BusinessIcon from "../components/BusinessIcon";
 const RatePanel = ({ rateItems = [] }) => {
   const Item = ({ info = {} }) => (
     <div>
-      <p className="is-size-3 has-text-white">{info.description}</p>
+      <p className="is-size-3 has-text-white is-size-5-5-mobile">
+        {info.description}
+      </p>
       <div
         style={{
           width: "40px",
@@ -18,7 +20,9 @@ const RatePanel = ({ rateItems = [] }) => {
           margin: "2px 0 20px 0"
         }}
       />
-      <p className="heading has-text-white is-size-6">{info.heading}</p>
+      <p className="heading has-text-white is-size-6 is-size-7-mobile">
+        {info.heading}
+      </p>
     </div>
   );
   return (
@@ -62,7 +66,7 @@ export function IndexPageTemplate({ features, solution, business, rate }) {
   return (
     <div>
       <LoadableBanner />
-      <section className="section section--gradient">
+      <section className="section section--gradient is-paddingless-mobile">
         <div className="container">
           <div className="columns">
             <div className="column is-10 is-offset-1">
@@ -71,7 +75,7 @@ export function IndexPageTemplate({ features, solution, business, rate }) {
           </div>
         </div>
       </section>
-      <section className="section section--gradient has-background-white-ter">
+      <section className="section section--gradient has-background-white-ter is-paddingless-mobile">
         <div className="container">
           <div className="columns">
             <div className="column is-10 is-offset-1">
@@ -95,7 +99,7 @@ export function IndexPageTemplate({ features, solution, business, rate }) {
         </div>
       </section>
       <section
-        className="section has-background-link"
+        className="section has-background-link is-paddingless-mobile"
         style={{
           backgroundImage: `url(${"./img/persent.png"})`,
           backgroundSize: "cover"
