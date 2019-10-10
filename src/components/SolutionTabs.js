@@ -36,10 +36,10 @@ function SolutionTabs({ solutionItems }) {
       <h3 className="is-size-3 is-size-4-mobile has-text-black has-text-centered">
         {solutionItems.heading}
       </h3>
-      <br />
-      <div className="columns is-centered">
+      <br className="is-hidden-mobile" />
+      <div className="columns is-centered is-hidden-mobile">
         <div className="column is-8">
-          <div className="tabs is-around is-hidden-mobile">
+          <div className="tabs is-around">
             <ul>
               {[...items].map((o, i) => (
                 <li key={i} className={o.className}>

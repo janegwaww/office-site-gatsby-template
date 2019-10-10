@@ -2,18 +2,53 @@ import React from "react";
 import { Link } from "gatsby";
 import qr from "../img/qrcode.png";
 
+const FooterMobile = () => (
+  <div
+    className="content is-hidden-tablet is-size-7-mobile has-text-centered"
+    style={{ color: "#999999", padding: "1.13rem 0 8px" }}
+  >
+    <div className="container">
+      <p>黑顿科技公众号&ensp;&ensp;|&ensp;&ensp;市场部联系电话</p>
+      <p>peizhengqi@kc-group.com.cn</p>
+      <p>广东省深圳市龙岗区龙翔大道7188号万科大厦3109</p>
+    </div>
+  </div>
+);
+
+const FooterBottom = () => (
+  <div className="content  has-background-black is-size-6 has-text-grey">
+    <div className="container">
+      <div className="columns is-mobile">
+        <div className="column is-10 is-offset-1">
+          <div className="level">
+            <div className="level-left has-text-centered is-size-7-mobile">
+              <a className="bd-notification is-primary has-text-grey">
+                粤ICP备19120979号-1
+              </a>
+            </div>
+            <div className="level-right has-text-centered is-size-7-mobile">
+              <p className="bd-notification is-primary">
+                版权所有@黑顿科技有限公司 2019 保留一切权利
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
 const Footer = class extends React.Component {
   render() {
     return (
       <footer className="footer has-background-dark has-text-white-ter">
-        <div
-          className="content has-text-centered has-background-dark has-text-white-ter"
-          style={{ marginBottom: "1.8rem" }}
-        >
+        <FooterMobile />
+        <div className="content footer-above has-text-centered has-background-dark has-text-white-ter is-hidden-mobile">
           <div className="container has-background-dark has-text-white-ter">
             <div className="columns is-mobile">
               <div className="column is-10 is-offset-1">
-                <div className="columns is-hidden-mobile">
+                {/* hidden in mobile */}
+                <div className="columns">
                   {/* 使用指南 */}
                   <div className="column is-4">
                     <section className="menu">
@@ -120,26 +155,7 @@ const Footer = class extends React.Component {
             </div>
           </div>
         </div>
-        <div className="content  has-background-black is-size-6 has-text-grey">
-          <div className="container">
-            <div className="columns is-mobile">
-              <div className="column is-10 is-offset-1">
-                <div className="level">
-                  <div className="level-left">
-                    <a className="bd-notification is-primary has-text-grey">
-                      粤ICP备19120979号-1
-                    </a>
-                  </div>
-                  <div className="level-right">
-                    <p className="bd-notification is-primary">
-                      版权所有@黑顿科技有限公司 2019 保留一切权利
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <FooterBottom />
       </footer>
     );
   }
