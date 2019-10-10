@@ -11,13 +11,19 @@ const Article = ({ article = {} }) => {
       className="content has-text-left"
       style={{ maxWidth: "840px", margin: "auto" }}
     >
-      <p className="is-size-4">{article.heading}</p>
+      <p className="is-size-4 is-size-4-5-mobile">{article.heading}</p>
       <br />
-      <p className="is-size-5">{para1.heading}</p>
-      <p dangerouslySetInnerHTML={{ __html: para1.content }}></p>
+      <p className="is-size-5 is-size-5-5-mobile">{para1.heading}</p>
+      <p
+        className="is-size-6-5-mobile"
+        dangerouslySetInnerHTML={{ __html: para1.content }}
+      ></p>
       <br />
-      <p className="is-size-5">{para2.heading}</p>
-      <p dangerouslySetInnerHTML={{ __html: para2.content }}></p>
+      <p className="is-size-5 is-size-5-5-mobile">{para2.heading}</p>
+      <p
+        className="is-size-6-5-mobile"
+        dangerouslySetInnerHTML={{ __html: para2.content }}
+      ></p>
     </div>
   );
 };
@@ -40,8 +46,9 @@ const StudyDirection = ({ dirInfo = {} }) => {
   return (
     <div className="columns study-direction">
       <div className="column is-10 is-offset-1 has-text-centered">
-        <h3 className="is-size-3">{heading}</h3>
-        <div className="section is-small">
+        <h3 className="is-size-3 is-size-4-5-mobile">{heading}</h3>
+        <br className="is-hidden-tablet" />
+        <div className="section is-small is-paddingless-mobile">
           <div className="tabs is-around">
             <ul>
               {tabs.map((o, i) => (
@@ -52,17 +59,25 @@ const StudyDirection = ({ dirInfo = {} }) => {
                   style={{ cursor: "pointer" }}
                 >
                   <div>
-                    <div className="image is-80x80" style={{ margin: "auto" }}>
+                    <div
+                      className="image is-80x80 is-50x50-mobile"
+                      style={{ margin: "auto" }}
+                    >
                       <PreviewCompatibleImage imageInfo={o} />
                     </div>
                     <br />
-                    <a style={{ width: "128px" }}>{o.heading}</a>
+                    <a
+                      style={{ width: "128px" }}
+                      className="is-size-6-5-mobile"
+                    >
+                      {o.heading}
+                    </a>
                   </div>
                 </li>
               ))}
             </ul>
           </div>
-          <div className="section">
+          <div className="section is-paddingless-mobile">
             <Article article={article} />
           </div>
         </div>

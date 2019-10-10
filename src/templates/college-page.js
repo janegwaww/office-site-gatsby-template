@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
@@ -7,9 +7,9 @@ import StudyDirection from "../components/StudyDirection";
 const BackgroundInfo = ({ heading = "", bakPara = [] }) => (
   <div className="columns is-centered">
     <div className="column is-11 has-text-centered">
-      <h3 className=" is-size-3">{heading}</h3>
+      <h3 className=" is-size-3 is-size-4-5-mobile">{heading}</h3>
       <br />
-      <div className="is-size-6">
+      <div className="is-size-6 is-size-6-5-mobile">
         {bakPara.map((o, i) => (
           <p key={i}>{o}</p>
         ))}
@@ -18,29 +18,30 @@ const BackgroundInfo = ({ heading = "", bakPara = [] }) => (
   </div>
 );
 
-const CollegeTemplate = ({ image, background, direction }) => {
+const CollegeTemplate = ({ image, background, direction, isMobile }) => {
   const bakPara = background.description.split(/\s{2}|\\/);
+  const [backImage, setBackImage] = useState(
+    `${!!image ? image.childImageSharp.fluid.src : image}`
+  );
+  useEffect(() => {});
   return (
     <div>
       <div
         className="full-width-image margin-top-0"
         style={{
-          height: "580px",
-          backgroundImage: `url(${
-            !!image ? image.childImageSharp.fluid.src : image
-          })`,
-          backgroundSize: "cover"
+          backgroundImage: `url(${backImage})`,
+          backgroundSize: "100% 100%"
         }}
       >
         <div className="has-text-centered" style={{ lineHeight: 3 }}>
-          <h2 className="has-text-white is-size-3 is-size-4-mobile">
+          <h2 className="has-text-white is-size-3 is-size-5-5-mobile">
             黑顿研究院
           </h2>
           <div style={{ lineHeight: 1.2, fontSize: "50px" }}>
-            <h1 className="has-text-white is-size-3-mobile">
+            <h1 className="has-text-white is-size-4-5-mobile">
               HAETEK Institute of Machine Intelligence,
             </h1>
-            <h1 className="has-text-white is-size-3-mobile">
+            <h1 className="has-text-white is-size-4-5-mobile">
               Shenzhen, China.
             </h1>
           </div>
@@ -48,13 +49,13 @@ const CollegeTemplate = ({ image, background, direction }) => {
       </div>
       <div className="section section--gradient has-background-white-ter">
         <div className="container">
-          <div className="section">
+          <div className="section is-paddingless-mobile">
             <BackgroundInfo heading={background.heading} bakPara={bakPara} />
           </div>
         </div>
       </div>
       <div className="section section--gradient">
-        <div className="container" style={{ marginTop: "50px" }}>
+        <div className="container" style={{}}>
           <StudyDirection dirInfo={direction} />
         </div>
       </div>
