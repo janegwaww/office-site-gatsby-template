@@ -25,12 +25,12 @@ function AboutFeatures({ features = [], isMobile }) {
               key={i}
             >
               <div className="content">
-                <p
+                <figure
                   className={`image ${imgSize} has-text-centered`}
                   style={{ margin: "0 auto 1em" }}
                 >
                   <PreviewCompatibleImage imageInfo={o} />
-                </p>
+                </figure>
                 <p className="is-size-5 is-size-5-5-mobile">{o.heading}</p>
                 <p
                   className="is-size-6-5-mobile"

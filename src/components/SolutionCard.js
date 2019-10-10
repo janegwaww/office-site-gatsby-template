@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import LinesEllipsis from "react-lines-ellipsis";
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 
 const SolutionCard = ({ info = {} }) => {
@@ -35,9 +36,13 @@ const SolutionCard = ({ info = {} }) => {
               <p className="content is-size-4 is-size-5-5-mobile">
                 {info.heading}
               </p>
-              <p className="content is-size-6 is-size-6-5-mobile has-text-grey has-text-left">
-                {info.description}
-              </p>
+              <LinesEllipsis
+                style={{ height: "144px" }}
+                className="content is-size-6 is-size-6-5-mobile has-text-grey has-text-left"
+                text={`${info.description}`}
+                maxLine="6"
+                ellipsis="..."
+              />
               <br className="is-hidden-mobile" />
               <a
                 className="button is-blue is-size-6 is-size-7-mobile"
