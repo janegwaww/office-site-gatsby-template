@@ -9,7 +9,7 @@ import BusinessIcon from "../components/BusinessIcon";
 
 const RatePanel = ({ rateItems = [] }) => {
   const Item = ({ info = {} }) => (
-    <div>
+    <div className="rate-panel">
       <p className="is-size-3 has-text-white is-size-5-5-mobile">
         {info.description}
       </p>
@@ -26,7 +26,7 @@ const RatePanel = ({ rateItems = [] }) => {
     </div>
   );
   return (
-    <div className="level is-mobile">
+    <div className="level is-mobile" style={{ padding: "0.25rem" }}>
       <div className="level-left">
         <Item info={rateItems[0]} />
       </div>
