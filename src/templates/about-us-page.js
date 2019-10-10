@@ -13,9 +13,9 @@ const AboutUsTemplate = ({ image, intro, creaters }) => {
     alignItems: "center",
     maxWidth: `${width}px`,
     height: "30px",
-    margin: "auto",
-    boxShadow:
-      "rgba(12,102,255,1) 0.3rem 0px 0px, rgba(12,102,255,1) -0.3rem 0px 0px"
+    margin: "auto"
+    // boxShadow:
+    // "rgba(12,102,255,1) 0.3rem 0px 0px, rgba(12,102,255,1) -0.3rem 0px 0px"
   });
   const companyPara = para => {
     const pstyle = {
@@ -44,20 +44,18 @@ const AboutUsTemplate = ({ image, intro, creaters }) => {
       />
       <div className="section section--gradient">
         <div className="container">
-          <div className="section">
-            <div className="columns">
-              <div className="column is-10 is-offset-1">
-                <div style={headStyle(540)}>
-                  <h3 className="has-text-black is-size-3 has-text-centered is-size-4-mobile">
-                    {intro.heading}
-                  </h3>
-                </div>
-                <br />
-                {companyPara(companyIntro)}
+          <div className="columns">
+            <div className="column is-10 is-offset-1">
+              <div style={headStyle(540)}>
+                <h3 className="has-text-black is-size-3 has-text-centered is-size-4-5-mobile">
+                  {intro.heading}
+                </h3>
               </div>
+              <br />
+              {companyPara(companyIntro)}
             </div>
-            <AboutFeatures features={intro.blurbs} />
           </div>
+          <AboutFeatures features={intro.blurbs} />
         </div>
       </div>
       <div
