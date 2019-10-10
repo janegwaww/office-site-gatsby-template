@@ -10,7 +10,6 @@ const JoinTemplate = ({ image, jobList = [] }) => {
       <div
         className="full-width-image margin-top-0"
         style={{
-          height: "450px",
           backgroundImage: `url(${
             !!image ? image.childImageSharp.fluid.src : image
           })`,
