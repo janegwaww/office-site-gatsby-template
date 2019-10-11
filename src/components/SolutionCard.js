@@ -43,14 +43,13 @@ const SolutionCard = ({ info = {} }) => {
                 maxLine="6"
                 ellipsis="..."
               />
-              <br className="is-hidden-mobile" />
-              <a
-                className="button is-blue is-size-6 is-size-7-mobile"
-                style={{ width: "132px" }}
-              >
-                查看详情
-              </a>
             </div>
+            <a
+              className="button is-blue is-size-6 is-size-7-mobile"
+              style={{ width: "132px" }}
+            >
+              查看详情
+            </a>
           </div>
         </div>
       </div>

@@ -14,8 +14,8 @@ const ContainCard = ({ info = {} }) => {
           <PreviewCompatibleImage imageInfo={info} />
         </figure>
       </div>
-      <div className="column is-7 contain-card-right">
-        <div className="content has-text-centered-mobile">
+      <div className="column is-7 contain-card-right has-text-centered-mobile">
+        <div className="content">
           <p className="is-size-4 is-hidden-mobile">{info.subHeading}</p>
           <LinesEllipsis
             className="is-size-6 has-text-grey has-text-left is-size-6-5-mobile"
@@ -23,15 +23,14 @@ const ContainCard = ({ info = {} }) => {
             maxLine="5"
             ellipsis="..."
           />
-          <br />
-          <a
-            href="#top"
-            className="button is-white-blue is-size-6"
-            style={{ width: "120px" }}
-          >
-            了解更多
-          </a>
         </div>
+        <a
+          href="#top"
+          className="button is-white-blue is-size-6"
+          style={{ width: "120px" }}
+        >
+          了解更多
+        </a>
       </div>
     </div>
   );
