@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import bulmaCarousel from "../../node_modules/bulma-extensions/bulma-carousel/dist/js/bulma-carousel.min.js";
 import SolutionCard from "../components/SolutionCard";
+import "../components/solution-tabs.sass";
 
 function SolutionTabs({ solutionItems }) {
   const [items, setItems] = useState(
@@ -29,7 +30,7 @@ function SolutionTabs({ solutionItems }) {
       pagination: false
     });
     setCaro(carousels[0]);
-  }, [caro]);
+  });
 
   return (
     <div className="solution-tabs">

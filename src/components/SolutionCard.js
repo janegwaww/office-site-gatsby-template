@@ -37,7 +37,7 @@ const SolutionCard = ({ info = {} }) => {
                 {info.heading}
               </p>
               <LinesEllipsis
-                style={{ height: "144px" }}
+                style={{ height: "144px", overflow: "hidden" }}
                 className="content is-size-6 is-size-6-5-mobile has-text-grey has-text-left"
                 text={`${info.description}`}
                 maxLine="6"
