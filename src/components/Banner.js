@@ -10,7 +10,7 @@ function Banner({ isMobile }) {
       setImageUrl("./img/index-banner-mobile.png");
       setColumnSize("is-three-fifths");
     }
-  });
+  }, []);
   const Title = () => (
     <div className="index-banner">
       <div className="content">
