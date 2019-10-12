@@ -29,7 +29,12 @@ function SeekerTabs({ scrollItems = [] }) {
                 <div className="is-size-7 has-text-grey-light is-hidden-mobile">
                   {o.heading}
                 </div>
-                <a onClick={() => _tabSelect(o.heading)}>{o.subHeading}</a>
+                <a
+                  className="is-size-7-mobile"
+                  onClick={() => _tabSelect(o.heading)}
+                >
+                  {o.subHeading}
+                </a>
               </div>
             </li>
           ))}

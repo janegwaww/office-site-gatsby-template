@@ -63,31 +63,45 @@ solution:
         solution cases
     blurbs:
         - heading: 智慧零售
-          image: /img/retail.png
+          image1: /img/solutions/retail.png
+          image2: /img/solutions/retail-mobile.png
+          alt: retail
           description: >
               基于大数据分析，深度学习等核心AI技术能力，赋能线下门店、商场、超市、品牌商等各类零售业。助力会员管理、货流分析、商品结算、货品陈列稽查、物流库存分配方案、客户画像、供货方渠道及广告精准投放等业务场景升级，形成智能化闭环商业模块，提升资金效率降低人力物力财力三重运作成本。
         - heading: 大健康
-          image: /img/health.png
+          image1: /img/solutions/health.png
+          image2: /img/solutions/health-mobile.png
+          alt: health
           description: >
               针对人体属性及特征，结合生活偏好画像，依靠海量权威医疗及营养学方面的文献构建健康知识图谱，对每个人的健康进行全周期的全面监护。包括结合人体症状进行智能诊断、根据生活现状生成智能食谱、嫁接权威人体属性采集设备以实现生理状况的全方位预测与解析。
         - heading: 智慧生活
-          image: /img/life.png
+          image1: /img/solutions/life.png
+          image2: /img/solutions/life-mobile.png
+          alt: life
           description: >
               以人工智能算法嫁接高精度传感设备，对民宅建筑及其基础设施进行全面的信息化，营造闭环的智能化应用生态。能够针对智能拾取、资源整合及分配、安防监控、行为捕捉跟踪、住户画像生成、生活模式优化等环节赋予高性能的人工智能算力支持。
         - heading: 智能营销
-          image: /img/sale.png
+          image1: /img/solutions/sale.png
+          image2: /img/solutions/sale-mobile.png
+          alt: sale
           description: >
               基于大数据分析，深度学习等核心AI技术能力，赋能线下门店、商超、MALL、品牌商各类零售业态，助力会员管理、客流分析、商品结算、货品陈列稽查、物流库存分析、客户画像及广告精准投放等业务场景升级，提升商业效率。
         - heading: 智能教育
-          image: /img/teach.png
+          image1: /img/solutions/teach.png
+          image2: /img/solutions/teach-mobile.png
+          alt: teach
           description: >
               通过将海量互联网及线下学员长期形成的教学过程数据化，并进行机器挖掘，得到包括自动批改、拍照识别、语音授课等在内的专业化定制化教育模式和教学内容。同时开发线下智慧校园，提供校园安全、课堂表现等重要板块的线下AI+应用。
         - heading: 智能物流
-          image: /img/logistics.png
+          image1: /img/solutions/logistics.png
+          image2: /img/solutions/logistics-mobile.png
+          alt: logistics
           description: >
               依靠匹配规划算法模块，通过应用大数据、云计算、物联网等技术对物流要素进行数字化，结合运筹学及深度学习算法，对物流方面问题如寻找货物与运货载体及其运货渠道的最优匹配方案进行深层次挖掘。支持自定义匹配规划问题的建模及目标函数搭建。
         - heading: 智能银行
-          image: /img/bank.png
+          image1: /img/solutions/bank.png
+          image2: /img/solutions/bank-mobile.png
+          alt: bank
           description: >
               通过账户行为分析，一方面智能匹配客户需求，从而设计差异化精准营销；另一方面利用大数据预测用户风险，评估信用等级，基于AI反洗钱反诈骗算法构建完整的反欺诈体系。
 business:

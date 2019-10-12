@@ -8,23 +8,23 @@ function Banner({ isMobile }) {
   useEffect(() => {
     if (isMobile) {
       setImageUrl("./img/index-banner-mobile.png");
-      setColumnSize("is-8");
+      setColumnSize("is-three-fifths");
     }
   });
   const Title = () => (
-    <div>
+    <div className="index-banner">
       <div className="content">
-        <p className="is-size-4-mobile is-size-2-tablet is-size-2-widescreen has-text-white">
+        <p className="is-size-5-5-mobile is-size-2-tablet is-size-2-widescreen has-text-white">
           {`数据场景化搭建`}
         </p>
       </div>
       <div className="content">
-        <p className="is-size-6-mobile is-size-5-tablet is-size-5-widescreen has-text-white">
+        <p className="is-size-7-mobile is-size-5-tablet is-size-5-widescreen has-text-white">
           {`实现数据的按需汇聚，让应用像阳光，照亮业务场景的每个角落`}
         </p>
       </div>
       <div className="content">
-        <a className="button is-opacity is-size-7-mobile">了解Seeker</a>
+        <a className="button is-opacity is-size-7-5-mobile">了解Seeker</a>
       </div>
     </div>
   );
