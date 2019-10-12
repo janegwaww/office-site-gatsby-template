@@ -27,6 +27,7 @@ function SolutionTabs({ solutionItems }) {
       effect: "translate",
       navigationKeys: false,
       navigation: false,
+      infinite: window.innerWidth <= 768 ? true : false,
       pagination: false
     });
     setCaro(carousels[0]);
@@ -35,7 +36,7 @@ function SolutionTabs({ solutionItems }) {
   return (
     <div className="solution-tabs">
       <br className="is-hidden-tablet" />
-      <h3 className="is-size-3 is-size-4-mobile has-text-black has-text-centered">
+      <h3 className="is-size-3 is-size-5-5-mobile has-text-black has-text-centered">
         {solutionItems.heading}
       </h3>
       <br className="is-hidden-mobile" />

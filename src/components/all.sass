@@ -179,7 +179,7 @@ $input-placeholder-color: $placeholder-color
   .navbar-item
     &.logo
       padding: 0 1rem
-    img
+    Img
       max-height: unset
 
 
@@ -231,9 +231,9 @@ $menu-label-color: $white-ter
 
 
 // responsiveness
-+tablet-only
-  .blog-list-item .featured-thumbnail
-    flex-basis: 50%;
++tablet
+  .is-paddingless-tablet
+    padding: 0 !important
 
 
 /* --------footer start---------
@@ -265,6 +265,8 @@ footer.footer
       display: flex
       flex-direction: column
       justify-content: space-between
+      .button
+        max-width: 120px
 /* ----solution-tabs end------
 
 /* -----seeker-tabs start-----
@@ -274,6 +276,8 @@ footer.footer
     display: flex
     flex-direction: column
     justify-content: space-between
+    .button
+      max-width: 120px
 /* ------seeker-tab end-------
 
 /* ---join start-----
@@ -290,19 +294,14 @@ footer.footer
 
 /* ----mobile start------
 +mobile
-  .blog-list-item header
-    display: block
-  .blog-list-item .featured-thumbnail
-    text-align: center;
-    max-width: 70%;
-    margin: 0 0 1em;
-
   .is-size-4-5-mobile
     font-size: 22px !important
   .is-size-5-5-mobile
     font-size: 1.125em !important
   .is-size-6-5-mobile
     font-size: 0.875em !important
+  .is-size-7-5-mobile
+    font-size: 0.625em !important
 
   .is-paddingless-mobile
     padding: 0 !important
@@ -314,6 +313,9 @@ footer.footer
     &.is-13x13-mobile
       width: 13px
       height: 13px
+    &.is-48x48-mobile
+      width: 48px
+      height: 48px
     &.is-50x50-mobile
       width: 50px
       height: 50px
@@ -322,6 +324,8 @@ footer.footer
       height: 150px
 
   footer
+    .level-left + .level-right
+      margin-top: 0.6rem
     &.footer
       padding: 0rem 0rem 0rem
 
@@ -330,14 +334,20 @@ footer.footer
       padding-right: 0
 
   .solution-tabs
+    .carousel
+      .slider-navigation-previous, .slider-navigation-next
+        display: none
     .solution-card
       .solution-card-right
         padding: 1.6rem 0.8rem
         .button
           margin: 0 auto
   .seeker-tabs
+    .tabs.is-around ul li a
+      padding-top: 1.2em
+      padding-bottom: 1.2em
     .contain-card-right
-      padding: 0rem 1.6rem 1.6rem
+      padding: 0rem 2rem 1.6rem
       .button
         margin: 0 auto
 /* -----mobile end-------

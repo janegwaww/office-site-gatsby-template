@@ -15,9 +15,9 @@ const RatePanel = ({ rateItems = [] }) => {
       </p>
       <div
         style={{
-          width: "40px",
+          width: "2rem",
           borderTop: "solid .2rem white",
-          margin: "2px 0 20px 0"
+          margin: "2px 0 1rem 0"
         }}
       />
       <p className="heading has-text-white is-size-6 is-size-7-mobile">
@@ -26,7 +26,10 @@ const RatePanel = ({ rateItems = [] }) => {
     </div>
   );
   return (
-    <div className="level is-mobile" style={{ padding: "0.25rem" }}>
+    <div
+      className="level is-mobile is-paddingless-tablet"
+      style={{ padding: "0.75rem 1rem" }}
+    >
       <div className="level-left">
         <Item info={rateItems[0]} />
       </div>
@@ -87,7 +90,8 @@ export function IndexPageTemplate({ features, solution, business, rate }) {
       <section
         className="section section--gradient"
         style={{
-          backgroundImage: `url('./img/coop-background.png')`
+          backgroundImage: `url('./img/coop-background.png')`,
+          backgroundSize: "100% 100%"
         }}
       >
         <div className="container">
@@ -102,12 +106,13 @@ export function IndexPageTemplate({ features, solution, business, rate }) {
         className="section has-background-link is-paddingless-mobile"
         style={{
           backgroundImage: `url(${"./img/persent.png"})`,
-          backgroundSize: "cover"
+          backgroundSize: "100% 100%",
+          backgroundPosition: "center"
         }}
       >
         <div className="container">
           <div className="columns">
-            <div className="column is-10 is-offset-1">
+            <div className="column is-10 is-offset-1 is-paddingless-tablet">
               <RatePanel rateItems={rate} />
             </div>
           </div>
@@ -174,13 +179,21 @@ export const pageQuery = graphql`
           heading
           blurbs {
             heading
-            image {
+            image1 {
               childImageSharp {
                 fluid(maxWidth: 1024, quality: 100) {
                   ...GatsbyImageSharpFluid
                 }
               }
             }
+            image2 {
+              childImageSharp {
+                fluid(maxWidth: 1024, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            alt
             description
           }
         }

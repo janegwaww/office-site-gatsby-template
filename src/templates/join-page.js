@@ -25,7 +25,7 @@ const JoinTemplate = ({ image, jobList = [] }) => {
                   <div className="select haetek-select is-fullwidth">
                     <select
                       defaultValue={{ value: 0 }}
-                      className="is-size-6-5-mobile"
+                      className="is-size-7-mobile"
                     >
                       <option>搜索地点</option>
                       <option>深圳</option>
@@ -36,7 +36,7 @@ const JoinTemplate = ({ image, jobList = [] }) => {
                   <div className="select haetek-select is-fullwidth">
                     <select
                       defaultValue={{ value: 0 }}
-                      className="is-size-6-5-mobile"
+                      className="is-size-7-mobile"
                     >
                       <option style={{ color: "#BBBBBB" }}>搜索岗位</option>
                       <option>开发部</option>
@@ -47,7 +47,7 @@ const JoinTemplate = ({ image, jobList = [] }) => {
                 </div>
                 <div className="control is-expanded has-icons-right">
                   <input
-                    className="input h-input is-size-6-5-mobile"
+                    className="input h-input is-size-7-mobile"
                     type="text"
                     placeholder="搜索职位"
                   />

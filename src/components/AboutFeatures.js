@@ -9,7 +9,7 @@ function AboutFeatures({ features = [], isMobile }) {
   useEffect(() => {
     if (isMobile) {
       setColumnSize("is-6");
-      setImgSize("is-110x110");
+      setImgSize("is-96x96");
     }
   });
   return (
@@ -31,9 +31,9 @@ function AboutFeatures({ features = [], isMobile }) {
                 >
                   <PreviewCompatibleImage imageInfo={o} />
                 </figure>
-                <p className="is-size-5 is-size-5-5-mobile">{o.heading}</p>
+                <p className="is-size-5 is-size-6-mobile">{o.heading}</p>
                 <p
-                  className="is-size-6-5-mobile"
+                  className="is-size-7-mobile"
                   style={{ margin: "auto", color: "#666", maxWidth: "350px" }}
                 >
                   {o.text}

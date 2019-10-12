@@ -7,7 +7,7 @@ const ContainCard = ({ info = {} }) => {
   return (
     <div className="contain-card columns is-horizontal has-background-white">
       <div className="column is-5">
-        <p className="is-size-4 is-hidden-tablet is-size-5-5-mobile has-text-centered">
+        <p className="is-size- is-hidden-tablet is-size-6-mobile has-text-centered">
           {info.subHeading}
         </p>
         <figure className="image is-200x150-mobile" style={{ margin: "auto" }}>
@@ -18,17 +18,13 @@ const ContainCard = ({ info = {} }) => {
         <div className="content">
           <p className="is-size-4 is-hidden-mobile">{info.subHeading}</p>
           <LinesEllipsis
-            className="is-size-6 has-text-grey has-text-left is-size-6-5-mobile"
+            className="is-size-6 has-text-grey has-text-left is-size-7-mobile"
             text={`${info.description}`}
             maxLine="5"
             ellipsis="..."
           />
         </div>
-        <a
-          href="#top"
-          className="button is-white-blue is-size-6"
-          style={{ width: "120px" }}
-        >
+        <a className="button is-white-blue is-size-6 is-size-7-mobile">
           了解更多
         </a>
       </div>

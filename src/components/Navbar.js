@@ -9,7 +9,8 @@ const Navbar = class extends React.Component {
     this.state = {
       active: false,
       navBarActiveClass: "",
-      activeNav: {}
+      activeNav: {},
+      logoWidth: "143"
     };
   }
 
@@ -20,6 +21,9 @@ const Navbar = class extends React.Component {
         .pop()
         .replace(/\-/, "")
     );
+    if (window.innerWidth <= 768) {
+      this.setState({ logoWidth: "100" });
+    }
   }
 
   toggleHamburger = () => {
@@ -51,7 +55,7 @@ const Navbar = class extends React.Component {
   };
 
   render() {
-    const { activeNav } = this.state;
+    const { activeNav, logoWidth } = this.state;
     return (
       <nav
         className="navbar is-fixed-top has-shadow is-transparent"
@@ -62,7 +66,7 @@ const Navbar = class extends React.Component {
         <div className="container">
           <div className="navbar-brand">
             <Link to="/" className="navbar-item logo" title="Logo">
-              <img src={logo} alt="Haetek" width="143" height="40" />
+              <img src={logo} alt="Haetek" width={`${logoWidth}`} height="40" />
             </Link>
             <div
               className={`navbar-burger burger ${this.state.navBarActiveClass}`}

@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import LinesEllipsis from "react-lines-ellipsis";
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 
 const SolutionCard = ({ info = {} }) => {
+  const [columnSize, setColumnSize] = useState(["is-half", "is-half"]);
+  const [imgInfo, setImgInfo] = useState({ image: info.image2, alt: info.alt });
+  useEffect(() => {
+    if (window.innerWidth <= 768) {
+      setColumnSize(["is-two-fifth", "is-three-fifth"]);
+      // setImgInfo({ image: info.image2, alt: info.alt });
+    } else {
+      setImgInfo({ image: info.image1, alt: info.alt });
+    }
+  }, []);
   return (
     <div
       className="solution-card box has-background-white"
@@ -14,17 +24,17 @@ const SolutionCard = ({ info = {} }) => {
       }}
     >
       <div className="columns is-gapless">
-        <div className="column is-half">
+        <div className={`column ${columnSize[0]}`}>
           <div className="container">
             <figure className="image has-background-grey-light">
               <PreviewCompatibleImage
-                imageInfo={{ ...info, style: { borderRadius: "none" } }}
+                imageInfo={{ ...imgInfo, style: { borderRadius: "none" } }}
               />
             </figure>
           </div>
         </div>
         <div
-          className="column is-half has-background-white"
+          className={`column ${columnSize[1]} has-background-white`}
           style={{
             display: "flex",
             justifyContent: "center",
@@ -33,21 +43,18 @@ const SolutionCard = ({ info = {} }) => {
         >
           <div className="section solution-card-right">
             <div className="content has-text-centered-mobile">
-              <p className="content is-size-4 is-size-5-5-mobile">
+              <p className="content is-size-4 is-size-6-mobile">
                 {info.heading}
               </p>
               <LinesEllipsis
-                style={{ height: "144px", overflow: "hidden" }}
-                className="content is-size-6 is-size-6-5-mobile has-text-grey has-text-left"
+                style={{ maxHeight: "144px", overflow: "hidden" }}
+                className="content is-size-6 is-size-7-mobile has-text-grey has-text-left"
                 text={`${info.description}`}
-                maxLine="6"
+                maxLine="5"
                 ellipsis="..."
               />
             </div>
-            <a
-              className="button is-blue is-size-6 is-size-7-mobile"
-              style={{ width: "132px" }}
-            >
+            <a className="button is-blue is-size-6 is-size-7-mobile">
               查看详情
             </a>
           </div>
