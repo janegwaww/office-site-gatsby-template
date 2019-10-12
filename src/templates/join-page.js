@@ -53,7 +53,7 @@ const JoinTemplate = ({ image, jobList = [] }) => {
                   />
                   <span className="icon is-small is-right">
                     <i className="image is-20x20 is-13x13-mobile">
-                      <img src="/img/search.png" width="20" height="20" />
+                      <img src="./img/search.png" width="20" height="20" />
                     </i>
                   </span>
                 </div>
