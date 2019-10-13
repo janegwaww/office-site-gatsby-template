@@ -66,10 +66,7 @@ const StudyDirection = ({ dirInfo = {} }) => {
                       <PreviewCompatibleImage imageInfo={o} />
                     </div>
                     <br className="is-hidden-mobile" />
-                    <a
-                      style={{ maxWidth: "128px" }}
-                      className="is-size-7-mobile"
-                    >
+                    <a style={{ width: "7.5em" }} className="is-size-7-mobile">
                       {o.heading}
                     </a>
                   </div>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import Loadable from "react-loadable";
@@ -28,7 +28,7 @@ const RatePanel = ({ rateItems = [] }) => {
   return (
     <div
       className="level is-mobile is-paddingless-tablet"
-      style={{ padding: "0.75rem 1rem" }}
+      style={{ padding: "0rem 1rem" }}
     >
       <div className="level-left">
         <Item info={rateItems[0]} />
@@ -66,6 +66,14 @@ const LoadableSolution = Loadable({
 });
 
 export function IndexPageTemplate({ features, solution, business, rate }) {
+  const [rateImg, setRateImg] = useState("./img/persent.png");
+  const [coopImg, setCoopImg] = useState("./img/coop-background.png");
+  useEffect(() => {
+    if (window.innerWidth <= 768) {
+      setRateImg("./img/persent-mobile.png");
+      setCoopImg("./img/coop-background-mobile.png");
+    }
+  }, []);
   return (
     <div>
       <LoadableBanner />
@@ -90,7 +98,7 @@ export function IndexPageTemplate({ features, solution, business, rate }) {
       <section
         className="section section--gradient"
         style={{
-          backgroundImage: `url('./img/coop-background.png')`,
+          backgroundImage: `url(${coopImg})`,
           backgroundSize: "100% 100%"
         }}
       >
@@ -105,7 +113,7 @@ export function IndexPageTemplate({ features, solution, business, rate }) {
       <section
         className="section has-background-link is-paddingless-mobile"
         style={{
-          backgroundImage: `url(${"./img/persent.png"})`,
+          backgroundImage: `url(${rateImg})`,
           backgroundSize: "100% 100%",
           backgroundPosition: "center"
         }}
