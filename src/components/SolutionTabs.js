@@ -57,7 +57,7 @@ function SolutionTabs({ solutionItems }) {
       <div className="container">
         <div id="carousel-solution" className="carousel">
           {[...items].map((o, i) => (
-            <div key={i} className={`item-${i}`} style={{ margin: "0 1.4rem" }}>
+            <div key={i} className={`item-${i}`} style={{ margin: "0 1.6rem" }}>
               <SolutionCard info={o} />
             </div>
           ))}

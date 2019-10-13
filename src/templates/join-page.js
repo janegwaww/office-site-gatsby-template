@@ -1,21 +1,36 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import JobCard from "../components/JobCard";
 
 const JoinTemplate = ({ image, jobList = [] }) => {
+  const [banner, setBanner] = useState(
+    `${!!image ? image.childImageSharp.fluid.src : image}`
+  );
+  const [height, setHeight] = useState("450px");
+  useEffect(() => {
+    if (window.innerWidth <= 768) {
+      setBanner("./img/join-mobile.png");
+      setHeight("160px");
+    }
+  }, []);
   return (
     <div className="join">
       <div
         className="full-width-image margin-top-0"
         style={{
-          backgroundImage: `url(${
-            !!image ? image.childImageSharp.fluid.src : image
-          })`,
-          backgroundSize: "cover"
+          height: height,
+          backgroundImage: `url(${banner})`,
+          backgroundSize: "100% 100%"
         }}
-      />
+      >
+        <div className="has-text-centered">
+          <h2 className="has-text-white is-size-3 is-size-5-5-mobile">
+            Power Humanity with AI
+          </h2>
+        </div>
+      </div>
       <div className="section">
         <div className="container">
           <div className="columns is-centered">

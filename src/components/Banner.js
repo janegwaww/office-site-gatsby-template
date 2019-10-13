@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-// import PropTypes from "prop-types";
 import withSize from "react-sizes";
+import LinesEllipsis from "react-lines-ellipsis";
 
 function Banner({ isMobile }) {
   const [imageUrl, setImageUrl] = useState("./img/index-banner.png");
@@ -8,7 +8,7 @@ function Banner({ isMobile }) {
   useEffect(() => {
     if (isMobile) {
       setImageUrl("./img/index-banner-mobile.png");
-      setColumnSize("is-three-fifths");
+      setColumnSize("is-7");
     }
   });
   const Title = () => (
@@ -19,9 +19,11 @@ function Banner({ isMobile }) {
         </p>
       </div>
       <div className="content">
-        <p className="is-size-7-mobile is-size-5-tablet is-size-5-widescreen has-text-white">
-          {`实现数据的按需汇聚，让应用像阳光，照亮业务场景的每个角落`}
-        </p>
+        <LinesEllipsis
+          className="is-size-7-mobile is-size-5-tablet is-size-5-widescreen has-text-white"
+          text={`实现数据的按需汇聚，让应用像阳光，照亮业务场景的每个角落`}
+          maxLine="3"
+        />
       </div>
       <div className="content">
         <a className="button is-opacity is-size-7-5-mobile">了解Seeker</a>
