@@ -24,12 +24,19 @@ const CollegeTemplate = ({ image, background, direction, isMobile }) => {
   const [backImage, setBackImage] = useState(
     `${!!image ? image.childImageSharp.fluid.src : image}`
   );
-  useEffect(() => {});
+  const [height, setHeight] = useState("600px");
+  useEffect(() => {
+    if (window.innerWidth <= 768) {
+      setBackImage("./img/college-mobile.png");
+      setHeight("180px");
+    }
+  });
   return (
     <div>
       <div
         className="full-width-image margin-top-0"
         style={{
+          height: height,
           backgroundImage: `url(${backImage})`,
           backgroundSize: "100% 100%"
         }}
@@ -39,10 +46,10 @@ const CollegeTemplate = ({ image, background, direction, isMobile }) => {
             黑顿研究院
           </h2>
           <div style={{ lineHeight: 1.2, fontSize: "50px" }}>
-            <h1 className="has-text-white is-size-4-5-mobile">
+            <h1 className="has-text-white is-size-5-mobile">
               HAETEK Institute of Machine Intelligence,
             </h1>
-            <h1 className="has-text-white is-size-4-5-mobile">
+            <h1 className="has-text-white is-size-5-mobile">
               Shenzhen, China.
             </h1>
           </div>
