@@ -26,7 +26,7 @@ function SolutionTabs({ solutionItems }) {
       slidesToShow: 1,
       effect: "translate",
       navigationKeys: false,
-      navigation: false,
+      navigation: window.innerWidth <= 768 ? true : false,
       infinite: window.innerWidth <= 768 ? true : false,
       pagination: false
     });
