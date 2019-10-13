@@ -24,7 +24,7 @@ const AboutUsTemplate = ({ image, intro, creaters }) => {
       padding: "1em 0em"
     };
     return para.map((o, i) => (
-      <p className="has-text-dark is-size-6-5-mobile" style={pstyle} key={i}>
+      <p className="has-text-dark is-size-7-mobile" style={pstyle} key={i}>
         {o}
       </p>
     ));
@@ -47,7 +47,7 @@ const AboutUsTemplate = ({ image, intro, creaters }) => {
           <div className="columns">
             <div className="column is-10 is-offset-1">
               <div style={headStyle(540)}>
-                <h3 className="has-text-black is-size-3 has-text-centered is-size-5-mobile">
+                <h3 className="has-text-black is-size-3 has-text-centered is-size-5-5-mobile">
                   {intro.heading}
                 </h3>
               </div>

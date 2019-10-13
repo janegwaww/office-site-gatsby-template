@@ -5,7 +5,7 @@ import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 
 const SolutionCard = ({ info = {} }) => {
   const [columnSize, setColumnSize] = useState(["is-half", "is-half"]);
-  const [imgInfo, setImgInfo] = useState({ image: info.image2, alt: info.alt });
+  const [imgInfo, setImgInfo] = useState({ image: info.image3, alt: info.alt });
   useEffect(() => {
     if (window.innerWidth <= 768) {
       setColumnSize(["is-two-fifth", "is-three-fifth"]);

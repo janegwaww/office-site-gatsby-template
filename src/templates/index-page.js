@@ -193,6 +193,13 @@ export const pageQuery = graphql`
                 }
               }
             }
+            image3 {
+              childImageSharp {
+                fluid(maxWidth: 1024, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
             alt
             description
           }
