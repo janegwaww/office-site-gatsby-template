@@ -47,7 +47,7 @@ const LoadableBanner = Loadable({
   loader: () => import("../components/Banner"),
   loading() {
     return (
-      <div className="pageloader is-active">
+      <div className="full-width-image">
         <div className="title">Loading...</div>
       </div>
     );
@@ -58,7 +58,7 @@ const LoadableSolution = Loadable({
   loader: () => import("../components/SolutionTabs"),
   loading() {
     return (
-      <div className="pageloader is-active">
+      <div className="full-width-image">
         <div className="title">Loading...</div>
       </div>
     );
