@@ -89,7 +89,8 @@ export function IndexPageTemplate({ features, solution, business, rate }) {
         className="section section--gradient"
         style={{
           backgroundImage: `url(${coopImg})`,
-          backgroundSize: "100% 100%"
+          backgroundSize: "cover",
+          backgroundPosition: "center"
         }}
       >
         <div className="container">
@@ -104,7 +105,7 @@ export function IndexPageTemplate({ features, solution, business, rate }) {
         className="section has-background-link is-paddingless-mobile"
         style={{
           backgroundImage: `url(${rateImg})`,
-          backgroundSize: "100% 100%",
+          backgroundSize: "cover",
           backgroundPosition: "center"
         }}
       >
