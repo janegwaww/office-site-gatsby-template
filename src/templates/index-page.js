@@ -6,6 +6,7 @@ import Loadable from "react-loadable";
 import Layout from "../components/Layout";
 import SeekerTabs from "../components/SeekerTabs";
 import BusinessIcon from "../components/BusinessIcon";
+import SolutionTabs from "../components/SolutionTabs";
 
 const RatePanel = ({ rateItems = [] }) => {
   const Item = ({ info = {} }) => (
@@ -54,17 +55,6 @@ const LoadableBanner = Loadable({
   }
 });
 
-const LoadableSolution = Loadable({
-  loader: () => import("../components/SolutionTabs"),
-  loading() {
-    return (
-      <div className="full-width-image">
-        <div className="title">Loading...</div>
-      </div>
-    );
-  }
-});
-
 export function IndexPageTemplate({ features, solution, business, rate }) {
   const [rateImg, setRateImg] = useState("./img/persent.png");
   const [coopImg, setCoopImg] = useState("./img/coop-background.png");
@@ -90,7 +80,7 @@ export function IndexPageTemplate({ features, solution, business, rate }) {
         <div className="container">
           <div className="columns">
             <div className="column is-10 is-offset-1">
-              <LoadableSolution solutionItems={solution} />
+              <SolutionTabs solutionItems={solution} />
             </div>
           </div>
         </div>
