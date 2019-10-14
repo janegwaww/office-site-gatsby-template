@@ -90,9 +90,9 @@ class SolutionTabs extends Component {
           </div>
         </div>
         <br />
-        <section
+        <div
           className="container"
-          style={mobile ? { margin: "0 0 0 -4em" } : {}}
+          style={mobile ? { margin: "0 0 0 -3em" } : {}}
         >
           <Slider ref={e => (this.sliderRef = e)} {...slider}>
             {[...items].map((o, i) => (
@@ -101,7 +101,7 @@ class SolutionTabs extends Component {
               </div>
             ))}
           </Slider>
-        </section>
+        </div>
         <br />
       </div>
     );
