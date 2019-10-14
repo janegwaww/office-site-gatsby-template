@@ -1,16 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import withSize from "react-sizes";
 import LinesEllipsis from "react-lines-ellipsis";
 
 function Banner({ isMobile }) {
-  const [imageUrl, setImageUrl] = useState("./img/index-banner.png");
-  const [columnSize, setColumnSize] = useState("is-two-fifths");
-  useEffect(() => {
-    if (isMobile) {
-      setImageUrl("./img/index-banner-mobile.png");
-      setColumnSize("is-7");
-    }
-  }, []);
   const Title = () => (
     <div className="index-banner">
       <div className="content">
@@ -35,7 +27,11 @@ function Banner({ isMobile }) {
       <div
         className="full-width-image margin-top-0"
         style={{
-          backgroundImage: `url(${imageUrl})`,
+          backgroundImage: `url(${
+            isMobile
+              ? "./img/index-banner-mobile.png"
+              : "./img/index-banner.png"
+          })`,
           backgroundColor: `gray`,
           backgroundSize: "100% 100%"
         }}
@@ -44,7 +40,9 @@ function Banner({ isMobile }) {
           <div className="columns is-mobile">
             <div className="column is-10 is-offset-1">
               <div className="columns is-mobile">
-                <div className={`column ${columnSize}`}>
+                <div
+                  className={`column ${isMobile ? "is-7" : "is-two-fifths"}`}
+                >
                   <Title />
                 </div>
               </div>
