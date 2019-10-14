@@ -1,71 +1,111 @@
-import React, { useState, useEffect } from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
-import bulmaCarousel from "../../node_modules/bulma-extensions/bulma-carousel/dist/js/bulma-carousel.min.js";
+import Slider from "react-slick";
 import SolutionCard from "../components/SolutionCard";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import "../components/solution-tabs.sass";
 
-function SolutionTabs({ solutionItems }) {
-  const [items, setItems] = useState(
-    solutionItems.blurbs.map((o, i) =>
-      i === 0 ? { ...o, className: "is-active" } : o
-    )
+const SampleNextArrow = props => {
+  const { className, style, onClick } = props;
+  return <div className={className} style={{ ...style }} onClick={onClick} />;
+};
+
+const SamplePrevArrow = props => {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, zIndex: 1 }}
+      onClick={onClick}
+    />
   );
-  const [caro, setCaro] = useState({});
-  const _tabSelect = key => {
-    setItems(
-      items.map((o, i) =>
+};
+
+class SolutionTabs extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      items: [],
+      mobile: false,
+      heading: ""
+    };
+  }
+
+  _tabSelect = key => {
+    this.setState({
+      items: this.state.items.map((o, i) =>
         i === key ? { ...o, className: "is-active" } : { ...o, className: "" }
       )
-    );
-    caro.show(key);
-  };
-  useEffect(() => {
-    const carousels = bulmaCarousel.attach(`#carousel-solution`, {
-      initialSlide: 0,
-      slidesToScroll: 1,
-      slidesToShow: 1,
-      effect: "translate",
-      navigationKeys: false,
-      navigation: window.innerWidth <= 768 ? true : false,
-      infinite: window.innerWidth <= 768 ? true : false,
-      pagination: false
     });
-    setCaro(carousels[0]);
-  });
+    this.sliderRef.slickGoTo(key);
+  };
 
-  return (
-    <div className="solution-tabs">
-      <br className="is-hidden-tablet" />
-      <h3 className="is-size-3 is-size-5-5-mobile has-text-black has-text-centered">
-        {solutionItems.heading}
-      </h3>
-      <br className="is-hidden-mobile" />
-      <div className="columns is-centered is-hidden-mobile">
-        <div className="column is-8">
-          <div className="tabs is-around">
-            <ul>
-              {[...items].map((o, i) => (
-                <li key={i} className={o.className}>
-                  <a onClick={() => _tabSelect(i)}>{o.heading}</a>
-                </li>
-              ))}
-            </ul>
+  componentDidMount() {
+    const { solutionItems } = this.props;
+    this.setState({
+      items: solutionItems.blurbs.map((o, i) =>
+        i === 0 ? { ...o, className: "is-active" } : o
+      ),
+      heading: solutionItems.heading
+    });
+    if (window.innerWidth <= 768) {
+      this.setState({ mobile: true });
+    }
+  }
+
+  render() {
+    const { mobile, heading, items } = this.state;
+    const slider = {
+      infinite: false,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      centerMode: mobile,
+      variableWidth: mobile,
+      className: "carousel slider variable-width",
+      beforeChange: (current, next) => this._tabSelect(next),
+      nextArrow: <SampleNextArrow />,
+      prevArrow: <SamplePrevArrow />
+    };
+
+    return (
+      <div className="solution-tabs">
+        <br className="is-hidden-tablet" />
+        <h3 className="is-size-3 is-size-5-5-mobile has-text-black has-text-centered">
+          {heading}
+        </h3>
+        <br className="is-hidden-mobile" />
+        <div className="columns is-centered is-hidden-mobile">
+          <div className="column is-8">
+            <div className="tabs is-around">
+              <ul>
+                {[...items].map((o, i) => (
+                  <li key={i} className={o.className}>
+                    <a onClick={() => this._tabSelect(i)}>{o.heading}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
+        <br />
+        <section
+          className="container"
+          style={mobile ? { margin: "0 0 0 -4em" } : {}}
+        >
+          <Slider ref={e => (this.sliderRef = e)} {...slider}>
+            {[...items].map((o, i) => (
+              <div key={`item-${i}`} style={{ width: 300 }}>
+                <SolutionCard info={o} />
+              </div>
+            ))}
+          </Slider>
+        </section>
+        <br />
       </div>
-      <br />
-      <div className="container">
-        <div id="carousel-solution" className="carousel">
-          {[...items].map((o, i) => (
-            <div key={i} className={`item-${i}`} style={{ margin: "0 3rem" }}>
-              <SolutionCard info={o} />
-            </div>
-          ))}
-        </div>
-      </div>
-      <br />
-    </div>
-  );
+    );
+  }
 }
 
 SolutionTabs.propTypes = {

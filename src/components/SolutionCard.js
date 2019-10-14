@@ -5,11 +5,12 @@ import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 
 const SolutionCard = ({ info = {} }) => {
   const [columnSize, setColumnSize] = useState(["is-half", "is-half"]);
-  const [imgInfo, setImgInfo] = useState({ image: info.image3, alt: info.alt });
+  const [imgInfo, setImgInfo] = useState({ image: info.image2, alt: info.alt });
+  const [mobile, setMobile] = useState(false);
   useEffect(() => {
     if (window.innerWidth <= 768) {
       setColumnSize(["is-two-fifth", "is-three-fifth"]);
-      // setImgInfo({ image: info.image2, alt: info.alt });
+      setMobile(true);
     } else {
       setImgInfo({ image: info.image1, alt: info.alt });
     }
@@ -20,7 +21,8 @@ const SolutionCard = ({ info = {} }) => {
       style={{
         padding: 0,
         overflow: "hidden",
-        boxShadow: "0px 4px 10px 0px rgba(0,0,0,0.1)"
+        boxShadow: "unset",
+        margin: mobile ? "8px" : "1rem"
       }}
     >
       <div className="columns is-gapless">
@@ -50,7 +52,7 @@ const SolutionCard = ({ info = {} }) => {
                 style={{ maxHeight: "144px", overflow: "hidden" }}
                 className="content is-size-6 is-size-7-mobile has-text-grey has-text-left"
                 text={`${info.description}`}
-                maxLine="5"
+                maxLine={mobile ? "4" : "5"}
                 ellipsis="..."
               />
             </div>
