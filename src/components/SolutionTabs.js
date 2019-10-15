@@ -59,6 +59,7 @@ class SolutionTabs extends Component {
     const slider = {
       infinite: false,
       speed: 500,
+      arrows: !mobile,
       slidesToShow: 1,
       slidesToScroll: 1,
       centerMode: mobile,
