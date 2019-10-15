@@ -8,7 +8,7 @@ const Article = ({ article = {} }) => {
   const para2 = article.article[1];
   return (
     <div
-      className="content has-text-left"
+      className="college-article content has-text-left"
       style={{ maxWidth: "840px", margin: "auto" }}
     >
       <p className="is-size-4 is-size-5-mobile">{article.heading}</p>
