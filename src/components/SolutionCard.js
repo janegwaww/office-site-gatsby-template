@@ -22,7 +22,7 @@ const SolutionCard = ({ info = {} }) => {
         padding: 0,
         overflow: "hidden",
         boxShadow: "unset",
-        margin: mobile ? "8px" : "1rem"
+        margin: mobile ? "8px" : "2rem"
       }}
     >
       <div className="columns is-gapless">

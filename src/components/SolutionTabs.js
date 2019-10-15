@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import PropTypes from "prop-types";
 import Slider from "react-slick";
 import SolutionCard from "../components/SolutionCard";
@@ -7,18 +7,72 @@ import "slick-carousel/slick/slick-theme.css";
 import "../components/solution-tabs.sass";
 
 const SampleNextArrow = props => {
-  const { className, style, onClick } = props;
-  return <div className={className} style={{ ...style }} onClick={onClick} />;
-};
-
-const SamplePrevArrow = props => {
-  const { className, style, onClick } = props;
+  const { className, currentSlide, slideCount, onClick } = props;
+  const [arrow, setArrow] = useState("./img/solutions/right.png");
+  const mouseAct = e => {
+    if (e.type === "mouseover") {
+      setArrow("./img/solutions/right-chosen.png");
+    } else {
+      setArrow("./img/solutions/right.png");
+    }
+  };
   return (
     <div
       className={className}
-      style={{ ...style, zIndex: 1 }}
+      style={{
+        display: currentSlide + 1 === slideCount ? "none" : "block",
+        maxHeight: "60px",
+        maxWidth: "60px",
+        backgroundColor: "white",
+        padding: "1rem",
+        borderRadius: 50,
+        width: "unset",
+        height: "unset"
+      }}
       onClick={onClick}
-    />
+      onMouseOver={mouseAct}
+      onMouseOut={mouseAct}
+    >
+      <figure className="image is-20x20">
+        <img src={arrow} alt="right" />
+      </figure>
+    </div>
+  );
+};
+
+const SamplePrevArrow = props => {
+  const { className, currentSlide, onClick } = props;
+  const [arrow, setArrow] = useState("./img/solutions/left.png");
+  const mouseAct = e => {
+    if (e.type === "mouseover") {
+      setArrow("./img/solutions/left-chosen.png");
+    } else {
+      setArrow("./img/solutions/left.png");
+    }
+  };
+
+  return (
+    <div
+      className={className}
+      style={{
+        display: currentSlide === 0 ? "none" : "block",
+        zIndex: 1,
+        maxHeight: "60px",
+        maxWidth: "60px",
+        backgroundColor: "white",
+        padding: "1rem",
+        borderRadius: 50,
+        width: "unset",
+        height: "unset"
+      }}
+      onClick={onClick}
+      onMouseOver={mouseAct}
+      onMouseOut={mouseAct}
+    >
+      <figure className="image is-20x20">
+        <img src={arrow} alt="left" />
+      </figure>
+    </div>
   );
 };
 
@@ -57,6 +111,8 @@ class SolutionTabs extends Component {
   render() {
     const { mobile, heading, items } = this.state;
     const slider = {
+      dots: mobile,
+      dotsClass: "slick-dots slick-thumb",
       infinite: false,
       speed: 500,
       arrows: !mobile,
