@@ -13,14 +13,17 @@
         overflow: unset
 @media screen and (max-width: 768px)
   .solution-tabs
+    padding-top: 0.6rem
     padding-bottom: 25px
     .solution-card
       border-radius: 2px
     .slick-dots
       bottom: -28px
       padding-left: 3em
-      li button:before
-        color: white
-        opacity: 1
-      li.slick-active button:before
-        color: black
+      li
+        margin: unset
+        & button:before
+          color: white
+          opacity: 1
+        &.slick-active button:before
+          color: black

@@ -4,7 +4,7 @@ import qr from "../img/qrcode.png";
 
 const FooterMobile = () => (
   <div
-    className="content is-hidden-tablet is-size-7-mobile has-text-centered"
+    className="footer-mobile content is-hidden-tablet is-size-7-mobile has-text-centered"
     style={{ color: "#999999", padding: "1.13rem 0 8px" }}
   >
     <div className="container">

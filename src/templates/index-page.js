@@ -10,7 +10,7 @@ import SolutionTabs from "../components/SolutionTabs";
 
 const RatePanel = ({ rateItems = [] }) => {
   const Item = ({ info = {} }) => (
-    <div className="rate-panel">
+    <div className="rate-panel has-text-centered">
       <p className="is-size-3 has-text-white is-size-5-5-mobile">
         {info.description}
       </p>
@@ -18,7 +18,7 @@ const RatePanel = ({ rateItems = [] }) => {
         style={{
           width: "2rem",
           borderTop: "solid .2rem white",
-          margin: "2px 0 1rem 0"
+          margin: "2px auto 0.8rem"
         }}
       />
       <p className="heading has-text-white is-size-6 is-size-7-mobile">
@@ -90,7 +90,8 @@ export function IndexPageTemplate({ features, solution, business, rate }) {
         style={{
           backgroundImage: `url(${coopImg})`,
           backgroundSize: "cover",
-          backgroundPosition: "center"
+          backgroundPosition: "center",
+          padding: "2.25rem 1.5rem 3rem 1.5rem"
         }}
       >
         <div className="container">

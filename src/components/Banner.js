@@ -4,7 +4,7 @@ import LinesEllipsis from "react-lines-ellipsis";
 
 function Banner({ isMobile }) {
   const Title = () => (
-    <div className="index-banner">
+    <div className="banner-title">
       <div className="content">
         <p className="is-size-5-5-mobile is-size-2-tablet is-size-2-widescreen has-text-white">
           {`数据场景化搭建`}
@@ -23,7 +23,7 @@ function Banner({ isMobile }) {
     </div>
   );
   return (
-    <div>
+    <div className="index-banner">
       <div
         className="full-width-image margin-top-0"
         style={{

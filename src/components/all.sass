@@ -15,9 +15,9 @@ $tabs-link-active-color: $tab-blue
 $tabs-link-padding: .5em 1em
 $navbar-tab-hover-border-bottom-color: transparent
 $navbar-tab-active-border-bottom-width: 2px
+$navbar-height: 3.25rem
 $body-color: #333
 $black: #2b2523
-$navbar-height: 3.75rem
 $input-placeholder-color: $placeholder-color
 
 .is-size-4-5
@@ -28,6 +28,7 @@ $input-placeholder-color: $placeholder-color
   font-size: 0.875em !important
 
 .navbar
+  height: 3.75rem
   .container
     max-width: 1620px
   .navbar-menu
@@ -100,6 +101,7 @@ $input-placeholder-color: $placeholder-color
   &.haetek-select
     padding-right: 1rem
     select
+      text-rendering: auto !important
       border: unset
       border-radius: unset
       border-bottom: solid 1px #bbbbbb
@@ -110,6 +112,7 @@ $input-placeholder-color: $placeholder-color
         box-shadow: none
         border-color: #bbbbbb
     &:not(.is-multiple):not(.is-loading)::after
+      border-radius: 0
       border-color: #666666
 
 .content .taglist
@@ -308,10 +311,18 @@ footer.footer
     padding: 0 !important
 
   .button
+    &.is-opacity
+      border-radius: 2px
+      pointer-events: none
     &.is-blue
+      pointer-events: none
       padding: 16px 20px
       border-radius: 2px
     &.is-white-blue
+      pointer-events: none
+      background-color: rgba(12,102,255,1)
+      color: white
+      border: unset
       padding: 16px 20px
       border-radius: 2px
 
@@ -336,9 +347,11 @@ footer.footer
 
   footer
     .level-left + .level-right
-      margin-top: 0.6rem
+      margin-top: 0.55rem
     &.footer
       padding: 0rem 0rem 0rem
+      .footer-mobile.content p:not(:last-child)
+        margin-bottom: 0.55rem
 
   .full-width-image
     height: 190px
@@ -349,10 +362,15 @@ footer.footer
     .column
       padding: 0.75em 0
 
+  .navbar
+    height: 3.25rem
+
+  .index-banner
+    .banner-title
+      .content:not(:last-child)
+        margin-bottom: 0.8rem
+
   .solution-tabs
-    .carousel
-      .slider-navigation-previous, .slider-navigation-next
-        /* display: none
     .solution-card
       .solution-card-right
         padding: 1.6rem 0.8rem
