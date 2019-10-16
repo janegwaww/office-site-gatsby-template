@@ -32,7 +32,7 @@ function Banner({ isMobile }) {
               ? "./img/index-banner-mobile.png"
               : "./img/index-banner.png"
           })`,
-          height: "570px",
+          height: isMobile ? "190px" : "570px",
           backgroundColor: `gray`,
           backgroundPosition: "center",
           backgroundSize: "cover"
