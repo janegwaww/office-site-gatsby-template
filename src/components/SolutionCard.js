@@ -17,11 +17,11 @@ const SolutionCard = ({ info = {} }) => {
   }, []);
   return (
     <div
-      className="solution-card box has-background-white"
+      className="solution-card  has-background-white"
       style={{
         padding: 0,
+        borderRadius: "4px",
         overflow: "hidden",
-        boxShadow: "unset",
         margin: mobile ? "8px" : "2rem"
       }}
     >

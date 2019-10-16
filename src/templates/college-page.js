@@ -58,7 +58,7 @@ const CollegeTemplate = ({ image, background, direction }) => {
       </div>
       <div className="college-back section section--gradient has-background-white-ter">
         <div className="container">
-          <div className="section is-paddingless-mobile">
+          <div className="section is-paddingless">
             <BackgroundInfo heading={background.heading} bakPara={bakPara} />
           </div>
         </div>
