@@ -63,7 +63,8 @@ const JoinTemplate = ({ image, jobList = [] }) => {
         style={{
           height: height,
           backgroundImage: `url(${banner})`,
-          backgroundSize: "100% 100%"
+          backgroundSize: "cover",
+          backgroundPosition: "center"
         }}
       >
         <div className="has-text-centered">

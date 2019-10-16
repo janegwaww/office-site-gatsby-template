@@ -32,8 +32,10 @@ function Banner({ isMobile }) {
               ? "./img/index-banner-mobile.png"
               : "./img/index-banner.png"
           })`,
+          height: "570px",
           backgroundColor: `gray`,
-          backgroundSize: "100% 100%"
+          backgroundPosition: "center",
+          backgroundSize: "cover"
         }}
       >
         <div className="container">

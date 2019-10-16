@@ -39,7 +39,8 @@ const CollegeTemplate = ({ image, background, direction }) => {
         style={{
           height: height,
           backgroundImage: `url(${backImage})`,
-          backgroundSize: "100% 100%"
+          backgroundSize: "cover",
+          backgroundPosition: "center"
         }}
       >
         <div className="has-text-centered" style={{ lineHeight: 3 }}>
