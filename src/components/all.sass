@@ -15,7 +15,7 @@ $tabs-link-active-color: $tab-blue
 $tabs-link-padding: .5em 1em
 $navbar-tab-hover-border-bottom-color: transparent
 $navbar-tab-active-border-bottom-width: 2px
-$navbar-height: 3.25rem
+$navbar-height: 3.75rem
 $body-color: #333
 $black: #2b2523
 $input-placeholder-color: $placeholder-color
@@ -28,7 +28,6 @@ $input-placeholder-color: $placeholder-color
   font-size: 0.875em !important
 
 .navbar
-  height: 3.75rem
   .container
     max-width: 1620px
   .navbar-menu
@@ -289,7 +288,7 @@ footer.footer
   input, textarea
     &:focus
       outline: none !important
-      border-color: rgba(43, 37, 35, 0.1);
+      border-color: #bbbbbb
       -webkit-box-shadow: none;
       box-shadow: none;
 /* ----join end------
@@ -348,6 +347,15 @@ footer.footer
   .has-text-left-mobile
     text-align: left !important
 
+  .columns
+    margin-left: 0
+    margin-right: 0
+    .column
+      padding: 0.75em 0
+
+  .navbar
+    /* height: 3.25rem
+
   footer
     .level-left + .level-right
       margin-top: 0.55rem
@@ -359,15 +367,6 @@ footer.footer
   .full-width-image
     height: 190px
 
-  .columns
-    margin-left: 0 !important
-    margin-right: 0 !important
-    .column
-      padding: 0.75em 0
-
-  .navbar
-    height: 3.25rem
-
   .index-banner
     .banner-title
       .content:not(:last-child)
@@ -378,6 +377,7 @@ footer.footer
       padding: 1.875em 1.5em 1.875em
       .about-us-content-head
         margin-bottom: 12px
+
   .college
     .college-back.section
       padding: 1.875em 1.5em 1.875em
@@ -392,6 +392,7 @@ footer.footer
         padding: 1.6rem 0.8rem
         .button
           margin: 0 auto
+
   .seeker-tabs
     .tabs.is-around ul li a
       padding-top: 1.2em
@@ -400,4 +401,18 @@ footer.footer
       padding: 0rem 2rem 1.6rem
       .button
         margin: 0 auto
+
+  .join
+    .join-input.section
+      padding: 1.875em 1.5em 1.875em
+      .column
+        &:not(:last-child)
+          padding-right: 1.5em
+        .control.has-icons-right .icon
+          height: 1.8em
+        .select.haetek-select
+          &:not(.is-multiple):not(.is-loading)::after
+            top: 40%
+    .join-jobs.section
+      padding: 1.875em 1.5em 1.875em
 /* -----mobile end-------
