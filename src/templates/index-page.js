@@ -65,7 +65,7 @@ export function IndexPageTemplate({ features, solution, business, rate }) {
     }
   }, []);
   return (
-    <div>
+    <div className="home">
       <LoadableBanner />
       <section className="section section--gradient is-paddingless-mobile">
         <div className="container">

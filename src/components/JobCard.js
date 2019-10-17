@@ -4,7 +4,7 @@ import LinesEllipsis from "react-lines-ellipsis";
 
 function JobCard({ info = {} }) {
   return (
-    <div className="box" style={{ borderRadius: "4px", boxShadow: "unset" }}>
+    <div className="box" style={{ boxShadow: "unset" }}>
       <div className="" style={{ marginBottom: "6px" }}>
         <p className="is-size-5 is-size-6-mobile">{info.heading}</p>
       </div>

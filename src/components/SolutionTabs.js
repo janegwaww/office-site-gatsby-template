@@ -4,7 +4,7 @@ import Slider from "react-slick";
 import SolutionCard from "../components/SolutionCard";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import "../components/solution-tabs.sass";
+import "../components/component.sass";
 
 const SampleNextArrow = props => {
   const { className, currentSlide, slideCount, onClick } = props;
