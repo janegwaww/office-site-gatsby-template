@@ -73,11 +73,14 @@ $input-placeholder-color: $placeholder-color
       border-bottom-width: 2px
       border-bottom-color: transparent
       font-size: 1.125rem
+      -webkit-tap-highlight-color: transparent
     ul
       justify-content: space-around
-    li.is-active
-      a
-        border-bottom-width: 2px
+    li
+      -webkit-tap-highlight-color: rgba(0,0,0,0)
+      &.is-active
+        a
+          border-bottom-width: 2px
 
 .image
   &.is-20x20
@@ -115,6 +118,8 @@ $input-placeholder-color: $placeholder-color
     &:not(.is-multiple):not(.is-loading)::after
       border-radius: 0
       border-color: #666666
+      border-bottom-width: 2px
+      border-left-width: 2px
 
 .content .taglist
   list-style: none
