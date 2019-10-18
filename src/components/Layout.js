@@ -7,13 +7,15 @@ import useSiteMetadata from "./SiteMetadata";
 import { withPrefix } from "gatsby";
 
 const TemplateWrapper = ({ children }) => {
-  const { title, description } = useSiteMetadata();
+  const { title, description, keywords, author } = useSiteMetadata();
   return (
     <div>
       <Helmet>
         <html lang="en" className="has-navbar-fixed-top" />
         <title>{title}</title>
+        <meta name="keywords" content={keywords} />
         <meta name="description" content={description} />
+        <meta name="author" content={author} />
 
         <link
           rel="apple-touch-icon"
@@ -32,7 +34,6 @@ const TemplateWrapper = ({ children }) => {
           href={`${withPrefix("/")}img/favicon-16x16.png`}
           sizes="16x16"
         />
-
         <link
           rel="mask-icon"
           href={`${withPrefix("/")}img/logo-copy.png`}
@@ -45,7 +46,7 @@ const TemplateWrapper = ({ children }) => {
         <meta property="og:url" content="/" />
         <meta
           property="og:image"
-          content={`${withPrefix("/")}img/aboutus1.jpg`}
+          content={`${withPrefix("/")}img/logo-copy.png`}
         />
       </Helmet>
       <Navbar />

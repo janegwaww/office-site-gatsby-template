@@ -81,13 +81,13 @@
   +desktop-only
     .solution-card
       .solution-card-right
-        padding: 2rem 0.8rem
+        padding: 2rem 2.5rem
         .solution-detail
           max-height: 72px
   +widescreen-only
     .solution-card
       .solution-card-right
-        padding: 2rem 0.8rem
+        /* padding: 2rem 0.8rem
         .solution-detail
           max-height: 96px
 /* ------solution-tab end-------
@@ -100,6 +100,8 @@
 
 /* ------about us start-------
 .about-us
+  .about-us-content.section
+    padding: 100px 1.5rem
   +mobile
     .about-us-content.section
       padding: 1.875em 1.5em 1.875em
@@ -165,6 +167,17 @@ footer
     background-color: transparent
     .footer-above
       margin-bottom: 1.8rem
+    .footer-bottom
+      .gov-code
+        display: flex
+        justify-content: space-between
+        flex-wrap: wrap
+        @include tablet
+          min-width: 450px
+        .gov-icon
+          margin-right: 10px
+          @include mobile
+            margin-right: 5px
     .menu-list
       margin-top: 0
       margin-left: 0

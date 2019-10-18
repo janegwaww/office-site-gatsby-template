@@ -16,15 +16,27 @@ const FooterMobile = () => (
 );
 
 const FooterBottom = () => (
-  <div className="content  has-background-black is-size-6 has-text-grey">
+  <div className="footer-bottom content has-background-black is-size-6 has-text-grey">
     <div className="container">
       <div className="columns is-mobile">
         <div className="column is-10 is-offset-1">
           <div className="level">
             <div className="level-left has-text-centered is-size-7-mobile">
-              <a className="bd-notification is-primary has-text-grey">
-                粤ICP备19120979号-1
-              </a>
+              <div className="gov-code">
+                <div style={{ display: "flex", alignItems: "center" }}>
+                  <span className="gov-icon image is-20x20 is-10x10-mobile">
+                    <img src={"./img/gov.png"} alt="gov" />
+                  </span>
+                  <a className="bd-notification is-primary has-text-grey">
+                    粤公网安备 44030702002640号
+                  </a>
+                </div>
+                <div>
+                  <a className="bd-notification is-primary has-text-grey">
+                    粤ICP备19120979号-1
+                  </a>
+                </div>
+              </div>
             </div>
             <div className="level-right has-text-centered is-size-7-mobile">
               <p className="bd-notification is-primary">

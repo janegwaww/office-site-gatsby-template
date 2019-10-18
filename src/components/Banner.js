@@ -33,7 +33,7 @@ function Banner({ isMobile }) {
               : "./img/index-banner.png"
           })`,
           height: isMobile ? "190px" : "570px",
-          backgroundColor: `gray`,
+          backgroundColor: `white`,
           backgroundPosition: "center",
           backgroundSize: "cover"
         }}

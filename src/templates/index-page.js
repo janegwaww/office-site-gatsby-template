@@ -47,11 +47,7 @@ const RatePanel = ({ rateItems = [] }) => {
 const LoadableBanner = Loadable({
   loader: () => import("../components/Banner"),
   loading() {
-    return (
-      <div className="full-width-image">
-        <div className="title">Loading...</div>
-      </div>
-    );
+    return <div className="full-width-image"></div>;
   }
 });
 
