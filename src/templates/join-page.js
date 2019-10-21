@@ -8,7 +8,7 @@ const JoinInput = ({}) => (
   <div className="columns is-mobile">
     <div className="column is-4">
       <div className="control is-expanded has-icons-right">
-        <div className="select haetek-select is-fullwidth">
+        <div className="select h-select is-fullwidth">
           <select defaultValue={{ value: 0 }} className="is-size-7-mobile">
             <option>搜索地点</option>
             <option>深圳</option>
@@ -18,7 +18,7 @@ const JoinInput = ({}) => (
     </div>
     <div className="column is-4">
       <div className="control is-expanded has-icons-right">
-        <div className="select haetek-select is-fullwidth">
+        <div className="select h-select is-fullwidth">
           <select defaultValue={{ value: 0 }} className="is-size-7-mobile">
             <option style={{ color: "#BBBBBB" }}>搜索岗位</option>
             <option>开发部</option>
