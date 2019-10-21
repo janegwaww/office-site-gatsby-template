@@ -10,7 +10,7 @@ import SolutionTabs from "../components/SolutionTabs";
 
 const RatePanel = ({ rateItems = [] }) => {
   const Item = ({ info = {} }) => (
-    <div className="rate-panel has-text-centered">
+    <div className="has-text-centered">
       <p className="is-size-3 has-text-white is-size-5-5-mobile">
         {info.description}
       </p>
@@ -28,7 +28,7 @@ const RatePanel = ({ rateItems = [] }) => {
   );
   return (
     <div
-      className="level is-mobile is-paddingless-tablet"
+      className="rate-panel level is-mobile is-paddingless-tablet"
       style={{ padding: "0rem 1rem" }}
     >
       <div className="level-left">
@@ -82,13 +82,8 @@ export function IndexPageTemplate({ features, solution, business, rate }) {
         </div>
       </section>
       <section
-        className="section section--gradient"
-        style={{
-          backgroundImage: `url(${coopImg})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          padding: "2.25rem 1.5rem 3rem 1.5rem"
-        }}
+        className="business-icon-section section section--gradient"
+        style={{ backgroundImage: `url(${coopImg})` }}
       >
         <div className="container">
           <div className="columns">
@@ -99,12 +94,8 @@ export function IndexPageTemplate({ features, solution, business, rate }) {
         </div>
       </section>
       <section
-        className="section has-background-link is-paddingless-mobile"
-        style={{
-          backgroundImage: `url(${rateImg})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center"
-        }}
+        className="rate-panel-section section has-background-link is-paddingless-mobile"
+        style={{ backgroundImage: `url(${rateImg})` }}
       >
         <div className="container">
           <div className="columns">

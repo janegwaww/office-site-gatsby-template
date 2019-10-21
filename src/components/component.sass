@@ -1,6 +1,21 @@
 @import "~bulma/sass/utilities/mixins"
 
 
+// home page start
+.home
+  .business-icon-section
+    background-size: cover
+    background-position: center
+    padding: 2.25rem 1.5rem 3rem
+    @include mobile
+      padding: 1.5rem 1.5rem 2.25rem
+  .rate-panel-section
+    background-size: cover
+    background-position: center
+    .column
+      padding: 0.75rem 0 1.5rem
+// home page end
+
 /* -----index banner start------
 .index-banner
   +mobile
@@ -92,11 +107,12 @@
           max-height: 96px
 /* ------solution-tab end-------
 
-// business card
+// business card start
 .business-card
   +mobile
     img
       border-radius: 2px
+// business card end
 
 /* ------about us start-------
 .about-us

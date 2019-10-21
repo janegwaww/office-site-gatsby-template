@@ -5,7 +5,7 @@ import qr from "../img/qrcode.png";
 const FooterMobile = () => (
   <div
     className="footer-mobile content is-hidden-tablet is-size-7-mobile has-text-centered"
-    style={{ color: "#999999", padding: "1.13rem 0 8px" }}
+    style={{ color: "#999999", padding: "0.75rem 0 0" }}
   >
     <div className="container">
       <p>黑顿科技公众号&ensp;&ensp;|&ensp;&ensp;市场部联系电话</p>
