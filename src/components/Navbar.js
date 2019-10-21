@@ -17,6 +17,7 @@ const Navbar = class extends React.Component {
   componentDidMount() {
     this._activeNavHandle(
       globalHistory.location.pathname
+        .replace(/\/$/, "")
         .split("/")
         .pop()
         .replace(/\-/, "")
@@ -49,7 +50,7 @@ const Navbar = class extends React.Component {
   _activeNavHandle = nav => {
     this.setState({
       activeNav: {
-        [nav === "" ? "home" : nav]: "is-active"
+        [nav ? nav : "home"]: "is-active"
       }
     });
   };

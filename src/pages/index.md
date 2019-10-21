@@ -1,5 +1,6 @@
 ---
 templateKey: index-page
+path: "/"
 tags: [home]
 image: /img/index-banner.png
 heading: home page
