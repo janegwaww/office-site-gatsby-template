@@ -27,14 +27,18 @@ const FooterBottom = () => (
                   <span className="gov-icon image is-20x20 is-10x10-mobile">
                     <img src={"./img/gov.png"} alt="gov" />
                   </span>
-                  <a className="bd-notification is-primary has-text-grey">
+                  <a
+                    className="bd-notification is-primary has-text-grey"
+                    href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702002640"
+                    target="_blank"
+                  >
                     粤公网安备 44030702002640号
                   </a>
                 </div>
                 <div>
-                  <a className="bd-notification is-primary has-text-grey">
+                  <span className="bd-notification is-primary has-text-grey">
                     粤ICP备19120979号-1
-                  </a>
+                  </span>
                 </div>
               </div>
             </div>
