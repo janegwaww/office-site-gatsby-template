@@ -8,7 +8,18 @@ const FooterMobile = () => (
     style={{ color: "#999999", padding: "0.75rem 0 0" }}
   >
     <div className="container">
-      <p>黑顿科技公众号&ensp;&ensp;|&ensp;&ensp;市场部联系电话</p>
+      <p>
+        <span
+          className="tooltip has-tooltip-top"
+          data-tooltip="haetek_20190801"
+        >
+          黑顿科技公众号
+        </span>
+        &ensp;&ensp;|&ensp;&ensp;
+        <span className="tooltip has-tooltip-top" data-tooltip="155-2412-0109">
+          市场部联系电话
+        </span>
+      </p>
       <p>peizhengqi@kc-group.com.cn</p>
       <p>广东省深圳市龙岗区龙翔大道7188号万科大厦3109</p>
     </div>
