@@ -1,5 +1,19 @@
 var proxy = require("http-proxy-middleware");
 
+const baiduAnalyticsConditionalConfig = () => {
+  // 生产环境下加载百度统计
+  if (process.env.NODE_ENV === "production") {
+    return {
+      resolve: `gatsby-plugin-baidu-analytics`,
+      options: {
+        siteId: "55635412905eb8d0d22476d497a731c0",
+        head: false
+      }
+    };
+  }
+  return { resolve: `gatsby-plugin-baidu-analytics` };
+};
+
 module.exports = {
   pathPrefix: `/gatsby-starter-netlify-cms`,
   siteMetadata: {
@@ -78,13 +92,7 @@ module.exports = {
         purgeOnly: ["/all.sass"] // applies purging only on the bulma css file
       }
     }, // must be after other CSS plugins
-    {
-      resolve: `gatsby-plugin-baidu-analytics`,
-      options: {
-        siteId: "55635412905eb8d0d22476d497a731c0",
-        head: false
-      }
-    },
+    baiduAnalyticsConditionalConfig(),
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
