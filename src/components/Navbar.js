@@ -94,6 +94,13 @@ const Navbar = class extends React.Component {
               </Link>
               <Link
                 className="navbar-item is-tab"
+                to="/case"
+                activeClassName={activeNav.case}
+              >
+                客户案例
+              </Link>
+              <Link
+                className="navbar-item is-tab"
                 to="/about-us"
                 activeClassName={activeNav.aboutus}
               >
