@@ -20,6 +20,7 @@ $navbar-height: 3.75rem
 $body-color: #333
 $black: #2b2523
 $input-placeholder-color: $placeholder-color
+$table-cell-border: 1px solid hsl(0°, 0%, 92%)
 
 .is-size-2-5
   font-size: 2.25rem !important
@@ -32,9 +33,16 @@ $input-placeholder-color: $placeholder-color
 
 .has-margin-bottom-30
   margin-bottom: 30px !important
+.has-margin-bottom-40
+  margin-bottom: 40px !important
 
 .has-text-666
-  color: hsl(0°, 0%, 40%)
+  color: hsl(0°, 0%, 40%) !important
+.has-text-333
+  color: #333333
+
+.margin-auto
+  margin: auto !important
 
 .has-background-grey-1
   background-color: hsl(216°, 20%, 95%)
@@ -92,6 +100,12 @@ $input-placeholder-color: $placeholder-color
       &.is-active
         a
           border-bottom-width: 2px
+  &.is-left
+    a
+      color: white
+      border-bottom-color: transparent
+    ul
+      border-bottom-color: transparent
 
 .image
   &.is-20x20
