@@ -1,154 +1,78 @@
-import React, { useState } from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 import ProductTitle from "../components/ProductTitle";
-import ProductAdvantages from "../components/ProductAdvantages";
-import ProductTabCard from "../components/ProductTabCard";
-import ProductHoner from "../components/ProductHoner";
+import ProductMethodTitle from "../components/ProductMethodTitle";
+import ProductAdvantageTable from "../components/ProductAdvantageTable";
 
-const tabItems = [
-  { index: "features", name: "产品功能", className: "is-active" },
-  { index: "advantages", name: "产品优势", className: "" },
-  { index: "structure", name: "解决方案架构", className: "" },
-  { index: "multiple", name: "多项架构图", className: "" },
-  { index: "scenario", name: "应用场景", className: "" },
-  { index: "practice", name: "内部实践", className: "" },
-  { index: "honor", name: "荣誉与成就", className: "" },
-  { index: "step", name: "使用步骤", className: "" }
-];
-
-const ProductCenterTemplate = ({
-  image,
-  methods,
-  advantages,
-  structure,
-  solutions,
-  scenario,
-  honer
-}) => {
-  const [tabs, setTabs] = useState(tabItems);
-  const tabSelect = tab => {
-    setTabs(
-      tabs.map(o =>
-        o.index === tab
-          ? { ...o, className: "is-active" }
-          : { ...o, className: "" }
-      )
-    );
-  };
+const SeekerTabContent = ({ method, advantage, imageInfo = {} }) => {
+  const { image } = imageInfo;
   return (
-    <div className="product-center">
-      <div
-        className="full-width-image margin-top-0"
-        style={{
-          height: "580px",
-          backgroundImage: `url(${
-            !!image ? image.childImageSharp.fluid.src : image
-          })`,
-          backgroundSize: `cover`
-        }}
-      >
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <ProductTitle />
-          </div>
-        </div>
-      </div>
-      <section className="has-background-black">
-        <div className="tabs is-centered">
-          <ul>
-            {tabs.map((o, i) => (
-              <li className={o.className} key={i}>
-                <a href={`#${o.index}`} onClick={() => tabSelect(o.index)}>
-                  {o.name}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-      <section id="features" className="section has-background-grey-lighter">
+    <div>
+      <section className="section h-section has-background-grey-1">
         <div className="container">
           <div className="columns">
             <div className="column is-10 is-offset-1">
-              <div className="content">
-                <h3 className="has-text-centered">{methods.heading}</h3>
-                <br />
-                <ProductTabCard cardInfo={methods.blurbs} />
-              </div>
+              <ProductMethodTitle method={method} />
             </div>
           </div>
         </div>
       </section>
-      <section id="advantages" className="section section--gradient">
+      <section className="section h-section section--gradient">
         <div className="container">
           <div className="columns">
             <div className="column is-10 is-offset-1">
-              <div className="content">
-                <ProductAdvantages advInfo={advantages} />
-              </div>
+              <ProductAdvantageTable tableInfo={advantage}/>
             </div>
           </div>
         </div>
       </section>
-      <section id="structure" className="section has-background-grey-lighter">
+      <section>
+        <div
+          style={{
+            height: "698px",
+            backgroundImage: `url(${
+              !!image ? image.childImageSharp.fluid.src : image
+            })`,
+            backgroundSize: "cover",
+            backgroundPosition: "center"
+          }}
+        ></div>
+      </section>
+    </div>
+  );
+};
+
+const InfoPlusTabContent = ({ method, advantage, imageInfo }) => {
+  const { image } = imageInfo;
+  return (
+    <div>
+      <section className="section h-section has-background-grey-1">
         <div className="container">
           <div className="columns">
             <div className="column is-10 is-offset-1">
-              <div className="content">
-                <h3 className="has-text-centered">{structure.heading}</h3>
-                <br />
-                <div
-                  className="container has-background-white"
-                  style={{
-                    boxShadow: "0px 2px 10px 2px rgba(0,0,0,0.15)",
-                    padding: "1.5rem 1.5rem"
-                  }}
-                >
-                  <PreviewCompatibleImage imageInfo={structure} />
-                </div>
-              </div>
+              <ProductMethodTitle method={method}/>
             </div>
           </div>
         </div>
       </section>
-      <section id="solution" className="section has-background-white">
+      <section className="section h-section section--gradient">
         <div className="container">
           <div className="columns">
             <div className="column is-10 is-offset-1">
-              <div className="content">
-                <h3 className="has-text-centered">{solutions.heading}</h3>
-                <br />
-                <ProductTabCard cardInfo={solutions.blurbs} />
-              </div>
+              <ProductAdvantageTable tableInfo={advantage}/>
             </div>
           </div>
         </div>
       </section>
-      <section id="scenario" className="section has-background-grey-lighter">
+      <section className="section has-background-grey-1">
         <div className="container">
           <div className="columns">
             <div className="column is-10 is-offset-1">
-              <div className="content">
-                <h3 className="has-text-centered">{scenario.heading}</h3>
-                <br />
-                <ProductTabCard cardInfo={scenario.blurbs} />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section id="honor" className="section has-background-white">
-        <div className="container">
-          <div className="columns">
-            <div className="column is-10 is-offset-1">
-              <div className="content">
-                <h3 className="has-text-centered">{honer.heading}</h3>
-                <br />
-                <ProductHoner honerInfo={honer.image1} />
-              </div>
+              <div className="is-size-2-5 has-text-centered has-margin-bottom-40">方案架构</div>
+                <PreviewCompatibleImage imageInfo={{...imageInfo, style:{borderRadius:"unset"}}}/>
             </div>
           </div>
         </div>
@@ -157,14 +81,142 @@ const ProductCenterTemplate = ({
   );
 };
 
+const HDPPTabContent = ({ method, datapool }) => (
+  <div>
+    <section className="section h-section has-background-grey-1">
+      <div className="container">
+        <div className="columns">
+          <div className="column is-10 is-offset-1">
+            <ProductMethodTitle method={method}/>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section className="section">
+      <div className="container">
+        <div className="columns">
+          <div className="column is-10 is-offset-1">
+            <div className="is-size-2-5 has-text-centered has-margin-bottom-40">数据池</div>
+            <div className="columns is-multiline">
+              {datapool.map((o,i) => (
+                <div className="column is-4" key={i}>
+                  <figure className="image is-48x48 margin-auto">
+                    <PreviewCompatibleImage imageInfo={o}/>
+                  </figure>
+                  <div className="is-size-6 has-text-centered has-text-333" style={{lineHeight:'21px',padding:'20px'}}>{o.head}</div>
+                  <div className="is-size-6-5 has-text-666" style={{lineHeight:'26px'}}>{o.content}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+);
+
+class ProductCenterTemplate extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeTab: {},
+      tabs: this.props.tabs.map(i => i.index==='seeker' ? {...i, className: 'is-active'} : i)
+    };
+  }
+
+  componentDidMount() {
+    this.setState({ activeTab: { seeker: 'is-active' }});
+  }
+
+  handleTab = (index) => {
+    const { tabs } = this.state;
+    this.setState({
+      activeTab:{ [index]:'is-active' },
+      tabs: tabs.map(i => i.index===index ? {...i, className: 'is-active'} : { ...i, className: ''})
+    });
+  }
+
+  render() {
+    const {
+      image,
+      header,
+      methods,
+      advantages,
+      banner,
+      datapool
+    } = this.props;
+    const { activeTab, tabs } = this.state;
+    return (
+      <div className="product-center">
+        <div
+          className="full-width-image margin-top-0"
+          style={{
+            height: "580px",
+            backgroundImage: `url(${
+              !!image ? image.childImageSharp.fluid.src : image
+            })`,
+            backgroundSize: `cover`
+          }}
+        >
+          <div className="columns">
+            <div className="column is-10 is-offset-1">
+              <ProductTitle info={header} />
+            </div>
+          </div>
+        </div>
+        {/* tabs */}
+        <section className="has-background-black">
+          <div className="container">
+            <div className="columns">
+              <div className="column is-10 is-offset-1">
+                <div className="tabs-header">
+                  <div className="tabs is-left">
+                    <ul>
+                      {tabs.map((o, i) => (
+                        <li key={i} onClick={() => this.handleTab(o.index)} className={o.className}>
+                          <a>{o.name}</a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        {/* tabs content */}
+        <div className="tabs-content">
+          <div className={`tab-content ${activeTab.seeker}`}>
+            <SeekerTabContent
+              method={methods[0]}
+              advantage={advantages[0]}
+              imageInfo={banner[0]}
+            />
+          </div>
+          <div className={`tab-content ${activeTab.infoplus}`}>
+            <InfoPlusTabContent
+              method={methods[1]}
+              advantage={advantages[1]}
+              imageInfo={banner[1]}
+            />
+          </div>
+          <div className={`tab-content ${activeTab.hdpp}`}>
+            <HDPPTabContent method={methods[2]} datapool={datapool} />
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+
 ProductCenterTemplate.propTypes = {
   image: PropTypes.object,
-  methods: PropTypes.object,
-  advantages: PropTypes.object,
-  structure: PropTypes.object,
-  solutions: PropTypes.object,
-  scenario: PropTypes.object,
-  honer: PropTypes.object
+  header: PropTypes.object,
+  tabs: PropTypes.array,
+  methods: PropTypes.array,
+  advantages: PropTypes.array,
+  banner: PropTypes.array,
+  datapool: PropTypes.array
 };
 
 const ProductCenter = ({ data }) => {
@@ -173,12 +225,12 @@ const ProductCenter = ({ data }) => {
     <Layout>
       <ProductCenterTemplate
         image={frontmatter.image}
+        header={frontmatter.header}
+        tabs={frontmatter.tabs}
         methods={frontmatter.methods}
         advantages={frontmatter.advantages}
-        structure={frontmatter.structure}
-        solutions={frontmatter.solutions}
-        scenario={frontmatter.scenario}
-        honer={frontmatter.honer}
+        banner={frontmatter.productbanner}
+        datapool={frontmatter.datapool}
       />
     </Layout>
   );
@@ -205,41 +257,36 @@ export const productCenterQuery = graphql`
             }
           }
         }
+        header {
+          heading
+          description
+        }
+        tabs {
+          name
+          index
+        }
         methods {
           heading
-          blurbs {
-            heading
-            alt
-            image {
-              childImageSharp {
-                fluid(maxWidth: 2048, quality: 100) {
-                  ...GatsbyImageSharpFluid
-                }
+          image {
+            childImageSharp {
+              fluid(maxWidth: 600, quality: 100) {
+                ...GatsbyImageSharpFluid
               }
             }
-            description {
-              heading
-              description
-            }
           }
+          alt
+          description
         }
         advantages {
           heading
-          blurbs {
-            image {
-              childImageSharp {
-                fluid(maxWidth: 2048, quality: 100) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            alt
-            heading
-            description
+          index
+          description {
+            th
+            tr
+            tc
           }
         }
-        structure {
-          heading
+        productbanner {
           image {
             childImageSharp {
               fluid(maxWidth: 2048, quality: 100) {
@@ -249,58 +296,17 @@ export const productCenterQuery = graphql`
           }
           alt
         }
-        solutions {
-          heading
-          blurbs {
-            heading
-            image {
-              childImageSharp {
-                fluid(maxWidth: 2048, quality: 100) {
-                  ...GatsbyImageSharpFluid
-                }
+        datapool {
+          image {
+            childImageSharp {
+              fluid(maxWidth: 600, quality: 100) {
+                ...GatsbyImageSharpFluid
               }
             }
-            alt
-            title
-            explanation
-            description {
-              heading
-              description
-            }
           }
-        }
-        scenario {
-          heading
-          blurbs {
-            heading
-            image {
-              childImageSharp {
-                fluid(maxWidth: 2048, quality: 100) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            alt
-            title
-            explanation
-            description {
-              heading
-              description
-            }
-          }
-        }
-        honer {
-          heading
-          image1 {
-            image {
-              childImageSharp {
-                fluid(maxWidth: 2048, quality: 100) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            alt
-          }
+          alt
+          head
+          content
         }
       }
     }
