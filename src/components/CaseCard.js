@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import LinesEllipsis from "react-lines-ellipsis";
-// import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
+import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 
 const CaseCard = ({ info = {} }) => {
   const cardHandle = e => {
@@ -12,9 +12,8 @@ const CaseCard = ({ info = {} }) => {
     <div className="case-card" onClick={cardHandle}>
       <div
         className="has-background-grey-lighter"
-        style={{ minHeight: "240px" }}
       >
-        {/* <PreviewCompatibleImage imageInfo={info} /> */}
+        <PreviewCompatibleImage imageInfo={{...info,style:{borderRadius:'unset'}}} />
       </div>
       <div style={{ padding: "30px" }}>
         <div className="is-size-6 has-text-gray-333 has-margin-bottom-20">
