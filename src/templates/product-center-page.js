@@ -222,7 +222,7 @@ ProductCenterTemplate.propTypes = {
   tabs: PropTypes.array,
   methods: PropTypes.array,
   advantages: PropTypes.array,
-  banner: PropTypes.array,
+  banner: PropTypes.object,
   datapool: PropTypes.array,
 };
 
