@@ -23,50 +23,53 @@ const ProductAdvantageTable = ({tableInfo}) => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th className="tr">
-              <p className="tr-text">{description.tr[0]}</p>
-            </th>
-            {cells[0].map((o, i) => (
-              <th key={i} className="tc is-size-6-5 has-text-666">
-                {o.split("/").map((o, i) => (
-                  <p key={i}>{o}</p>
-                ))}
+          {description.tr.map((o, i) => (
+            <tr key={i}>
+              <th className="tr">
+                <p className="tr-text">{o}</p>
               </th>
-            ))}
-          </tr>
-          <tr>
-            <th className="tr">
-              <p className="tr-text">{description.tr[1]}</p>
-            </th>
-            {cells[1].map((o, i) => (
-              <th key={i} className="tc is-size-6-5 has-text-666">
-                {o.split("/").map((o, i) => (
-                  <p key={i}>{o}</p>
-                ))}
-              </th>
-            ))}
-          </tr>
-          <tr>
-            <th className="tr">
-              <p className="tr-text">{description.tr[2]}</p>
-            </th>
-            {cells[2].map((o, i) => (
-              <th key={i} className="tc is-size-6-5 has-text-666">
-                {o.split("/").map((o, i) => (
-                  <p key={i}>{o}</p>
-                ))}
-              </th>
-            ))}
-          </tr>
+              {cells[i].map((j, k) => (
+                <th key={k} className="tc is-size-6-5 has-text-666">
+                  {j.split("/").map((h, g) => (
+                    <p key={g}>{h}</p>
+                  ))}
+                </th>
+              ))}
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
   );
 };
 
+ProductAdvantageTable.defaultProps = {
+  tableInfo: {
+    heading: "Product Advantage Table",
+    description: {
+      th: ["Our Product", "Other Product"],
+      tr: ["Function 1", "Function 2", "Function 3"],
+      tc: [
+        "- Advantage 1/- Advantage 2",
+        "- Advantage 3/- Advantage 4",
+        "- Advantage 5/- Advantage 6",
+        "- Advantage 7/- Advantage 8",
+        "- Advantage 9/- Advantage 10",
+        "- Advantage 11/- Advantage 12",
+      ],
+    },
+  },
+};
+
 ProductAdvantageTable.propTypes = {
-  tableInfo: PropTypes.object,
+  tableInfo: PropTypes.shape({
+    description: PropTypes.shape({
+      th: PropTypes.array,
+      tr: PropTypes.array,
+      tc: PropTypes.array,
+    }),
+    heading: PropTypes.string,
+  }),
 };
 
 export default ProductAdvantageTable;

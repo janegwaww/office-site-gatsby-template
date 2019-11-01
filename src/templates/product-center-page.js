@@ -6,9 +6,9 @@ import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 import ProductTitle from "../components/ProductTitle";
 import ProductMethodTitle from "../components/ProductMethodTitle";
 import ProductAdvantageTable from "../components/ProductAdvantageTable";
+import ProductSeekerBanner from "../components/ProductSeekerBanner";
 
 const SeekerTabContent = ({method, advantage, imageInfo = {}}) => {
-  const {image} = imageInfo;
   return (
     <div>
       <section className="section h-section has-background-grey-1">
@@ -30,16 +30,7 @@ const SeekerTabContent = ({method, advantage, imageInfo = {}}) => {
         </div>
       </section>
       <section>
-        <div
-          style={{
-            height: "698px",
-            backgroundImage: `url(${
-              !!image ? image.childImageSharp.fluid.src : image
-            })`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        ></div>
+        <ProductSeekerBanner bannerInfo={imageInfo} />
       </section>
     </div>
   );
@@ -179,24 +170,22 @@ class ProductCenterTemplate extends Component {
           </div>
         </div>
         {/* tabs */}
-        <section className="has-background-black">
+        <section className="has-background-black h-product-navbar">
           <div className="container">
             <div className="columns">
               <div className="column is-10 is-offset-1">
-                <div className="tabs-header">
-                  <div className="tabs is-left">
-                    <ul>
-                      {tabs.map((o, i) => (
-                        <li
-                          key={i}
-                          onClick={() => this.handleTab(o.index)}
-                          className={o.className}
-                        >
-                          <a>{o.name}</a>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                <div className="tabs is-left">
+                  <ul>
+                    {tabs.map((o, i) => (
+                      <li
+                        key={i}
+                        onClick={() => this.handleTab(o.index)}
+                        className={o.className}
+                      >
+                        <a>{o.name}</a>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             </div>
@@ -208,14 +197,14 @@ class ProductCenterTemplate extends Component {
             <SeekerTabContent
               method={methods[0]}
               advantage={advantages[0]}
-              imageInfo={banner[0]}
+              imageInfo={banner.seeker}
             />
           </div>
           <div className={`tab-content ${activeTab.infoplus}`}>
             <InfoPlusTabContent
               method={methods[1]}
               advantage={advantages[1]}
-              imageInfo={banner[1]}
+              imageInfo={banner.infoplus}
             />
           </div>
           <div className={`tab-content ${activeTab.hdpp}`}>
@@ -303,14 +292,36 @@ export const productCenterQuery = graphql`
           }
         }
         productbanner {
-          image {
-            childImageSharp {
-              fluid(maxWidth: 2048, quality: 100) {
-                ...GatsbyImageSharpFluid
+          seeker {
+            image {
+              childImageSharp {
+                fluid(maxWidth: 2048, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
               }
             }
+            alt
+            seekerslider {
+              image {
+                childImageSharp {
+                  fluid(maxWidth: 1000, quality: 100) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
+              alt
+            }
           }
-          alt
+          infoplus {
+            image {
+              childImageSharp {
+                fluid(maxWidth: 2048, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            alt
+          }
         }
         datapool {
           image {

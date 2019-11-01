@@ -104,9 +104,16 @@ $table-cell-border: 1px solid hsl(0°, 0%, 92%)
     a
       color: white
       border-bottom-color: transparent
+      padding-left: 0
+      padding-right: 0
+      border-bottom-width: 2px
+      border-bottom-color: transparent
+      font-size: 1rem
+      -webkit-tap-highlight-color: transparent
     ul
       border-bottom-color: transparent
-
+      li:not(:last-child)
+        margin-right: 60px
 .image
   &.is-20x20
     width: 20px
