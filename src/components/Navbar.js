@@ -1,6 +1,6 @@
 import React from "react";
-import { globalHistory } from "@reach/router";
-import { Link } from "gatsby";
+import {globalHistory} from "@reach/router";
+import {Link} from "gatsby";
 import logo from "../img/logo.png";
 
 const Navbar = class extends React.Component {
@@ -10,7 +10,7 @@ const Navbar = class extends React.Component {
       active: false,
       navBarActiveClass: "",
       activeNav: {},
-      logoWidth: "143"
+      logoWidth: "143",
     };
   }
 
@@ -20,10 +20,10 @@ const Navbar = class extends React.Component {
         .replace(/\/$/, "")
         .split("/")
         .pop()
-        .replace(/\-/, "")
+        .replace(/\-/, ""),
     );
     if (window.innerWidth <= 768) {
-      this.setState({ logoWidth: "100" });
+      this.setState({logoWidth: "100"});
     }
   }
 
@@ -31,38 +31,38 @@ const Navbar = class extends React.Component {
     //   toggle the active boolean in the state
     this.setState(
       {
-        active: !this.state.active
+        active: !this.state.active,
       },
       //   after state has been updated,
       () => {
         //   set the class in state for the navbar accordingly
         this.state.active
           ? this.setState({
-              navBarActiveClass: "is-active"
+              navBarActiveClass: "is-active",
             })
           : this.setState({
-              navBarActiveClass: ""
+              navBarActiveClass: "",
             });
-      }
+      },
     );
   };
 
   _activeNavHandle = nav => {
     this.setState({
       activeNav: {
-        [nav ? nav : "home"]: "is-active"
-      }
+        [nav ? nav : "home"]: "is-active",
+      },
     });
   };
 
   render() {
-    const { activeNav, logoWidth } = this.state;
+    const {activeNav, logoWidth} = this.state;
     return (
       <nav
         className="navbar is-fixed-top has-shadow is-transparent"
         role="navigation"
         aria-label="main navigation"
-        style={{ boxShadow: "0px 2px 10px 0px rgba(0,0,0,0.1)" }}
+        style={{boxShadow: "0px 2px 10px 0px rgba(0,0,0,0.1)"}}
       >
         <div className="container">
           <div className="navbar-brand">
@@ -140,7 +140,7 @@ const Navbar = class extends React.Component {
                       width: "1px",
                       borderLeft: "2px solid rgba(193,193,193,1)",
                       height: "21px",
-                      margin: "0 6px 0 6px"
+                      margin: "0 6px 0 6px",
                     }}
                   ></span>
                   <a href="#top">EN</a>

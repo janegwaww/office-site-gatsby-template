@@ -71,10 +71,23 @@ advantages:
               - "- 与我们的变量引擎产品相辅相成/- 挖掘“字面”背后的业务逻辑,生成用户专属的信息业务知识图谱"
               - "- 功能单薄，主要专注于信息的“字面”智能,较少深入信息背后的业务逻辑"
 productbanner:
-    - image: /img/product/seeker-banner.png
-      alt: seeker show
-    - image: /img/product/infoplus.png
-      alt: infoplus show
+    seeker:
+        image: /img/product/seeker-banner.png
+        alt: seeker show
+        seekerslider:
+            - image: /img/product/slider1.png
+              alt: seeker search engine
+            - image: /img/product/slider2.png
+              alt: seeker search engine
+            - image: /img/product/slider3.png
+              alt: seeker search engine
+            - image: /img/product/slider4.png
+              alt: seeker search engine
+            - image: /img/product/slider5.png
+              alt: seeker search engine
+    infoplus:
+        image: /img/product/infoplus.png
+        alt: infoplus show
 datapool:
     - image: /img/product/pool1.png
       alt: datapool logo
