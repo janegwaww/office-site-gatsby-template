@@ -1,14 +1,14 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import PropTypes from "prop-types";
-import { graphql } from "gatsby";
+import {graphql} from "gatsby";
 import Layout from "../components/Layout";
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 import ProductTitle from "../components/ProductTitle";
 import ProductMethodTitle from "../components/ProductMethodTitle";
 import ProductAdvantageTable from "../components/ProductAdvantageTable";
 
-const SeekerTabContent = ({ method, advantage, imageInfo = {} }) => {
-  const { image } = imageInfo;
+const SeekerTabContent = ({method, advantage, imageInfo = {}}) => {
+  const {image} = imageInfo;
   return (
     <div>
       <section className="section h-section has-background-grey-1">
@@ -24,7 +24,7 @@ const SeekerTabContent = ({ method, advantage, imageInfo = {} }) => {
         <div className="container">
           <div className="columns">
             <div className="column is-10 is-offset-1">
-              <ProductAdvantageTable tableInfo={advantage}/>
+              <ProductAdvantageTable tableInfo={advantage} />
             </div>
           </div>
         </div>
@@ -37,7 +37,7 @@ const SeekerTabContent = ({ method, advantage, imageInfo = {} }) => {
               !!image ? image.childImageSharp.fluid.src : image
             })`,
             backgroundSize: "cover",
-            backgroundPosition: "center"
+            backgroundPosition: "center",
           }}
         ></div>
       </section>
@@ -45,15 +45,14 @@ const SeekerTabContent = ({ method, advantage, imageInfo = {} }) => {
   );
 };
 
-const InfoPlusTabContent = ({ method, advantage, imageInfo }) => {
-  const { image } = imageInfo;
+const InfoPlusTabContent = ({method, advantage, imageInfo}) => {
   return (
     <div>
       <section className="section h-section has-background-grey-1">
         <div className="container">
           <div className="columns">
             <div className="column is-10 is-offset-1">
-              <ProductMethodTitle method={method}/>
+              <ProductMethodTitle method={method} />
             </div>
           </div>
         </div>
@@ -62,7 +61,7 @@ const InfoPlusTabContent = ({ method, advantage, imageInfo }) => {
         <div className="container">
           <div className="columns">
             <div className="column is-10 is-offset-1">
-              <ProductAdvantageTable tableInfo={advantage}/>
+              <ProductAdvantageTable tableInfo={advantage} />
             </div>
           </div>
         </div>
@@ -71,8 +70,12 @@ const InfoPlusTabContent = ({ method, advantage, imageInfo }) => {
         <div className="container">
           <div className="columns">
             <div className="column is-10 is-offset-1">
-              <div className="is-size-2-5 has-text-centered has-margin-bottom-40">方案架构</div>
-                <PreviewCompatibleImage imageInfo={{...imageInfo, style:{borderRadius:"unset"}}}/>
+              <div className="is-size-2-5 has-text-centered has-margin-bottom-40">
+                方案架构
+              </div>
+              <PreviewCompatibleImage
+                imageInfo={{...imageInfo, style: {borderRadius: "unset"}}}
+              />
             </div>
           </div>
         </div>
@@ -81,13 +84,13 @@ const InfoPlusTabContent = ({ method, advantage, imageInfo }) => {
   );
 };
 
-const HDPPTabContent = ({ method, datapool }) => (
+const HDPPTabContent = ({method, datapool}) => (
   <div>
     <section className="section h-section has-background-grey-1">
       <div className="container">
         <div className="columns">
           <div className="column is-10 is-offset-1">
-            <ProductMethodTitle method={method}/>
+            <ProductMethodTitle method={method} />
           </div>
         </div>
       </div>
@@ -96,15 +99,27 @@ const HDPPTabContent = ({ method, datapool }) => (
       <div className="container">
         <div className="columns">
           <div className="column is-10 is-offset-1">
-            <div className="is-size-2-5 has-text-centered has-margin-bottom-40">数据池</div>
+            <div className="is-size-2-5 has-text-centered has-margin-bottom-40">
+              数据池
+            </div>
             <div className="columns is-multiline">
-              {datapool.map((o,i) => (
+              {datapool.map((o, i) => (
                 <div className="column is-4" key={i}>
                   <figure className="image is-48x48 margin-auto">
-                    <PreviewCompatibleImage imageInfo={o}/>
+                    <PreviewCompatibleImage imageInfo={o} />
                   </figure>
-                  <div className="is-size-6 has-text-centered has-text-333" style={{lineHeight:'21px',padding:'20px'}}>{o.head}</div>
-                  <div className="is-size-6-5 has-text-666" style={{lineHeight:'26px'}}>{o.content}</div>
+                  <div
+                    className="is-size-6 has-text-centered has-text-333"
+                    style={{lineHeight: "21px", padding: "20px"}}
+                  >
+                    {o.head}
+                  </div>
+                  <div
+                    className="is-size-6-5 has-text-666"
+                    style={{lineHeight: "26px"}}
+                  >
+                    {o.content}
+                  </div>
                 </div>
               ))}
             </div>
@@ -120,32 +135,31 @@ class ProductCenterTemplate extends Component {
     super(props);
     this.state = {
       activeTab: {},
-      tabs: this.props.tabs.map(i => i.index==='seeker' ? {...i, className: 'is-active'} : i)
+      tabs: this.props.tabs.map(i =>
+        i.index === "seeker" ? {...i, className: "is-active"} : i,
+      ),
     };
   }
 
   componentDidMount() {
-    this.setState({ activeTab: { seeker: 'is-active' }});
+    this.setState({activeTab: {seeker: "is-active"}});
   }
 
-  handleTab = (index) => {
-    const { tabs } = this.state;
+  handleTab = index => {
+    const {tabs} = this.state;
     this.setState({
-      activeTab:{ [index]:'is-active' },
-      tabs: tabs.map(i => i.index===index ? {...i, className: 'is-active'} : { ...i, className: ''})
+      activeTab: {[index]: "is-active"},
+      tabs: tabs.map(i =>
+        i.index === index
+          ? {...i, className: "is-active"}
+          : {...i, className: ""},
+      ),
     });
-  }
+  };
 
   render() {
-    const {
-      image,
-      header,
-      methods,
-      advantages,
-      banner,
-      datapool
-    } = this.props;
-    const { activeTab, tabs } = this.state;
+    const {image, header, methods, advantages, banner, datapool} = this.props;
+    const {activeTab, tabs} = this.state;
     return (
       <div className="product-center">
         <div
@@ -155,7 +169,7 @@ class ProductCenterTemplate extends Component {
             backgroundImage: `url(${
               !!image ? image.childImageSharp.fluid.src : image
             })`,
-            backgroundSize: `cover`
+            backgroundSize: `cover`,
           }}
         >
           <div className="columns">
@@ -173,7 +187,11 @@ class ProductCenterTemplate extends Component {
                   <div className="tabs is-left">
                     <ul>
                       {tabs.map((o, i) => (
-                        <li key={i} onClick={() => this.handleTab(o.index)} className={o.className}>
+                        <li
+                          key={i}
+                          onClick={() => this.handleTab(o.index)}
+                          className={o.className}
+                        >
                           <a>{o.name}</a>
                         </li>
                       ))}
@@ -216,11 +234,11 @@ ProductCenterTemplate.propTypes = {
   methods: PropTypes.array,
   advantages: PropTypes.array,
   banner: PropTypes.array,
-  datapool: PropTypes.array
+  datapool: PropTypes.array,
 };
 
-const ProductCenter = ({ data }) => {
-  const { frontmatter } = data.markdownRemark;
+const ProductCenter = ({data}) => {
+  const {frontmatter} = data.markdownRemark;
   return (
     <Layout>
       <ProductCenterTemplate
@@ -238,17 +256,15 @@ const ProductCenter = ({ data }) => {
 
 ProductCenter.propTypes = {
   data: PropTypes.shape({
-    frontmatter: PropTypes.object
-  })
+    frontmatter: PropTypes.object,
+  }),
 };
 
 export default ProductCenter;
 
 export const productCenterQuery = graphql`
   query ProductCenter {
-    markdownRemark(
-      frontmatter: { templateKey: { eq: "product-center-page" } }
-    ) {
+    markdownRemark(frontmatter: {templateKey: {eq: "product-center-page"}}) {
       frontmatter {
         image {
           childImageSharp {
