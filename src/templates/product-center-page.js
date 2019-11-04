@@ -90,10 +90,10 @@ const HDPPTabContent = ({method, datapool}) => (
       <div className="container">
         <div className="columns">
           <div className="column is-10 is-offset-1">
-            <div className="is-size-2-5 has-text-centered has-margin-bottom-40">
+            <div className="is-size-2-5 has-text-centered has-margin-bottom-30">
               数据池
             </div>
-            <div className="columns is-multiline">
+            <div className="data-pool-cards columns is-multiline">
               {datapool.map((o, i) => (
                 <div className="column is-4" key={i}>
                   <figure className="image is-48x48 margin-auto">
