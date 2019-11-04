@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import {Link} from "gatsby";
 
 function ProductTitle({info = {}}) {
   return (
@@ -39,12 +40,13 @@ function ProductTitle({info = {}}) {
               <a className="button is-blue is-fullwidth">立即使用</a>
             </div>
             <div className="column is-4 has-text-left">
-              <a
+              <Link
                 className="button is-fullwidth"
                 style={{backgroundColor: "transparent", color: "white"}}
+                to="/product-center/advisory"
               >
                 业务方案咨询
-              </a>
+              </Link>
             </div>
             <div className="column is-4 has-text-centered">
               <a
