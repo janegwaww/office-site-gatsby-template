@@ -160,12 +160,15 @@ class ProductCenterTemplate extends Component {
             backgroundImage: `url(${
               !!image ? image.childImageSharp.fluid.src : image
             })`,
+            backgroundPosition: "center",
             backgroundSize: `cover`,
           }}
         >
-          <div className="columns">
-            <div className="column is-10 is-offset-1">
-              <ProductTitle info={header} />
+          <div className="container">
+            <div className="columns">
+              <div className="column is-10 is-offset-1">
+                <ProductTitle info={header} />
+              </div>
             </div>
           </div>
         </div>
