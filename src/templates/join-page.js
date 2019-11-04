@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, {useState, useEffect} from "react";
 import PropTypes from "prop-types";
-import { graphql } from "gatsby";
+import {graphql} from "gatsby";
 import Layout from "../components/Layout";
 import JobCard from "../components/JobCard";
 
@@ -9,7 +9,7 @@ const JoinInput = ({}) => (
     <div className="column is-4">
       <div className="control is-expanded has-icons-right">
         <div className="select h-select is-fullwidth">
-          <select defaultValue={{ value: 0 }} className="is-size-7-mobile">
+          <select defaultValue={{value: 0}} className="is-size-7-mobile">
             <option>搜索地点</option>
             <option>深圳</option>
           </select>
@@ -19,8 +19,8 @@ const JoinInput = ({}) => (
     <div className="column is-4">
       <div className="control is-expanded has-icons-right">
         <div className="select h-select is-fullwidth">
-          <select defaultValue={{ value: 0 }} className="is-size-7-mobile">
-            <option style={{ color: "#BBBBBB" }}>搜索岗位</option>
+          <select defaultValue={{value: 0}} className="is-size-7-mobile">
+            <option style={{color: "#BBBBBB"}}>搜索岗位</option>
             <option>开发部</option>
             <option>算法部</option>
             <option>市场部</option>
@@ -37,7 +37,7 @@ const JoinInput = ({}) => (
         />
         <span className="icon is-small is-right">
           <i className="image is-20x20 is-13x13-mobile">
-            <img src="./img/search.png" width="20" height="20" />
+            <img src="../img/search.png" width="20" height="20" />
           </i>
         </span>
       </div>
@@ -45,9 +45,9 @@ const JoinInput = ({}) => (
   </div>
 );
 
-const JoinTemplate = ({ image, jobList = [] }) => {
+const JoinTemplate = ({image, jobList = []}) => {
   const [banner, setBanner] = useState(
-    `${!!image ? image.childImageSharp.fluid.src : image}`
+    `${!!image ? image.childImageSharp.fluid.src : image}`,
   );
   const [height, setHeight] = useState("450px");
   useEffect(() => {
@@ -64,7 +64,7 @@ const JoinTemplate = ({ image, jobList = [] }) => {
           height: height,
           backgroundImage: `url(${banner})`,
           backgroundSize: "cover",
-          backgroundPosition: "center"
+          backgroundPosition: "center",
         }}
       >
         <div className="has-text-centered">
@@ -105,11 +105,11 @@ const JoinTemplate = ({ image, jobList = [] }) => {
 
 JoinTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  jobList: PropTypes.array
+  jobList: PropTypes.array,
 };
 
-const Join = ({ data }) => {
-  const { frontmatter } = data.markdownRemark;
+const Join = ({data}) => {
+  const {frontmatter} = data.markdownRemark;
   return (
     <Layout>
       <JoinTemplate
@@ -124,7 +124,7 @@ export default Join;
 
 export const joinQuery = graphql`
   query Join($id: String!) {
-    markdownRemark(id: { eq: $id }) {
+    markdownRemark(id: {eq: $id}) {
       frontmatter {
         image {
           childImageSharp {

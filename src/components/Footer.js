@@ -1,11 +1,11 @@
 import React from "react";
-import { Link } from "gatsby";
+import {Link} from "gatsby";
 import qr from "../img/qrcode.png";
 
 const FooterMobile = () => (
   <div
     className="footer-mobile content is-hidden-tablet is-size-7-mobile has-text-centered"
-    style={{ color: "#999999", padding: "0.75rem 0 0" }}
+    style={{color: "#999999", padding: "0.75rem 0 0"}}
   >
     <div className="container">
       <p>
@@ -34,9 +34,9 @@ const FooterBottom = () => (
           <div className="level">
             <div className="level-left has-text-centered is-size-7-mobile">
               <div className="gov-code">
-                <div style={{ display: "flex", alignItems: "center" }}>
+                <div style={{display: "flex", alignItems: "center"}}>
                   <span className="gov-icon image is-20x20 is-10x10-mobile">
-                    <img src={"./img/gov.png"} alt="gov" />
+                    <img src={"../img/gov.png"} alt="gov" />
                   </span>
                   <a
                     className="bd-notification is-primary has-text-grey"
@@ -115,10 +115,10 @@ const Footer = class extends React.Component {
                         </li>
                         <li>
                           <Link className="h-navbar-item" to="/">
-                            <div style={{ display: "flex" }}>
+                            <div style={{display: "flex"}}>
                               <span className="image is-24x24">
                                 <img
-                                  src={"./img/mobile-icon.svg"}
+                                  src={"../img/mobile-icon.svg"}
                                   alt="mobile"
                                 />
                               </span>
@@ -128,10 +128,10 @@ const Footer = class extends React.Component {
                         </li>
                         <li>
                           <Link className="h-navbar-item" to="/">
-                            <div style={{ display: "flex" }}>
+                            <div style={{display: "flex"}}>
                               <span className="image is-24x24">
                                 <img
-                                  src={"./img/wechat-icon.svg"}
+                                  src={"../img/wechat-icon.svg"}
                                   alt="wechat"
                                 />
                               </span>
@@ -141,9 +141,9 @@ const Footer = class extends React.Component {
                         </li>
                         <li>
                           <Link className="h-navbar-item" to="/">
-                            <div style={{ display: "flex" }}>
+                            <div style={{display: "flex"}}>
                               <span className="image is-24x24">
-                                <img src={"./img/mail-icon.svg"} alt="mail" />
+                                <img src={"../img/mail-icon.svg"} alt="mail" />
                               </span>
                               &ensp; peizhengqi@kc-group.com.cn
                             </div>
@@ -151,10 +151,10 @@ const Footer = class extends React.Component {
                         </li>
                         <li>
                           <Link className="h-navbar-item" to="/">
-                            <div style={{ display: "flex" }}>
+                            <div style={{display: "flex"}}>
                               <span className="image is-24x24">
                                 <img
-                                  src={"./img/address-icon.svg"}
+                                  src={"../img/address-icon.svg"}
                                   alt="address"
                                 />
                               </span>
@@ -170,11 +170,11 @@ const Footer = class extends React.Component {
                     <div className="has-text-centered">
                       <div
                         className="image is-128x128"
-                        style={{ margin: "auto" }}
+                        style={{margin: "auto"}}
                       >
                         <img src={qr} alt="heatex-qrcode" />
                       </div>
-                      <p style={{ padding: "10px 0" }}>黑顿科技</p>
+                      <p style={{padding: "10px 0"}}>黑顿科技</p>
                     </div>
                   </div>
                 </div>
