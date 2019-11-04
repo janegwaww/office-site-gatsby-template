@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, {useState, useEffect} from "react";
 import PropTypes from "prop-types";
-import { graphql } from "gatsby";
+import {graphql} from "gatsby";
 import Layout from "../components/Layout";
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 import AboutFeatures from "../components/AboutFeatures";
-// import banner from "../img/aboutus1-mobile.png";
 
-const AboutUsTemplate = ({ image, intro, creaters }) => {
+const AboutUsTemplate = ({image, intro, creaters}) => {
   const [isMobile, setIsMobile] = useState(false);
   const companyIntro = intro.description.split(/\s{2}|\\/);
   const headStyle = (width = 280) => ({
@@ -18,18 +17,21 @@ const AboutUsTemplate = ({ image, intro, creaters }) => {
     margin: "auto",
     boxShadow: isMobile
       ? "unset"
-      : "rgba(12,102,255,1) 0.3rem 0px 0px, rgba(12,102,255,1) -0.3rem 0px 0px"
+      : "rgba(12,102,255,1) 0.3rem 0px 0px, rgba(12,102,255,1) -0.3rem 0px 0px",
   });
   const companyPara = para => {
     const pstyle = {
       lineHeight: isMobile ? "20px" : "26px",
       letterSpacing: isMobile ? "0.04em" : "0.1em",
-      padding: "1em 0em"
+      padding: "1em 0em",
     };
     return para.map((o, i) => (
-      <p className="has-text-dark is-size-7-mobile" style={pstyle} key={i}>
-        {o}
-      </p>
+      <p
+        className="company-para has-text-dark is-size-7-mobile"
+        style={pstyle}
+        key={i}
+        dangerouslySetInnerHTML={{__html: o}}
+      ></p>
     ));
   };
 
@@ -49,7 +51,7 @@ const AboutUsTemplate = ({ image, intro, creaters }) => {
             !!image ? image.childImageSharp.fluid.src : image
           })`,
           backgroundSize: "cover",
-          backgroundPosition: "center"
+          backgroundPosition: "center",
         }}
       />
       <div className="about-us-content section section--gradient">
@@ -70,7 +72,7 @@ const AboutUsTemplate = ({ image, intro, creaters }) => {
       </div>
       <div
         className="section"
-        style={{ backgroundColor: "rgba(249,251,253,1)", display: "none" }}
+        style={{backgroundColor: "rgba(249,251,253,1)", display: "none"}}
       >
         <div className="container">
           <div className="columns">
@@ -97,16 +99,16 @@ AboutUsTemplate.propTypes = {
   intro: PropTypes.shape({
     blurbs: PropTypes.array,
     description: PropTypes.string,
-    heading: PropTypes.string
+    heading: PropTypes.string,
   }),
   creaters: PropTypes.shape({
     heading: PropTypes.string,
-    image: PropTypes.oneOfType([PropTypes.object, PropTypes.string])
-  })
+    image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  }),
 };
 
-const AboutUs = ({ data }) => {
-  const { frontmatter } = data.markdownRemark;
+const AboutUs = ({data}) => {
+  const {frontmatter} = data.markdownRemark;
 
   return (
     <Layout>
@@ -123,7 +125,7 @@ export default AboutUs;
 
 export const aboutUsQuery = graphql`
   query AboutUs($id: String!) {
-    markdownRemark(id: { eq: $id }) {
+    markdownRemark(id: {eq: $id}) {
       frontmatter {
         image {
           childImageSharp {
