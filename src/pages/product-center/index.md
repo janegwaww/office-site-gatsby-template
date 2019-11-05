@@ -2,10 +2,14 @@
 templateKey: product-center-page
 path: /product-center
 tags: ['haetek', 'product-center']
-image: /img/product/product-center.png
 title: haetek product center
 descritiop: >-
     about heatek company products
+images:
+    - image: /img/product/product-center.png
+      alt: product center banner
+    - image: /img/product/product-center-mobile.png
+      alt: product center banner
 header:
     heading: 黑顿算法模块变量引擎 Seeker
     description: >
@@ -72,7 +76,8 @@ advantages:
               - "- 功能单薄，主要专注于信息的“字面”智能,较少深入信息背后的业务逻辑"
 productbanner:
     seeker:
-        image: /img/product/seeker-banner.png
+        image1: /img/product/seeker-banner.png
+        image2: /img/product/seeker-banner-mobile.png
         alt: seeker show
         seekerslider:
             - image: /img/product/slider1.png

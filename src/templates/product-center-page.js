@@ -7,6 +7,7 @@ import ProductTitle from "../components/ProductTitle";
 import ProductMethodTitle from "../components/ProductMethodTitle";
 import ProductAdvantageTable from "../components/ProductAdvantageTable";
 import ProductSeekerBanner from "../components/ProductSeekerBanner";
+import BackgroundImageSwitch from "../components/BackgroundImageSwitch";
 
 const SeekerTabContent = ({method, advantage, imageInfo = {}}) => {
   return (
@@ -97,7 +98,9 @@ const HDPPTabContent = ({method, datapool}) => (
               {datapool.map((o, i) => (
                 <div className="column is-4" key={i}>
                   <figure className="image is-48x48 margin-auto">
-                    <PreviewCompatibleImage imageInfo={o} />
+                    <PreviewCompatibleImage
+                      imageInfo={{...o, style: {borderRadius: "unset"}}}
+                    />
                   </figure>
                   <div
                     className="is-size-6 has-text-centered has-text-333"
@@ -149,21 +152,11 @@ class ProductCenterTemplate extends Component {
   };
 
   render() {
-    const {image, header, methods, advantages, banner, datapool} = this.props;
+    const {images, header, methods, advantages, banner, datapool} = this.props;
     const {activeTab, tabs} = this.state;
     return (
       <div className="product-center">
-        <div
-          className="full-width-image margin-top-0"
-          style={{
-            height: "580px",
-            backgroundImage: `url(${
-              !!image ? image.childImageSharp.fluid.src : image
-            })`,
-            backgroundPosition: "center",
-            backgroundSize: `cover`,
-          }}
-        >
+        <BackgroundImageSwitch images={images}>
           <div className="container">
             <div className="columns">
               <div className="column is-10 is-offset-1">
@@ -171,7 +164,7 @@ class ProductCenterTemplate extends Component {
               </div>
             </div>
           </div>
-        </div>
+        </BackgroundImageSwitch>
         {/* tabs */}
         <section className="has-background-black h-product-navbar">
           <div className="container">
@@ -220,7 +213,7 @@ class ProductCenterTemplate extends Component {
 }
 
 ProductCenterTemplate.propTypes = {
-  image: PropTypes.object,
+  images: PropTypes.array,
   header: PropTypes.object,
   tabs: PropTypes.array,
   methods: PropTypes.array,
@@ -234,7 +227,7 @@ const ProductCenter = ({data}) => {
   return (
     <Layout>
       <ProductCenterTemplate
-        image={frontmatter.image}
+        images={frontmatter.images}
         header={frontmatter.header}
         tabs={frontmatter.tabs}
         methods={frontmatter.methods}
@@ -258,12 +251,15 @@ export const productCenterQuery = graphql`
   query ProductCenter {
     markdownRemark(frontmatter: {templateKey: {eq: "product-center-page"}}) {
       frontmatter {
-        image {
-          childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
-              ...GatsbyImageSharpFluid
+        images {
+          image {
+            childImageSharp {
+              fluid(maxWidth: 2048, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
             }
           }
+          alt
         }
         header {
           heading
@@ -296,7 +292,14 @@ export const productCenterQuery = graphql`
         }
         productbanner {
           seeker {
-            image {
+            image1 {
+              childImageSharp {
+                fluid(maxWidth: 2048, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            image2 {
               childImageSharp {
                 fluid(maxWidth: 2048, quality: 100) {
                   ...GatsbyImageSharpFluid
