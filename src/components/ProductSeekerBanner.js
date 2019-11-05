@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import Slider from "react-slick";
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
@@ -23,32 +23,20 @@ const ProductSeekerBanner = ({bannerInfo}) => {
     variableWidth: true,
     className: "seeker-carousel",
   };
-  const [isMobile, setIsMobile] = useState(false);
-  useEffect(() => {
-    if (window.innerWidth <= 768) {
-      setIsMobile(true);
-    }
-  }, []);
   return (
     <BackgroundImageSwitch images={images} switchHeight={["698px", "349px"]}>
       <div className="container">
         <div className="slider-container">
-          {isMobile ? null : (
-            <Slider {...slider}>
-              {seekerslider.map((o, i) => (
-                <figure
-                  className="image is-681x383"
-                  key={i}
-                  style={{width: 681}}
-                >
-                  <PreviewCompatibleImage
-                    imageInfo={{...o, style: {borderRadius: 0}}}
-                    key={i}
-                  />
-                </figure>
-              ))}
-            </Slider>
-          )}
+          {/* <Slider {...slider}> */}
+          {/*   {seekerslider.map((o, i) => ( */}
+          {/*     <figure className="image is-681x383" key={i} style={{width: 681}}> */}
+          {/*       <PreviewCompatibleImage */}
+          {/*         imageInfo={{...o, style: {borderRadius: 0}}} */}
+          {/*         key={i} */}
+          {/*       /> */}
+          {/*     </figure> */}
+          {/*   ))} */}
+          {/* </Slider> */}
         </div>
       </div>
     </BackgroundImageSwitch>
