@@ -1,6 +1,11 @@
 import React from "react";
 import {Link} from "gatsby";
 import qr from "../img/qrcode.png";
+import mobile from "../img/mobile-icon.svg";
+import wechat from "../img/wechat-icon.svg";
+import mail from "../img/mail-icon.svg";
+import address from "../img/address-icon.svg";
+import gov from "../img/gov.png";
 
 const FooterMobile = () => (
   <div
@@ -36,7 +41,7 @@ const FooterBottom = () => (
               <div className="gov-code">
                 <div style={{display: "flex", alignItems: "center"}}>
                   <span className="gov-icon image is-20x20 is-10x10-mobile">
-                    <img src={"../img/gov.png"} alt="gov" />
+                    <img src={gov} alt="gov" />
                   </span>
                   <a
                     className="bd-notification is-primary has-text-grey"
@@ -117,10 +122,7 @@ const Footer = class extends React.Component {
                           <Link className="h-navbar-item" to="/">
                             <div style={{display: "flex"}}>
                               <span className="image is-24x24">
-                                <img
-                                  src={"../img/mobile-icon.svg"}
-                                  alt="mobile"
-                                />
+                                <img src={mobile} alt="mobile" />
                               </span>
                               &ensp; 155-2412-0109（市场部 刘经理）
                             </div>
@@ -130,10 +132,7 @@ const Footer = class extends React.Component {
                           <Link className="h-navbar-item" to="/">
                             <div style={{display: "flex"}}>
                               <span className="image is-24x24">
-                                <img
-                                  src={"../img/wechat-icon.svg"}
-                                  alt="wechat"
-                                />
+                                <img src={wechat} alt="wechat" />
                               </span>
                               &ensp; haetek_20190801
                             </div>
@@ -143,7 +142,7 @@ const Footer = class extends React.Component {
                           <Link className="h-navbar-item" to="/">
                             <div style={{display: "flex"}}>
                               <span className="image is-24x24">
-                                <img src={"../img/mail-icon.svg"} alt="mail" />
+                                <img src={mail} alt="mail" />
                               </span>
                               &ensp; peizhengqi@kc-group.com.cn
                             </div>
@@ -153,10 +152,7 @@ const Footer = class extends React.Component {
                           <Link className="h-navbar-item" to="/">
                             <div style={{display: "flex"}}>
                               <span className="image is-24x24">
-                                <img
-                                  src={"../img/address-icon.svg"}
-                                  alt="address"
-                                />
+                                <img src={address} alt="address" />
                               </span>
                               &ensp;
                               广东省深圳市龙岗区龙翔大道7188号万科大厦3109
