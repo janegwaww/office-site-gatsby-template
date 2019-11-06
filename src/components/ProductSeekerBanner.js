@@ -36,7 +36,7 @@ const ProductSeekerBanner = ({bannerInfo}) => {
           <Slider {...slider}>
             {seekerslider.map((o, i) => (
               <figure
-                className="image is-681x383 is-240x190-mobile"
+                className="image is-681x383 is-240x140-mobile"
                 key={i}
                 style={{width: sliderWidth}}
               >
