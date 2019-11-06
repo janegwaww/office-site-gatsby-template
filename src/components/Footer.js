@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import {Link} from "gatsby";
 import qr from "../img/qrcode.png";
 import mobile from "../img/mobile-icon.svg";
@@ -31,44 +31,54 @@ const FooterMobile = () => (
   </div>
 );
 
-const FooterBottom = () => (
-  <div className="footer-bottom content has-background-black is-size-6 has-text-grey">
-    <div className="container">
-      <div className="columns is-mobile">
-        <div className="column is-10 is-offset-1">
-          <div className="level">
-            <div className="level-left has-text-centered is-size-7-mobile">
-              <div className="gov-code">
-                <div style={{display: "flex", alignItems: "center"}}>
-                  <span className="gov-icon image is-20x20 is-10x10-mobile">
-                    <img src={gov} alt="gov" />
-                  </span>
-                  <a
-                    className="bd-notification is-primary has-text-grey"
-                    href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702002640"
-                    target="_blank"
-                  >
-                    粤公网安备 44030702002640号
-                  </a>
-                </div>
-                <div>
-                  <span className="bd-notification is-primary has-text-grey">
-                    粤ICP备19120979号-1
-                  </span>
+const FooterBottom = () => {
+  const [side, setSide] = useState("is-10 is-offset-1");
+  const [center, setCenter] = useState("");
+  useEffect(() => {
+    if (window.innerWidth <= 768) {
+      setSide("is-11");
+      setCenter("is-centered");
+    }
+  }, []);
+  return (
+    <div className="footer-bottom content has-background-black is-size-6 has-text-grey">
+      <div className="container">
+        <div className={`columns is-mobile ${center}`}>
+          <div className={`column ${side}`}>
+            <div className="level">
+              <div className="level-left has-text-centered is-size-7-mobile">
+                <div className="gov-code">
+                  <div style={{display: "flex", alignItems: "center"}}>
+                    <span className="gov-icon image is-20x20 is-10x10-mobile">
+                      <img src={gov} alt="gov" />
+                    </span>
+                    <a
+                      className="bd-notification is-primary has-text-grey"
+                      href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702002640"
+                      target="_blank"
+                    >
+                      粤公网安备 44030702002640号
+                    </a>
+                  </div>
+                  <div>
+                    <span className="bd-notification is-primary has-text-grey">
+                      粤ICP备19120979号-1
+                    </span>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="level-right has-text-centered is-size-7-mobile">
-              <p className="bd-notification is-primary">
-                版权所有@黑顿科技有限公司 2019 保留一切权利
-              </p>
+              <div className="level-right has-text-centered is-size-7-mobile">
+                <p className="bd-notification is-primary">
+                  版权所有@黑顿科技有限公司 2019 保留一切权利
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 const Footer = class extends React.Component {
   render() {
