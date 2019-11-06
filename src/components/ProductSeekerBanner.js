@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import PropTypes from "prop-types";
 import Slider from "react-slick";
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
@@ -9,13 +9,14 @@ import "slick-carousel/slick/slick-theme.css";
 const ProductSeekerBanner = ({bannerInfo}) => {
   const {image1, image2, alt, seekerslider} = bannerInfo;
   const images = [{image: image1, alt}, {image: image2, alt}];
+  const [sliderWidth, setSliderWidth] = useState(681);
   const slider = {
     dots: false,
     arrows: false,
     speed: 500,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 3000,
     autoplay: true,
-    // fade: true,
+    fade: true,
     infini: true,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -23,20 +24,29 @@ const ProductSeekerBanner = ({bannerInfo}) => {
     variableWidth: true,
     className: "seeker-carousel",
   };
+  useEffect(() => {
+    if (window.innerWidth <= 768) {
+      setSliderWidth(240);
+    }
+  }, []);
   return (
-    <BackgroundImageSwitch images={images} switchHeight={["698px", "349px"]}>
+    <BackgroundImageSwitch images={images} switchHeight={["698px", "249px"]}>
       <div className="container">
-        <div className="slider-container">
-          {/* <Slider {...slider}> */}
-          {/*   {seekerslider.map((o, i) => ( */}
-          {/*     <figure className="image is-681x383" key={i} style={{width: 681}}> */}
-          {/*       <PreviewCompatibleImage */}
-          {/*         imageInfo={{...o, style: {borderRadius: 0}}} */}
-          {/*         key={i} */}
-          {/*       /> */}
-          {/*     </figure> */}
-          {/*   ))} */}
-          {/* </Slider> */}
+        <div className="h-slider-container">
+          <Slider {...slider}>
+            {seekerslider.map((o, i) => (
+              <figure
+                className="image is-681x383 is-240x190-mobile"
+                key={i}
+                style={{width: sliderWidth}}
+              >
+                <PreviewCompatibleImage
+                  imageInfo={{...o, style: {borderRadius: 0}}}
+                  key={i}
+                />
+              </figure>
+            ))}
+          </Slider>
         </div>
       </div>
     </BackgroundImageSwitch>

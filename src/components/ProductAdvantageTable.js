@@ -9,14 +9,14 @@ const ProductAdvantageTable = ({tableInfo}) => {
   );
   return (
     <div>
-      <div className="is-size-2-5 has-text-centered has-margin-bottom-40">
+      <div className="is-size-2-5 has-text-centered has-margin-bottom-40 is-size-5-mobile has-margin-bottom-15-mobile">
         {tableInfo.heading}
       </div>
       <table className="table is-bordered is-fullwidth">
         <thead>
           <tr>
             {description.th.map((o, i) => (
-              <th key={i} className="th">
+              <th key={i} className="th is-size-6 is-size-7-5-mobile">
                 {o}
               </th>
             ))}
@@ -26,12 +26,18 @@ const ProductAdvantageTable = ({tableInfo}) => {
           {description.tr.map((o, i) => (
             <tr key={i}>
               <th className="tr">
-                <p className="tr-text">{o}</p>
+                <p className="tr-text is-size-6 is-size-7-5-mobile">{o}</p>
               </th>
               {cells[i].map((j, k) => (
-                <th key={k} className="tc is-size-6-5 has-text-666">
+                <th
+                  key={k}
+                  className="tc is-size-6-5 has-text-666 is-size-7-5-mobile"
+                >
                   {j.split("/").map((h, g) => (
-                    <p key={g}>{h}</p>
+                    <div key={g} className="tc-para">
+                      <span>-&ensp;</span>
+                      <p>{h}</p>
+                    </div>
                   ))}
                 </th>
               ))}

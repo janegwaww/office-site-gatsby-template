@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, {Component, useState, useEffect} from "react";
 import PropTypes from "prop-types";
 import {graphql} from "gatsby";
 import Layout from "../components/Layout";
@@ -30,7 +30,7 @@ const SeekerTabContent = ({method, advantage, imageInfo = {}}) => {
           </div>
         </div>
       </section>
-      <section>
+      <section className="seeker-banner">
         <ProductSeekerBanner bannerInfo={imageInfo} />
       </section>
     </div>
@@ -58,11 +58,11 @@ const InfoPlusTabContent = ({method, advantage, imageInfo}) => {
           </div>
         </div>
       </section>
-      <section className="section has-background-grey-1">
+      <section className="section has-background-grey-1 h-section">
         <div className="container">
           <div className="columns">
             <div className="column is-10 is-offset-1">
-              <div className="is-size-2-5 has-text-centered has-margin-bottom-40">
+              <div className="is-size-2-5 is-size-5-mobile has-text-centered has-margin-bottom-40 has-margin-bottom-15-mobile">
                 方案架构
               </div>
               <PreviewCompatibleImage
@@ -76,53 +76,67 @@ const InfoPlusTabContent = ({method, advantage, imageInfo}) => {
   );
 };
 
-const HDPPTabContent = ({method, datapool}) => (
-  <div>
-    <section className="section h-section has-background-grey-1">
-      <div className="container">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <ProductMethodTitle method={method} />
-          </div>
-        </div>
-      </div>
-    </section>
-    <section className="section">
-      <div className="container">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <div className="is-size-2-5 has-text-centered has-margin-bottom-30">
-              数据池
-            </div>
-            <div className="data-pool-cards columns is-multiline">
-              {datapool.map((o, i) => (
-                <div className="column is-4" key={i}>
-                  <figure className="image is-48x48 margin-auto">
-                    <PreviewCompatibleImage
-                      imageInfo={{...o, style: {borderRadius: "unset"}}}
-                    />
-                  </figure>
-                  <div
-                    className="is-size-6 has-text-centered has-text-333"
-                    style={{lineHeight: "21px", padding: "20px"}}
-                  >
-                    {o.head}
-                  </div>
-                  <div
-                    className="is-size-6-5 has-text-666"
-                    style={{lineHeight: "26px"}}
-                  >
-                    {o.content}
-                  </div>
-                </div>
-              ))}
+const HDPPTabContent = ({method, datapool}) => {
+  const [side, setSide] = useState("is-4");
+  useEffect(() => {
+    if (window.innerWidth <= 768) {
+      setSide("is-6");
+    }
+  }, []);
+  return (
+    <div>
+      <section className="section h-section has-background-grey-1">
+        <div className="container">
+          <div className="columns">
+            <div className="column is-10 is-offset-1">
+              <ProductMethodTitle method={method} />
             </div>
           </div>
         </div>
-      </div>
-    </section>
-  </div>
-);
+      </section>
+      <section className="section h-section">
+        <div className="container">
+          <div className="columns">
+            <div className="column is-10 is-offset-1">
+              <div className="is-size-2-5 is-size-5-mobile has-text-centered has-margin-bottom-30 has-margin-bottom-15-mobile">
+                数据池
+              </div>
+              <div className="data-pool-cards columns is-multiline is-mobile">
+                {datapool.map((o, i) => (
+                  <div className={`column ${side}`} key={i}>
+                    <figure className="image is-48x48 is-42x42-mobile margin-auto">
+                      <PreviewCompatibleImage
+                        imageInfo={{...o, style: {borderRadius: "unset"}}}
+                      />
+                    </figure>
+                    <div className="data-pool-cards-head is-size-6 is-size-6-mobile has-text-centered has-text-333">
+                      {o.head}
+                    </div>
+                    <div className="data-pool-cards-text is-size-6-5 has-text-666 is-size-7-mobile">
+                      {o.content}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+const TabTitle = ({info}) => {
+  return (
+    <>
+      <a className="is-size-6-5-mobile is-hidden-tablet">
+        <p className="is-size-7-mobile">{info.subname}</p>
+        <p>{info.name}</p>
+      </a>
+      <a className="is-size-6 is-size-6-5-mobile is-hidden-mobile">{`${info.name}（${info.subname}）`}</a>
+    </>
+  );
+};
 
 class ProductCenterTemplate extends Component {
   constructor(props) {
@@ -156,9 +170,12 @@ class ProductCenterTemplate extends Component {
     const {activeTab, tabs} = this.state;
     return (
       <div className="product-center">
-        <BackgroundImageSwitch images={images}>
+        <BackgroundImageSwitch
+          images={images}
+          switchHeight={["580px", "222px"]}
+        >
           <div className="container">
-            <div className="columns">
+            <div className="columns is-mobile">
               <div className="column is-10 is-offset-1">
                 <ProductTitle info={header} />
               </div>
@@ -178,7 +195,7 @@ class ProductCenterTemplate extends Component {
                         onClick={() => this.handleTab(o.index)}
                         className={o.className}
                       >
-                        <a>{o.name}</a>
+                        <TabTitle info={o} />
                       </li>
                     ))}
                   </ul>
@@ -267,6 +284,7 @@ export const productCenterQuery = graphql`
         }
         tabs {
           name
+          subname
           index
         }
         methods {

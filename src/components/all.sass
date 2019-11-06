@@ -96,6 +96,9 @@ $table-cell-border: 1px solid hsl(0°, 0%, 92%)
     &:hover
       color: white
       background-color: #1758C6
+  &.is-transparent
+    background-color: transparent
+    color: white
 
 .tabs
   &.is-around
@@ -311,6 +314,9 @@ $menu-label-color: $white-ter
   .is-paddingless-mobile
     padding: 0 !important
 
+  .is-line-height-unset-mobile
+    line-height: unset !important
+
   .button
     &.is-opacity
       border-radius: 2px
@@ -325,7 +331,10 @@ $menu-label-color: $white-ter
       color: white
       border: unset
       padding: 16px 20px
-      border-radius: 2px
+      bordere-radius: 2px
+    &.is-transparent
+      padding: 5px 11px
+      background: rgba(216,216,216,0.2)
 
   .image
     &.is-10x10-mobile
@@ -334,6 +343,12 @@ $menu-label-color: $white-ter
     &.is-13x13-mobile
       width: 13px
       height: 13px
+    &.is-30x30-mobile
+      width: 30px
+      height: 30px
+    &.is-42x42-mobile
+      width: 42px
+      height: 42px
     &.is-48x48-mobile
       width: 48px
       height: 48px

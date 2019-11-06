@@ -4,19 +4,15 @@ import PreviewCompatibleImage from "../components/PreviewCompatibleImage.js";
 
 const ProductMethodTitle = ({method}) => (
   <div className="product-method-title">
-    <div className="product-method-head has-margin-bottom-30">
-      <figure className="image is-48x48">
+    <div className="product-method-head has-margin-bottom-30 has-margin-bottom-15-mobile">
+      <figure className="image is-48x48 is-30x30-mobile">
         <PreviewCompatibleImage
           imageInfo={{...method, style: {borderRadius: "unset"}}}
         />
       </figure>
-      &ensp;&ensp;
-      <div className="is-size-4">{method.heading}</div>
+      <div className="is-size-4 is-size-6-mobile">{method.heading}</div>
     </div>
-    <div
-      className="is-size-6-5 has-text-666"
-      style={{lineHeight: "26px", letterSpacing: "1px"}}
-    >
+    <div className="product-method-content is-size-6-5 has-text-666 is-size-7-mobile is-line-height-unset-mobile">
       {method.description.split("/").map((o, i) => (
         <div key={i}>{o}</div>
       ))}
