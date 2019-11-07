@@ -4,12 +4,10 @@ import {Link} from "gatsby";
 
 function ProductTitle({info = {}}) {
   const [heading, setHeading] = useState(info.heading);
-  const [side, setSide] = useState("is-half");
   const [bside, setBside] = useState("is-4");
   const [des, setDes] = useState(info.description);
   useEffect(() => {
     if (window.innerWidth <= 768) {
-      setSide("is-8");
       setBside("is-6");
       setDes("全面闭环的自动化机器学习平台。");
       setHeading("黑顿算法模块变量引擎");
@@ -18,7 +16,7 @@ function ProductTitle({info = {}}) {
   return (
     <div className="product-title">
       <div className="columns is-mobile">
-        <div className={`column ${side} has-text-centered-mobile`}>
+        <div className={`column is-half has-text-centered-mobile`}>
           <div className="has-margin-bottom-15-mobile">
             <h3
               className="is-size-5-5-mobile is-size-2-5 has-text-white is-size-4-touch is-hidden-tablet"
@@ -51,13 +49,13 @@ function ProductTitle({info = {}}) {
           <br className="is-hidden-mobile" />
           <div className="product-title-buttons columns is-mobile is-multiline is-size-7-5-mobile is-centered">
             <div className={`column ${bside}`}>
-              <a className="button is-blue is-fullwidth is-size-7-5-mobile">
-                立即使用
+              <a className="button is-blue is-size-7-5-mobile">
+                &ensp;&ensp;立即使用&ensp;&ensp;
               </a>
             </div>
             <div className={`column ${bside} has-text-left`}>
               <Link
-                className="button is-fullwidth is-size-7-5-mobile is-transparent"
+                className="button is-size-7-5-mobile is-transparent"
                 to="/product-center/advisory"
               >
                 业务方案咨询

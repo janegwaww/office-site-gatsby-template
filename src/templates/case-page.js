@@ -14,7 +14,7 @@ const CaseTemplate = ({images, heading, cases}) => {
       />
       <div className="section h-section">
         <div className="container">
-          <h3 className="is-size-3 is-size-5-mobile has-text-centered has-margin-bottom-40 has-margin-bottom-15-mobile">
+          <h3 className="is-size-3 is-size-5-mobile has-text-centered has-margin-bottom-30 has-margin-bottom-15-mobile">
             {heading}
           </h3>
           <div className="case-container">

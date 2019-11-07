@@ -146,11 +146,15 @@ class ProductCenterTemplate extends Component {
       tabs: this.props.tabs.map(i =>
         i.index === "seeker" ? {...i, className: "is-active"} : i,
       ),
+      isMobile: false,
     };
   }
 
   componentDidMount() {
     this.setState({activeTab: {seeker: "is-active"}});
+    if (window.innerWidth <= 768) {
+      this.setState({isMobile: true});
+    }
   }
 
   handleTab = index => {
@@ -167,7 +171,7 @@ class ProductCenterTemplate extends Component {
 
   render() {
     const {images, header, methods, advantages, banner, datapool} = this.props;
-    const {activeTab, tabs} = this.state;
+    const {activeTab, tabs, isMobile} = this.state;
     return (
       <div className="product-center">
         <BackgroundImageSwitch
@@ -175,8 +179,8 @@ class ProductCenterTemplate extends Component {
           switchHeight={["580px", "222px"]}
         >
           <div className="container">
-            <div className="columns is-mobile">
-              <div className="column is-10 is-offset-1">
+            <div className="columns is-mobile is-centered">
+              <div className={`column ${isMobile ? "is-12" : "is-10"}`}>
                 <ProductTitle info={header} />
               </div>
             </div>
@@ -291,7 +295,7 @@ export const productCenterQuery = graphql`
           heading
           image {
             childImageSharp {
-              fluid(maxWidth: 600, quality: 100) {
+              fluid(maxWidth: 1000, quality: 100) {
                 ...GatsbyImageSharpFluid
               }
             }
@@ -350,7 +354,7 @@ export const productCenterQuery = graphql`
         datapool {
           image {
             childImageSharp {
-              fluid(maxWidth: 600, quality: 100) {
+              fluid(maxWidth: 1000, quality: 100) {
                 ...GatsbyImageSharpFluid
               }
             }

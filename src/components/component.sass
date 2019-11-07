@@ -38,9 +38,11 @@
       padding-top: 1.2em
       padding-bottom: 1.2em
     .contain-card-right
-      padding: 0rem 2rem 1.6rem
+      padding: 0rem 0rem 1rem
       .button
         margin: 0 auto
+    .card-section
+      padding: 0 1.875rem 1.875rem
 /* ------seeker-tab end-------
 
 /* ------solution-tab start------
@@ -126,7 +128,7 @@
         color: #1758c6
   +mobile
     .about-us-content.section
-      padding: 1.875em 1.5em 1.875em
+      padding: 1.875em 1.875em
       .about-us-content-head
         margin-bottom: 12px
 /* -------about us end--------
@@ -145,9 +147,9 @@
           color: #1758c6
   +mobile
     .college-back.section
-      padding: 1.875em 1.5em 1.875em
+      padding: 1.875em 1.875em
     .college-study-section
-      padding: 2.625em 1.5em 2.625em
+      padding: 1.875rem
       .tabs a
         padding: 0.8em 1em
 /* -------college end-------
@@ -177,7 +179,7 @@
             top: 40%
     .join-jobs
       &.section
-        padding: 1.875em 1.5em 1.875em
+        padding: 1.875em 1.875em
       .column .box
         border-radius: 2px
 /* ----join end------
@@ -228,6 +230,10 @@ footer
           padding: 0.33rem 0.5rem
       .is-blue
         padding: 5px 11px
+      .button
+        @include tablet
+          display: flex
+          width: 100%
   .product-method-title
     .product-method-head
       display: flex
@@ -348,6 +354,8 @@ footer
     max-width: 1181px
     .column
       padding: 1rem 0.75rem
+      @include mobile
+        padding: 0.625rem 0
   .case-card
     border: 1px solid rgba(232,232,232,1)
     max-width: 367px
@@ -362,11 +370,14 @@ footer
 
 // advisory start
 .advisory
-  .field:not(:last-child)
-    margin-bottom: 2.5rem;
-    .label
-      font-weight: unset
-      span
-        color: #F03D3D
-        margin-right: 0.2rem
+  .field
+    &:not(:last-child)
+      margin-bottom: 2.5rem;
+      .label
+        font-weight: unset
+        span
+          color: #F03D3D
+          margin-right: 0.2rem
+    .button.is-blue
+      padding: unset
 // advisory end
