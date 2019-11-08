@@ -2,10 +2,14 @@
 templateKey: college-page
 path: /college
 tags: ['haetek', 'college']
-image: /img/college.png
 title: haetek college
 descritiop: >-
     about heatek college
+images:
+    - image: /img/college.png
+      alt: college banner
+    - image: /img/college-mobile.png
+      alt: college banner mobile
 background:
     heading: 学术背景
     description: >
