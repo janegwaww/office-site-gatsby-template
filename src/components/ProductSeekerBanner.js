@@ -20,7 +20,7 @@ const ProductSeekerBanner = ({bannerInfo}) => {
     infini: true,
     slidesToShow: 1,
     slidesToScroll: 1,
-    pauseOnHover: false,
+    pauseOnHover: true,
     variableWidth: true,
     className: "seeker-carousel",
   };
