@@ -133,7 +133,7 @@ const TabTitle = ({info}) => {
         <p className="is-size-7-mobile">{info.subname}</p>
         <p>{info.name}</p>
       </a>
-      <a className="is-size-6 is-size-6-5-mobile is-hidden-mobile">{`${info.name}（${info.subname}）`}</a>
+      <a className="is-size-6 is-size-6-5-mobile is-hidden-mobile">{`${info.name}(${info.subname})`}</a>
     </>
   );
 };
