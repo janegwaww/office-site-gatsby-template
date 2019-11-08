@@ -39,7 +39,7 @@ export default class Index extends React.Component {
       <Layout>
         <section className="advisory section h-section has-background-grey-1">
           <div className="container">
-            <h1 className="is-size-2-5 has-text-centered has-margin-bottom-30">
+            <h1 className="is-size-2-5 is-size-5-mobile has-text-centered has-margin-bottom-30 has-margin-bottom-15-mobile">
               填写信息
             </h1>
             <div className="columns">

@@ -1,83 +1,105 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import PropTypes from "prop-types";
 import {graphql} from "gatsby";
 import Layout from "../components/Layout";
 import JobCard from "../components/JobCard";
+import BackgroundImageSwitch from "../components/BackgroundImageSwitch";
+import searchImg from "../img/search.png";
 
-const JoinInput = ({}) => (
-  <div className="columns is-mobile">
-    <div className="column is-4">
-      <div className="control is-expanded has-icons-right">
-        <div className="select h-select is-fullwidth">
-          <select defaultValue={{value: 0}} className="is-size-7-mobile">
-            <option>搜索地点</option>
-            <option>深圳</option>
-          </select>
+const JoinInput = ({filter}) => {
+  const [search, setSearch] = useState({});
+  const handleChange = e => {
+    e.preventDefault();
+    setSearch({...search, [e.target.name]: e.target.value});
+    filter({...search, [e.target.name]: e.target.value});
+  };
+  const handleSubmit = e => {
+    e.preventDefault();
+    filter(search);
+  };
+  return (
+    <form name="search" onSubmit={handleSubmit}>
+      <div className="columns is-mobile">
+        <div className="column is-4">
+          <div className="control is-expanded has-icons-right">
+            <div className="select h-select is-fullwidth">
+              <select
+                defaultValue={{value: 0}}
+                className="is-size-7-mobile"
+                name="address"
+                onChange={handleChange}
+              >
+                <option>搜索地点</option>
+                <option>深圳</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div className="column is-4">
+          <div className="control is-expanded has-icons-right">
+            <div className="select h-select is-fullwidth">
+              <select
+                defaultValue={{value: 0}}
+                className="is-size-7-mobile"
+                name="position"
+                onChange={handleChange}
+              >
+                <option style={{color: "#BBBBBB"}}>搜索岗位</option>
+                <option>开发部</option>
+                <option>算法部</option>
+                <option>市场部</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div className="search-input column is-4">
+          <div className="control is-expanded has-icons-right">
+            <input
+              name="job"
+              className="input h-input is-size-7-mobile"
+              type="text"
+              placeholder="搜索职位"
+              onChange={handleChange}
+            />
+            <span className="icon is-small is-right" onClick={handleSubmit}>
+              <i className="image is-20x20 is-13x13-mobile">
+                <img src={searchImg} width="20" height="20" />
+              </i>
+            </span>
+          </div>
         </div>
       </div>
-    </div>
-    <div className="column is-4">
-      <div className="control is-expanded has-icons-right">
-        <div className="select h-select is-fullwidth">
-          <select defaultValue={{value: 0}} className="is-size-7-mobile">
-            <option style={{color: "#BBBBBB"}}>搜索岗位</option>
-            <option>开发部</option>
-            <option>算法部</option>
-            <option>市场部</option>
-          </select>
-        </div>
-      </div>
-    </div>
-    <div className="column is-4">
-      <div className="control is-expanded has-icons-right">
-        <input
-          className="input h-input is-size-7-mobile"
-          type="text"
-          placeholder="搜索职位"
-        />
-        <span className="icon is-small is-right">
-          <i className="image is-20x20 is-13x13-mobile">
-            <img src="../img/search.png" width="20" height="20" />
-          </i>
-        </span>
-      </div>
-    </div>
-  </div>
-);
-
-const JoinTemplate = ({image, jobList = []}) => {
-  const [banner, setBanner] = useState(
-    `${!!image ? image.childImageSharp.fluid.src : image}`,
+    </form>
   );
-  const [height, setHeight] = useState("450px");
-  useEffect(() => {
-    if (window.innerWidth <= 768) {
-      setBanner("./img/join-mobile.png");
-      setHeight("160px");
-    }
-  }, []);
+};
+
+const JoinTemplate = ({images, jobList = []}) => {
+  const [jobfilter, setJobfilter] = useState(jobList);
+  const jobFilterEvent = e => {
+    setJobfilter(
+      jobList.filter(i => {
+        return (
+          (i.date.replace(/\s/g, "").split("|")[1] === e.position ||
+            e.position === "搜索岗位") &&
+          (i.heading.includes(e.job) || !e.job)
+        );
+      }),
+    );
+  };
   return (
     <div className="join">
-      <div
-        className="full-width-image margin-top-0"
-        style={{
-          height: height,
-          backgroundImage: `url(${banner})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
+      <BackgroundImageSwitch images={images} switchHeight={["450px", "160px"]}>
         <div className="has-text-centered">
           <h2 className="has-text-white is-size-3 is-size-5-5-mobile">
             Power Humanity with AI
           </h2>
         </div>
-      </div>
+      </BackgroundImageSwitch>
       <div className="join-input section">
         <div className="container">
           <div className="columns is-centered">
             <div className="column is-10 is-paddingless-mobile">
-              <JoinInput />
+              <JoinInput filter={jobFilterEvent} />
             </div>
           </div>
         </div>
@@ -88,7 +110,7 @@ const JoinTemplate = ({image, jobList = []}) => {
             <div className="column is-10 is-offset-1">
               <div className="content">
                 <div className="columns is-multiline is-variable is-3">
-                  {jobList.map((o, i) => (
+                  {jobfilter.map((o, i) => (
                     <div className="column is-half" key={i}>
                       <JobCard info={o} />
                     </div>
@@ -104,7 +126,7 @@ const JoinTemplate = ({image, jobList = []}) => {
 };
 
 JoinTemplate.propTypes = {
-  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  images: PropTypes.array,
   jobList: PropTypes.array,
 };
 
@@ -112,12 +134,15 @@ const Join = ({data}) => {
   const {frontmatter} = data.markdownRemark;
   return (
     <Layout>
-      <JoinTemplate
-        image={frontmatter.image}
-        jobList={frontmatter.newJobs.blurbs}
-      />
+      <JoinTemplate images={frontmatter.images} jobList={frontmatter.newJobs} />
     </Layout>
   );
+};
+
+Join.propTypes = {
+  data: PropTypes.shape({
+    frontmatter: PropTypes.object,
+  }),
 };
 
 export default Join;
@@ -126,27 +151,20 @@ export const joinQuery = graphql`
   query Join($id: String!) {
     markdownRemark(id: {eq: $id}) {
       frontmatter {
-        image {
-          childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
-              ...GatsbyImageSharpFluid
+        images {
+          image {
+            childImageSharp {
+              fluid(maxWidth: 2048, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
             }
           }
-        }
-        filterJobs {
-          heading
-          blurbs {
-            item
-            subItems
-          }
+          alt
         }
         newJobs {
           heading
-          blurbs {
-            heading
-            date
-            description
-          }
+          date
+          description
         }
       }
     }

@@ -156,6 +156,10 @@
 
 /* ---join start-----
 .join
+  .search-input
+    .icon
+      pointer-events: auto
+      cursor: pointer
   .join-jobs
     .column .box
       border-radius: 4px
@@ -373,6 +377,8 @@ footer
   .field
     &:not(:last-child)
       margin-bottom: 2.5rem;
+      @include mobile
+        margin-bottom: 1rem
       .label
         font-weight: unset
         span
