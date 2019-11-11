@@ -1,6 +1,7 @@
 import React from "react";
 import {globalHistory} from "@reach/router";
 import {Link} from "gatsby";
+import LanguageSwitch from "../components/LanguageSwitch";
 import logo from "../img/logo.png";
 
 const Navbar = class extends React.Component {
@@ -128,20 +129,7 @@ const Navbar = class extends React.Component {
 
             <div className="navbar-end has-text-centered">
               <div className="navbar-item">
-                <div className="language">
-                  <a href="#top" className="is-active">
-                    中
-                  </a>
-                  <span
-                    style={{
-                      width: "1px",
-                      borderLeft: "2px solid rgba(193,193,193,1)",
-                      height: "21px",
-                      margin: "0 6px 0 6px",
-                    }}
-                  ></span>
-                  <a href="#top">EN</a>
-                </div>
+                <LanguageSwitch />
               </div>
             </div>
           </div>
