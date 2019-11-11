@@ -79,8 +79,12 @@ const JoinTemplate = ({images, jobList = []}) => {
     setJobfilter(
       jobList.filter(i => {
         return (
+          (i.date.replace(/\s/g, "").split("|")[0] === e.address ||
+            e.address === "搜索地点" ||
+            !e.address) &&
           (i.date.replace(/\s/g, "").split("|")[1] === e.position ||
-            e.position === "搜索岗位") &&
+            e.position === "搜索岗位" ||
+            !e.position) &&
           (i.heading.includes(e.job) || !e.job)
         );
       }),

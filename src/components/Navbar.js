@@ -10,7 +10,6 @@ const Navbar = class extends React.Component {
       active: false,
       navBarActiveClass: "",
       activeNav: {},
-      logoWidth: "143",
     };
   }
 
@@ -19,12 +18,8 @@ const Navbar = class extends React.Component {
       globalHistory.location.pathname
         .replace(/\/$/, "")
         .split("/")
-        .pop()
-        .replace(/\-/, ""),
+        .pop(),
     );
-    if (window.innerWidth <= 768) {
-      this.setState({logoWidth: "100"});
-    }
   }
 
   toggleHamburger = () => {
@@ -56,7 +51,7 @@ const Navbar = class extends React.Component {
   };
 
   render() {
-    const {activeNav, logoWidth} = this.state;
+    const {activeNav} = this.state;
     return (
       <nav
         className="navbar is-fixed-top has-shadow is-transparent"
@@ -67,7 +62,9 @@ const Navbar = class extends React.Component {
         <div className="container">
           <div className="navbar-brand">
             <Link to="/" className="navbar-item logo" title="Logo">
-              <img src={logo} alt="Haetek" width={`${logoWidth}`} height="40" />
+              <figure className="image is-143x40 is-100x28-mobile">
+                <img src={logo} alt="Haetek" />
+              </figure>
             </Link>
             <div
               className={`navbar-burger burger ${this.state.navBarActiveClass}`}
@@ -94,7 +91,7 @@ const Navbar = class extends React.Component {
               </Link>
               <Link
                 className="navbar-item is-tab"
-                to="/product-center"
+                to="/productcenter"
                 activeClassName={activeNav.productcenter}
               >
                 产品中心
@@ -108,7 +105,7 @@ const Navbar = class extends React.Component {
               </Link>
               <Link
                 className="navbar-item is-tab"
-                to="/about-us"
+                to="/aboutus"
                 activeClassName={activeNav.aboutus}
               >
                 关于黑顿

@@ -1,6 +1,6 @@
 ---
 templateKey: about-us-page
-path: /about-us
+path: /aboutus
 tags: ['haetek', 'aboutus']
 image: /img/aboutus1.png
 title: about haetek

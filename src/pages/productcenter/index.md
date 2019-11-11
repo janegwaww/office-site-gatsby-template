@@ -1,6 +1,6 @@
 ---
 templateKey: product-center-page
-path: /product-center
+path: /productcenter
 tags: ['haetek', 'product-center']
 title: haetek product center
 descritiop: >-
