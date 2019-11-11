@@ -44,9 +44,10 @@ const Navbar = class extends React.Component {
   };
 
   _activeNavHandle = nav => {
+    const path = nav ? nav : "home";
     this.setState({
       activeNav: {
-        [nav ? nav : "home"]: "is-active",
+        [path]: "is-active",
       },
     });
   };
