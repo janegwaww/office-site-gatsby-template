@@ -4,6 +4,7 @@ import {graphql} from "gatsby";
 import Layout from "../components/Layout";
 import JobCard from "../components/JobCard";
 import BackgroundImageSwitch from "../components/BackgroundImageSwitch";
+import Dropdown from "../components/Dropdown";
 import searchImg from "../img/search.png";
 
 const JoinInput = ({filter}) => {
@@ -22,34 +23,12 @@ const JoinInput = ({filter}) => {
       <div className="columns is-mobile">
         <div className="column is-4">
           <div className="control is-expanded has-icons-right">
-            <div className="select h-select is-fullwidth">
-              <select
-                defaultValue={{value: 0}}
-                className="is-size-7-mobile"
-                name="address"
-                onChange={handleChange}
-              >
-                <option>搜索地点</option>
-                <option>深圳</option>
-              </select>
-            </div>
+            <Dropdown />
           </div>
         </div>
         <div className="column is-4">
           <div className="control is-expanded has-icons-right">
-            <div className="select h-select is-fullwidth">
-              <select
-                defaultValue={{value: 0}}
-                className="is-size-7-mobile"
-                name="position"
-                onChange={handleChange}
-              >
-                <option style={{color: "#BBBBBB"}}>搜索岗位</option>
-                <option>开发部</option>
-                <option>算法部</option>
-                <option>市场部</option>
-              </select>
-            </div>
+            <Dropdown />
           </div>
         </div>
         <div className="search-input column is-4">
