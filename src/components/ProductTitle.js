@@ -4,17 +4,19 @@ import {Link} from "gatsby";
 
 function ProductTitle({info = {}}) {
   const [bside, setBside] = useState("is-4");
+  const [side, setSide] = useState("is-6");
   const [des, setDes] = useState(info.description);
   useEffect(() => {
     if (window.innerWidth <= 768) {
       setBside("is-6");
+      setSide("is-7");
       setDes("全面闭环的自动化机器学习平台,自主研发的零门槛场景变量挖掘神器。");
     }
   }, []);
   return (
     <div className="product-title">
       <div className="columns is-mobile">
-        <div className={`column is-half`}>
+        <div className={`column ${side}`}>
           <div className="has-margin-bottom-15-mobile">
             <h3
               className="is-size-5-5-mobile is-size-2-5 has-text-white is-size-4-touch is-hidden-tablet"
