@@ -3,56 +3,10 @@ import PropTypes from "prop-types";
 import {graphql} from "gatsby";
 import Layout from "../components/Layout";
 import JobCard from "../components/JobCard";
+import JoinInput from "../components/JoinInput";
 import BackgroundImageSwitch from "../components/BackgroundImageSwitch";
-import Dropdown from "../components/Dropdown";
-import searchImg from "../img/search.png";
 
-const JoinInput = ({filter}) => {
-  const [search, setSearch] = useState({});
-  const handleChange = e => {
-    e.preventDefault();
-    setSearch({...search, [e.target.name]: e.target.value});
-    filter({...search, [e.target.name]: e.target.value});
-  };
-  const handleSubmit = e => {
-    e.preventDefault();
-    filter(search);
-  };
-  return (
-    <form name="search" onSubmit={handleSubmit}>
-      <div className="columns is-mobile">
-        <div className="column is-4">
-          <div className="control is-expanded has-icons-right">
-            <Dropdown />
-          </div>
-        </div>
-        <div className="column is-4">
-          <div className="control is-expanded has-icons-right">
-            <Dropdown />
-          </div>
-        </div>
-        <div className="search-input column is-4">
-          <div className="control is-expanded has-icons-right">
-            <input
-              name="job"
-              className="input h-input is-size-7-mobile"
-              type="text"
-              placeholder="搜索职位"
-              onChange={handleChange}
-            />
-            <span className="icon is-small is-right" onClick={handleSubmit}>
-              <i className="image is-20x20 is-13x13-mobile">
-                <img src={searchImg} width="20" height="20" />
-              </i>
-            </span>
-          </div>
-        </div>
-      </div>
-    </form>
-  );
-};
-
-const JoinTemplate = ({images, jobList = []}) => {
+const JoinTemplate = ({images, jobList, filterJobs}) => {
   const [jobfilter, setJobfilter] = useState(jobList);
   const jobFilterEvent = e => {
     setJobfilter(
@@ -82,7 +36,7 @@ const JoinTemplate = ({images, jobList = []}) => {
         <div className="container">
           <div className="columns is-centered">
             <div className="column is-10 is-paddingless-mobile">
-              <JoinInput filter={jobFilterEvent} />
+              <JoinInput filter={jobFilterEvent} selectOptions={filterJobs} />
             </div>
           </div>
         </div>
@@ -111,13 +65,18 @@ const JoinTemplate = ({images, jobList = []}) => {
 JoinTemplate.propTypes = {
   images: PropTypes.array,
   jobList: PropTypes.array,
+  filterJobs: PropTypes.object,
 };
 
 const Join = ({data}) => {
   const {frontmatter} = data.markdownRemark;
   return (
     <Layout>
-      <JoinTemplate images={frontmatter.images} jobList={frontmatter.newJobs} />
+      <JoinTemplate
+        images={frontmatter.images}
+        jobList={frontmatter.newJobs}
+        filterJobs={frontmatter.filterJobs}
+      />
     </Layout>
   );
 };
@@ -148,6 +107,16 @@ export const joinQuery = graphql`
           heading
           date
           description
+        }
+        filterJobs {
+          address {
+            index
+            value
+          }
+          position {
+            index
+            value
+          }
         }
       }
     }
