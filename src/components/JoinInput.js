@@ -41,7 +41,7 @@ const JoinInput = ({filter, selectOptions}) => {
             />
             <span className="icon is-small is-right" onClick={handleSubmit}>
               <i className="image is-20x20 is-13x13-mobile">
-                <img src={searchImg} width="20" height="20" />
+                <img alt="search-icon" src={searchImg} width="20" height="20" />
               </i>
             </span>
           </div>
