@@ -93,35 +93,35 @@ const Navbar = class extends React.Component {
               </Link>
               <Link
                 className="navbar-item is-tab"
-                to="/productcenter"
+                to="/productcenter/"
                 activeClassName={activeNav.productcenter}
               >
                 产品中心
               </Link>
               <Link
                 className="navbar-item is-tab"
-                to="/case"
+                to="/case/"
                 activeClassName={activeNav.case}
               >
                 客户案例
               </Link>
               <Link
                 className="navbar-item is-tab"
-                to="/aboutus"
+                to="/aboutus/"
                 activeClassName={activeNav.aboutus}
               >
                 关于黑顿
               </Link>
               <Link
                 className="navbar-item is-tab"
-                to="/college"
+                to="/college/"
                 activeClassName={activeNav.college}
               >
                 黑顿研究院
               </Link>
               <Link
                 className="navbar-item is-tab"
-                to="/join"
+                to="/join/"
                 activeClassName={activeNav.join}
               >
                 加入我们

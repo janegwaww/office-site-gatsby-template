@@ -47,7 +47,7 @@ function ProductTitle({info = {}}) {
             <div className={`column ${bside}`}>
               <Link
                 className="button is-size-7-5-mobile is-transparent"
-                to="/productcenter/advisory"
+                to="/productcenter/advisory/"
               >
                 业务方案咨询
               </Link>
