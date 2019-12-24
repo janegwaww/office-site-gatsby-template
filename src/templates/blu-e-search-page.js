@@ -2,8 +2,71 @@ import React from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
+import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 import ProductTitle from "../components/ProductTitle";
 import BackgroundImageSwitch from "../components/BackgroundImageSwitch";
+
+const ProductValue = ({ items = [] }) => {
+  return (
+    <div className="product-value">
+      <div
+        className="is-size-2-5 is-size-5-mobile has-text-centered"
+        style={{ marginBottom: "30px" }}
+      >
+        产品价值
+      </div>
+      <div className="columns is-mobile">
+        {items.map((o, i) => (
+          <div className="column is-4 has-text-centered" key={i}>
+            <div className="image is-60x60 is-centered">
+              <PreviewCompatibleImage imageInfo={o} />
+            </div>
+            <div className="is-size-5-5 has-text-black">{o.title}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+const ProductDemo = ({ info = "" }) => {
+  return (
+    <div>
+      <div className="is-size-2-5 is-size-5-mobile has-text-centered">
+        功能演示
+      </div>
+    </div>
+  );
+};
+
+const ProductScene = ({ items = [] }) => {
+  const handleClick = e => {
+    console.log(e);
+  };
+  return (
+    <div className="product-scene">
+      <div className="is-size-2-5 is-size-5-mobile has-text-centered has-margin-bottom-40">
+        业务场景
+      </div>
+      <div className="columns is-multiline">
+        {items.map((o, i) => (
+          <div
+            className="column is-3 has-text-centered"
+            onClick={() => handleClick(o)}
+            key={i}
+          >
+            <div className="scene-card has-background-white">
+              <div className="image is-80x80">
+                <PreviewCompatibleImage imageInfo={o} />
+              </div>
+              <div className="is-size-5-5 has-text-333">{o.title}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 const BluETemplate = ({
   header,
@@ -23,6 +86,33 @@ const BluETemplate = ({
           </div>
         </div>
       </BackgroundImageSwitch>
+      <section className="section h-section has-background-gray-2">
+        <div className="container">
+          <div className="columns">
+            <div className="column is-10 is-offset-1">
+              <ProductValue items={productvalue} />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="section h-section">
+        <div className="container">
+          <div className="columns">
+            <div className="column is-10 is-offset-1">
+              <ProductDemo info={searchtemple} />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="section h-section has-background-gray-3">
+        <div className="container">
+          <div className="columns">
+            <div className="column is-10 is-offset-1">
+              <ProductScene items={businessscene} />
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
