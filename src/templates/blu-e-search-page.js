@@ -5,6 +5,7 @@ import Layout from "../components/Layout";
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 import ProductTitle from "../components/ProductTitle";
 import BackgroundImageSwitch from "../components/BackgroundImageSwitch";
+import ProductTextArea from "../components/ProductTextArea";
 
 const ProductValue = ({ items = [] }) => {
   return (
@@ -32,8 +33,11 @@ const ProductValue = ({ items = [] }) => {
 const ProductDemo = ({ info = "" }) => {
   return (
     <div>
-      <div className="is-size-2-5 is-size-5-mobile has-text-centered">
+      <div className="is-size-2-5 is-size-5-mobile has-text-centered has-margin-bottom-40">
         功能演示
+      </div>
+      <div>
+        <ProductTextArea text={info} />
       </div>
     </div>
   );
