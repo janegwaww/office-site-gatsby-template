@@ -53,7 +53,10 @@ const RelatedItem = ({ info = {} }) => {
           </span>
         </div>
         <br />
-        <span className="is-size-6-5 has-text-333">{info.text}</span>
+        <span
+          className="is-size-6-5 has-text-333"
+          dangerouslySetInnerHTML={{ __html: info.text }}
+        ></span>
       </div>
     </div>
   );
@@ -67,20 +70,21 @@ const SearchResult = () => {
       position: "[277,295]",
       class: "first",
       text:
-        "……风的皱褶里夹含着水分，这些细小的事件被我们日常的忙碌所掩盖，直到发现阳台上晾晒的……"
+        '……风的皱褶里夹含着水分，<span style="color: #2c95ff">这些细小的事件被我们日常的忙碌所掩盖</span>，直到发现阳台上晾晒的……'
     },
     {
       related: 8.434285,
       position: "[559,568]",
       class: "",
-      text: "……它慷慨地落下，它把这些动人的时光，落向大海，落向潮汐……"
+      text:
+        "……它慷慨地落下，<span style='color: #2c95ff'>它把这些动人的时光</span>，落向大海，落向潮汐……"
     },
     {
       related: 8.396917,
       position: "[479,489]",
       class: "",
       text:
-        "……雨水击中了早晨的脉搏，让我感叹中国农历和大自然之间的神秘感应，雨水使得季节激……"
+        "……雨水击中了早晨的脉搏，<span style='color: #2c95ff'>让我感叹中国农历和</span>大自然之间的神秘感应，雨水使得季节激……"
     }
   ];
   const handleChange = () => {
@@ -88,9 +92,9 @@ const SearchResult = () => {
   };
   return (
     <div className="search-result">
-      <div>
+      <div className="field">
         <div className="field">
-          <span className="is-size-5-5 has-text-666">开启语义理解:&ensp;</span>
+          <span className="is-size-6 has-text-666">开启语义理解:&ensp;</span>
           <input
             id="switchRoundedInfo"
             type="checkbox"
@@ -101,7 +105,7 @@ const SearchResult = () => {
           />
           <label
             htmlFor="switchRoundedInfo"
-            className="is-size-5-5 has-text-666"
+            className="is-size-6 has-text-666"
           ></label>
         </div>
         <div className="is-size-7 has-text-999">
@@ -146,12 +150,14 @@ function BusinessScene({ text = "" }) {
           </div>
           <div className="tr">
             <div className="td">
-              <textarea
-                value={content}
+              <div
+                className="textarea"
+                contenteditable="true"
                 onChange={handleChange}
                 rows="25"
                 cols="32"
-              />
+                dangerouslySetInnerHTML={{ __html: content }}
+              ></div>
             </div>
             <div className="td">
               <SearchInput />

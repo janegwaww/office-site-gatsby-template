@@ -435,37 +435,44 @@ footer
     border: 0.5px solid #ebebeb
     .tr
       display: table-row
+      .td
+        border: 0.5px solid #ebebeb
+        display: table-cell
+        color: #666666
+        font-weight: normal
+        text-align: center
+        vertical-align: top
+        font-size: 14px
+        max-height: 531px
+        padding: 40px 30px
+        &:nth-child(even)
+          width: 27%
+        &:nth-child(odd)
+          width: 36%
       &.thead
         background-color: #fbfbfb
         height: 60px
         .td
           padding: 0
           vertical-align: middle
-          text-align: center
-      .td
-        border: 0.5px solid #ebebeb
-        display: table-cell
-        color: #666666
-        font-weight: normal
-        text-align: left
-        vertical-align: top
-        font-size: 14px
-        width: 33%
-        max-height: 531px
-        padding: 40px 30px
-      textarea
+      .textarea
         color: #666666
         font-size: 14px
-        border: unset
+        border: none
+        box-shadow: unset
         resize: none
         overflow: auto
         outline: none
+        text-align: left
+
   .search-input
     .control
       .input
         font-size: 14px
         padding-top: 21px
         padding-bottom: 21px
+        box-shadow: unset
+        border-color: #dbdbdb
       .button.is-info
           background-color: #ebebeb
     .buttons .button
@@ -477,6 +484,7 @@ footer
         color: white
         background-color: #0c66ff
   .search-result
+    text-align: left
     .related-item
       display: flex
       justify-content: space-between
@@ -493,4 +501,6 @@ footer
           background-color: #f67280
       span.first
         color: #f67280
+    .switch[type="checkbox"].is-info:checked + label::before
+      background-color: #0c66ff
 // bluesearch end
