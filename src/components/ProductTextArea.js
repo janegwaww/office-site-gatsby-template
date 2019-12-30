@@ -152,7 +152,7 @@ function BusinessScene({ text = "" }) {
             <div className="td">
               <div
                 className="textarea"
-                contenteditable="true"
+                contentEditable="true"
                 onChange={handleChange}
                 rows="25"
                 cols="32"

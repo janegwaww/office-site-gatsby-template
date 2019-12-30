@@ -150,7 +150,9 @@ export const bluESearchQuery = graphql`
       frontmatter {
         header {
           heading
+          subheading
           description
+          subdescription
         }
         images {
           image {
