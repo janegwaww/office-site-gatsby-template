@@ -95,18 +95,18 @@ const SearchResult = () => {
       <div className="field">
         <div className="field">
           <span className="is-size-6 has-text-666">开启语义理解:&ensp;</span>
-          <input
-            id="switchRoundedInfo"
-            type="checkbox"
-            name="switchRoundedInfo"
-            className="switch is-rounded is-info"
-            checked={check}
-            onChange={handleChange}
-          />
-          <label
-            htmlFor="switchRoundedInfo"
-            className="is-size-6 has-text-666"
-          ></label>
+          {/* <input */}
+          {/*   id="switchRoundedInfo" */}
+          {/*   type="checkbox" */}
+          {/*   name="switchRoundedInfo" */}
+          {/*   className="switch is-rounded is-info" */}
+          {/*   checked={check} */}
+          {/*   onChange={handleChange} */}
+          {/* /> */}
+          {/* <label */}
+          {/*   htmlFor="switchRoundedInfo" */}
+          {/*   className="is-size-6 has-text-666" */}
+          {/* ></label> */}
         </div>
         <div className="is-size-7 has-text-999">
           说明：该分值表明搜索内容与文本的契合度，数值越高，则语义契合度越好。
