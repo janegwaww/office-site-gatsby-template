@@ -6,7 +6,7 @@ const SearchInput = () => {
   return (
     <div className="search-input">
       <div className="field has-addons has-margin-bottom-40">
-        <div className="control">
+        <div className="control" style={{ width: "100%" }}>
           <input
             className="input is-medium"
             type="text"
@@ -22,13 +22,13 @@ const SearchInput = () => {
         </div>
       </div>
       <div className="buttons">
-        <button className="button is-fullwidth is-medium is-link has-margin-bottom-40">
+        <button className="button is-fullwidth is-link has-margin-bottom-40">
           被我们忽视的小事
         </button>
-        <button className="button is-fullwidth is-medium has-margin-bottom-40">
+        <button className="button is-fullwidth has-margin-bottom-40">
           未知的玩意儿
         </button>
-        <button className="button is-fullwidth is-medium has-margin-bottom-40">
+        <button className="button is-fullwidth has-margin-bottom-40">
           有点不清楚
         </button>
         <button className="button is-fullwidth is-medium">神秘的季节</button>
@@ -46,10 +46,12 @@ const RelatedItem = ({ info = {} }) => {
       <div>
         <div className="is-size-6 has-text-666">
           <span style={{ marginRight: "30px" }}>
-            关联度: <span className={info.class}>{info.related}</span>
+            关联度:{" "}
+            <span className={`relate-num ${info.class}`}>{info.related}</span>
           </span>
           <span>
-            位置: <span className={info.class}>{info.position}</span>
+            位置:{" "}
+            <span className={`relate-num ${info.class}`}>{info.position}</span>
           </span>
         </div>
         <br />
@@ -63,7 +65,7 @@ const RelatedItem = ({ info = {} }) => {
 };
 
 const SearchResult = () => {
-  const [check, setCheck] = useState("checked");
+  // const [check, setCheck] = useState("checked");
   const arr = [
     {
       related: 8.899692,
@@ -87,14 +89,14 @@ const SearchResult = () => {
         "……雨水击中了早晨的脉搏，<span style='color: #2c95ff'>让我感叹中国农历和</span>大自然之间的神秘感应，雨水使得季节激……"
     }
   ];
-  const handleChange = () => {
-    setCheck(check === "" ? "checked" : "");
-  };
+  // const handleChange = () => {
+  //   setCheck(check === "" ? "checked" : "");
+  // };
   return (
     <div className="search-result">
       <div className="field">
         <div className="field">
-          <span className="is-size-6 has-text-666">开启语义理解:&ensp;</span>
+          {/* <span className="is-size-6 has-text-666">开启语义理解:&ensp;</span> */}
           {/* <input */}
           {/*   id="switchRoundedInfo" */}
           {/*   type="checkbox" */}
@@ -130,13 +132,12 @@ function BusinessScene({ text = "" }) {
   return (
     <div className="product-textarea">
       <div className="buttons">
-        <button className="button is-white">
+        <div className="refresh-button">
           <span className="icon">
-            {/* <img src={curcle} alt="curcle" /> */}
-            <i className="fas fa-circle-notch"></i>
+            <img src={curcle} alt="curcle" width="20" height="20" />
           </span>
           <span className="is-size-6 has-text-666">换一个实例</span>
-        </button>
+        </div>
         <button className="button is-light is-size-6 has-text-666">
           自定义文本
         </button>
@@ -148,7 +149,7 @@ function BusinessScene({ text = "" }) {
             <div className="td">想要从文本中搜索的语义/语句</div>
             <div className="td">挖掘结果</div>
           </div>
-          <div className="tr">
+          <div className="tr tbody">
             <div className="td">
               <div
                 className="textarea"
