@@ -1,8 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
+import Switch from "react-switch";
 import curcle from "../img/curcle.svg";
+import searchIcon from "../img/search-white.svg";
 
-const SearchInput = () => {
+const SearchInput = ({ handleSearch, searchKeywords = [] }) => {
+  const [inputValue, setInputValue] = useState("");
+  const inputHandler = e => {
+    setInputValue(e.target.value);
+  };
+  const searchHandler = e => {
+    e.persist();
+    handleSearch(e.currentTarget.value);
+  };
   return (
     <div className="search-input">
       <div className="field has-addons has-margin-bottom-40">
@@ -11,27 +21,32 @@ const SearchInput = () => {
             className="input is-medium"
             type="text"
             placeholder="自定义输入"
+            onChange={inputHandler}
           />
         </div>
         <div className="control">
-          <button className="button is-info is-medium">
+          <button
+            className="button is-info is-medium"
+            value={inputValue}
+            onClick={searchHandler}
+          >
             <span className="icon">
-              <i className="fa fa-search"></i>
+              <img src={searchIcon} alt="search" />
             </span>
           </button>
         </div>
       </div>
       <div className="buttons">
-        <button className="button is-fullwidth is-link has-margin-bottom-40">
-          被我们忽视的小事
-        </button>
-        <button className="button is-fullwidth has-margin-bottom-40">
-          未知的玩意儿
-        </button>
-        <button className="button is-fullwidth has-margin-bottom-40">
-          有点不清楚
-        </button>
-        <button className="button is-fullwidth is-medium">神秘的季节</button>
+        {searchKeywords.map((o, i) => (
+          <button
+            className={`button is-fullwidth has-margin-bottom-40`}
+            value={o}
+            onClick={searchHandler}
+            key={i}
+          >
+            {o}
+          </button>
+        ))}
       </div>
     </div>
   );
@@ -41,82 +56,67 @@ const RelatedItem = ({ info = {} }) => {
   return (
     <div className="related-item">
       <div style={{ marginRight: "10px" }}>
-        <div className={`index-num ${info.class}`}>{info.key + 1}</div>
+        <div className="index-num">{info.key + 1}</div>
       </div>
       <div>
         <div className="is-size-6 has-text-666">
           <span style={{ marginRight: "30px" }}>
-            关联度:{" "}
-            <span className={`relate-num ${info.class}`}>{info.related}</span>
+            关联度: <span className="relate-num">{info.match_score}</span>
           </span>
           <span>
             位置:{" "}
-            <span className={`relate-num ${info.class}`}>{info.position}</span>
+            <span className="relate-num">{`[${info.str_position.toString()}]`}</span>
           </span>
         </div>
         <br />
         <span
           className="is-size-6-5 has-text-333"
-          dangerouslySetInnerHTML={{ __html: info.text }}
+          dangerouslySetInnerHTML={{
+            __html: `...${info.matched_sentence.replace(
+              info.matched_str,
+              `<span style='color:#2c95ff'>${info.matched_str}</span>`
+            )}...`
+          }}
         ></span>
       </div>
     </div>
   );
 };
 
-const SearchResult = () => {
-  // const [check, setCheck] = useState("checked");
-  const arr = [
-    {
-      related: 8.899692,
-      position: "[277,295]",
-      class: "first",
-      text:
-        '……风的皱褶里夹含着水分，<span style="color: #2c95ff">这些细小的事件被我们日常的忙碌所掩盖</span>，直到发现阳台上晾晒的……'
-    },
-    {
-      related: 8.434285,
-      position: "[559,568]",
-      class: "",
-      text:
-        "……它慷慨地落下，<span style='color: #2c95ff'>它把这些动人的时光</span>，落向大海，落向潮汐……"
-    },
-    {
-      related: 8.396917,
-      position: "[479,489]",
-      class: "",
-      text:
-        "……雨水击中了早晨的脉搏，<span style='color: #2c95ff'>让我感叹中国农历和</span>大自然之间的神秘感应，雨水使得季节激……"
-    }
-  ];
-  // const handleChange = () => {
-  //   setCheck(check === "" ? "checked" : "");
-  // };
+const SearchResult = ({ result = [], checkHandler }) => {
+  const [check, setCheck] = useState(false);
+  const handleChange = () => {
+    setCheck(!check);
+    checkHandler(!check);
+  };
   return (
     <div className="search-result">
       <div className="field">
         <div className="field">
-          {/* <span className="is-size-6 has-text-666">开启语义理解:&ensp;</span> */}
-          {/* <input */}
-          {/*   id="switchRoundedInfo" */}
-          {/*   type="checkbox" */}
-          {/*   name="switchRoundedInfo" */}
-          {/*   className="switch is-rounded is-info" */}
-          {/*   checked={check} */}
-          {/*   onChange={handleChange} */}
-          {/* /> */}
-          {/* <label */}
-          {/*   htmlFor="switchRoundedInfo" */}
-          {/*   className="is-size-6 has-text-666" */}
-          {/* ></label> */}
+          <label htmlFor="l-switch">
+            <span className="is-size-6 has-text-666">开启语义理解:&ensp;</span>
+            <Switch
+              onChange={handleChange}
+              checked={check}
+              offColor={"#999"}
+              onColor={"#0c66ff"}
+              handleDiameter={12}
+              uncheckedIcon={false}
+              checkedIcon={false}
+              height={20}
+              width={36}
+              id="l-switch"
+              disabled
+            />
+          </label>
         </div>
         <div className="is-size-7 has-text-999">
           说明：该分值表明搜索内容与文本的契合度，数值越高，则语义契合度越好。
         </div>
       </div>
       <br />
-      <div>
-        {arr.map((o, i) => (
+      <div className="relate-section">
+        {result.map((o, i) => (
           <RelatedItem info={{ ...o, key: i }} key={i} />
         ))}
       </div>
@@ -124,21 +124,75 @@ const SearchResult = () => {
   );
 };
 
-function BusinessScene({ text = "" }) {
-  const [content, setContent] = useState(text);
+function ProductTextArea({ text = [] }) {
+  const [content, setContent] = useState(text[0].description);
+  const [keywords, setKeywords] = useState(text[0].keywords);
+  const [issemantic, setIssemantic] = useState(false);
+  const [related, setRelated] = useState([]);
+  const [textIndex, setTextIndex] = useState(0);
+  useEffect(() => {
+    changeContent();
+  }, []);
+  const handleQuery = (value, text) => {
+    if (!text) return alert("文本不能为空！");
+    let param = {
+      querystring: value,
+      paragraph: text,
+      issemantic: issemantic
+    };
+    fetchQuery(param)
+      .then(data => {
+        if (data.err === 0) {
+          const arr = data.resultdata.slice(1);
+          setRelated(arr);
+        } else {
+          alert(data.errmsg);
+        }
+      })
+      .catch(err => alert(err));
+  };
   const handleChange = e => {
     setContent(e.target.value);
+  };
+  const handleSearch = value => {
+    const zh_regexp = /^[\u4e00-\u9fa5]+$/;
+    if (zh_regexp.test(value)) {
+      return handleQuery(value, content);
+    }
+    alert("请输入中文字符！");
+  };
+  const changeContent = () => {
+    const { description, keywords } = text[textIndex];
+    setContent(description);
+    setKeywords(keywords);
+    handleQuery(keywords[0], description);
+    if (textIndex >= text.length - 1) {
+      setTextIndex(0);
+    } else {
+      setTextIndex(textIndex + 1);
+    }
+  };
+  const defineContent = () => {
+    setContent("");
+    setKeywords([]);
+    setRelated([]);
+  };
+  const handleCheck = e => {
+    setIssemantic(e);
   };
   return (
     <div className="product-textarea">
       <div className="buttons">
-        <div className="refresh-button">
+        <div className="refresh-button" onClick={changeContent}>
           <span className="icon">
             <img src={curcle} alt="curcle" width="20" height="20" />
           </span>
           <span className="is-size-6 has-text-666">换一个实例</span>
         </div>
-        <button className="button is-light is-size-6 has-text-666">
+        <button
+          className="button is-light is-size-6-5 has-text-999 has-background-gray-2"
+          onClick={defineContent}
+        >
           自定义文本
         </button>
       </div>
@@ -151,20 +205,23 @@ function BusinessScene({ text = "" }) {
           </div>
           <div className="tr tbody">
             <div className="td">
-              <div
+              <textarea
                 className="textarea"
-                contentEditable="true"
+                placeholder="请输入文本"
                 onChange={handleChange}
                 rows="25"
                 cols="32"
-                dangerouslySetInnerHTML={{ __html: content }}
-              ></div>
+                value={content}
+              ></textarea>
             </div>
             <div className="td">
-              <SearchInput />
+              <SearchInput
+                handleSearch={handleSearch}
+                searchKeywords={keywords}
+              />
             </div>
             <div className="td">
-              <SearchResult />
+              <SearchResult result={related} checkHandler={handleCheck} />
             </div>
           </div>
         </div>
@@ -173,12 +230,43 @@ function BusinessScene({ text = "" }) {
   );
 }
 
-BusinessScene.defaultProps = {
-  info: `雨水之所以愿意落下，是因为它在天上，把满地盛开的雨伞，看作莲花。这个想象有些大，大到可以覆盖我走过的所有的路。人生大概是随时要迎接雨的，直到雨成为身体的一部分。雨是一种巨大的力量，它来自天堂。我想象，在夏末的黄昏，或者是春天的早晨，大自然会有某种力量在凝聚，在地上的人们不注意的时候，某种力量突然苏醒，这是云团里隐藏着的季节的神秘。我在早上起来，可以感觉到空气中这些微小的湿度。打开窗户的时候，常常忘记了今天应该翻到谷雨这个节气，翻日历这个动作对于雨来说是多么的渺小，对于我来说却是必不可少的。这个时候桃花在日历的后面悄悄苏醒，风的皱褶里夹含着水分，这些细小的事件被我们日常的忙碌所掩盖，直到发现阳台上晾晒的衣物为什么还有没有干，此时才想到今天会发生点什么。然后就是上路，大街如常，人流如常，来不及欣赏云朵的变化。天空对于我们来说，既可以像天气预报那用“阴”、“晴”、“雨几个字来概括，也可以用好多天……`
+ProductTextArea.propTypes = {
+  info: PropTypes.shape({
+    description: PropTypes.string,
+    keywords: PropTypes.array
+  })
 };
 
-BusinessScene.propTypes = {
-  info: PropTypes.string
-};
+export default ProductTextArea;
 
-export default BusinessScene;
+async function fetchQuery(
+  param = {
+    querystring: "",
+    paragraph: "",
+    issemantic: false
+  }
+) {
+  const data = {
+    dbmodelname: "blue",
+    modelaction: "search",
+    extradata: {
+      querystring: "",
+      paragraph: "",
+      lang: "ch",
+      issemantic: false,
+      isjson: false
+    },
+    modeltype: "ai"
+  };
+  const response = await fetch("http://codes.haetek.com:6677/blue", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      ...data,
+      ...{ extradata: Object.assign(data.extradata, param) }
+    })
+  });
+  return await response.json();
+}

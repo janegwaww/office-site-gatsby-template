@@ -11,7 +11,7 @@ const ProductValue = ({ items = [] }) => {
   return (
     <div className="product-value">
       <div
-        className="is-size-2-5 is-size-5-mobile has-text-centered"
+        className="is-size-2-5 is-size-5-mobile has-text-centered has-text-000"
         style={{ marginBottom: "30px" }}
       >
         产品价值
@@ -22,7 +22,7 @@ const ProductValue = ({ items = [] }) => {
             <div className="image is-60x60 is-centered">
               <PreviewCompatibleImage imageInfo={o} />
             </div>
-            <div className="is-size-5-5 has-text-black">{o.title}</div>
+            <div className="is-size-5-5 has-text-000">{o.title}</div>
           </div>
         ))}
       </div>
@@ -33,7 +33,7 @@ const ProductValue = ({ items = [] }) => {
 const ProductDemo = ({ info = "" }) => {
   return (
     <div>
-      <div className="is-size-2-5 is-size-5-mobile has-text-centered has-margin-bottom-40">
+      <div className="is-size-2-5 is-size-5-mobile has-text-centered has-margin-bottom-40 has-text-000">
         功能演示
       </div>
       <div>
@@ -49,7 +49,7 @@ const ProductScene = ({ items = [] }) => {
   };
   return (
     <div className="product-scene">
-      <div className="is-size-2-5 is-size-5-mobile has-text-centered has-margin-bottom-40">
+      <div className="is-size-2-5 is-size-5-mobile has-text-centered has-margin-bottom-40 has-text-000">
         业务场景
       </div>
       <div className="columns is-multiline">
@@ -175,7 +175,10 @@ export const bluESearchQuery = graphql`
           }
           alt
         }
-        searchtemple
+        searchtemple {
+          description
+          keywords
+        }
         businessscene {
           title
           image {

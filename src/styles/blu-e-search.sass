@@ -62,17 +62,25 @@
       &.tbody
         .td
           border-bottom: 0
+          height: 531px
           &:last-child
             border-right: 0
       .textarea
         color: #666666
+        background-color: #f8f8f9
         font-size: 14px
         border: none
         box-shadow: unset
         resize: none
+        height: 480px
         overflow: auto
         outline: none
         text-align: left
+    +mobile
+      .thead
+        display: none
+      .tbody .td
+        display: table-row
   .search-input
     .control
       .input
@@ -80,23 +88,42 @@
         padding-top: 21px
         padding-bottom: 21px
         box-shadow: unset
-        border-color: #dbdbdb
+        /* border-color: #e0e0e0
+        &:focus
+          /* border-right: 0
+          /* border-color: #0c66ff
       .button.is-info
-          background-color: #ebebeb
+        background-color: #ebebeb
     .buttons .button
       font-size: 14px
       height: 3em
       color: #666666
-      &.is-link
+      &:first-child
         color: white
         background-color: #0c66ff
+      &:last-child
+        margin-bottom: 0
   .search-result
     text-align: left
+    label
+      display: flex
+      align-items: center
+      span
+        user-select: none
+    .relate-section
+      overflow: auto
+      max-height: 380px
     .related-item
       display: flex
-      justify-content: space-between
-      &:not(last-child)
-        margin-bottom: 40px
+      justify-content: flex-start
+      margin-bottom: 40px
+      &:last-child
+        margin-bottom: 0
+      &:first-child
+        .index-num
+          background-color: #f67280
+        .relate-num
+          color: #f67280
       .index-num
         background-color: #d9d9d9
         border-radius: 100px
@@ -104,12 +131,6 @@
         height: 22px
         text-align: center
         color: white
-        &.first
-          background-color: #f67280
       .relate-num
         color: #333333
-        &.first
-          color: #f67280
-    /* .switch[type="checkbox"].is-info:checked + label::before
-    /*   background-color: #0c66ff
 // bluesearch end
