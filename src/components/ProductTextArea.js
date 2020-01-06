@@ -1,185 +1,66 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
-import Switch from "react-switch";
+import Loader from "react-loader-spinner";
+import SearchInput from "../components/SearchInput";
+import SearchResult from "../components/SearchResult";
 import curcle from "../img/curcle.svg";
-import searchIcon from "../img/search-white.svg";
 
-const SearchInput = ({ handleSearch, searchKeywords = [] }) => {
-  const [inputValue, setInputValue] = useState("");
-  const inputHandler = e => {
-    setInputValue(e.target.value);
-  };
-  const searchHandler = e => {
-    e.persist();
-    handleSearch(e.currentTarget.value);
-  };
-  return (
-    <div className="search-input">
-      <div className="field has-addons has-margin-bottom-40">
-        <div className="control" style={{ width: "100%" }}>
-          <input
-            className="input is-medium"
-            type="text"
-            placeholder="自定义输入"
-            onChange={inputHandler}
-          />
-        </div>
-        <div className="control">
-          <button
-            className="button is-info is-medium"
-            value={inputValue}
-            onClick={searchHandler}
-          >
-            <span className="icon">
-              <img src={searchIcon} alt="search" />
-            </span>
-          </button>
-        </div>
-      </div>
-      <div className="buttons">
-        {searchKeywords.map((o, i) => (
-          <button
-            className={`button is-fullwidth has-margin-bottom-40`}
-            value={o}
-            onClick={searchHandler}
-            key={i}
-          >
-            {o}
-          </button>
-        ))}
-      </div>
-    </div>
-  );
-};
-
-const RelatedItem = ({ info = {} }) => {
-  return (
-    <div className="related-item">
-      <div style={{ marginRight: "10px" }}>
-        <div className="index-num">{info.key + 1}</div>
-      </div>
-      <div>
-        <div className="is-size-6 has-text-666">
-          <span style={{ marginRight: "30px" }}>
-            关联度: <span className="relate-num">{info.match_score}</span>
-          </span>
-          <span>
-            位置:{" "}
-            <span className="relate-num">{`[${info.str_position.toString()}]`}</span>
-          </span>
-        </div>
-        <br />
-        <span
-          className="is-size-6-5 has-text-333"
-          dangerouslySetInnerHTML={{
-            __html: `...${info.matched_sentence.replace(
-              info.matched_str,
-              `<span style='color:#2c95ff'>${info.matched_str}</span>`
-            )}...`
-          }}
-        ></span>
-      </div>
-    </div>
-  );
-};
-
-const SearchResult = ({ result = [], checkHandler }) => {
-  const [check, setCheck] = useState(false);
-  const handleChange = () => {
-    setCheck(!check);
-    checkHandler(!check);
-  };
-  return (
-    <div className="search-result">
-      <div className="field">
-        <div className="field">
-          <label htmlFor="l-switch">
-            <span className="is-size-6 has-text-666">开启语义理解:&ensp;</span>
-            <Switch
-              onChange={handleChange}
-              checked={check}
-              offColor={"#999"}
-              onColor={"#0c66ff"}
-              handleDiameter={12}
-              uncheckedIcon={false}
-              checkedIcon={false}
-              height={20}
-              width={36}
-              id="l-switch"
-              disabled
-            />
-          </label>
-        </div>
-        <div className="is-size-7 has-text-999">
-          说明：该分值表明搜索内容与文本的契合度，数值越高，则语义契合度越好。
-        </div>
-      </div>
-      <br />
-      <div className="relate-section">
-        {result.map((o, i) => (
-          <RelatedItem info={{ ...o, key: i }} key={i} />
-        ))}
-      </div>
-    </div>
-  );
-};
-
-function ProductTextArea({ text = [] }) {
-  const [content, setContent] = useState(text[0].description);
-  const [keywords, setKeywords] = useState(text[0].keywords);
+function ProductTextArea({ info = [] }) {
+  const [content, setContent] = useState(info[0]);
+  const [keyword, setKeyword] = useState(info[0].keywords[0]);
   const [issemantic, setIssemantic] = useState(false);
   const [related, setRelated] = useState([]);
   const [textIndex, setTextIndex] = useState(0);
+  const [loading, setLoading] = useState(false);
+  const searchInput = useRef(null);
+
   useEffect(() => {
-    changeContent();
-  }, []);
-  const handleQuery = (value, text) => {
-    if (!text) return alert("文本不能为空！");
-    let param = {
-      querystring: value,
-      paragraph: text,
-      issemantic: issemantic
-    };
-    fetchQuery(param)
-      .then(data => {
-        if (data.err === 0) {
-          const arr = data.resultdata.slice(1);
-          setRelated(arr);
+    const handleQuery = async () => {
+      if (!keyword) return alert("关键字不能为空！");
+      if (!content.description) return alert("文本不能为空！");
+      setLoading(true);
+      try {
+        const result = await fetchQuery({
+          querystring: keyword,
+          paragraph: content.description,
+          issemantic: issemantic
+        });
+        if (result.err === 0) {
+          setRelated(result.resultdata.slice(1));
+          searchInput.current.handleActiveButton(keyword);
         } else {
-          alert(data.errmsg);
+          alert(result.errmsg);
         }
-      })
-      .catch(err => alert(err));
-  };
-  const handleChange = e => {
-    setContent(e.target.value);
-  };
+      } catch (err) {
+        alert(err);
+      }
+      console.log(loading);
+      setLoading(false);
+    };
+    handleQuery();
+  }, [keyword, issemantic]);
+
   const handleSearch = value => {
     const zh_regexp = /^[\u4e00-\u9fa5]+$/;
     if (zh_regexp.test(value)) {
-      return handleQuery(value, content);
+      return setKeyword(value);
     }
     alert("请输入中文字符！");
   };
   const changeContent = () => {
-    const { description, keywords } = text[textIndex];
-    setContent(description);
-    setKeywords(keywords);
-    handleQuery(keywords[0], description);
-    if (textIndex >= text.length - 1) {
+    setContent(info[textIndex]);
+    setKeyword(info[textIndex].keywords[0]);
+    if (textIndex >= info.length - 1) {
       setTextIndex(0);
     } else {
       setTextIndex(textIndex + 1);
     }
   };
   const defineContent = () => {
-    setContent("");
-    setKeywords([]);
+    setContent({ description: "", keywords: [] });
     setRelated([]);
   };
-  const handleCheck = e => {
-    setIssemantic(e);
-  };
+
   return (
     <div className="product-textarea">
       <div className="buttons">
@@ -208,33 +89,49 @@ function ProductTextArea({ text = [] }) {
               <textarea
                 className="textarea"
                 placeholder="请输入文本"
-                onChange={handleChange}
+                onChange={e =>
+                  setContent({ ...content, ...{ description: e.target.value } })
+                }
                 rows="25"
                 cols="32"
-                value={content}
+                value={content.description}
+                onFocus={event => event.target.select()}
               ></textarea>
             </div>
             <div className="td">
               <SearchInput
+                ref={searchInput}
                 handleSearch={handleSearch}
-                searchKeywords={keywords}
+                searchKeywords={content.keywords}
               />
             </div>
             <div className="td">
-              <SearchResult result={related} checkHandler={handleCheck} />
+              <SearchResult
+                result={related}
+                checkHandler={e => setIssemantic(e)}
+              />
             </div>
           </div>
         </div>
+        <Loader
+          type="TailSpin"
+          color="#0c66ff"
+          visible={loading}
+          timeout={5000}
+          className="search-spinner"
+        />
       </div>
     </div>
   );
 }
 
 ProductTextArea.propTypes = {
-  info: PropTypes.shape({
-    description: PropTypes.string,
-    keywords: PropTypes.array
-  })
+  info: PropTypes.arrayOf(
+    PropTypes.shape({
+      description: PropTypes.string,
+      keywords: PropTypes.array
+    })
+  )
 };
 
 export default ProductTextArea;

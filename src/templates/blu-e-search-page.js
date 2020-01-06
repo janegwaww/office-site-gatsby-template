@@ -7,71 +7,6 @@ import ProductTitle from "../components/ProductTitle";
 import BackgroundImageSwitch from "../components/BackgroundImageSwitch";
 import ProductTextArea from "../components/ProductTextArea";
 
-const ProductValue = ({ items = [] }) => {
-  return (
-    <div className="product-value">
-      <div
-        className="is-size-2-5 is-size-5-mobile has-text-centered has-text-000"
-        style={{ marginBottom: "30px" }}
-      >
-        产品价值
-      </div>
-      <div className="columns is-mobile">
-        {items.map((o, i) => (
-          <div className="column is-4 has-text-centered" key={i}>
-            <div className="image is-60x60 is-centered">
-              <PreviewCompatibleImage imageInfo={o} />
-            </div>
-            <div className="is-size-5-5 has-text-000">{o.title}</div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-};
-
-const ProductDemo = ({ info = "" }) => {
-  return (
-    <div>
-      <div className="is-size-2-5 is-size-5-mobile has-text-centered has-margin-bottom-40 has-text-000">
-        功能演示
-      </div>
-      <div>
-        <ProductTextArea text={info} />
-      </div>
-    </div>
-  );
-};
-
-const ProductScene = ({ items = [] }) => {
-  const handleClick = e => {
-    console.log(e);
-  };
-  return (
-    <div className="product-scene">
-      <div className="is-size-2-5 is-size-5-mobile has-text-centered has-margin-bottom-40 has-text-000">
-        业务场景
-      </div>
-      <div className="columns is-multiline">
-        {items.map((o, i) => (
-          <div
-            className="column is-3 has-text-centered"
-            onClick={() => handleClick(o)}
-            key={i}
-          >
-            <div className="scene-card has-background-white">
-              <div className="image is-80x80">
-                <PreviewCompatibleImage imageInfo={o} />
-              </div>
-              <div className="is-size-5-5 has-text-333">{o.title}</div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-};
-
 const BluETemplate = ({
   header,
   images,
@@ -79,6 +14,9 @@ const BluETemplate = ({
   searchtemple,
   businessscene
 }) => {
+  const handleClick = e => {
+    console.log(e);
+  };
   return (
     <div className="blu-e-search">
       <BackgroundImageSwitch images={images} switchHeight={["580px", "222px"]}>
@@ -94,7 +32,24 @@ const BluETemplate = ({
         <div className="container">
           <div className="columns">
             <div className="column is-10 is-offset-1">
-              <ProductValue items={productvalue} />
+              <div className="product-value">
+                <div
+                  className="is-size-2-5 is-size-5-mobile has-text-centered has-text-000"
+                  style={{ marginBottom: "30px" }}
+                >
+                  产品价值
+                </div>
+                <div className="columns is-mobile">
+                  {productvalue.map((o, i) => (
+                    <div className="column is-4 has-text-centered" key={i}>
+                      <div className="image is-60x60 is-centered">
+                        <PreviewCompatibleImage imageInfo={o} />
+                      </div>
+                      <div className="is-size-5-5 has-text-000">{o.title}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -103,7 +58,12 @@ const BluETemplate = ({
         <div className="container">
           <div className="columns">
             <div className="column is-10 is-offset-1">
-              <ProductDemo info={searchtemple} />
+              <div className="is-size-2-5 is-size-5-mobile has-text-centered has-margin-bottom-40 has-text-000">
+                功能演示
+              </div>
+              <div>
+                <ProductTextArea info={searchtemple} />
+              </div>
             </div>
           </div>
         </div>
@@ -112,13 +72,42 @@ const BluETemplate = ({
         <div className="container">
           <div className="columns">
             <div className="column is-10 is-offset-1">
-              <ProductScene items={businessscene} />
+              <div className="product-scene">
+                <div className="is-size-2-5 is-size-5-mobile has-text-centered has-margin-bottom-40 has-text-000">
+                  业务场景
+                </div>
+                <div className="columns is-multiline">
+                  {businessscene.map((o, i) => (
+                    <div
+                      className="column is-3 has-text-centered"
+                      onClick={() => handleClick(o)}
+                      key={i}
+                    >
+                      <div className="scene-card has-background-white">
+                        <div className="image is-80x80">
+                          <PreviewCompatibleImage imageInfo={o} />
+                        </div>
+                        <div className="is-size-5-5 has-text-333">
+                          {o.title}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
     </div>
   );
+};
+BluETemplate.propTypes = {
+  header: PropTypes.object,
+  images: PropTypes.array,
+  productvalue: PropTypes.array,
+  searchtemple: PropTypes.array,
+  businessscene: PropTypes.array
 };
 
 const BluESearch = ({ data }) => {
