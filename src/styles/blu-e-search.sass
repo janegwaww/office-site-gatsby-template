@@ -1,6 +1,3 @@
-@import "~react-loader-spinner/dist/loader/css/react-spinner-loader.css"
-
-
 // bluesearch start
 .product-value
   .image
@@ -34,6 +31,7 @@
           transform: rotate(90deg)
     .button
       height: 40px
+      margin-bottom: 0
   .h-table
     display: table
     width: 100%
@@ -50,7 +48,7 @@
         vertical-align: top
         font-size: 14px
         max-height: 531px
-        padding: 40px 30px
+        padding: 40px 40px
         &:nth-child(even)
           width: 27%
         &:nth-child(odd)
@@ -81,6 +79,11 @@
         overflow: auto
         outline: none
         text-align: left
+        scrollbar-width: none
+        &[disabled]
+          background-color: transparent
+        &::-webkit-scrollbar
+          height: 0
     +mobile
       .thead
         display: none
@@ -93,7 +96,6 @@
         padding-top: 21px
         padding-bottom: 21px
         box-shadow: unset
-        /* border-color: #e0e0e0
       .button.is-info
         background-color: #ebebeb
         &.is-active
@@ -118,6 +120,14 @@
     .relate-section
       overflow: auto
       max-height: 380px
+      scrollbar-width: thin
+      scrollbar-color: hsl(0, 0%, 86%) transparent
+      &::-webkit-scrollbar
+        width: 8px
+        background-color: transparent
+      &::-webkit-scrollbar-thumb
+        background: hsl(0, 0%, 86%)
+        -webkit-border-radius: 5ex
     .related-item
       display: flex
       justify-content: flex-start

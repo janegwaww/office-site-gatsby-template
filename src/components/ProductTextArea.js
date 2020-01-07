@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
-import Loader from "react-loader-spinner";
 import SearchInput from "../components/SearchInput";
 import SearchResult from "../components/SearchResult";
 import curcle from "../img/curcle.svg";
@@ -11,14 +10,15 @@ function ProductTextArea({ info = [] }) {
   const [issemantic, setIssemantic] = useState(false);
   const [related, setRelated] = useState([]);
   const [textIndex, setTextIndex] = useState(0);
-  const [loading, setLoading] = useState(false);
+  const [isUnediteble, setIsUnediteble] = useState(true);
   const searchInput = useRef(null);
 
   useEffect(() => {
     const handleQuery = async () => {
       if (!keyword) return alert("关键字不能为空！");
       if (!content.description) return alert("文本不能为空！");
-      setLoading(true);
+      searchInput.current.setActiveButton(keyword);
+      searchInput.current.isLoading(true);
       try {
         const result = await fetchQuery({
           querystring: keyword,
@@ -27,15 +27,13 @@ function ProductTextArea({ info = [] }) {
         });
         if (result.err === 0) {
           setRelated(result.resultdata.slice(1));
-          searchInput.current.handleActiveButton(keyword);
         } else {
           alert(result.errmsg);
         }
       } catch (err) {
         alert(err);
       }
-      console.log(loading);
-      setLoading(false);
+      searchInput.current.isLoading(false);
     };
     handleQuery();
   }, [keyword, issemantic]);
@@ -50,15 +48,15 @@ function ProductTextArea({ info = [] }) {
   const changeContent = () => {
     setContent(info[textIndex]);
     setKeyword(info[textIndex].keywords[0]);
-    if (textIndex >= info.length - 1) {
-      setTextIndex(0);
-    } else {
-      setTextIndex(textIndex + 1);
-    }
+    setTextIndex(textIndex + 1);
+    textIndex >= info.length - 1 && setTextIndex(0);
   };
   const defineContent = () => {
-    setContent({ description: "", keywords: [] });
-    setRelated([]);
+    setIsUnediteble(!isUnediteble);
+    if (isUnediteble) {
+      setContent({ description: content.description, keywords: [] });
+      setRelated([]);
+    }
   };
 
   return (
@@ -74,7 +72,7 @@ function ProductTextArea({ info = [] }) {
           className="button is-light is-size-6-5 has-text-999 has-background-gray-2"
           onClick={defineContent}
         >
-          自定义文本
+          {isUnediteble ? "自定义文本" : "取消编辑"}
         </button>
       </div>
       <div>
@@ -96,6 +94,7 @@ function ProductTextArea({ info = [] }) {
                 cols="32"
                 value={content.description}
                 onFocus={event => event.target.select()}
+                disabled={isUnediteble}
               ></textarea>
             </div>
             <div className="td">
@@ -113,13 +112,6 @@ function ProductTextArea({ info = [] }) {
             </div>
           </div>
         </div>
-        <Loader
-          type="TailSpin"
-          color="#0c66ff"
-          visible={loading}
-          timeout={5000}
-          className="search-spinner"
-        />
       </div>
     </div>
   );

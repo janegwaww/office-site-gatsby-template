@@ -4,12 +4,15 @@ import searchIcon from "../img/search-white.svg";
 function SearchInput({ handleSearch, searchKeywords = [] }, ref) {
   const [searchValue, setSearchValue] = useState("");
   const [activeButton, setActiveButton] = useState(-1);
+  const [isLoading, setIsLoading] = useState("");
   const searchHandler = e => {
     e.preventDefault();
     handleSearch(e.currentTarget.value);
+    setActiveButton(searchKeywords.indexOf(e.currentTarget.value));
   };
   useImperativeHandle(ref, () => ({
-    handleActiveButton: e => setActiveButton(searchKeywords.indexOf(e))
+    isLoading: e => setIsLoading(e ? "is-loading" : ""),
+    setActiveButton: e => setActiveButton(searchKeywords.indexOf(e))
   }));
 
   return (
@@ -27,13 +30,13 @@ function SearchInput({ handleSearch, searchKeywords = [] }, ref) {
         <div className="control">
           <button
             className={`button is-info is-medium ${
-              activeButton === -1 ? "is-active" : ""
+              activeButton === -1 ? "is-active " + isLoading : ""
             }`}
             value={searchValue}
             onClick={searchHandler}
           >
             <span className="icon">
-              <img src={searchIcon} alt="search" />
+              {isLoading ? null : <img src={searchIcon} alt="search" />}
             </span>
           </button>
         </div>
@@ -43,7 +46,7 @@ function SearchInput({ handleSearch, searchKeywords = [] }, ref) {
           return (
             <button
               className={`button is-fullwidth has-margin-bottom-40 ${
-                i === activeButton ? "is-active" : ""
+                i === activeButton ? "is-active " + isLoading : ""
               }`}
               value={o}
               onClick={searchHandler}
