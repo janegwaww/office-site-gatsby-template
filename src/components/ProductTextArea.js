@@ -75,7 +75,7 @@ function ProductTextArea({ info = [] }) {
           {isUnediteble ? "自定义文本" : "取消编辑"}
         </button>
       </div>
-      <div>
+      <div className="h-table-container">
         <div className="h-table is-bordered is-fullwidth">
           <div className="tr thead">
             <div className="td">文本样例</div>
