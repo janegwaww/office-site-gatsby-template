@@ -7,7 +7,7 @@ description: >-
     bluE search
 header:
     heading: bluE -- 懂“人话”的模糊搜索
-    subheading: bluE -- 懂“人话”的模糊搜索
+    subheading: bluE模糊搜索
     description: >
         拥有自主知识产权的行业领先的语义级文本模糊搜索系统，深度结合人工智能算法与信息检索技术，基于经过多层次训练的深度学习语言模型组，实现文本语义的高效挖掘，给予拟人思维的智慧理解。 轻量、快速、查全率高、理解层次深、信息定位准。
     subdescription: >

@@ -36,7 +36,9 @@ function SearchInput({ handleSearch, searchKeywords = [] }, ref) {
             onClick={searchHandler}
           >
             <span className="icon">
-              {isLoading ? null : <img src={searchIcon} alt="search" />}
+              {activeButton === -1 && isLoading ? null : (
+                <img src={searchIcon} alt="search" />
+              )}
             </span>
           </button>
         </div>
