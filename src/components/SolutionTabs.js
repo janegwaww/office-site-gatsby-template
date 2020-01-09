@@ -8,12 +8,12 @@ import "../styles/solution-tabs.sass";
 
 const SampleNextArrow = props => {
   const { className, currentSlide, slideCount, onClick } = props;
-  const [arrow, setArrow] = useState("./img/solutions/right.png");
+  const [arrow, setArrow] = useState("/img/solutions/right.png");
   const mouseAct = e => {
     if (e.type === "mouseover") {
-      setArrow("./img/solutions/right-chosen.png");
+      setArrow("/img/solutions/right-chosen.png");
     } else {
-      setArrow("./img/solutions/right.png");
+      setArrow("/img/solutions/right.png");
     }
   };
   return (
@@ -42,12 +42,12 @@ const SampleNextArrow = props => {
 
 const SamplePrevArrow = props => {
   const { className, currentSlide, onClick } = props;
-  const [arrow, setArrow] = useState("./img/solutions/left.png");
+  const [arrow, setArrow] = useState("/img/solutions/left.png");
   const mouseAct = e => {
     if (e.type === "mouseover") {
-      setArrow("./img/solutions/left-chosen.png");
+      setArrow("/img/solutions/left-chosen.png");
     } else {
-      setArrow("./img/solutions/left.png");
+      setArrow("/img/solutions/left.png");
     }
   };
 

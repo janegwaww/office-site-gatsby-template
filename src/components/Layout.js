@@ -1,21 +1,24 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import { useIntl } from "gatsby-plugin-intl";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-import useSiteMetadata from "./SiteMetadata";
 import { withPrefix } from "gatsby";
 import "../styles/all.sass";
 
 const TemplateWrapper = ({ children }) => {
-  const { title, description, keywords, author } = useSiteMetadata();
+  const { formatMessage } = useIntl();
   return (
     <div>
       <Helmet>
         <html lang="en" className="has-navbar-fixed-top" />
-        <title>{title}</title>
-        <meta name="keywords" content={keywords} />
-        <meta name="description" content={description} />
-        <meta name="author" content={author} />
+        <title>{formatMessage({ id: "title" })}</title>
+        <meta name="keywords" content={formatMessage({ id: "keywords" })} />
+        <meta
+          name="description"
+          content={formatMessage({ id: "description" })}
+        />
+        <meta name="author" content={formatMessage({ id: "author" })} />
 
         <link
           rel="apple-touch-icon"
@@ -42,7 +45,7 @@ const TemplateWrapper = ({ children }) => {
         <meta name="theme-color" content="#fff" />
 
         <meta property="og:type" content="business.business" />
-        <meta property="og:title" content={title} />
+        <meta property="og:title" content={formatMessage({ id: "title" })} />
         <meta property="og:url" content="/" />
         <meta
           property="og:image"
