@@ -35,9 +35,7 @@ function Banner({ isMobile }) {
         className="full-width-image margin-top-0"
         style={{
           backgroundImage: `url(${
-            isMobile
-              ? "./img/index-banner-mobile.png"
-              : "./img/index-banner.png"
+            isMobile ? "/img/index-banner-mobile.png" : "/img/index-banner.png"
           })`,
           height: isMobile ? "190px" : "570px",
           backgroundColor: `white`,

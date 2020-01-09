@@ -1,6 +1,6 @@
 import React from "react";
 import { globalHistory } from "@reach/router";
-import { Link } from "gatsby";
+import { Link, FormattedMessage } from "gatsby-plugin-intl";
 import LanguageSwitch from "../components/LanguageSwitch";
 import logo from "../img/logo.png";
 
@@ -44,7 +44,7 @@ const Navbar = class extends React.Component {
   };
 
   _activeNavHandle = nav => {
-    const path = nav ? nav : "home";
+    const path = !nav || ["en", "zh"].includes(nav) ? "home" : nav;
     this.setState({
       activeNav: {
         [path]: "is-active"
@@ -54,6 +54,7 @@ const Navbar = class extends React.Component {
 
   render() {
     const { activeNav } = this.state;
+
     return (
       <nav
         className="navbar is-fixed-top has-shadow is-transparent"
@@ -89,21 +90,21 @@ const Navbar = class extends React.Component {
                 to="/"
                 activeClassName={activeNav.home}
               >
-                &ensp;首页&ensp;
+                <FormattedMessage id="navbar.home" />
               </Link>
               <Link
                 className="navbar-item is-tab"
                 to="/productcenter/"
                 activeClassName={activeNav.productcenter}
               >
-                产品中心
+                <FormattedMessage id="navbar.productcenter" />
               </Link>
               <Link
                 className="navbar-item is-tab"
                 to="/bluesearch/"
                 activeClassName={activeNav.bluesearch}
               >
-                模糊搜索
+                <FormattedMessage id="navbar.bluesearch" />
               </Link>
 
               <Link
@@ -111,28 +112,28 @@ const Navbar = class extends React.Component {
                 to="/case/"
                 activeClassName={activeNav.case}
               >
-                客户案例
+                <FormattedMessage id="navbar.case" />
               </Link>
               <Link
                 className="navbar-item is-tab"
                 to="/aboutus/"
                 activeClassName={activeNav.aboutus}
               >
-                关于黑顿
+                <FormattedMessage id="navbar.aboutus" />
               </Link>
               <Link
                 className="navbar-item is-tab"
                 to="/college/"
                 activeClassName={activeNav.college}
               >
-                黑顿研究院
+                <FormattedMessage id="navbar.college" />
               </Link>
               <Link
                 className="navbar-item is-tab"
                 to="/join/"
                 activeClassName={activeNav.join}
               >
-                加入我们
+                <FormattedMessage id="navbar.joinus" />
               </Link>
             </div>
 
