@@ -1,17 +1,18 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
+import { injectIntl, changeLocale } from "gatsby-plugin-intl";
 
 const spanStyle = {
   width: "1px",
   borderLeft: "2px solid rgba(193,193,193,1)",
   height: "21px",
-  margin: "0 6px 0 6px",
+  margin: "0 6px 0 6px"
 };
 
-const LanguageSwitch = () => {
-  const [activeItem, setActiveItem] = useState({zh: "is-active"});
+const LanguageSwitch = ({ intl }) => {
+  const [activeItem] = useState({ [intl.locale]: "is-active" });
   const handleSwitch = e => {
     e.preventDefault();
-    setActiveItem({[e.target.name]: "is-active"});
+    changeLocale(e.target.name);
   };
   return (
     <div className="language">
@@ -26,4 +27,4 @@ const LanguageSwitch = () => {
   );
 };
 
-export default LanguageSwitch;
+export default injectIntl(LanguageSwitch);

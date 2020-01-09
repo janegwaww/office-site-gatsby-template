@@ -1,15 +1,15 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import {graphql} from "gatsby";
-import Loadable from "react-loadable";
+import { graphql } from "gatsby";
 
+import Banner from "../components/Banner";
 import Layout from "../components/Layout";
 import SeekerTabs from "../components/SeekerTabs";
 import BusinessIcon from "../components/BusinessIcon";
 import SolutionTabs from "../components/SolutionTabs";
 
-const RatePanel = ({rateItems = []}) => {
-  const Item = ({info = {}}) => (
+const RatePanel = ({ rateItems = [] }) => {
+  const Item = ({ info = {} }) => (
     <div className="rate-panel-item has-text-centered">
       <p className="is-size-3 has-text-white is-size-5-5-mobile">
         {info.description}
@@ -18,7 +18,7 @@ const RatePanel = ({rateItems = []}) => {
         style={{
           width: "2rem",
           borderTop: "solid .2rem white",
-          margin: "2px auto 0.8rem",
+          margin: "2px auto 0.8rem"
         }}
       />
       <p className="heading has-text-white is-size-6 is-size-7-mobile">
@@ -29,7 +29,7 @@ const RatePanel = ({rateItems = []}) => {
   return (
     <div
       className="rate-panel level is-mobile is-paddingless-tablet"
-      style={{padding: "0rem 1rem"}}
+      style={{ padding: "0rem 1rem" }}
     >
       <div className="level-left">
         <Item info={rateItems[0]} />
@@ -44,25 +44,18 @@ const RatePanel = ({rateItems = []}) => {
   );
 };
 
-const LoadableBanner = Loadable({
-  loader: () => import("../components/Banner"),
-  loading() {
-    return <div className="full-width-image"></div>;
-  },
-});
-
-export function IndexPageTemplate({features, solution, business, rate}) {
-  const [rateImg, setRateImg] = useState("./img/persent.png");
-  const [coopImg, setCoopImg] = useState("./img/coop-background.png");
+export function IndexPageTemplate({ features, solution, business, rate }) {
+  const [rateImg, setRateImg] = useState("/img/persent.png");
+  const [coopImg, setCoopImg] = useState("/img/coop-background.png");
   useEffect(() => {
     if (window.innerWidth <= 768) {
-      setRateImg("./img/persent-mobile.png");
-      setCoopImg("./img/coop-background-mobile.png");
+      setRateImg("/img/persent-mobile.png");
+      setCoopImg("/img/coop-background-mobile.png");
     }
   }, []);
   return (
     <div className="home">
-      <LoadableBanner />
+      <Banner />
       <section className="section section--gradient is-paddingless-mobile">
         <div className="container">
           <div className="columns">
@@ -83,7 +76,7 @@ export function IndexPageTemplate({features, solution, business, rate}) {
       </section>
       <section
         className="business-icon-section section section--gradient"
-        style={{backgroundImage: `url(${coopImg})`}}
+        style={{ backgroundImage: `url(${coopImg})` }}
       >
         <div className="container">
           <div className="columns">
@@ -95,7 +88,7 @@ export function IndexPageTemplate({features, solution, business, rate}) {
       </section>
       <section
         className="rate-panel-section section has-background-link is-paddingless-mobile"
-        style={{backgroundImage: `url(${rateImg})`}}
+        style={{ backgroundImage: `url(${rateImg})` }}
       >
         <div className="container">
           <div className="columns">
@@ -113,14 +106,14 @@ IndexPageTemplate.propTypes = {
   features: PropTypes.array,
   solution: PropTypes.shape({
     heading: PropTypes.string,
-    blurbs: PropTypes.array,
+    blurbs: PropTypes.array
   }),
   business: PropTypes.array,
-  rate: PropTypes.array,
+  rate: PropTypes.array
 };
 
-const IndexPage = ({data}) => {
-  const {frontmatter} = data.markdownRemark;
+const IndexPage = ({ data }) => {
+  const { frontmatter } = data.markdownRemark;
 
   return (
     <Layout>
@@ -137,16 +130,16 @@ const IndexPage = ({data}) => {
 IndexPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
-      frontmatter: PropTypes.object,
-    }),
-  }),
+      frontmatter: PropTypes.object
+    })
+  })
 };
 
 export default IndexPage;
 
 export const pageQuery = graphql`
   query IndexPageTemplate {
-    markdownRemark(frontmatter: {templateKey: {eq: "index-page"}}) {
+    markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
         features {
           blurbs {
