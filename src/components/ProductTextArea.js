@@ -17,8 +17,9 @@ function ProductTextArea({ info = [] }) {
     const handleQuery = async () => {
       if (!keyword) return alert("关键字不能为空！");
       if (!content.description) return alert("文本不能为空！");
-      searchInput.current.setActiveButton(keyword);
-      searchInput.current.isLoading(true);
+      // 加存在验证是因为searchInput没有加载完全会报current不存在错误
+      searchInput.current && searchInput.current.isLoading(true);
+      searchInput.current && searchInput.current.setActiveButton(keyword);
       try {
         const result = await fetchQuery({
           querystring: keyword,
@@ -33,7 +34,7 @@ function ProductTextArea({ info = [] }) {
       } catch (err) {
         alert(err);
       }
-      searchInput.current.isLoading(false);
+      searchInput.current && searchInput.current.isLoading(false);
     };
     handleQuery();
   }, [keyword, issemantic]);
