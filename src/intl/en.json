@@ -11,5 +11,21 @@
     "aboutus": "About Us",
     "college": "College",
     "joinus": "Join Us"
+  },
+  "footer": {
+    "guidance": "User's Guidance",
+    "contactus": "Contact Us",
+    "helpcenter": "Help Center",
+    "ict": "Chinese Academy of Sciences",
+    "alicloud": "Alibaba Cloud",
+    "qcloud": "Tencent Cloud",
+    "mobile": "155-2412-0109 (Marketing Manager Liu)",
+    "wechat": "haetek_20190801",
+    "email": "peizhengqi@kc-group.com.cn",
+    "address": "Longgang District, China Shenzhen, No.7188 Lung Cheung Road, 3109 Vanke building",
+    "officialaccount": "Wechat Official Account",
+    "marketingphone": "Marketing Phone",
+    "copyright": "Copyright@Haetek Technology Co., Ltd. 2019, All Rights Reserved",
+    "codetitle": "HAETEK"
   }
 }

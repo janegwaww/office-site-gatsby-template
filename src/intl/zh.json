@@ -11,5 +11,21 @@
     "aboutus": "关于黑顿",
     "college": "黑顿研究院",
     "joinus": "加入我们"
+  },
+  "footer": {
+    "guidance": "使用指南",
+    "contactus": "联系我们",
+    "helpcenter": "帮助中心",
+    "ict": "中科院计算所",
+    "alicloud": "阿里云",
+    "qcloud": "腾讯云",
+    "mobile": "155-2412-0109（市场部 刘经理）",
+    "wechat": "haetek_20190801",
+    "email": "peizhengqi@kc-group.com.cn",
+    "address": "广东省深圳市龙岗区龙翔大道7188号万科大厦3109",
+    "officialaccount": "黑顿科技公众号",
+    "marketingphone": "市场部联系电话",
+    "copyright": "版权所有@黑顿科技有限公司 2019 保留一切权利",
+    "codetitle": "黑顿科技"
   }
 }
