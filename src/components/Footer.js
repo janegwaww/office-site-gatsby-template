@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, injectIntl, FormattedMessage } from "gatsby-plugin-intl";
+import { injectIntl, FormattedMessage } from "gatsby-plugin-intl";
 import qr from "../img/qrcode.png";
 import mobile from "../img/mobile-icon.svg";
 import wechat from "../img/wechat-icon.svg";
@@ -8,10 +8,7 @@ import address from "../img/address-icon.svg";
 import gov from "../img/gov.png";
 
 const FooterMobile = () => (
-  <div
-    className="footer-mobile content is-hidden-tablet is-size-7-mobile has-text-centered"
-    style={{ color: "#999999", padding: "0.75rem 0 0" }}
-  >
+  <div className="footer-mobile content is-hidden-tablet is-size-7-mobile has-text-centered">
     <div className="container">
       <p>
         <span
@@ -45,29 +42,6 @@ const FooterBottom = ({ intl }) => {
       setCenter("is-centered");
     }
   }, []);
-  const GovCode = () =>
-    intl.locale === "zh" ? (
-      <div className="gov-code">
-        <div style={{ display: "flex", alignItems: "center" }}>
-          <span className="gov-icon image is-20x20 is-10x10-mobile">
-            <img src={gov} alt="gov" />
-          </span>
-          <a
-            className="bd-notification is-primary has-text-grey"
-            href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702002640"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            粤公网安备 44030702002640号
-          </a>
-        </div>
-        <div>
-          <span className="bd-notification is-primary has-text-grey">
-            粤ICP备19120979号-1
-          </span>
-        </div>
-      </div>
-    ) : null;
   return (
     <div className="footer-bottom content has-background-black is-size-6 has-text-grey">
       <div className="container">
@@ -75,7 +49,28 @@ const FooterBottom = ({ intl }) => {
           <div className={`column ${side}`}>
             <div className="level">
               <div className="level-left has-text-centered is-size-7-mobile">
-                <GovCode />
+                {intl.locale === "zh" ? (
+                  <div className="gov-code">
+                    <div style={{ display: "flex", alignItems: "center" }}>
+                      <span className="gov-icon image is-20x20 is-10x10-mobile">
+                        <img src={gov} alt="gov" />
+                      </span>
+                      <a
+                        className="bd-notification is-primary has-text-grey"
+                        href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702002640"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        粤公网安备 44030702002640号
+                      </a>
+                    </div>
+                    <div>
+                      <span className="bd-notification is-primary has-text-grey">
+                        粤ICP备19120979号-1
+                      </span>
+                    </div>
+                  </div>
+                ) : null}
               </div>
               <div className="level-right has-text-centered is-size-7-mobile">
                 <p className="bd-notification is-primary">
@@ -96,49 +91,40 @@ const Footer = ({ intl }) => {
     {
       index: "mobile",
       src: mobile,
-      content: formatMessage({ id: "footer.mobile" }),
-      to: "/"
+      content: formatMessage({ id: "footer.mobile" })
     },
     {
       index: "wechat",
       src: wechat,
-      content: "haetek_20190801",
-      to: "/"
+      content: "haetek_20190801"
     },
     {
       index: "mail",
       src: mail,
-      content: "peizhengqi@kc-group.com.cn",
-      to: "/"
+      content: "peizhengqi@kc-group.com.cn"
     },
     {
       index: "address",
       src: address,
-      content: formatMessage({ id: "footer.address" }),
-      to: "/"
+      content: formatMessage({ id: "footer.address" })
     }
   ];
-
   const intro = [
     {
       index: "help",
-      name: formatMessage({ id: "footer.helpcenter" }),
-      to: "/"
+      name: formatMessage({ id: "footer.helpcenter" })
     },
     {
       index: "zhongkeyuan",
-      name: formatMessage({ id: "footer.ict" }),
-      to: "/"
+      name: formatMessage({ id: "footer.ict" })
     },
     {
       index: "aliyun",
-      name: formatMessage({ id: "footer.alicloud" }),
-      to: "/"
+      name: formatMessage({ id: "footer.alicloud" })
     },
     {
       index: "tensentclound",
-      name: formatMessage({ id: "footer.qcloud" }),
-      to: "/"
+      name: formatMessage({ id: "footer.qcloud" })
     }
   ];
   return (
@@ -161,9 +147,7 @@ const Footer = ({ intl }) => {
                       </li>
                       {intro.map(o => (
                         <li key={o.index}>
-                          <Link to={o.to} className="h-navbar-item">
-                            {o.name}
-                          </Link>
+                          <a className="h-navbar-item">{o.name}</a>
                         </li>
                       ))}
                     </ul>
@@ -180,7 +164,7 @@ const Footer = ({ intl }) => {
                       </li>
                       {contantUsObj.map(o => (
                         <li key={o.index}>
-                          <Link className="h-navbar-item" to={o.to}>
+                          <a className="h-navbar-item">
                             <div>
                               <span className="image is-24x24">
                                 <img src={o.src} alt={o.alt} />
@@ -188,7 +172,7 @@ const Footer = ({ intl }) => {
                               &ensp;
                               <span>{o.content}</span>
                             </div>
-                          </Link>
+                          </a>
                         </li>
                       ))}
                     </ul>
