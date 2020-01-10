@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { injectIntl, changeLocale } from "gatsby-plugin-intl";
 
 const spanStyle = {
@@ -9,18 +9,26 @@ const spanStyle = {
 };
 
 const LanguageSwitch = ({ intl }) => {
-  const [activeItem] = useState({ [intl.locale]: "is-active" });
   const handleSwitch = e => {
     e.preventDefault();
     changeLocale(e.target.name);
   };
+  const _activeLanguage = ln => (intl.locale === ln ? "is-active" : "");
   return (
     <div className="language">
-      <a className={activeItem.zh} name="zh" onClick={handleSwitch}>
+      <a
+        className={`${_activeLanguage("zh")}`}
+        name="zh"
+        onClick={handleSwitch}
+      >
         中
       </a>
       <span style={spanStyle}></span>
-      <a className={activeItem.en} name="en" onClick={handleSwitch}>
+      <a
+        className={`${_activeLanguage("en")}`}
+        name="en"
+        onClick={handleSwitch}
+      >
         EN
       </a>
     </div>

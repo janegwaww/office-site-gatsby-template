@@ -68,21 +68,6 @@ $table-cell-border: 1px solid hsl(0°, 0%, 92%)
 .has-margin-bottom-40
   margin-bottom: 40px !important
 
-.navbar
-  .container
-    max-width: 1620px
-  .navbar-menu
-    box-shadow: none !important
-    margin-left: 50px
-    .navbar-item
-      margin-right: 50px
-      &.is-tab
-        padding-left: 0
-        padding-right: 0
-  .language
-    a.is-active
-      color: #363636
-
 .button
   &.is-opacity
     background-color: rgba(216,216,216,0.2)
@@ -286,19 +271,6 @@ $table-cell-border: 1px solid hsl(0°, 0%, 92%)
 .margin-top-0
   margin-top: 0 !important
 
-.navbar-item .icon
-// Override for use of svg's from https://simpleicons.org/
-.icon svg
-  width: 1.5rem
-  height: 1.5rem
-  fill: currentColor
-.navbar-brand
-  .navbar-item
-    &.logo
-      padding: 0 1rem
-    Img
-      max-height: unset
-
 //Menu overrides
 $menu-item-color: $white-ter
 $menu-item-hover-color: white !important
@@ -326,16 +298,6 @@ $menu-label-color: $white-ter
   height: 1em
   vertical-align: middle
   display: inline
-
-// blog roll
-.blog-list-item.is-featured
-  background-color: #d6400033;
-.blog-list-item header
-  display: flex;
-  margin-bottom: 1em;
-.blog-list-item .featured-thumbnail
-  flex-basis: 35%;
-  margin: 0 1.5em 0 0;
 
 
 @import "~bulma"
@@ -389,18 +351,17 @@ $menu-label-color: $white-ter
   .button
     &.is-opacity
       border-radius: 2px
-      pointer-events: none
     &.is-blue
-      pointer-events: none
       padding: 16px 20px
       border-radius: 2px
     &.is-white-blue
-      pointer-events: none
       background-color: rgba(12,102,255,1)
       color: white
       border: unset
       padding: 16px 20px
       bordere-radius: 2px
+      &:hover
+        color: white
     &.is-transparent
       padding: 5px 11px
       background: rgba(216,216,216,0.2)
