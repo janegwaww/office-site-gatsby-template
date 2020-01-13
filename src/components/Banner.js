@@ -1,17 +1,24 @@
-import React from "react";
-import withSize from "react-sizes";
+import React, { useState, useEffect } from "react";
 import LinesEllipsis from "react-lines-ellipsis";
 
 function Banner({ isMobile }) {
+  const [background, setBackground] = useState("/img/index-banner.png");
+  const [height, setHeight] = useState("570px");
+  const [col, setCol] = useState("is-two-fifths");
+  useEffect(() => {
+    if (window.innerWidth <= 768) {
+      setBackground("/img/index-banner-mobile.png");
+      setHeight("190px");
+      setCol("is-7");
+    }
+  }, []);
   return (
     <div className="index-banner">
       <div
         className="full-width-image margin-top-0"
         style={{
-          backgroundImage: `url(${
-            isMobile ? "/img/index-banner-mobile.png" : "/img/index-banner.png"
-          })`,
-          height: isMobile ? "190px" : "570px",
+          backgroundImage: `url(${background})`,
+          height: `${height}`,
           backgroundColor: `white`,
           backgroundPosition: "center",
           backgroundSize: "cover"
@@ -21,9 +28,7 @@ function Banner({ isMobile }) {
           <div className="columns is-mobile">
             <div className="column is-10 is-offset-1">
               <div className="columns is-mobile">
-                <div
-                  className={`column ${isMobile ? "is-7" : "is-two-fifths"}`}
-                >
+                <div className={`column ${col}`}>
                   <div className="banner-title">
                     <div className="content">
                       <p className="is-size-5-5-mobile is-size-2-tablet is-size-2-widescreen has-text-white">
@@ -58,8 +63,4 @@ function Banner({ isMobile }) {
   );
 }
 
-const mapSizesToProps = ({ width }) => ({
-  isMobile: width < 768
-});
-
-export default withSize(mapSizesToProps)(Banner);
+export default Banner;
