@@ -1,11 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { navigate } from "gatsby-plugin-intl";
 import LinesEllipsis from "react-lines-ellipsis";
 
 function JobCard({ info = {} }) {
+  const handleClick = e => {
+    e.preventDefault();
+    navigate("/detail/", {
+      state: { title: info.heading, content: info.description }
+    });
+  };
   return (
-    <div className="box" style={{ boxShadow: "unset" }}>
-      <div className="" style={{ marginBottom: "6px" }}>
+    <div className="job-card box" onClick={handleClick}>
+      <div style={{ marginBottom: "6px" }}>
         <p className="is-size-5 is-size-6-mobile">{info.heading}</p>
       </div>
       <p className="is-size-7-5-mobile">{info.date}</p>

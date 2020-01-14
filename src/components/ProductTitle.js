@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import { Link } from "gatsby";
+import { Link } from "gatsby-plugin-intl";
 
 function ProductTitle({ info = {} }) {
   const [bside, setBside] = useState("is-4");

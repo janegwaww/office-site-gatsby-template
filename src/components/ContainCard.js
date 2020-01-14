@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Link } from "gatsby-plugin-intl";
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 import LinesEllipsis from "react-lines-ellipsis";
 
@@ -24,9 +25,13 @@ const ContainCard = ({ info = {} }) => {
             ellipsis="..."
           />
         </div>
-        <a className="button is-white-blue is-size-6 is-size-7-mobile">
+        <Link
+          className="button is-white-blue is-size-6 is-size-7-mobile"
+          to="/detail/"
+          state={{ title: info.subHeading, content: info.description }}
+        >
           了解更多
-        </a>
+        </Link>
       </div>
     </div>
   );

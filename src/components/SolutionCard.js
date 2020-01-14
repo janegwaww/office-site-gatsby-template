@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
+import { Link } from "gatsby-plugin-intl";
 import LinesEllipsis from "react-lines-ellipsis";
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 
@@ -55,9 +56,13 @@ const SolutionCard = ({ info = {} }) => {
                 ellipsis="..."
               />
             </div>
-            <a className="button is-blue is-size-6 is-size-7-mobile">
+            <Link
+              className="button is-blue is-size-6 is-size-7-mobile"
+              to="/detail/"
+              state={{ title: info.heading, content: info.description }}
+            >
               查看详情
-            </a>
+            </Link>
           </div>
         </div>
       </div>

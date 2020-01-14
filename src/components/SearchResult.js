@@ -9,8 +9,8 @@ const RelatedItem = ({ info = {} }) => {
         <div className="index-num">{info.key + 1}</div>
       </div>
       <div>
-        <div className="is-size-6 has-text-666">
-          <span style={{ marginRight: "30px" }}>
+        <div className="item-head is-size-6 has-text-666">
+          <span>
             关联度: <span className="relate-num">{info.match_score}</span>
           </span>
           <span>
