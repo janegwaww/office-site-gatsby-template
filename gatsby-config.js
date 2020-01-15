@@ -86,9 +86,9 @@ module.exports = {
         // supported language
         languages: [`zh`, `en`],
         // language file path
-        defaultLanguage: `zh`,
+        defaultLanguage: `zh`
         // option to redirect to `/ko` when connecting `/`
-        redirect: true
+        // redirect: true
       }
     },
     {
