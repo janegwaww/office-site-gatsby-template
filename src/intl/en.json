@@ -30,5 +30,10 @@
   },
   "join": {
     "searchjob": "Search Job"
+  },
+  "home": {
+    "learnseeker": "Learn Seeker",
+    "understandmore": "Learn More",
+    "seedetails": "See Details"
   }
 }

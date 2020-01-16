@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { FormattedMessage } from "gatsby-plugin-intl";
 import withSize from "react-sizes";
 import LinesEllipsis from "react-lines-ellipsis";
 
@@ -45,7 +46,7 @@ function Banner({ isMobile, info = {} }) {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        了解Seeker
+                        <FormattedMessage id="home.learnseeker" />
                       </a>
                     </div>
                   </div>

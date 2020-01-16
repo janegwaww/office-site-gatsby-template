@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { FormattedMessage } from "gatsby-plugin-intl";
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 import LinesEllipsis from "react-lines-ellipsis";
 
@@ -26,7 +27,7 @@ const ContainCard = ({ info = {} }) => {
           />
         </div>
         <a className="button is-white-blue is-size-6 is-size-7-mobile">
-          了解更多
+          <FormattedMessage id="home.understandmore" />
         </a>
       </div>
     </div>

@@ -133,19 +133,21 @@ class SolutionTabs extends Component {
           {heading}
         </h3>
         <br className="is-hidden-mobile" />
-        <div className="columns is-centered is-hidden-mobile">
-          <div className="column is-8">
-            <div className="tabs is-around">
-              <ul>
-                {[...items].map((o, i) => (
-                  <li key={i} className={o.className}>
-                    <a onClick={() => this._tabSelect(i)}>{o.heading}</a>
-                  </li>
-                ))}
-              </ul>
+        {this.props.language === "zh" && (
+          <div className="columns is-centered is-hidden-mobile">
+            <div className="column is-8">
+              <div className="tabs is-around">
+                <ul>
+                  {[...items].map((o, i) => (
+                    <li key={i} className={o.className}>
+                      <a onClick={() => this._tabSelect(i)}>{o.heading}</a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
-        </div>
+        )}{" "}
         <br />
         <div
           className="container"

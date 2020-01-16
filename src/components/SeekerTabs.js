@@ -1,21 +1,21 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import ContainCard from "../components/ContainCard";
 
-function SeekerTabs({scrollItems = []}) {
+function SeekerTabs({ scrollItems = [], language }) {
   const [items, setItems] = useState(
-    scrollItems.map((o, i) => (i === 0 ? {...o, className: "is-active"} : o)),
+    scrollItems.map((o, i) => (i === 0 ? { ...o, className: "is-active" } : o))
   );
   const [contentItem, setContentItem] = useState(items[0]);
   const _tabSelect = tab => {
     setItems(
       items.map(o => {
         if (o.heading === tab) {
-          return {...o, className: "is-active"};
+          return { ...o, className: "is-active" };
         } else {
-          return {...o, className: ""};
+          return { ...o, className: "" };
         }
-      }),
+      })
     );
     setContentItem(items.filter(o => o.heading === tab)[0]);
   };
@@ -26,9 +26,11 @@ function SeekerTabs({scrollItems = []}) {
           {[...items].map((o, i) => (
             <li key={i} className={`has-text-centered ${o.className}`}>
               <div>
-                <div className="is-size-7 has-text-grey-light is-hidden-mobile">
-                  {o.heading}
-                </div>
+                {language === "zh" && (
+                  <div className="is-size-7 has-text-grey-light is-hidden-mobile">
+                    {o.heading}
+                  </div>
+                )}
                 <a
                   className="is-size-7-mobile"
                   onClick={() => _tabSelect(o.heading)}
@@ -48,7 +50,7 @@ function SeekerTabs({scrollItems = []}) {
 }
 
 SeekerTabs.propTypes = {
-  scrollItems: PropTypes.array,
+  scrollItems: PropTypes.array
 };
 
 export default SeekerTabs;

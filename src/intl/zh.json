@@ -30,5 +30,10 @@
   },
   "join": {
     "searchjob": "搜索职位"
+  },
+  "home": {
+    "learnseeker": "了解Seeker",
+    "understandmore": "了解更多",
+    "seedetails": "查看更多"
   }
 }

@@ -49,7 +49,8 @@ export function IndexPageTemplate({
   features,
   solution,
   business,
-  rate
+  rate,
+  language
 }) {
   const [rateImg, setRateImg] = useState("/img/persent.png");
   const [coopImg, setCoopImg] = useState("/img/coop-background.png");
@@ -66,7 +67,7 @@ export function IndexPageTemplate({
         <div className="container">
           <div className="columns">
             <div className="column is-10 is-offset-1">
-              <SeekerTabs scrollItems={features} />
+              <SeekerTabs scrollItems={features} language={language} />
             </div>
           </div>
         </div>
@@ -75,7 +76,7 @@ export function IndexPageTemplate({
         <div className="container">
           <div className="columns">
             <div className="column is-10 is-offset-1">
-              <SolutionTabs solutionItems={solution} />
+              <SolutionTabs solutionItems={solution} language={language} />
             </div>
           </div>
         </div>
@@ -119,17 +120,24 @@ IndexPageTemplate.propTypes = {
   rate: PropTypes.array
 };
 
-const IndexPage = ({ data }) => {
+const IndexPage = ({
+  data,
+  pageContext: {
+    intl: { language }
+  }
+}) => {
   const { frontmatter } = data.markdownRemark;
-
+  const [zh, en] = frontmatter.version;
+  const content = { zh, en }[language];
   return (
     <Layout>
       <IndexPageTemplate
-        header={frontmatter.header}
-        features={frontmatter.features.blurbs}
-        solution={frontmatter.solution}
+        header={content.header}
+        features={content.features.blurbs}
+        solution={content.solution}
         business={frontmatter.business.blurbs}
-        rate={frontmatter.rate.blurbs}
+        rate={content.rate.blurbs}
+        language={language}
       />
     </Layout>
   );
@@ -149,53 +157,6 @@ export const pageQuery = graphql`
   query IndexPageTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
-        header {
-          heading
-          description
-        }
-        features {
-          blurbs {
-            image {
-              childImageSharp {
-                fluid(maxWidth: 1000, quality: 100) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            heading
-            subHeading
-            description
-          }
-        }
-        solution {
-          heading
-          blurbs {
-            heading
-            image1 {
-              childImageSharp {
-                fluid(maxWidth: 1024, quality: 100) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            image2 {
-              childImageSharp {
-                fluid(maxWidth: 1024, quality: 100) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            image3 {
-              childImageSharp {
-                fluid(maxWidth: 1024, quality: 100) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            alt
-            description
-          }
-        }
         business {
           blurbs {
             image {
@@ -207,10 +168,59 @@ export const pageQuery = graphql`
             }
           }
         }
-        rate {
-          blurbs {
+        version {
+          header {
             heading
             description
+          }
+          features {
+            blurbs {
+              image {
+                childImageSharp {
+                  fluid(maxWidth: 1000, quality: 100) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
+              heading
+              subHeading
+              description
+            }
+          }
+          solution {
+            heading
+            blurbs {
+              heading
+              image1 {
+                childImageSharp {
+                  fluid(maxWidth: 1024, quality: 100) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
+              image2 {
+                childImageSharp {
+                  fluid(maxWidth: 1024, quality: 100) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
+              image3 {
+                childImageSharp {
+                  fluid(maxWidth: 1024, quality: 100) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
+              alt
+              description
+            }
+          }
+          rate {
+            blurbs {
+              heading
+              description
+            }
           }
         }
       }

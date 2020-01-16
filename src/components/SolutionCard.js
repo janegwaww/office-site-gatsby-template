@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
+import { FormattedMessage } from "gatsby-plugin-intl";
 import LinesEllipsis from "react-lines-ellipsis";
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 
@@ -56,7 +57,7 @@ const SolutionCard = ({ info = {} }) => {
               />
             </div>
             <a className="button is-blue is-size-6 is-size-7-mobile">
-              查看详情
+              <FormattedMessage id="home.seedetails" />
             </a>
           </div>
         </div>
