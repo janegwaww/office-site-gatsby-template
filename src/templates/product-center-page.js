@@ -1,6 +1,7 @@
 import React, { Component, useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
+import { FormattedMessage } from "gatsby-plugin-intl";
 import Layout from "../components/Layout";
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 import ProductTitle from "../components/ProductTitle";
@@ -63,7 +64,7 @@ const InfoPlusTabContent = ({ method, advantage, imageInfo }) => {
           <div className="columns">
             <div className="column is-10 is-offset-1">
               <div className="is-size-2-5 is-size-5-mobile has-text-centered has-margin-bottom-40 has-margin-bottom-15-mobile">
-                方案架构
+                <FormattedMessage id="product.solutionarchitecture" />
               </div>
               <PreviewCompatibleImage
                 imageInfo={{ ...imageInfo, style: { borderRadius: "unset" } }}
@@ -99,7 +100,7 @@ const HDPPTabContent = ({ method, datapool }) => {
           <div className="columns">
             <div className="column is-10 is-offset-1">
               <div className="is-size-2-5 is-size-5-mobile has-text-centered has-margin-bottom-30 has-margin-bottom-15-mobile">
-                数据池
+                <FormattedMessage id="product.datapool" />
               </div>
               <div className="data-pool-cards columns is-multiline is-mobile">
                 {datapool.map((o, i) => (
@@ -250,18 +251,25 @@ ProductCenterTemplate.propTypes = {
   datapool: PropTypes.array
 };
 
-const ProductCenter = ({ data }) => {
+const ProductCenter = ({
+  data,
+  pageContext: {
+    intl: { language }
+  }
+}) => {
   const { frontmatter } = data.markdownRemark;
+  const [zh, en] = frontmatter.version;
+  const content = { zh, en }[language];
   return (
     <Layout>
       <ProductCenterTemplate
         images={frontmatter.images}
-        header={frontmatter.header}
-        tabs={frontmatter.tabs}
-        methods={frontmatter.methods}
-        advantages={frontmatter.advantages}
         banner={frontmatter.productbanner}
-        datapool={frontmatter.datapool}
+        header={content.header}
+        tabs={content.tabs}
+        methods={content.methods}
+        advantages={content.advantages}
+        datapool={content.datapool}
       />
     </Layout>
   );
@@ -290,38 +298,6 @@ export const productCenterQuery = graphql`
             }
           }
           alt
-        }
-        header {
-          heading
-          subheading
-          description
-          subdescription
-        }
-        tabs {
-          name
-          subname
-          index
-        }
-        methods {
-          heading
-          image {
-            childImageSharp {
-              fluid(maxWidth: 1000, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-          alt
-          description
-        }
-        advantages {
-          heading
-          index
-          description {
-            th
-            tr
-            tc
-          }
         }
         productbanner {
           seeker {
@@ -362,17 +338,51 @@ export const productCenterQuery = graphql`
             alt
           }
         }
-        datapool {
-          image {
-            childImageSharp {
-              fluid(maxWidth: 1000, quality: 100) {
-                ...GatsbyImageSharpFluid
+        version {
+          header {
+            heading
+            subheading
+            description
+            subdescription
+          }
+          tabs {
+            name
+            subname
+            index
+          }
+          methods {
+            heading
+            image {
+              childImageSharp {
+                fluid(maxWidth: 1000, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
               }
             }
+            alt
+            description
           }
-          alt
-          head
-          content
+          advantages {
+            heading
+            index
+            description {
+              th
+              tr
+              tc
+            }
+          }
+          datapool {
+            image {
+              childImageSharp {
+                fluid(maxWidth: 1000, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            alt
+            head
+            content
+          }
         }
       }
     }

@@ -35,5 +35,11 @@
     "learnseeker": "了解Seeker",
     "understandmore": "了解更多",
     "seedetails": "查看更多"
+  },
+  "product": {
+    "usenow": "立即使用",
+    "solutionconsulting": "业务方案咨询",
+    "solutionarchitecture": "方案架构",
+    "datapool": "数据池"
   }
 }

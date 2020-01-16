@@ -35,5 +35,11 @@
     "learnseeker": "Learn Seeker",
     "understandmore": "Learn More",
     "seedetails": "See Details"
+  },
+  "product": {
+    "usenow": "Use Now",
+    "solutionconsulting": "Solution Consulting",
+    "solutionarchitecture": "Solution Architecture",
+    "datapool": "Data Pool"
   }
 }
