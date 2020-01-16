@@ -44,7 +44,13 @@ const RatePanel = ({ rateItems = [] }) => {
   );
 };
 
-export function IndexPageTemplate({ features, solution, business, rate }) {
+export function IndexPageTemplate({
+  header,
+  features,
+  solution,
+  business,
+  rate
+}) {
   const [rateImg, setRateImg] = useState("/img/persent.png");
   const [coopImg, setCoopImg] = useState("/img/coop-background.png");
   useEffect(() => {
@@ -55,7 +61,7 @@ export function IndexPageTemplate({ features, solution, business, rate }) {
   }, []);
   return (
     <div className="home">
-      <Banner />
+      <Banner info={header} />
       <section className="section section--gradient is-paddingless-mobile">
         <div className="container">
           <div className="columns">
@@ -103,6 +109,7 @@ export function IndexPageTemplate({ features, solution, business, rate }) {
 }
 
 IndexPageTemplate.propTypes = {
+  header: PropTypes.object,
   features: PropTypes.array,
   solution: PropTypes.shape({
     heading: PropTypes.string,
@@ -118,6 +125,7 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <IndexPageTemplate
+        header={frontmatter.header}
         features={frontmatter.features.blurbs}
         solution={frontmatter.solution}
         business={frontmatter.business.blurbs}
@@ -141,6 +149,10 @@ export const pageQuery = graphql`
   query IndexPageTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
+        header {
+          heading
+          description
+        }
         features {
           blurbs {
             image {

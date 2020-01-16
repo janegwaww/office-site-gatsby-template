@@ -22,6 +22,7 @@ const ContainCard = ({ info = {} }) => {
             text={`${info.description}`}
             maxLine="5"
             ellipsis="..."
+            style={{ whiteSpace: "pre-wrap" }}
           />
         </div>
         <a className="button is-white-blue is-size-6 is-size-7-mobile">
