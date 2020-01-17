@@ -1,21 +1,21 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import LinesEllipsis from "react-lines-ellipsis";
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 
-const CaseCard = ({info = {}}) => {
+const CaseCard = ({ info = {} }) => {
   const [maxLine, setMaxLine] = useState("");
-  const [headimg, setHeadimg] = useState({image: "", alt: ""});
+  const [headimg, setHeadimg] = useState({ image: "", alt: "" });
   const cardHandle = e => {
     e.preventDefault();
     console.log(e.currentTarget);
   };
   useEffect(() => {
     if (window.innerWidth <= 768) {
-      setHeadimg({...info, image: info.image2});
+      setHeadimg({ ...info, image: info.image2 });
       setMaxLine("3");
     } else {
-      setHeadimg({...info, image: info.image1});
+      setHeadimg({ ...info, image: info.image1 });
       setMaxLine("6");
     }
   }, []);
@@ -23,7 +23,7 @@ const CaseCard = ({info = {}}) => {
     <div className="case-card" onClick={cardHandle}>
       <div className="has-background-grey-lighter">
         <PreviewCompatibleImage
-          imageInfo={{...headimg, style: {borderRadius: "unset"}}}
+          imageInfo={{ ...headimg, style: { borderRadius: "unset" } }}
         />
       </div>
       <div className="has-padding-30 has-padding-20-mobile">
@@ -35,7 +35,7 @@ const CaseCard = ({info = {}}) => {
             text={`${info.content}`}
             maxLine={maxLine}
             ellipsis="..."
-            style={{lineHeight: "26px"}}
+            style={{ lineHeight: "26px", whiteSpace: "pre-wrap" }}
           />
         </div>
       </div>
@@ -44,7 +44,7 @@ const CaseCard = ({info = {}}) => {
 };
 
 CaseCard.propTypes = {
-  info: PropTypes.object,
+  info: PropTypes.object
 };
 
 export default CaseCard;

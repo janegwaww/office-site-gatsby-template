@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import { FormattedMessage } from "gatsby-plugin-intl";
 import Switch from "react-switch";
 
 const RelatedItem = ({ info = {} }) => {
@@ -11,10 +12,11 @@ const RelatedItem = ({ info = {} }) => {
       <div>
         <div className="is-size-6 has-text-666">
           <span style={{ marginRight: "30px" }}>
-            关联度: <span className="relate-num">{info.match_score}</span>
+            <FormattedMessage id="bluesearch.correlation" />:{" "}
+            <span className="relate-num">{info.match_score}</span>
           </span>
           <span>
-            位置:{" "}
+            <FormattedMessage id="bluesearch.location" />:{" "}
             <span className="relate-num">{`[${info.str_position.toString()}]`}</span>
           </span>
         </div>
@@ -47,7 +49,10 @@ const SearchResult = ({ result = [], checkHandler }) => {
       <div className="field">
         <div className="field">
           <label htmlFor="l-switch">
-            <span className="is-size-6 has-text-666">开启语义理解:&ensp;</span>
+            <span className="is-size-6 has-text-666">
+              <FormattedMessage id="bluesearch.turnonunderstand" />
+              :&ensp;
+            </span>
             <Switch
               onChange={handleChange}
               checked={check}
@@ -63,7 +68,7 @@ const SearchResult = ({ result = [], checkHandler }) => {
           </label>
         </div>
         <div className="is-size-7 has-text-999">
-          说明：该分值表明搜索内容与文本的契合度，数值越高，则语义契合度越好。
+          <FormattedMessage id="bluesearch.resultnote" />
         </div>
       </div>
       <br />

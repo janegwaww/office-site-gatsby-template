@@ -53,6 +53,21 @@
   "bluesearch": {
     "productvalue": "产品价值",
     "demo": "功能演示",
-    "businessscene": "业务场景"
+    "businessscene": "业务场景",
+    "correlation": "关联度",
+    "location": "位置",
+    "resultnote": "说明：该分值表明搜索内容与文本的契合度，数值越高，则语义契合度越好。",
+    "turnonunderstand": "开启语义理解",
+    "anotherexample": "换一个实例",
+    "customtext": "自定义文本",
+    "canceledit": "取消编辑",
+    "sampletext": "文本样例",
+    "searchfrom": "想要从文本中搜索的语义/语句",
+    "miningresults": "挖掘结果",
+    "pleaseinput": "请输入文本",
+    "custominput": "自定义输入",
+    "chinainput": "请输入中文字符！",
+    "notempty": "关键字不能为空！",
+    "textnotempty": "文本不能为空！"
   }
 }

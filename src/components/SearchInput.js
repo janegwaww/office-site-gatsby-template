@@ -1,10 +1,12 @@
 import React, { useState, forwardRef, useImperativeHandle } from "react";
+import { useIntl } from "gatsby-plugin-intl";
 import searchIcon from "../img/search-white.svg";
 
 function SearchInput({ handleSearch, searchKeywords = [] }, ref) {
   const [searchValue, setSearchValue] = useState("");
   const [activeButton, setActiveButton] = useState(-1);
   const [isLoading, setIsLoading] = useState("");
+  const { formatMessage } = useIntl();
   const searchHandler = e => {
     e.preventDefault();
     handleSearch(e.currentTarget.value);
@@ -22,7 +24,7 @@ function SearchInput({ handleSearch, searchKeywords = [] }, ref) {
           <input
             className="input is-medium"
             type="text"
-            placeholder="自定义输入"
+            placeholder={formatMessage({ id: "bluesearch.customtext" })}
             onChange={e => setSearchValue(e.target.value)}
             onFocus={event => event.target.select()}
           />

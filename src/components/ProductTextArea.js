@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
+import { useIntl, FormattedMessage } from "gatsby-plugin-intl";
 import SearchInput from "../components/SearchInput";
 import SearchResult from "../components/SearchResult";
 import curcle from "../img/curcle.svg";
@@ -12,11 +13,13 @@ function ProductTextArea({ info = [] }) {
   const [textIndex, setTextIndex] = useState(0);
   const [isUnediteble, setIsUnediteble] = useState(true);
   const searchInput = useRef(null);
+  const { formatMessage } = useIntl();
 
   useEffect(() => {
     const handleQuery = async () => {
-      if (!keyword) return alert("关键字不能为空！");
-      if (!content.description) return alert("文本不能为空！");
+      if (!keyword) return alert(formatMessage({ id: "bluesearch.notempty" }));
+      if (!content.description)
+        return alert(formatMessage({ id: "bluesearch.textnotempty" }));
       // 加存在验证是因为searchInput没有加载完全会报current不存在错误
       searchInput.current && searchInput.current.isLoading(true);
       searchInput.current && searchInput.current.setActiveButton(keyword);
@@ -44,7 +47,7 @@ function ProductTextArea({ info = [] }) {
     if (zh_regexp.test(value)) {
       return setKeyword(value);
     }
-    alert("请输入中文字符！");
+    alert(formatMessage({ id: "bluesearch.chinainput" }));
   };
   const changeContent = () => {
     setContent(info[textIndex]);
@@ -67,27 +70,39 @@ function ProductTextArea({ info = [] }) {
           <span className="icon">
             <img src={curcle} alt="curcle" width="20" height="20" />
           </span>
-          <span className="is-size-6 has-text-666">换一个实例</span>
+          <span className="is-size-6 has-text-666">
+            <FormattedMessage id="bluesearch.anotherexample" />
+          </span>
         </div>
         <button
           className="button is-light is-size-6-5 has-text-999 has-background-gray-2"
           onClick={defineContent}
         >
-          {isUnediteble ? "自定义文本" : "取消编辑"}
+          {isUnediteble ? (
+            <FormattedMessage id="bluesearch.customtext" />
+          ) : (
+            <FormattedMessage id="bluesearch.canceledit" />
+          )}
         </button>
       </div>
       <div className="h-table-container">
         <div className="h-table is-bordered is-fullwidth">
           <div className="tr thead">
-            <div className="td">文本样例</div>
-            <div className="td">想要从文本中搜索的语义/语句</div>
-            <div className="td">挖掘结果</div>
+            <div className="td">
+              <FormattedMessage id="bluesearch.sampletext" />
+            </div>
+            <div className="td">
+              <FormattedMessage id="bluesearch.searchfrom" />
+            </div>
+            <div className="td">
+              <FormattedMessage id="bluesearch.miningresults" />
+            </div>
           </div>
           <div className="tr tbody">
             <div className="td">
               <textarea
                 className="textarea"
-                placeholder="请输入文本"
+                placeholder={formatMessage({ id: "pleaseinput" })}
                 onChange={e =>
                   setContent({ ...content, ...{ description: e.target.value } })
                 }

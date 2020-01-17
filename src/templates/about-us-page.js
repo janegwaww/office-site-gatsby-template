@@ -1,15 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {graphql} from "gatsby";
+import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import AboutFeatures from "../components/AboutFeatures";
 import BackgroundImageSwitch from "../components/BackgroundImageSwitch";
 
-const AboutUsTemplate = ({image, intro}) => {
+const AboutUsTemplate = ({ image, intro }) => {
   return (
     <div className="about-us">
       <BackgroundImageSwitch
-        images={[{image: image}, {image: image}]}
+        images={[{ image: image }, { image: image }]}
         switchHeight={["500px", "160px"]}
       />
       <div className="about-us-content section section--gradient">
@@ -28,7 +28,7 @@ const AboutUsTemplate = ({image, intro}) => {
                 <p
                   className="company-para has-text-dark is-size-7-mobile"
                   key={i}
-                  dangerouslySetInnerHTML={{__html: o}}
+                  dangerouslySetInnerHTML={{ __html: o }}
                 ></p>
               ))}
             </div>
@@ -42,32 +42,36 @@ const AboutUsTemplate = ({image, intro}) => {
 
 AboutUsTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  intro: PropTypes.object,
+  intro: PropTypes.object
 };
 
-const AboutUs = ({data}) => {
-  const {frontmatter} = data.markdownRemark;
-
+const AboutUs = ({
+  data,
+  pageContext: {
+    intl: { language }
+  }
+}) => {
+  const { frontmatter } = data.markdownRemark;
+  const [zh, en] = frontmatter.version;
   return (
     <Layout>
-      <AboutUsTemplate image={frontmatter.image} intro={frontmatter.main} />
+      <AboutUsTemplate image={frontmatter.image} intro={{ zh, en }[language]} />
     </Layout>
   );
 };
 
 AboutUs.propTypes = {
   data: PropTypes.shape({
-    frontmatter: PropTypes.object,
-  }),
+    frontmatter: PropTypes.object
+  })
 };
 
 export default AboutUs;
 
 export const aboutUsQuery = graphql`
   query AboutUs($id: String!) {
-    markdownRemark(id: {eq: $id}) {
+    markdownRemark(id: { eq: $id }) {
       frontmatter {
-        title
         image {
           childImageSharp {
             fluid(maxWidth: 2048, quality: 100) {
@@ -75,7 +79,7 @@ export const aboutUsQuery = graphql`
             }
           }
         }
-        main {
+        version {
           heading
           description
           blurbs {

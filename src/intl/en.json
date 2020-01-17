@@ -53,6 +53,21 @@
   "bluesearch": {
     "productvalue": "Product Value",
     "demo": "Demo",
-    "businessscene": "Business Scene"
+    "businessscene": "Business Scene",
+    "correlation": "Correlation",
+    "location": "Location",
+    "resultnote": "Note: This score indicates the degree of fit between the search content and the text. The higher the value, the better the semantic fit.",
+    "turnonunderstand": "Turn on semantic understanding",
+    "anotherexample": "Another Example",
+    "customtext": "Custom Text",
+    "canceledit": "Cancel Edit",
+    "sampletext": "Sample Text",
+    "searchfrom": "Statements You Want To Search",
+    "miningresults": "Mining Results",
+    "pleaseinput": "Please enter text",
+    "custominput": "Custom Input",
+    "chinainput": "Please enter Chinese characters!",
+    "notempty": "Keywords cannot be empty!",
+    "textnotempty": "Text cannot be empty!"
   }
 }
