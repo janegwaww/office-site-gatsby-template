@@ -3,6 +3,19 @@ import PropTypes from "prop-types";
 import Switch from "react-switch";
 
 const RelatedItem = ({ info = {} }) => {
+  const extractSentence = ({
+    article = "",
+    sentence = "",
+    start,
+    end,
+    related
+  }) => {
+    let frontWord = article && article.substring(start - 15, start);
+    let endWord = article && article.substring(end, end + 16);
+    return related === -1
+      ? ""
+      : `...${frontWord}<span style='color:#2c95ff'>${sentence}</span>${endWord}...`;
+  };
   return (
     <div className="related-item">
       <div style={{ marginRight: "10px" }}>
@@ -22,10 +35,13 @@ const RelatedItem = ({ info = {} }) => {
         <span
           className="is-size-6-5 has-text-333"
           dangerouslySetInnerHTML={{
-            __html: `...${info.matched_str.replace(
-              info.matched_str,
-              `<span style='color:#2c95ff'>${info.matched_str}</span>`
-            )}...`
+            __html: extractSentence({
+              article: info.article,
+              sentence: info.matched_str,
+              start: parseInt(info.str_position[0], 10),
+              end: parseInt(info.str_position[1], 10),
+              related: info.match_score
+            })
           }}
         ></span>
       </div>
@@ -44,7 +60,7 @@ RelatedItem.propTypes = {
   info: PropTypes.object
 };
 
-const SearchResult = ({ result = [], checkHandler }) => {
+const SearchResult = ({ result = [], checkHandler, text = "" }) => {
   const [check, setCheck] = useState(true);
   const handleChange = () => {
     setCheck(!check);
@@ -77,13 +93,14 @@ const SearchResult = ({ result = [], checkHandler }) => {
       <br />
       <div className="relate-section">
         {result.map((o, i) => (
-          <RelatedItem info={{ ...o, key: i }} key={i} />
+          <RelatedItem info={{ ...o, article: text, key: i }} key={i} />
         ))}
       </div>
     </div>
   );
 };
 SearchResult.propTypes = {
+  text: PropTypes.string,
   result: PropTypes.array,
   checkHandler: PropTypes.func
 };

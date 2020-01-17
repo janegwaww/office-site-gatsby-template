@@ -107,6 +107,7 @@ function ProductTextArea({ info = [] }) {
             </div>
             <div className="td">
               <SearchResult
+                text={content.description}
                 result={related}
                 checkHandler={e => setIssemantic(e)}
               />
