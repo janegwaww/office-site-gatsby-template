@@ -22,7 +22,7 @@ const RelatedItem = ({ info = {} }) => {
         <span
           className="is-size-6-5 has-text-333"
           dangerouslySetInnerHTML={{
-            __html: `...${info.matched_sentence.replace(
+            __html: `...${info.matched_str.replace(
               info.matched_str,
               `<span style='color:#2c95ff'>${info.matched_str}</span>`
             )}...`
@@ -32,12 +32,20 @@ const RelatedItem = ({ info = {} }) => {
     </div>
   );
 };
+RelatedItem.defaultProps = {
+  info: {
+    key: 0,
+    match_score: "",
+    str_position: [0, 0],
+    matched_str: ""
+  }
+};
 RelatedItem.propTypes = {
   info: PropTypes.object
 };
 
 const SearchResult = ({ result = [], checkHandler }) => {
-  const [check, setCheck] = useState(false);
+  const [check, setCheck] = useState(true);
   const handleChange = () => {
     setCheck(!check);
     checkHandler(!check);

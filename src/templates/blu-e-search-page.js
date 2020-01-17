@@ -68,7 +68,7 @@ const BluETemplate = ({
           </div>
         </div>
       </section>
-      <section className="section h-section has-background-gray-3">
+      <section className="section h-section has-background-gray-4">
         <div className="container">
           <div className="columns">
             <div className="column is-10 is-offset-1">

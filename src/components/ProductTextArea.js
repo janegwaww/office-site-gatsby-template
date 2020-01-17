@@ -7,7 +7,7 @@ import curcle from "../img/curcle.svg";
 function ProductTextArea({ info = [] }) {
   const [content, setContent] = useState(info[0]);
   const [keyword, setKeyword] = useState(info[0].keywords[0]);
-  const [issemantic, setIssemantic] = useState(false);
+  const [issemantic, setIssemantic] = useState(true);
   const [related, setRelated] = useState([]);
   const [textIndex, setTextIndex] = useState(0);
   const [isUnediteble, setIsUnediteble] = useState(true);
