@@ -37,9 +37,17 @@
     "seedetails": "See Details"
   },
   "product": {
-    "usenow": "Use Now",
+    "usenow": "Try Now",
     "solutionconsulting": "Solution Consulting",
     "solutionarchitecture": "Solution Architecture",
-    "datapool": "Data Pool"
+    "datapool": "Data Pool",
+    "personalinformation": "Personal Information",
+    "name": "Name",
+    "company": "Company",
+    "position": "Position",
+    "industry": "Industry",
+    "email": "Email",
+    "mobile": "Mobile",
+    "youneeds": "You Needs"
   }
 }

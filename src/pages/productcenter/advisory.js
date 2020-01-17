@@ -1,16 +1,17 @@
 import React from "react";
-import {navigate} from "gatsby-link";
+import { navigate } from "gatsby-link";
+import { FormattedMessage } from "gatsby-plugin-intl";
 import emailjs from "emailjs-com";
 import Layout from "../../components/Layout";
 
 export default class Index extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {isValidated: false};
+    this.state = { isValidated: false };
   }
 
   handleChange = e => {
-    this.setState({[e.target.name]: e.target.value});
+    this.setState({ [e.target.name]: e.target.value });
   };
 
   handleSubmit = e => {
@@ -20,8 +21,8 @@ export default class Index extends React.Component {
       .send(
         "outlook",
         "advisory",
-        {...this.state},
-        "user_BBiJVm0Sq42hFj1H1Bny0",
+        { ...this.state },
+        "user_BBiJVm0Sq42hFj1H1Bny0"
       )
       .then(
         response => {
@@ -30,7 +31,7 @@ export default class Index extends React.Component {
         },
         error => {
           console.log("FAILED...", error);
-        },
+        }
       );
   };
 
@@ -40,7 +41,7 @@ export default class Index extends React.Component {
         <section className="advisory section h-section has-background-grey-1">
           <div className="container">
             <h1 className="is-size-2-5 is-size-5-mobile has-text-centered has-margin-bottom-30 has-margin-bottom-15-mobile">
-              填写信息
+              <FormattedMessage id="product.personalinformation" />
             </h1>
             <div className="columns">
               <div className="column is-10 is-offset-1">
@@ -73,7 +74,8 @@ export default class Index extends React.Component {
                           </div>
                           <div className="field">
                             <label className="label" htmlFor={"name"}>
-                              <span>*</span>姓名
+                              <span>*</span>
+                              <FormattedMessage id="product.name" />
                             </label>
                             <div className="control">
                               <input
@@ -88,7 +90,8 @@ export default class Index extends React.Component {
                           </div>
                           <div className="field">
                             <label className="label" htmlFor={"company"}>
-                              <span>*</span>公司
+                              <span>*</span>
+                              <FormattedMessage id="product.company" />
                             </label>
                             <div className="control">
                               <input
@@ -103,7 +106,8 @@ export default class Index extends React.Component {
                           </div>
                           <div className="field">
                             <label className="label" htmlFor={"position"}>
-                              <span>*</span>职位
+                              <span>*</span>
+                              <FormattedMessage id="product.position" />
                             </label>
                             <div className="control">
                               <input
@@ -118,7 +122,8 @@ export default class Index extends React.Component {
                           </div>
                           <div className="field">
                             <label className="label" htmlFor={"industry"}>
-                              <span>*</span>行业
+                              <span>*</span>
+                              <FormattedMessage id="product.industry" />
                             </label>
                             <div className="control">
                               <input
@@ -133,7 +138,8 @@ export default class Index extends React.Component {
                           </div>
                           <div className="field">
                             <label className="label" htmlFor={"email"}>
-                              <span>*</span>电子邮件
+                              <span>*</span>
+                              <FormattedMessage id="product.email" />
                             </label>
                             <div className="control">
                               <input
@@ -148,7 +154,8 @@ export default class Index extends React.Component {
                           </div>
                           <div className="field">
                             <label className="label" htmlFor={"mobile"}>
-                              <span>*</span>电话
+                              <span>*</span>
+                              <FormattedMessage id="product.mobile" />
                             </label>
                             <div className="control">
                               <input
@@ -163,7 +170,8 @@ export default class Index extends React.Component {
                           </div>
                           <div className="field">
                             <label className="label" htmlFor={"message"}>
-                              <span>*</span>您的需求
+                              <span>*</span>
+                              <FormattedMessage id="product.youneeds" />
                             </label>
                             <div className="control">
                               <textarea
