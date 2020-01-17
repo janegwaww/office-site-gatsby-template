@@ -49,5 +49,10 @@
     "email": "电子邮件",
     "mobile": "电话",
     "youneeds": "您的需求"
+  },
+  "bluesearch": {
+    "productvalue": "产品价值",
+    "demo": "功能演示",
+    "businessscene": "业务场景"
   }
 }

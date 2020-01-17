@@ -49,5 +49,10 @@
     "email": "Email",
     "mobile": "Mobile",
     "youneeds": "You Needs"
+  },
+  "bluesearch": {
+    "productvalue": "Product Value",
+    "demo": "Demo",
+    "businessscene": "Business Scene"
   }
 }

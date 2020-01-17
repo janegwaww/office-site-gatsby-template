@@ -22,7 +22,7 @@ const RelatedItem = ({ info = {} }) => {
         <span
           className="is-size-6-5 has-text-333"
           dangerouslySetInnerHTML={{
-            __html: `...${info.matched_sentence.replace(
+            __html: `...${info.matched_str.replace(
               info.matched_str,
               `<span style='color:#2c95ff'>${info.matched_str}</span>`
             )}...`
