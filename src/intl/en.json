@@ -69,5 +69,13 @@
     "chinainput": "Please enter Chinese characters!",
     "notempty": "Keywords cannot be empty!",
     "textnotempty": "Text cannot be empty!"
+  },
+  "college": {
+    "academicbackground": "Academic Background",
+    "researchdirection": "Research Direction",
+    "haetekinstitute": "Haetek Institute",
+    "nnac": "Neural Network Architecture Search",
+    "inforintel": "Information Intelligence",
+    "infeengine": "Inference Engine"
   }
 }

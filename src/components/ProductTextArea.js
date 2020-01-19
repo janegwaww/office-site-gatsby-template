@@ -102,7 +102,7 @@ function ProductTextArea({ info = [] }) {
             <div className="td">
               <textarea
                 className="textarea"
-                placeholder={formatMessage({ id: "pleaseinput" })}
+                placeholder={formatMessage({ id: "bluesearch.pleaseinput" })}
                 onChange={e =>
                   setContent({ ...content, ...{ description: e.target.value } })
                 }

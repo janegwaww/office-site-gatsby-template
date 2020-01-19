@@ -69,5 +69,13 @@
     "chinainput": "请输入中文字符！",
     "notempty": "关键字不能为空！",
     "textnotempty": "文本不能为空！"
+  },
+  "college": {
+    "academicbackground": "学术背景",
+    "researchdirection": "研究方向",
+    "haetekinstitute": "黑顿研究院",
+    "nnac": "神经网络架构搜索",
+    "inforintel": "信息智能",
+    "infeengine": "推理引擎"
   }
 }
