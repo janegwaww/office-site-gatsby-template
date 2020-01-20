@@ -161,27 +161,27 @@ version:
                     subHeading: Seeker
                     image: /img/seeker.png
                     description: >
-                        Fully closed-loop, automated machine learning engine. Given a certain business scenario, input the historical data of each variable of the scenario, and the variable engine can learn autonomously based on the historical data, dig out deep scene knowledge, and form a correlation map between the variables. Relying on the correlation map, customers can assign values to some variables, and the map can make real-time prediction of variables that have not been assigned values to achieve penetration of scene data / variable depth mining.
+                        Fully closed-loop, automated machine learning engine. Given a certain business scenario, input the historical data of each variable of the scenario, and the variable engine can learn autonomously based on the historical data, dig out deep scene knowledge, and form a correlation map between the variables. Relying on the correlation map, customers can assign values to some variables, and the map can make a real-time prediction of variables that have not been assigned values to achieve penetration of scene data / variable depth mining.
                   - heading: Matcher
                     subHeading: Matcher
                     image: /img/matcher.png
                     description: >
-                        Given the objects, resources, and business associations (a priori relationships or constraints between object attributes) of each scenario, a custom objective function (combined with the empirical evaluation value obtained from the attributes of each object) is used to evaluate the problem (Pros and cons of matching planning schemes), under the condition of satisfying business associations, find a matching planning scheme that optimizes the objective function. It is mainly divided into three major links: matching, distribution and planning.
+                        Given the objects, resources, and business associations (a priori relationships or constraints between object attributes) of each scenario, a custom objective function (combined with the empirical evaluation value obtained from the attributes of each object) is used to evaluate the problem (Pros and cons of matching planning schemes), under the condition of satisfying business associations, find a matching planning scheme that optimizes the objective function. It is mainly divided into three major links: matching, distribution, and planning.
                   - heading: InfoPlus
                     subHeading: InfoPlus
                     image: /img/info.png
                     description: >
-                        Analyze information sources with precision, dig deep into the business logic behind the information sources, and launch a zero-threshold automated information source processing platform that supports independent development and iteration for the information (text, voice, image) processing business of different industries. The training samples are provided by customers. The InfoPlus platform will rely on the independently developed NLP algorithm to derive the "literal" and "literal behind" business logic, and complement the variable engine to generate an information logic map.
+                        Analyze information sources with precision, dig deep into the business logic behind the information sources, and launch a zero-threshold automated information source processing platform that supports independent development and iteration for the information (text, voice, image) processing business of different industries. The training samples are provided by customers. The InfoPlus platform will rely on the independently developed NLP algorithm to derive the "literal" and "literal behind" business logic and complement the variable engine to generate an information logic map.
                   - heading: HDPP
                     subHeading: HDPP
                     image: /img/hdpp.png
                     description: >
-                        A set of closed-loop tool-type data integration platforms for the input of raw data, data cleaning and preprocessing, generation and integration of variable portraits, and seamless integration with the variable engine. It is specially developed for intelligent applications, supports multi-person simultaneous data entry, monitors the statistical characteristics of data and variables throughout the process, and its influencing factors on the algorithm training process, from the acquisition of raw data to the completion of quantitative models, and the entire process is closed-loop. Intelligent application developers provide the most concise, efficient, and standardized data tools.
+                        A set of closed-loop tool-type data integration platforms for the input of raw data, data cleaning and preprocessing generation and integration of variable portraits, and seamless integration with the variable engine. It is specially developed for intelligent applications, supports multi-person simultaneous data entry, monitors the statistical characteristics of data and variables throughout the process, and its influencing factors on the algorithm training process, from the acquisition of raw data to the completion of quantitative models, and the entire process is closed-loop. Intelligent application developers provide the most concise, efficient, and standardized data tools.
                   - heading: IOE
                     subHeading: IOE
                     image: /img/ioe.png
                     description: >
-                        Open 1 artificial intelligence resource integration platform for managing things (including physical objects) and computing resources. It can be used to graft various types of entities and sensing devices. With the help of the core algorithm platform, developers can independently develop various types of intelligent applications for things, and design applications such as home furnishings, restaurants, storage, energy, health, environmental protection, medical treatment, and automation. Let AI shape life, let everything be connected in a smarter and more thorough way, and provide a robust closed-loop ecology for the upcoming intelligent industry.
+                        Open 1 artificial intelligence resource integration platform for managing things (including physical objects) and computing resources. It can be used to graft various types of entities and sensing devices. With the help of the core algorithm platform, developers can independently develop various types of intelligent applications for things, and design applications such as home furnishings, restaurants, storage, energy, health, environmental protection, medical treatment, and automation. Let AI shape life, let everything be connected more smartly and thoroughly, and provide a robust closed-loop ecology for the upcoming intelligent industry.
       solution:
               heading: Full-stack solutions for various business scenarios
               description: >
@@ -193,7 +193,7 @@ version:
                     image3: /img/solutions/retail-mobile-button.png
                     alt: retail
                     description: >
-                        Based on big data analysis, deep learning and other core AI technology capabilities, it empowers various retail industries such as offline stores, shopping malls, supermarkets, and brands. Assist member management, cargo flow analysis, commodity settlement, product display audit, logistics inventory allocation plan, customer portrait, supplier channel and accurate advertising and other business scenarios to upgrade, form an intelligent closed-loop business module, improve capital efficiency, reduce manpower, material and financial resources Triple operating costs.
+                        Based on big data analysis, deep learning and other core AI technology capabilities, it empowers various retail industries such as offline stores, shopping malls, supermarkets, and brands. Assist member management, cargo flow analysis, commodity settlement, product display audit, logistics inventory allocation plan, customer portrait, supplier channel and, accurate advertising and other business scenarios to upgrade, form an intelligent closed-loop business module, improve capital efficiency, reduce manpower, material and financial resources Triple operating costs.
                   - heading: Great health
                     image1: /img/solutions/health.png
                     image2: /img/solutions/health-mobile.png
@@ -207,7 +207,7 @@ version:
                     image3: /img/solutions/life-mobile-button.png
                     alt: life
                     description: >
-                        The artificial intelligence algorithm is used to graft high-precision sensor equipment to comprehensively informatize the residential building and its infrastructure to create a closed-loop intelligent application ecology. It can provide high-performance artificial intelligence computing support for intelligent pickup, resource integration and allocation, security monitoring, behavior capture and tracking, household portrait generation, and optimization of living modes.
+                        The artificial intelligence algorithm is used to graft high-precision sensor equipment to comprehensively informative the residential building and its infrastructure to create a closed-loop intelligent application ecology. It can provide high-performance artificial intelligence computing support for intelligent pickup, resource integration and allocation, security monitoring, behavior capture and tracking, household portrait generation, and optimization of living modes.
                   - heading: Smart marketing
                     image1: /img/solutions/sale.png
                     image2: /img/solutions/sale-mobile.png
@@ -235,7 +235,7 @@ version:
                     image3: /img/solutions/bank-mobile-button.png
                     alt: bank
                     description: >
-                        Through account behavior analysis, on the one hand, it intelligently matches customer needs to design differentiated and accurate marketing; on the other hand, it uses big data to predict user risks, evaluate credit ratings, and build a complete anti-fraud system based on AI anti-money laundering and anti-fraud algorithms.
+                        Through account behavior analysis, on the one hand, it intelligently matches customer needs to design differentiated and accurate marketing; on the other hand, it uses big data to predict user risks, evaluates credit ratings, and build a complete anti-fraud system based on AI anti-money laundering and anti-fraud algorithms.
       rate:
               heading: rating
               description: >

@@ -33,7 +33,12 @@ function ProductTitle({ info = {} }) {
             </h3>
             <h6
               className="is-size-7-mobile is-size-6-5 has-text-white"
-              style={{ lineHeight: "1.5", padding: "0.5em 0em" }}
+              style={{
+                lineHeight: "1.5",
+                padding: "0.5em 0em",
+                textAlign: "justify",
+                hyphens: "auto"
+              }}
             >
               {des}
             </h6>

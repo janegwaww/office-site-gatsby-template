@@ -113,7 +113,10 @@ const HDPPTabContent = ({ method, datapool }) => {
                     <div className="data-pool-cards-head is-size-6 is-size-6-mobile has-text-centered has-text-333">
                       {o.head}
                     </div>
-                    <div className="data-pool-cards-text is-size-6-5 has-text-666 is-size-7-mobile">
+                    <div
+                      className="data-pool-cards-text is-size-6-5 has-text-666 is-size-7-mobile"
+                      style={{ hyphens: "auto" }}
+                    >
                       {o.content}
                     </div>
                   </div>

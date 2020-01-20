@@ -126,7 +126,7 @@ version:
             heading: Haetek Algorithm Module Variable Engine SEEKER
             subheading: SEEKER Variable Engine
             description: >
-                Comprehensive closed-loop automated machine learning platform. Given a certain business scenario, input the historical data of each variable of the scenario, and the variable engine can learn autonomously based on the historical data, dig out deep scene knowledge, and form a correlation map between the variables. Relying on the correlation map, customers can assign values to some variables, and the map can make real-time prediction of variables that have not been assigned values to achieve penetration of scene data / variable depth mining.
+                Comprehensive closed-loop automated machine learning platform. Given a certain business scenario, input the historical data of each variable of the scenario, and the variable engine can learn autonomously based on the historical data, dig out deep scene knowledge, and form a correlation map between the variables. Relying on the correlation map, customers can assign values to some variables, and the map can make a real-time prediction of variables that have not been assigned values to achieve penetration of scene data / variable depth mining.
             subdescription: A fully closed-loop automated machine learning platform and an independently developed zero-threshold scene variable mining artifact.
       tabs:
             - name: Variable Engine
@@ -143,12 +143,12 @@ version:
               image: /img/product/features1.png
               alt: features
               description: >
-                  The self-developed zero-threshold scene variable mining artifact has the ability to provide independent historical learning data that is comparable to the autonomous learning ability of industry experts. / For enterprise users: full closed loop, independent iteration, in the shortest time, with the lowest research and development costs, control the industry's operation mechanism, give the scene deep computing power, let each enterprise user stand out, know oneself, know one another, and endless battles, giving life and spirituality to the business scene . / For individual users: scenes that are updated every moment, covering all walks of life, health and wellness, academic majors, career planning, diet life, leisure and entertainment, psychological diagnosis, clothing fashion, zero-touch exposure penetrates into every life A corner of the artificial intelligence algorithm.
+                  The self-developed zero-threshold scene variable mining artifact can provide independent historical learning data that is comparable to the autonomous learning ability of industry experts. / For enterprise users: full-closed loop, independent iteration, in the shortest time, with the lowest research and development costs, control the industry's operation mechanism, give the scene deep computing power, let each enterprise user stand out, know oneself, know one another, and endless battles, giving life and spirituality to the business scene. / For individual users: scenes that are updated every moment, covering all walks of life, health, and wellness, academic majors, career planning, diet life, leisure and entertainment, psychological diagnosis, clothing fashion, zero-touch exposure penetrates every life A corner of the artificial intelligence algorithm.
             - heading: Information Intelligence INFOPLUS
               image: /img/product/features2.png
               alt: features
               description: >
-                  International first-class NLP (Natural Language Processing) algorithm team, a fully modular intelligent application product. / Automated information source processing: For information processing business (e.g., text) of different industries, improve the efficiency of enterprise information business processing. / Autonomous learning: Support the self-cultivation model, combine the customer's own data, autonomous iteration, and zero AI threshold to create the word of the text intelligent world. / Information logic map: Mining the business logic behind information, not limited to "literal" operation optimization, to achieve deep business logic mining and information combing.
+                  International first-class NLP (Natural Language Processing) algorithm team, a fully modular intelligent application product. / Automated information source processing: For information processing business (e.g., text) of different industries, improve the efficiency of enterprise information business processing. / Autonomous learning: Support the self-cultivation model, combine the customer's data, autonomous iteration, and zero AI threshold to create the word of the text intelligent world. / Information logic map: Mining the business logic behind information, not limited to "literal" operation optimization, to achieve deep business logic mining and information combing.
             - heading: Data Protocol:Hyper Data Pre-processing Protocol
               image: /img/product/features3.png
               alt: features
@@ -187,7 +187,7 @@ version:
                   tc:
                       - "Supports low repetitiveness, ambiguous rules, scattered task types / smarter, more robust"
                       - "Only supports daily information (text) processing business with high repetition, clear rules, and huge batches"
-                      - "Supports autonomous learning / can be autonomously iterated in accordance with the customer's own situation / a formable information intelligence system"
+                      - "Supports autonomous learning / can be autonomously iterated by the customer's situation / a formable information intelligence system"
                       - "One-time service, unable to adapt to changes in business scenarios and adaptive upgrade / repetitive development cycle, long cost"
                       - "Complementary with our variable engine products / mining the business logic behind 'literal' to generate user-specific information business knowledge maps"
                       - "Thin functions, mainly focusing on the 'literal' intelligence of the information, and less depth into the business logic behind the information"
@@ -201,7 +201,7 @@ version:
               alt: datapool logo
               head: Tailored
               content: >
-                  It not only supports the storage of existing data, but also focuses on the flexible call and organization of data resources. It can provide customers with the most needed data resources in the most secure form at any time.
+                  It not only supports the storage of existing data but also focuses on the flexible call and organization of data resources. It can provide customers with the most needed data resources in the most secure form at any time.
             - image: /img/product/pool3.png
               alt: datapool logo
               head: Data Smart Contract

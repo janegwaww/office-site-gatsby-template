@@ -35,7 +35,12 @@ const CaseCard = ({ info = {} }) => {
             text={`${info.content}`}
             maxLine={maxLine}
             ellipsis="..."
-            style={{ lineHeight: "26px", whiteSpace: "pre-wrap" }}
+            style={{
+              lineHeight: "26px",
+              whiteSpace: "pre-wrap",
+              textAlign: "justify",
+              hyphens: "auto"
+            }}
           />
         </div>
       </div>

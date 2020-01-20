@@ -89,7 +89,7 @@ version:
                 date: Shenzhen | Development | 2019-9-30
                 description: >
                     Responsible for implementing the product design of the product department on the actual equipment; implementation of human-computer interaction functions and performance optimization; optimization of interface design details; and data-level and server-level engineering docking with back-end or engineers.
-              - heading: Back-end engineer
+              - heading: Back-end Engineer
                 date: Shenzhen | Development | 2019-9-30
                 description: >
                     Responsible for data docking and front-end engineering docking; ensuring background energy consumption and performance optimization; avoiding security vulnerabilities; implementing a server framework for software architects.
@@ -97,7 +97,7 @@ version:
                 date: Shenzhen | Algorithm | 2019-9-30
                 description: >
                     Responsible for improving the solution of the algorithm manager; coding of the key links to implement the solution; improvement of algorithm performance.
-              - heading: algorithm engineer
+              - heading: Algorithm Engineer
                 date: Shenzhen | Algorithm | 2019-9-30
                 description: >
                     Responsible for algorithm landing and performance evaluation; assist senior algorithm engineers to complete the series of links;
@@ -113,8 +113,8 @@ version:
                 date: Shenzhen | Development | 2019-9-30
                 description: >
                     Responsible for the implementation of data modeling; data resource integration; data preprocessing; data cleaning; data resource docking with the development department and algorithm department
-              - heading: software engineer
+              - heading: Software Engineer
                 date: Shenzhen | Development | 2019-9-30
                 description: >
-                    Responsible for full stack coding; infiltrate in all links to ensure the efficient development of the company's products.
+                    Responsible for full-stack coding; infiltrate in all links to ensure the efficient development of the company's products.
 ---

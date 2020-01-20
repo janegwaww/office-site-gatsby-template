@@ -87,7 +87,7 @@ version:
             heading: bluE -- Understand Fuzzy Search
             subheading: bluE Fuzzy Search
             description: >
-                Industry-leading semantic-level text fuzzy search system with independent intellectual property rights, deeply combining artificial intelligence algorithms and information retrieval technology, based on multi-level training deep learning language model groups, to achieve efficient mining of text semantics, and give intelligent understanding of anthropomorphic thinking . Lightweight, fast, high recall, deep understanding, accurate information positioning.
+                Industry-leading semantic-level text fuzzy search system with independent intellectual property rights, deeply combining artificial intelligence algorithms and information retrieval technology, based on multi-level training deep learning language model groups, to achieve efficient mining of text semantics and give an intelligent understanding of anthropomorphic thinking. Lightweight, fast, high recall, deep understanding, accurate information positioning.
             subdescription: >
                 An industry-leading semantic text fuzzy search system with independent intellectual property rights, deeply combining artificial intelligence algorithms and information retrieval technology.
       productvalue:

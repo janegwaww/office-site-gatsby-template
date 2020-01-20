@@ -15,7 +15,9 @@ function JobCard({ info = {} }) {
           height: "4.5em",
           overflow: "hidden",
           color: "#666666",
-          whiteSpace: "pre-wrap"
+          whiteSpace: "pre-wrap",
+          textAlign: "left",
+          hyphens: "auto"
         }}
         text={`${info.description}`}
         maxLine="3"

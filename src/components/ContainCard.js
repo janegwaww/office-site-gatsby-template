@@ -23,7 +23,11 @@ const ContainCard = ({ info = {} }) => {
             text={`${info.description}`}
             maxLine="5"
             ellipsis="..."
-            style={{ whiteSpace: "pre-wrap" }}
+            style={{
+              whiteSpace: "pre-wrap",
+              hyphens: "auto",
+              textAlign: "justify"
+            }}
           />
         </div>
         <a className="button is-white-blue is-size-6 is-size-7-mobile">

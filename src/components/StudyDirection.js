@@ -16,12 +16,14 @@ const Article = ({ article = [] }) => {
       <p
         className="is-size-7-mobile"
         dangerouslySetInnerHTML={{ __html: para1.content }}
+        style={{ hyphens: "auto" }}
       ></p>
       <br />
       <p className="is-size-5 is-size-6-mobile">{para2.heading}</p>
       <p
         className="is-size-7-mobile"
         dangerouslySetInnerHTML={{ __html: para2.content }}
+        style={{ hyphens: "auto" }}
       ></p>
     </div>
   );

@@ -58,7 +58,7 @@ version:
               alt: case2
               head: Medical platform
               content: >
-                  Without the intervention of any expert knowledge, it successfully trained a heart health diagnosis model comparable to an expert in a few hours through thousands of physical examination data, and was able to independently dig out some academic-level inferences or conclusions, such as oral health Links to heart health, and observes future heart health by autonomously adjusting diet plans on the system.
+                  Without the intervention of any expert knowledge, it successfully trained a heart health diagnosis model comparable to an expert in a few hours through thousands of physical examination data and was able to independently dig out some academic-level inferences or conclusions, such as oral health Links to heart health, and observes future heart health by autonomously adjusting diet plans on the system.
             - image1: /img/client-case/case3.png
               image2: /img/client-case/case3-mobile.png
               alt: case3
