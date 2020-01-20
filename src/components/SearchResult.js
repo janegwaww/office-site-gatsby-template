@@ -16,7 +16,9 @@ const RelatedItem = ({ info = {} }) => {
       ? ""
       : `...${frontWord}<span style='color:#2c95ff'>${sentence}</span>${endWord}...`;
   };
-  return (
+  return info.match_score === -1 ? (
+    <div>没有搜索到相应的内容</div>
+  ) : (
     <div className="related-item">
       <div style={{ marginRight: "10px" }}>
         <div className="index-num">{info.key + 1}</div>
