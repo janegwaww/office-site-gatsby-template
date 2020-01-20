@@ -1,11 +1,12 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import {graphql} from "gatsby";
+import { graphql } from "gatsby";
+import { FormattedMessage } from "gatsby-plugin-intl";
 import Layout from "../components/Layout";
 import StudyDirection from "../components/StudyDirection";
 import BackgroundImageSwitch from "../components/BackgroundImageSwitch";
 
-const BackgroundInfo = ({heading = "", bakPara = []}) => {
+const BackgroundInfo = ({ bakPara = [] }) => {
   let [para, setPara] = useState(<></>);
   useEffect(() => {
     if (window.innerWidth <= 768) {
@@ -13,7 +14,7 @@ const BackgroundInfo = ({heading = "", bakPara = []}) => {
         <>
           <p>{`${bakPara[0]}${bakPara[1]}`}</p>
           <p>{`${bakPara[2]}${bakPara[3]}`}</p>
-        </>,
+        </>
       );
     } else {
       setPara(
@@ -21,7 +22,7 @@ const BackgroundInfo = ({heading = "", bakPara = []}) => {
           {bakPara.map((o, i) => (
             <p key={i}>{o}</p>
           ))}
-        </>,
+        </>
       );
     }
   }, []);
@@ -29,7 +30,7 @@ const BackgroundInfo = ({heading = "", bakPara = []}) => {
     <div className="college-back-info columns is-centered">
       <div className="column is-11 has-text-centered">
         <h3 className="college-back-info-head is-size-3 is-size-5-mobile">
-          {heading}
+          <FormattedMessage id="college.academicbackground" />
         </h3>
         <br />
         <div className="is-size-6 is-size-7-mobile has-text-left-mobile">
@@ -40,16 +41,16 @@ const BackgroundInfo = ({heading = "", bakPara = []}) => {
   );
 };
 
-const CollegeTemplate = ({images, background, direction}) => {
-  const bakPara = background.description.split(/\s{2}|\\/);
+const CollegeTemplate = ({ images, background, direction }) => {
+  const bakPara = background.split(/\s{2}|\\/);
   return (
     <div className="college">
       <BackgroundImageSwitch images={images} height={["600px", "180px"]}>
-        <div className="has-text-centered" style={{lineHeight: 3}}>
+        <div className="has-text-centered" style={{ lineHeight: 3 }}>
           <h2 className="has-text-white is-size-3 is-size-6-mobile">
             黑顿研究院
           </h2>
-          <div style={{lineHeight: 1.2, fontSize: "50px"}}>
+          <div style={{ lineHeight: 1.2, fontSize: "50px" }}>
             <h1 className="has-text-white is-size-6-mobile">
               HAETEK Institute of Machine Intelligence,
             </h1>
@@ -62,7 +63,7 @@ const CollegeTemplate = ({images, background, direction}) => {
       <div className="college-back section section--gradient has-background-white-ter">
         <div className="container">
           <div className="section is-paddingless">
-            <BackgroundInfo heading={background.heading} bakPara={bakPara} />
+            <BackgroundInfo bakPara={bakPara} />
           </div>
         </div>
       </div>
@@ -77,24 +78,24 @@ const CollegeTemplate = ({images, background, direction}) => {
 
 CollegeTemplate.propTypes = {
   images: PropTypes.array,
-  background: PropTypes.shape({
-    heading: PropTypes.string,
-    description: PropTypes.string,
-  }),
-  direction: PropTypes.shape({
-    heading: PropTypes.string,
-    blurbs: PropTypes.array,
-  }),
+  background: PropTypes.string,
+  direction: PropTypes.array
 };
 
-const College = ({data}) => {
-  const {frontmatter} = data.markdownRemark;
+const College = ({
+  data,
+  pageContext: {
+    intl: { language }
+  }
+}) => {
+  const { frontmatter } = data.markdownRemark;
+  const [zh, en] = frontmatter.version;
   return (
     <Layout>
       <CollegeTemplate
         images={frontmatter.images}
-        background={frontmatter.background}
-        direction={frontmatter.direction}
+        background={{ zh, en }[language].description}
+        direction={{ zh, en }[language].direction}
       />
     </Layout>
   );
@@ -102,15 +103,15 @@ const College = ({data}) => {
 
 College.propTypes = {
   data: PropTypes.shape({
-    frontmatter: PropTypes.object,
-  }),
+    frontmatter: PropTypes.object
+  })
 };
 
 export default College;
 
 export const collegeQuery = graphql`
   query College($id: String!) {
-    markdownRemark(id: {eq: $id}) {
+    markdownRemark(id: { eq: $id }) {
       frontmatter {
         images {
           image {
@@ -122,35 +123,11 @@ export const collegeQuery = graphql`
           }
           alt
         }
-        background {
-          heading
+        version {
           description
-        }
-        direction {
-          heading
-          blurbs {
-            image1 {
-              childImageSharp {
-                fluid(maxWidth: 2048, quality: 100) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            image2 {
-              childImageSharp {
-                fluid(maxWidth: 2048, quality: 100) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            alt
+          direction {
             heading
-            article {
-              heading
-              label
-              link
-              content
-            }
+            content
           }
         }
       }

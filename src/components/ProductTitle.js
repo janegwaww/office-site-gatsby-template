@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import { Link } from "gatsby-plugin-intl";
+import { Link, useIntl } from "gatsby-plugin-intl";
 
 function ProductTitle({ info = {} }) {
+  const { formatMessage } = useIntl();
   const [bside, setBside] = useState("is-4");
   const [side, setSide] = useState("is-6");
   const [des, setDes] = useState(info.description);
@@ -32,7 +33,12 @@ function ProductTitle({ info = {} }) {
             </h3>
             <h6
               className="is-size-7-mobile is-size-6-5 has-text-white"
-              style={{ lineHeight: "1.5", padding: "0.5em 0em" }}
+              style={{
+                lineHeight: "1.5",
+                padding: "0.5em 0em",
+                textAlign: "justify",
+                hyphens: "auto"
+              }}
             >
               {des}
             </h6>
@@ -46,7 +52,9 @@ function ProductTitle({ info = {} }) {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                &ensp;&ensp;立即使用&ensp;&ensp;
+                &ensp;&ensp;
+                {`${formatMessage({ id: "product.usenow" })}`}
+                &ensp;&ensp;
               </a>
             </div>
             <div className={`column ${bside}`}>
@@ -54,7 +62,7 @@ function ProductTitle({ info = {} }) {
                 className="button is-size-7-5-mobile is-transparent"
                 to="/productcenter/advisory/"
               >
-                业务方案咨询
+                {formatMessage({ id: "product.solutionconsulting" })}
               </Link>
             </div>
             <div className={`column ${bside} has-text-centered`}>

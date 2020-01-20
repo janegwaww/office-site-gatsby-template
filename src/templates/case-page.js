@@ -1,11 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {graphql} from "gatsby";
+import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import BackgroundImageSwitch from "../components/BackgroundImageSwitch";
 import CaseCard from "../components/CaseCard";
 
-const CaseTemplate = ({images, heading, cases}) => {
+const CaseTemplate = ({ images, heading, cases }) => {
   return (
     <div className="case-page">
       <BackgroundImageSwitch
@@ -40,19 +40,25 @@ CaseTemplate.propTypes = {
       image: PropTypes.object,
       alt: PropTypes.string,
       head: PropTypes.string,
-      content: PropTypes.string,
-    }),
-  ),
+      content: PropTypes.string
+    })
+  )
 };
 
-const Case = ({data}) => {
-  const {frontmatter} = data.markdownRemark;
+const Case = ({
+  data,
+  pageContext: {
+    intl: { language }
+  }
+}) => {
+  const { frontmatter } = data.markdownRemark;
+  const [zh, en] = frontmatter.version;
   return (
     <Layout>
       <CaseTemplate
         images={frontmatter.images}
-        heading={frontmatter.heading}
-        cases={frontmatter.cases}
+        heading={{ zh, en }[language].heading}
+        cases={{ zh, en }[language].cases}
       />
     </Layout>
   );
@@ -60,15 +66,15 @@ const Case = ({data}) => {
 
 Case.propTypes = {
   data: PropTypes.shape({
-    frontmatter: PropTypes.object,
-  }),
+    frontmatter: PropTypes.object
+  })
 };
 
 export default Case;
 
 export const casesQuery = graphql`
   query Case($id: String!) {
-    markdownRemark(id: {eq: $id}) {
+    markdownRemark(id: { eq: $id }) {
       frontmatter {
         images {
           image {
@@ -80,25 +86,27 @@ export const casesQuery = graphql`
           }
           alt
         }
-        heading
-        cases {
-          image1 {
-            childImageSharp {
-              fluid(maxWidth: 600, quality: 100) {
-                ...GatsbyImageSharpFluid
+        version {
+          heading
+          cases {
+            image1 {
+              childImageSharp {
+                fluid(maxWidth: 600, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
               }
             }
-          }
-          image2 {
-            childImageSharp {
-              fluid(maxWidth: 600, quality: 100) {
-                ...GatsbyImageSharpFluid
+            image2 {
+              childImageSharp {
+                fluid(maxWidth: 600, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
               }
             }
+            alt
+            head
+            content
           }
-          alt
-          head
-          content
         }
       }
     }

@@ -1,8 +1,8 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 
-function AboutFeatures({features = []}) {
+function AboutFeatures({ features = [] }) {
   const [columnSize, setColumnSize] = useState("is-4");
   const [imgSize, setImgSize] = useState("is-128x128");
   useEffect(() => {
@@ -20,20 +20,25 @@ function AboutFeatures({features = []}) {
           features.map((o, i) => (
             <div
               className={`column ${columnSize} has-text-centered`}
-              style={{marginTop: "1.8em"}}
+              style={{ marginTop: "1.8em" }}
               key={i}
             >
               <div className="content">
                 <figure
                   className={`image ${imgSize} has-text-centered`}
-                  style={{margin: "0 auto 1em"}}
+                  style={{ margin: "0 auto 1em" }}
                 >
                   <PreviewCompatibleImage imageInfo={o} />
                 </figure>
                 <p className="is-size-5 is-size-6-mobile">{o.heading}</p>
                 <p
                   className="is-size-7-mobile"
-                  style={{margin: "auto", color: "#666", maxWidth: "350px"}}
+                  style={{
+                    margin: "auto",
+                    color: "#666",
+                    maxWidth: "350px",
+                    hyphens: "auto"
+                  }}
                 >
                   {o.text}
                 </p>
@@ -46,7 +51,7 @@ function AboutFeatures({features = []}) {
 }
 
 AboutFeatures.propTypes = {
-  features: PropTypes.array,
+  features: PropTypes.array
 };
 
 export default AboutFeatures;

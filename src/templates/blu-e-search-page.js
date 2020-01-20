@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
+import { FormattedMessage } from "gatsby-plugin-intl";
 import Layout from "../components/Layout";
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 import ProductTitle from "../components/ProductTitle";
@@ -37,7 +38,7 @@ const BluETemplate = ({
                   className="is-size-2-5 is-size-5-mobile has-text-centered has-text-000"
                   style={{ marginBottom: "30px" }}
                 >
-                  产品价值
+                  <FormattedMessage id="bluesearch.productvalue" />
                 </div>
                 <div className="columns is-mobile">
                   {productvalue.map((o, i) => (
@@ -59,7 +60,7 @@ const BluETemplate = ({
           <div className="columns">
             <div className="column is-10 is-offset-1">
               <div className="is-size-2-5 is-size-5-mobile has-text-centered has-margin-bottom-40 has-text-000">
-                功能演示
+                <FormattedMessage id="bluesearch.demo" />
               </div>
               <div>
                 <ProductTextArea info={searchtemple} />
@@ -74,7 +75,7 @@ const BluETemplate = ({
             <div className="column is-10 is-offset-1">
               <div className="product-scene">
                 <div className="is-size-2-5 is-size-5-mobile has-text-centered has-margin-bottom-40 has-text-000">
-                  业务场景
+                  <FormattedMessage id="bluesearch.businessscene" />
                 </div>
                 <div className="columns is-multiline">
                   {businessscene.map((o, i) => (
@@ -110,16 +111,23 @@ BluETemplate.propTypes = {
   businessscene: PropTypes.array
 };
 
-const BluESearch = ({ data }) => {
+const BluESearch = ({
+  data,
+  pageContext: {
+    intl: { language }
+  }
+}) => {
   const { frontmatter } = data.markdownRemark;
+  const [zh, en] = frontmatter.version;
+  const content = { zh, en }[language];
   return (
     <Layout>
       <BluETemplate
-        header={frontmatter.header}
+        header={content.header}
         images={frontmatter.images}
-        productvalue={frontmatter.productvalue}
+        productvalue={content.productvalue}
         searchtemple={frontmatter.searchtemple}
-        businessscene={frontmatter.businessscene}
+        businessscene={content.businessscene}
       />
     </Layout>
   );
@@ -137,12 +145,6 @@ export const bluESearchQuery = graphql`
   query bluESearch {
     markdownRemark(frontmatter: { templateKey: { eq: "blu-e-search-page" } }) {
       frontmatter {
-        header {
-          heading
-          subheading
-          description
-          subdescription
-        }
         images {
           image {
             childImageSharp {
@@ -153,31 +155,39 @@ export const bluESearchQuery = graphql`
           }
           alt
         }
-        productvalue {
-          title
-          image {
-            childImageSharp {
-              fluid(maxWidth: 1000, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-          alt
-        }
         searchtemple {
           description
           keywords
         }
-        businessscene {
-          title
-          image {
-            childImageSharp {
-              fluid(maxWidth: 1000, quality: 100) {
-                ...GatsbyImageSharpFluid
+        version {
+          header {
+            heading
+            subheading
+            description
+            subdescription
+          }
+          productvalue {
+            title
+            image {
+              childImageSharp {
+                fluid(maxWidth: 1000, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
               }
             }
+            alt
           }
-          alt
+          businessscene {
+            title
+            image {
+              childImageSharp {
+                fluid(maxWidth: 1000, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            alt
+          }
         }
       }
     }

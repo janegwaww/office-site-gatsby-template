@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import { Link } from "gatsby-plugin-intl";
+import { Link, FormattedMessage } from "gatsby-plugin-intl";
 import LinesEllipsis from "react-lines-ellipsis";
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 
@@ -49,7 +49,12 @@ const SolutionCard = ({ info = {} }) => {
                 {info.heading}
               </p>
               <LinesEllipsis
-                style={{ overflow: "hidden" }}
+                style={{
+                  overflow: "hidden",
+                  whiteSpace: "pre-wrap",
+                  hyphens: "auto",
+                  textAlign: "justify"
+                }}
                 className="solution-detail content is-size-6 is-size-7-mobile has-text-grey has-text-left"
                 text={`${info.description}`}
                 maxLine={mobile ? "4" : "5"}
@@ -61,7 +66,7 @@ const SolutionCard = ({ info = {} }) => {
               to="/detail/"
               state={{ title: info.heading, content: info.description }}
             >
-              查看详情
+              <FormattedMessage id="home.seedetails" />
             </Link>
           </div>
         </div>

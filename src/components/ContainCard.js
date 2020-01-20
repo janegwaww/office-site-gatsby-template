@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link } from "gatsby-plugin-intl";
+import { FormattedMessage, Link } from "gatsby-plugin-intl";
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 import LinesEllipsis from "react-lines-ellipsis";
 
@@ -23,6 +23,11 @@ const ContainCard = ({ info = {} }) => {
             text={`${info.description}`}
             maxLine="5"
             ellipsis="..."
+            style={{
+              whiteSpace: "pre-wrap",
+              hyphens: "auto",
+              textAlign: "justify"
+            }}
           />
         </div>
         <Link
@@ -30,7 +35,7 @@ const ContainCard = ({ info = {} }) => {
           to="/detail/"
           state={{ title: info.subHeading, content: info.description }}
         >
-          了解更多
+          <FormattedMessage id="home.understandmore" />
         </Link>
       </div>
     </div>

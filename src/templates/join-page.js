@@ -1,26 +1,26 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
-import {graphql} from "gatsby";
+import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import JobCard from "../components/JobCard";
 import JoinInput from "../components/JoinInput";
 import BackgroundImageSwitch from "../components/BackgroundImageSwitch";
 
-const JoinTemplate = ({images, jobList, filterJobs}) => {
+const JoinTemplate = ({ images, jobList, filterJobs }) => {
   const [jobfilter, setJobfilter] = useState(jobList);
   const jobFilterEvent = e => {
     setJobfilter(
       jobList.filter(i => {
         return (
           (i.date.replace(/\s/g, "").split("|")[0] === e.address ||
-            e.address === "搜索地点" ||
+            e.address === filterJobs.address[0].value ||
             !e.address) &&
           (i.date.replace(/\s/g, "").split("|")[1] === e.position ||
-            e.position === "搜索岗位" ||
+            e.position === filterJobs.position[0].value ||
             !e.position) &&
           (i.heading.includes(e.job) || !e.job)
         );
-      }),
+      })
     );
   };
   return (
@@ -65,17 +65,23 @@ const JoinTemplate = ({images, jobList, filterJobs}) => {
 JoinTemplate.propTypes = {
   images: PropTypes.array,
   jobList: PropTypes.array,
-  filterJobs: PropTypes.object,
+  filterJobs: PropTypes.object
 };
 
-const Join = ({data}) => {
-  const {frontmatter} = data.markdownRemark;
+const Join = ({
+  data,
+  pageContext: {
+    intl: { language }
+  }
+}) => {
+  const { frontmatter } = data.markdownRemark;
+  const [zh, en] = frontmatter.version;
   return (
     <Layout>
       <JoinTemplate
         images={frontmatter.images}
-        jobList={frontmatter.newJobs}
-        filterJobs={frontmatter.filterJobs}
+        jobList={{ zh, en }[language].newJobs}
+        filterJobs={{ zh, en }[language].filterJobs}
       />
     </Layout>
   );
@@ -83,15 +89,15 @@ const Join = ({data}) => {
 
 Join.propTypes = {
   data: PropTypes.shape({
-    frontmatter: PropTypes.object,
-  }),
+    frontmatter: PropTypes.object
+  })
 };
 
 export default Join;
 
 export const joinQuery = graphql`
   query Join($id: String!) {
-    markdownRemark(id: {eq: $id}) {
+    markdownRemark(id: { eq: $id }) {
       frontmatter {
         images {
           image {
@@ -103,19 +109,22 @@ export const joinQuery = graphql`
           }
           alt
         }
-        newJobs {
-          heading
-          date
-          description
-        }
-        filterJobs {
-          address {
-            index
-            value
+        version {
+          locale
+          newJobs {
+            heading
+            date
+            description
           }
-          position {
-            index
-            value
+          filterJobs {
+            address {
+              index
+              value
+            }
+            position {
+              index
+              value
+            }
           }
         }
       }

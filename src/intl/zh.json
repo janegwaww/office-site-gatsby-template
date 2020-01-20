@@ -27,5 +27,55 @@
     "marketingphone": "市场部联系电话",
     "copyright": "版权所有@黑顿科技有限公司 2020 保留一切权利",
     "codetitle": "黑顿科技"
+  },
+  "join": {
+    "searchjob": "搜索职位"
+  },
+  "home": {
+    "learnseeker": "了解Seeker",
+    "understandmore": "了解更多",
+    "seedetails": "查看更多"
+  },
+  "product": {
+    "usenow": "立即使用",
+    "solutionconsulting": "业务方案咨询",
+    "solutionarchitecture": "方案架构",
+    "datapool": "数据池",
+    "personalinformation": "填写信息",
+    "name": "姓名",
+    "company": "公司",
+    "position": "职位",
+    "industry": "行业",
+    "email": "电子邮件",
+    "mobile": "电话",
+    "youneeds": "您的需求"
+  },
+  "bluesearch": {
+    "productvalue": "产品价值",
+    "demo": "功能演示",
+    "businessscene": "业务场景",
+    "correlation": "关联度",
+    "location": "位置",
+    "resultnote": "说明：该分值表明搜索内容与文本的契合度，数值越高，则语义契合度越好。",
+    "turnonunderstand": "开启语义理解",
+    "anotherexample": "换一个实例",
+    "customtext": "自定义文本",
+    "canceledit": "取消编辑",
+    "sampletext": "文本样例",
+    "searchfrom": "想要从文本中搜索的语义/语句",
+    "miningresults": "挖掘结果",
+    "pleaseinput": "请输入文本",
+    "custominput": "自定义输入",
+    "chinainput": "请输入中文字符！",
+    "notempty": "关键字不能为空！",
+    "textnotempty": "文本不能为空！"
+  },
+  "college": {
+    "academicbackground": "学术背景",
+    "researchdirection": "研究方向",
+    "haetekinstitute": "黑顿研究院",
+    "nnac": "神经网络架构搜索",
+    "inforintel": "信息智能",
+    "infeengine": "推理引擎"
   }
 }

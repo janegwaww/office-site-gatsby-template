@@ -1,13 +1,15 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
+import { useIntl } from "gatsby-plugin-intl";
 import Dropdown from "../components/Dropdown";
 import searchImg from "../img/search.png";
 
-const JoinInput = ({filter, selectOptions}) => {
+const JoinInput = ({ filter, selectOptions }) => {
+  const { formatMessage } = useIntl();
   const [search, setSearch] = useState({});
   const handleChange = e => {
-    setSearch({...search, [e.target.name]: e.value});
-    filter({...search, [e.target.name]: e.value});
+    setSearch({ ...search, [e.target.name]: e.value });
+    filter({ ...search, [e.target.name]: e.value });
   };
   const handleSubmit = e => {
     e.preventDefault();
@@ -36,7 +38,7 @@ const JoinInput = ({filter, selectOptions}) => {
               name="job"
               className="input h-input is-size-7-mobile"
               type="text"
-              placeholder="搜索职位"
+              placeholder={formatMessage({ id: "join.searchjob" })}
               onChange={handleChange}
             />
             <span className="icon is-small is-right" onClick={handleSubmit}>
@@ -53,7 +55,7 @@ const JoinInput = ({filter, selectOptions}) => {
 
 JoinInput.propTypes = {
   filter: PropTypes.func,
-  selectOptions: PropTypes.object,
+  selectOptions: PropTypes.object
 };
 
 export default JoinInput;

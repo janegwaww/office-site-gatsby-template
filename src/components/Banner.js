@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
+import { FormattedMessage } from "gatsby-plugin-intl";
 import LinesEllipsis from "react-lines-ellipsis";
 
-function Banner({ isMobile }) {
+function Banner({ info = {} }) {
   const [background, setBackground] = useState("/img/index-banner.png");
   const [height, setHeight] = useState("570px");
   const [col, setCol] = useState("is-two-fifths");
@@ -32,14 +34,15 @@ function Banner({ isMobile }) {
                   <div className="banner-title">
                     <div className="content">
                       <p className="is-size-5-5-mobile is-size-2-tablet is-size-2-widescreen has-text-white">
-                        {`数据场景化搭建`}
+                        {`${info.heading}`}
                       </p>
                     </div>
                     <div className="content">
                       <LinesEllipsis
                         className="is-size-7-mobile is-size-5-tablet is-size-5-widescreen has-text-white"
-                        text={`实现数据的按需汇聚，让应用像阳光，照亮业务场景的每个角落`}
+                        text={`${info.description}`}
                         maxLine="3"
+                        style={{ hyphens: "auto" }}
                       />
                     </div>
                     <div className="content">
@@ -49,7 +52,7 @@ function Banner({ isMobile }) {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        了解Seeker
+                        <FormattedMessage id="home.learnseeker" />
                       </a>
                     </div>
                   </div>
@@ -62,5 +65,11 @@ function Banner({ isMobile }) {
     </div>
   );
 }
+Banner.propTypes = {
+  info: PropTypes.shape({
+    heading: PropTypes.string,
+    description: PropTypes.string
+  })
+};
 
 export default Banner;
