@@ -68,7 +68,8 @@
     "custominput": "Custom Input",
     "chinainput": "Please enter Chinese characters!",
     "notempty": "Keywords cannot be empty!",
-    "textnotempty": "Text cannot be empty!"
+    "textnotempty": "Text cannot be empty!",
+    "noresult": "No content found"
   },
   "college": {
     "academicbackground": "Academic Background",

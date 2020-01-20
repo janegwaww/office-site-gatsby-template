@@ -68,7 +68,8 @@
     "custominput": "自定义输入",
     "chinainput": "请输入中文字符！",
     "notempty": "关键字不能为空！",
-    "textnotempty": "文本不能为空！"
+    "textnotempty": "文本不能为空！",
+    "noresult": "没有搜索到相应的内容"
   },
   "college": {
     "academicbackground": "学术背景",
