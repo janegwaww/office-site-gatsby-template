@@ -91,13 +91,13 @@ version:
             subdescription: >
                 An industry-leading semantic text fuzzy search system with independent intellectual property rights, deeply combining artificial intelligence algorithms and information retrieval technology.
       productvalue:
-          - title: Can "think" and "understand"
+          - title: Can "think" And "learn"
             image: /img/bluesearch/value-think.png
             alt: value-think
-          - title: Lightweight interface for flexible invocation
+          - title: Lightweight Interface
             image: /img/bluesearch/value-api.png
             alt: value-api
-          - title: Customized text intelligent services for customer scenarios
+          - title: Customized Services
             image: /img/bluesearch/value-service.png
             alt: value-service
       businessscene:

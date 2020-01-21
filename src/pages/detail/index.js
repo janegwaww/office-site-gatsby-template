@@ -1,9 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link } from "gatsby-plugin-intl";
+import { FormattedMessage } from "gatsby-plugin-intl";
 import Layout from "../../components/Layout";
 
 const DetailTemplate = ({ title = "", content = "" }) => {
+  const handleBack = () => {
+    if (document.referrer.split("/").indexOf("haetek.com") === -1) {
+      return (window.location.href = "/");
+    }
+    window.history.back();
+  };
   return (
     <section className="hero is-light is-bold is-medium">
       <div className="hero-body">
@@ -13,9 +19,9 @@ const DetailTemplate = ({ title = "", content = "" }) => {
         </div>
       </div>
       <div className="hero-foot">
-        <Link className="button is-text" onClick={() => window.history.back()}>
-          返回
-        </Link>
+        <a className="button is-text" onClick={handleBack}>
+          <FormattedMessage id="back" />
+        </a>
       </div>
     </section>
   );

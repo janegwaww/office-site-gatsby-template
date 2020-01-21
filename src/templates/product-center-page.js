@@ -130,12 +130,12 @@ const HDPPTabContent = ({ method, datapool }) => {
   );
 };
 
-const TabTitle = ({ info }) => {
+const TabTitle = ({ info, language }) => {
   return (
     <>
       <a className="is-size-6-5-mobile is-hidden-tablet">
         <p className="is-size-7-mobile">{info.subname}</p>
-        <p>{info.name}</p>
+        {language === "zh" && <p>{info.name}</p>}
       </a>
       <a className="is-size-6 is-size-6-5-mobile is-hidden-mobile">{`${info.name}(${info.subname})`}</a>
     </>
@@ -180,7 +180,8 @@ class ProductCenterTemplate extends Component {
       methods,
       advantages,
       banner,
-      datapool
+      datapool,
+      language
     } = this.props;
     const { activeTab, tabs } = this.state;
     return (
@@ -210,7 +211,7 @@ class ProductCenterTemplate extends Component {
                         onClick={() => this.handleTab(o.index)}
                         className={o.className}
                       >
-                        <TabTitle info={o} />
+                        <TabTitle info={o} language={language} />
                       </li>
                     ))}
                   </ul>
@@ -273,6 +274,7 @@ const ProductCenter = ({
         methods={content.methods}
         advantages={content.advantages}
         datapool={content.datapool}
+        language={language}
       />
     </Layout>
   );

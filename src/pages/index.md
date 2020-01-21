@@ -149,7 +149,7 @@ version:
                     description: 7X24
     - locale: en
       header:
-              heading: Data scene construction
+              heading: Data Scene Construction
               description: >
                   Realize on-demand aggregation of data, let applications like sunlight, illuminate every corner of the business scene
       features:
@@ -183,7 +183,7 @@ version:
                     description: >
                         Open 1 artificial intelligence resource integration platform for managing things (including physical objects) and computing resources. It can be used to graft various types of entities and sensing devices. With the help of the core algorithm platform, developers can independently develop various types of intelligent applications for things, and design applications such as home furnishings, restaurants, storage, energy, health, environmental protection, medical treatment, and automation. Let AI shape life, let everything be connected more smartly and thoroughly, and provide a robust closed-loop ecology for the upcoming intelligent industry.
       solution:
-              heading: Full-stack solutions for various business scenarios
+              heading: Full-stack Solutions For Various Business
               description: >
                   solution cases
               blurbs:
@@ -241,10 +241,10 @@ version:
               description: >
                   blue background.
               blurbs:
-                  - heading: Algorithm reliability
+                  - heading: Reliability
                     description: 99.98%
-                  - heading: Exclusive for major customers
+                  - heading: VIP
                     description: 1V1
-                  - heading: Customer service support
+                  - heading: Support
                     description: 7X24
 ---

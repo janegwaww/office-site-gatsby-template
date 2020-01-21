@@ -160,12 +160,12 @@ version:
               description:
                   th:
                       - ""
-                      - "Our variable mining technology"
-                      - "Common variable mining techniques"
+                      - "Our Variable Mining"
+                      - "Common Variable Mining"
                   tr:
-                      - "Scene modeling"
-                      - "Training cost"
-                      - "Use threshold"
+                      - "scene modeling"
+                      - "training cost"
+                      - "use threshold"
                   tc:
                       - "Given business scenarios, given historical data, full-process closed-loop / automatic scenario features"
                       - "Data is cluttered / data cleaning takes a long time, high cost / different feature construction"
@@ -178,12 +178,12 @@ version:
               description:
                   th:
                       - ""
-                      - "Our Information Intelligence Technology"
-                      - "Common Information Intelligence Technology"
+                      - "Our Information Intelligence"
+                      - "Common Information Intelligence"
                   tr:
-                      - "Feature"
-                      - "Applicability"
-                      - "Expansibility"
+                      - "feature"
+                      - "applicability"
+                      - "expansibility"
                   tc:
                       - "Supports low repetitiveness, ambiguous rules, scattered task types / smarter, more robust"
                       - "Only supports daily information (text) processing business with high repetition, clear rules, and huge batches"

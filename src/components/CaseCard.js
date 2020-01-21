@@ -41,7 +41,6 @@ const CaseCard = ({ info = {} }) => {
             style={{
               lineHeight: "26px",
               whiteSpace: "pre-wrap",
-              textAlign: "justify",
               hyphens: "auto"
             }}
           />

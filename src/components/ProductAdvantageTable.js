@@ -1,11 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const ProductAdvantageTable = ({tableInfo}) => {
-  const {description = {}} = tableInfo;
+const ProductAdvantageTable = ({ tableInfo }) => {
+  const { description = {} } = tableInfo;
   const cells = description.tc.reduce(
     (a, c, i) => (i % 2 == 0 ? a.push([c]) : a[a.length - 1].push(c)) && a,
-    [],
+    []
   );
   return (
     <div>
@@ -36,7 +36,7 @@ const ProductAdvantageTable = ({tableInfo}) => {
                   {j.split("/").map((h, g) => (
                     <div key={g} className="tc-para">
                       <span>-&ensp;</span>
-                      <p>{h}</p>
+                      <p style={{ hyphens: "auto" }}>{h}</p>
                     </div>
                   ))}
                 </th>
@@ -61,10 +61,10 @@ ProductAdvantageTable.defaultProps = {
         "- Advantage 5/- Advantage 6",
         "- Advantage 7/- Advantage 8",
         "- Advantage 9/- Advantage 10",
-        "- Advantage 11/- Advantage 12",
-      ],
-    },
-  },
+        "- Advantage 11/- Advantage 12"
+      ]
+    }
+  }
 };
 
 ProductAdvantageTable.propTypes = {
@@ -72,10 +72,10 @@ ProductAdvantageTable.propTypes = {
     description: PropTypes.shape({
       th: PropTypes.array,
       tr: PropTypes.array,
-      tc: PropTypes.array,
+      tc: PropTypes.array
     }),
-    heading: PropTypes.string,
-  }),
+    heading: PropTypes.string
+  })
 };
 
 export default ProductAdvantageTable;

@@ -36,7 +36,6 @@ function ProductTitle({ info = {} }) {
               style={{
                 lineHeight: "1.5",
                 padding: "0.5em 0em",
-                textAlign: "justify",
                 hyphens: "auto"
               }}
             >

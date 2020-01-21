@@ -35,7 +35,7 @@ const BluETemplate = ({
             <div className="column is-10 is-offset-1">
               <div className="product-value">
                 <div
-                  className="is-size-2-5 is-size-5-mobile has-text-centered has-text-000"
+                  className="is-size-2-5 is-size-5-mobile has-text-centered has-text-000 is-marginless-mobile"
                   style={{ marginBottom: "30px" }}
                 >
                   <FormattedMessage id="bluesearch.productvalue" />
@@ -46,7 +46,9 @@ const BluETemplate = ({
                       <div className="image is-60x60 is-centered">
                         <PreviewCompatibleImage imageInfo={o} />
                       </div>
-                      <div className="is-size-5-5 has-text-000">{o.title}</div>
+                      <div className="is-size-5-5 has-text-000 is-size-6-5-mobile">
+                        {o.title}
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -59,7 +61,7 @@ const BluETemplate = ({
         <div className="container">
           <div className="columns">
             <div className="column is-10 is-offset-1">
-              <div className="is-size-2-5 is-size-5-mobile has-text-centered has-margin-bottom-40 has-text-000">
+              <div className="is-size-2-5 is-size-5-mobile has-text-centered has-margin-bottom-40 has-text-000 is-marginless-mobile">
                 <FormattedMessage id="bluesearch.demo" />
               </div>
               <div>

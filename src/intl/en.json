@@ -3,6 +3,7 @@
   "description": "Shenzhen Qianhai Haetek Technology Co., Ltd. (referred to as 'Haetek Technology'), the team entered the Qianhai District of Shenzhen on August 1, 2019, with a registered capital of 30 million yuan, and is committed to building intelligence for informationization, intelligence, and interconnection of all things Operational ecology, including fields such as logistics, finance, education, smart cities, languages, sales, sports, and health. The founding team came from internationally renowned universities such as the University of Toronto (the birthplace of deep learning), Carnegie Mellon University (the world's first major in artificial intelligence), Peking University, Zhejiang University, Harbin Institute of Technology. He has won the CGED competition from the Academy of Social Sciences, Alibaba, Peking University and other teams with absolute advantages. He has also held senior technical or R & D positions in internationally renowned companies such as Huawei, IBM, and HKUST. The company's research team has achieved results in popular areas such as natural language processing, machine learning, knowledge maps, path planning, etc., and holds several international or national patents, copyrights, conference papers, and academic cooperation with academic institutions such as VectorInstitute and the Chinese Academy of Sciences Computing Institute. relationship. The company is committed to integrating artificial intelligence algorithms with practical application scenarios, eliminating the generation gap between academia and the real industry, providing technical support for many enterprises with intelligent needs, and providing enterprises and developers dedicated to intelligent construction. A robust, flexible, and simple platform-type algorithm ecosystem allows intelligence to shape life.",
   "author": "haetek_20190801,peizhengqi@kc-group.com.cn",
   "keywords": "How about Haetek, Haetek Technology, haetek, haetek.com, Haetek Company, Qianhai Haetek, Shenzhen Haetek, Haetek recruitment, Haetek company, Haetek contract, variable engine, data protocol, algorithm platform, matching Planning, information intelligence, variable mining, understanding Heyton, Heyton evaluation, about Heyton, Shenzhen Qianhai Heyton Technology Co., Ltd.",
+  "back": "Back",
   "navbar": {
     "home": "Home",
     "productcenter": "Product Center",
@@ -75,7 +76,7 @@
     "academicbackground": "Academic Background",
     "researchdirection": "Research Direction",
     "haetekinstitute": "Haetek Institute",
-    "nnac": "Neural Network Architecture",
+    "nnac": "NN Architecture",
     "inforintel": "Information Intelligence",
     "infeengine": "Inference Engine"
   }

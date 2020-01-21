@@ -42,7 +42,7 @@ function Banner({ info = {} }) {
                         className="is-size-7-mobile is-size-5-tablet is-size-5-widescreen has-text-white"
                         text={`${info.description}`}
                         maxLine="3"
-                        style={{ hyphens: "auto" }}
+                        style={{ hyphens: "auto", whiteSpace: "pre-wrap" }}
                       />
                     </div>
                     <div className="content">
