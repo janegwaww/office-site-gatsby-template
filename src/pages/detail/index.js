@@ -5,7 +5,7 @@ import Layout from "../../components/Layout";
 
 const DetailTemplate = ({ title = "", content = "" }) => {
   const handleBack = () => {
-    if (document.referrer.split("/").indexOf("haetek.com") === -1) {
+    if (document.referrer.split("/").indexOf("www.haetek.com") === -1) {
       return (window.location.href = "/");
     }
     window.history.back();
