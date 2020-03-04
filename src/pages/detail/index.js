@@ -3,9 +3,10 @@ import PropTypes from "prop-types";
 import { FormattedMessage } from "gatsby-plugin-intl";
 import Layout from "../../components/Layout";
 
+const URLPATH = "www.haetek.com";
 const DetailTemplate = ({ title = "", content = "" }) => {
   const handleBack = () => {
-    if (document.referrer.split("/").indexOf("www.haetek.com") === -1) {
+    if (document.referrer.split("/").indexOf(URLPATH) === -1) {
       return (window.location.href = "/");
     }
     window.history.back();

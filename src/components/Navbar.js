@@ -44,7 +44,8 @@ const Navbar = class extends React.Component {
   };
 
   _activeNavHandle = nav => {
-    const path = !nav || ["en", "zh"].includes(nav) ? "home" : nav;
+    const languages = ["en", "zh"];
+    const path = !nav || languages.includes(nav) ? "home" : nav;
     this.setState({
       activeNav: {
         [path]: "is-active"
