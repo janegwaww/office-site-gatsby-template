@@ -10,7 +10,44 @@ const Navbar = class extends React.Component {
     this.state = {
       active: false,
       navBarActiveClass: "",
-      activeNav: {}
+      activeNav: {},
+      menuItems: [
+        {
+          index: "home",
+          address: "/",
+          message: "navbar.home"
+        },
+        {
+          index: "productcenter",
+          address: "/productcenter/",
+          message: "navbar.productcenter"
+        },
+        {
+          index: "bluesearch",
+          address: "/bluesearch/",
+          message: "navbar.bluesearch"
+        },
+        {
+          index: "case",
+          address: "/case/",
+          message: "navbar.case"
+        },
+        {
+          index: "aboutus",
+          address: "/aboutus",
+          message: "navbar.aboutus"
+        },
+        {
+          index: "college",
+          address: "/college/",
+          message: "navbar.college"
+        },
+        {
+          index: "join",
+          address: "/join/",
+          message: "navbar.joinus"
+        }
+      ]
     };
   }
 
@@ -54,7 +91,7 @@ const Navbar = class extends React.Component {
   };
 
   render() {
-    const { activeNav } = this.state;
+    const { activeNav, menuItems } = this.state;
 
     return (
       <nav
@@ -80,64 +117,22 @@ const Navbar = class extends React.Component {
               <span />
             </div>
           </div>
-
           <div
             id="navMenu"
             className={`navbar-menu ${this.state.navBarActiveClass}`}
           >
             <div className="navbar-start has-text-centered">
-              <Link
-                className="navbar-item is-tab"
-                to="/"
-                activeClassName={activeNav.home}
-              >
-                <FormattedMessage id="navbar.home" />
-              </Link>
-              <Link
-                className="navbar-item is-tab"
-                to="/productcenter/"
-                activeClassName={activeNav.productcenter}
-              >
-                <FormattedMessage id="navbar.productcenter" />
-              </Link>
-              <Link
-                className="navbar-item is-tab"
-                to="/bluesearch/"
-                activeClassName={activeNav.bluesearch}
-              >
-                <FormattedMessage id="navbar.bluesearch" />
-              </Link>
-
-              <Link
-                className="navbar-item is-tab"
-                to="/case/"
-                activeClassName={activeNav.case}
-              >
-                <FormattedMessage id="navbar.case" />
-              </Link>
-              <Link
-                className="navbar-item is-tab"
-                to="/aboutus/"
-                activeClassName={activeNav.aboutus}
-              >
-                <FormattedMessage id="navbar.aboutus" />
-              </Link>
-              <Link
-                className="navbar-item is-tab"
-                to="/college/"
-                activeClassName={activeNav.college}
-              >
-                <FormattedMessage id="navbar.college" />
-              </Link>
-              <Link
-                className="navbar-item is-tab"
-                to="/join/"
-                activeClassName={activeNav.join}
-              >
-                <FormattedMessage id="navbar.joinus" />
-              </Link>
+              {menuItems.map(o => (
+                <Link
+                  className="navbar-item is-tab"
+                  to={o.address}
+                  activeClassName={activeNav[o.index]}
+                  key={o.index}
+                >
+                  <FormattedMessage id={`${o.message}`} />
+                </Link>
+              ))}
             </div>
-
             <div className="navbar-end has-text-centered">
               <div className="navbar-item">
                 <LanguageSwitch />
