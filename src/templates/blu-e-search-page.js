@@ -79,18 +79,18 @@ const BluETemplate = ({
                 <div className="is-size-2-5 is-size-5-mobile has-text-centered has-margin-bottom-40 has-text-000">
                   <FormattedMessage id="bluesearch.businessscene" />
                 </div>
-                <div className="columns is-multiline">
+                <div className="columns is-multiline is-mobile">
                   {businessscene.map((o, i) => (
                     <div
-                      className="column is-3 has-text-centered"
+                      className="column is-one-quarter-tablet is-half-mobile has-text-centered"
                       onClick={() => handleClick(o)}
                       key={i}
                     >
                       <div className="scene-card has-background-white">
-                        <div className="image is-80x80">
+                        <div className="image is-80x80 is-42x42-mobile">
                           <PreviewCompatibleImage imageInfo={o} />
                         </div>
-                        <div className="is-size-5-5 has-text-333">
+                        <div className="is-size-5-5 has-text-333 is-size-6-5-mobile">
                           {o.title}
                         </div>
                       </div>

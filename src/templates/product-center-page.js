@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import { FormattedMessage } from "gatsby-plugin-intl";
@@ -78,12 +78,6 @@ const InfoPlusTabContent = ({ method, advantage, imageInfo }) => {
 };
 
 const HDPPTabContent = ({ method, datapool }) => {
-  const [side, setSide] = useState("is-4");
-  useEffect(() => {
-    if (window.innerWidth <= 768) {
-      setSide("is-6");
-    }
-  }, []);
   return (
     <div>
       <section className="section h-section has-background-grey-1">
@@ -104,7 +98,10 @@ const HDPPTabContent = ({ method, datapool }) => {
               </div>
               <div className="data-pool-cards columns is-multiline is-mobile">
                 {datapool.map((o, i) => (
-                  <div className={`column ${side}`} key={i}>
+                  <div
+                    className={`column is-one-thirds-tablet is-half-mobile`}
+                    key={i}
+                  >
                     <figure className="image is-48x48 is-42x42-mobile margin-auto">
                       <PreviewCompatibleImage
                         imageInfo={{ ...o, style: { borderRadius: "unset" } }}
@@ -149,16 +146,12 @@ class ProductCenterTemplate extends Component {
       activeTab: {},
       tabs: this.props.tabs.map(i =>
         i.index === "seeker" ? { ...i, className: "is-active" } : i
-      ),
-      isMobile: false
+      )
     };
   }
 
   componentDidMount() {
     this.setState({ activeTab: { seeker: "is-active" } });
-    if (window.innerWidth <= 768) {
-      this.setState({ isMobile: true });
-    }
   }
 
   handleTab = index => {
