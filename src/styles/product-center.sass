@@ -85,9 +85,14 @@
         left: 0
       .slider-list
         padding: 0
-    .is-681x383
-      width: 681px
-      height: 383px
+      .image
+        &.is-681x383
+          width: 681px !important
+          height: 383px
+        +mobile
+          &.is-240x140-mobile
+            width: 240px !important
+            height: 140px
   .data-pool-cards
     .column
       padding: 1.875rem 0.75rem
@@ -118,7 +123,4 @@
       .tc
         line-height: 18px
         padding: 0 10px
-    .is-240x140-mobile
-      width: 240px
-      height: 140px !important
 // product center end

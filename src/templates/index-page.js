@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 
@@ -52,14 +52,6 @@ export function IndexPageTemplate({
   rate,
   language
 }) {
-  const [rateImg, setRateImg] = useState("/img/persent.png");
-  const [coopImg, setCoopImg] = useState("/img/coop-background.png");
-  useEffect(() => {
-    if (window.innerWidth <= 768) {
-      setRateImg("/img/persent-mobile.png");
-      setCoopImg("/img/coop-background-mobile.png");
-    }
-  }, []);
   return (
     <div className="home">
       <Banner info={header} />
@@ -81,10 +73,7 @@ export function IndexPageTemplate({
           </div>
         </div>
       </section>
-      <section
-        className="business-icon-section section section--gradient"
-        style={{ backgroundImage: `url(${coopImg})` }}
-      >
+      <section className="business-icon-section section section--gradient">
         <div className="container">
           <div className="columns">
             <div className="column is-10 is-offset-1">
@@ -93,10 +82,7 @@ export function IndexPageTemplate({
           </div>
         </div>
       </section>
-      <section
-        className="rate-panel-section section has-background-link is-paddingless-mobile"
-        style={{ backgroundImage: `url(${rateImg})` }}
-      >
+      <section className="rate-panel-section section has-background-link is-paddingless-mobile">
         <div className="container">
           <div className="columns">
             <div className="column is-10 is-offset-1 is-paddingless-tablet">

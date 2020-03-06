@@ -1,31 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import { FormattedMessage } from "gatsby-plugin-intl";
+import { useMediaQuery } from "react-responsive";
 import Layout from "../components/Layout";
 import StudyDirection from "../components/StudyDirection";
 import BackgroundImageSwitch from "../components/BackgroundImageSwitch";
 
 const BackgroundInfo = ({ bakPara = [] }) => {
-  let [para, setPara] = useState(<></>);
-  useEffect(() => {
-    if (window.innerWidth <= 768) {
-      setPara(
-        <>
-          <p>{`${bakPara[0]}${bakPara[1]}`}</p>
-          <p>{`${bakPara[2]}${bakPara[3]}`}</p>
-        </>
-      );
-    } else {
-      setPara(
-        <>
-          {bakPara.map((o, i) => (
-            <p key={i}>{o}</p>
-          ))}
-        </>
-      );
-    }
-  }, []);
+  const isMobile = useMediaQuery({ query: "(max-device-width:768px)" });
   return (
     <div className="college-back-info columns is-centered">
       <div className="column is-11 has-text-centered">
@@ -34,7 +17,18 @@ const BackgroundInfo = ({ bakPara = [] }) => {
         </h3>
         <br />
         <div className="is-size-6 is-size-7-mobile has-text-left-mobile">
-          {para}
+          {isMobile ? (
+            <>
+              <p>{`${bakPara[0]}${bakPara[1]}`}</p>
+              <p>{`${bakPara[2]}${bakPara[3]}`}</p>
+            </>
+          ) : (
+            <>
+              {bakPara.map((o, i) => (
+                <p key={i}>{o}</p>
+              ))}
+            </>
+          )}
         </div>
       </div>
     </div>

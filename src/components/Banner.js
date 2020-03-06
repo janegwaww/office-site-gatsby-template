@@ -1,26 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { FormattedMessage } from "gatsby-plugin-intl";
 import LinesEllipsis from "react-lines-ellipsis";
+import { useMediaQuery } from "react-responsive";
 
 function Banner({ info = {} }) {
-  const [background, setBackground] = useState("/img/index-banner.png");
-  const [height, setHeight] = useState("570px");
-  const [col, setCol] = useState("is-two-fifths");
-  useEffect(() => {
-    if (window.innerWidth <= 768) {
-      setBackground("/img/index-banner-mobile.png");
-      setHeight("190px");
-      setCol("is-7");
-    }
-  }, []);
+  const isMobile = useMediaQuery({ query: "(max-device-width:768px)" });
   return (
     <div className="index-banner">
       <div
         className="full-width-image margin-top-0"
         style={{
-          backgroundImage: `url(${background})`,
-          height: `${height}`,
+          backgroundImage: `url(${
+            isMobile ? "/img/index-banner-mobile.png" : "/img/index-banner.png"
+          })`,
+          height: `${isMobile ? "190px" : "570px"}`,
           backgroundColor: `white`,
           backgroundPosition: "center",
           backgroundSize: "cover"
@@ -30,7 +24,7 @@ function Banner({ info = {} }) {
           <div className="columns is-mobile">
             <div className="column is-10 is-offset-1">
               <div className="columns is-mobile">
-                <div className={`column ${col}`}>
+                <div className={`column is-two-fifths-tablet is-7-mobile`}>
                   <div className="banner-title">
                     <div className="content">
                       <p className="is-size-5-5-mobile is-size-2-tablet is-size-2-widescreen has-text-white">

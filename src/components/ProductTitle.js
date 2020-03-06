@@ -1,23 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { Link, useIntl } from "gatsby-plugin-intl";
+import { useMediaQuery } from "react-responsive";
 
 function ProductTitle({ info = {} }) {
   const { formatMessage } = useIntl();
-  const [bside, setBside] = useState("is-4");
-  const [side, setSide] = useState("is-6");
-  const [des, setDes] = useState(info.description);
-  useEffect(() => {
-    if (window.innerWidth <= 768) {
-      setBside("is-6");
-      setSide("is-7");
-      setDes(info.subdescription);
-    }
-  }, []);
+  const isMobile = useMediaQuery({ query: "(max-device-width:768px)" });
   return (
     <div className="product-title">
       <div className="columns is-mobile">
-        <div className={`column ${side}`}>
+        <div className={`column ${isMobile ? "is-7" : "is-6"}`}>
           <div className="has-margin-bottom-15-mobile">
             <h3
               className="is-size-5-5-mobile is-size-2-5 has-text-white is-size-4-touch is-hidden-tablet"
@@ -39,12 +31,12 @@ function ProductTitle({ info = {} }) {
                 hyphens: "auto"
               }}
             >
-              {des}
+              {isMobile ? info.subdescription : info.description}
             </h6>
           </div>
           <br className="is-hidden-mobile" />
           <div className="product-title-buttons columns is-mobile is-multiline is-size-7-5-mobile">
-            <div className={`column ${bside}`}>
+            <div className={`column ${isMobile ? "is-6" : "is-4"}`}>
               <a
                 className="button is-blue is-size-7-5-mobile"
                 href="http://seeker.haetek.com/"
@@ -56,7 +48,7 @@ function ProductTitle({ info = {} }) {
                 &ensp;&ensp;
               </a>
             </div>
-            <div className={`column ${bside}`}>
+            <div className={`column ${isMobile ? "is-6" : "is-4"}`}>
               <Link
                 className="button is-size-7-5-mobile is-transparent"
                 to="/productcenter/advisory/"
@@ -64,7 +56,11 @@ function ProductTitle({ info = {} }) {
                 {formatMessage({ id: "product.solutionconsulting" })}
               </Link>
             </div>
-            <div className={`column ${bside} has-text-centered`}>
+            <div
+              className={`column ${
+                isMobile ? "is-6" : "is-4"
+              } has-text-centered`}
+            >
               {/*   <a */}
               {/*     className="button is-text is-size-7-5-mobile" */}
               {/*     style={{ */}
