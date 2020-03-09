@@ -2,23 +2,17 @@ import React from "react";
 import PropTypes from "prop-types";
 import { FormattedMessage } from "gatsby-plugin-intl";
 import LinesEllipsis from "react-lines-ellipsis";
-import { useMediaQuery } from "react-responsive";
+import BackgroundImageSwitch from "../components/BackgroundImageSwitch";
 
-function Banner({ info = {} }) {
-  const isMobile = useMediaQuery({ query: "(max-device-width:768px)" });
+const Banner = ({ info = {} }) => {
   return (
     <div className="index-banner">
-      <div
-        className="full-width-image margin-top-0"
-        style={{
-          backgroundImage: `url(${
-            isMobile ? "/img/index-banner-mobile.png" : "/img/index-banner.png"
-          })`,
-          height: `${isMobile ? "190px" : "570px"}`,
-          backgroundColor: `white`,
-          backgroundPosition: "center",
-          backgroundSize: "cover"
-        }}
+      <BackgroundImageSwitch
+        switchHeight={["570px", "190px"]}
+        images={[
+          { image: "/img/index-banner.png" },
+          { image: "/img/index-banner-mobile.png" }
+        ]}
       >
         <div className="container">
           <div className="columns is-mobile">
@@ -55,10 +49,10 @@ function Banner({ info = {} }) {
             </div>
           </div>
         </div>
-      </div>
+      </BackgroundImageSwitch>
     </div>
   );
-}
+};
 Banner.propTypes = {
   info: PropTypes.shape({
     heading: PropTypes.string,

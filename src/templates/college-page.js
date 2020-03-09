@@ -8,7 +8,7 @@ import StudyDirection from "../components/StudyDirection";
 import BackgroundImageSwitch from "../components/BackgroundImageSwitch";
 
 const BackgroundInfo = ({ bakPara = [] }) => {
-  const isMobile = useMediaQuery({ query: "(max-device-width:768px)" });
+  const isMobile = useMediaQuery({ query: "(max-width:767px)" });
   return (
     <div className="college-back-info columns is-centered">
       <div className="column is-11 has-text-centered">

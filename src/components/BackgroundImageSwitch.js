@@ -6,14 +6,14 @@ const BackgroundImageSwitch = ({ images, children, switchHeight }) => {
   const [tableHeight, mobileHeight] = switchHeight;
   const [tableImage, mobileImage] = images;
   return (
-    <>
+    <div>
       <MediaQuery minDeviceWidth={768}>
         <div
           className="full-width-image margin-top-0"
           style={{
             height: tableHeight,
             backgroundImage: `url(${
-              !!tableImage.image
+              !!tableImage.image.childImageSharp
                 ? tableImage.image.childImageSharp.fluid.src
                 : tableImage.image
             })`,
@@ -24,13 +24,13 @@ const BackgroundImageSwitch = ({ images, children, switchHeight }) => {
           {children}
         </div>
       </MediaQuery>
-      <MediaQuery maxDeviceWidth={768}>
+      <MediaQuery maxDeviceWidth={767}>
         <div
           className="full-width-image margin-top-0"
           style={{
             height: mobileHeight,
             backgroundImage: `url(${
-              !!mobileImage.image
+              !!mobileImage.image.childImageSharp
                 ? mobileImage.image.childImageSharp.fluid.src
                 : mobileImage.image
             })`,
@@ -41,7 +41,7 @@ const BackgroundImageSwitch = ({ images, children, switchHeight }) => {
           {children}
         </div>
       </MediaQuery>
-    </>
+    </div>
   );
 };
 
@@ -50,12 +50,7 @@ BackgroundImageSwitch.defaultProps = {
 };
 
 BackgroundImageSwitch.propTypes = {
-  images: PropTypes.arrayOf(
-    PropTypes.shape({
-      image: PropTypes.object.isRequired,
-      alt: PropTypes.string
-    })
-  ),
+  images: PropTypes.array,
   switchHeight: PropTypes.array
 };
 

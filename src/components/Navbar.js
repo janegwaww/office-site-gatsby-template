@@ -34,7 +34,7 @@ const Navbar = class extends React.Component {
         },
         {
           index: "aboutus",
-          address: "/aboutus",
+          address: "/aboutus/",
           message: "navbar.aboutus"
         },
         {
