@@ -5,6 +5,42 @@ import SearchInput from "../components/SearchInput";
 import SearchResult from "../components/SearchResult";
 import curcle from "../img/curcle.svg";
 
+const SEARCHURL = "http://codes.haetek.com:6677/blue";
+const composePromises = (...ms) => ms.reduce((f, g) => x => g(x).then(f));
+const extractItems = data => Promise.resolve(data.resultdata.slice(1) || []);
+const extractResponse = response => Promise.resolve(response.json());
+const fetchQuery = async (
+  param = {
+    querystring: "",
+    paragraph: "",
+    issemantic: false
+  }
+) => {
+  const data = {
+    dbmodelname: "blue",
+    modelaction: "search",
+    extradata: {
+      querystring: "",
+      paragraph: "",
+      lang: "ch",
+      issemantic: false,
+      isjson: false
+    },
+    modeltype: "ai"
+  };
+  return await fetch(SEARCHURL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      ...data,
+      ...{ extradata: Object.assign(data.extradata, param) }
+    })
+  });
+};
+const getItems = composePromises(extractItems, extractResponse, fetchQuery);
+
 function ProductTextArea({ info = [] }) {
   const [content, setContent] = useState(info[0]);
   const [keyword, setKeyword] = useState(info[0].keywords[0]);
@@ -16,28 +52,21 @@ function ProductTextArea({ info = [] }) {
   const { formatMessage } = useIntl();
 
   useEffect(() => {
-    const handleQuery = async () => {
+    const handleQuery = () => {
       if (!keyword) return alert(formatMessage({ id: "bluesearch.notempty" }));
       if (!content.description)
         return alert(formatMessage({ id: "bluesearch.textnotempty" }));
       // 加存在验证是因为searchInput没有加载完全会报current不存在错误
       searchInput.current && searchInput.current.isLoading(true);
       searchInput.current && searchInput.current.setActiveButton(keyword);
-      try {
-        const result = await fetchQuery({
-          querystring: keyword,
-          paragraph: content.description,
-          issemantic: issemantic
-        });
-        if (result.err === 0) {
-          setRelated(result.resultdata.slice(1));
-        } else {
-          alert(result.errmsg);
-        }
-      } catch (err) {
-        alert(err);
-      }
-      searchInput.current && searchInput.current.isLoading(false);
+      getItems({
+        querystring: keyword,
+        paragraph: content.description,
+        issemantic: issemantic
+      }).then(o => {
+        setRelated(o);
+        searchInput.current && searchInput.current.isLoading(false);
+      });
     };
     handleQuery();
   }, [keyword, issemantic]);
@@ -144,35 +173,3 @@ ProductTextArea.propTypes = {
 };
 
 export default ProductTextArea;
-
-async function fetchQuery(
-  param = {
-    querystring: "",
-    paragraph: "",
-    issemantic: false
-  }
-) {
-  const data = {
-    dbmodelname: "blue",
-    modelaction: "search",
-    extradata: {
-      querystring: "",
-      paragraph: "",
-      lang: "ch",
-      issemantic: false,
-      isjson: false
-    },
-    modeltype: "ai"
-  };
-  const response = await fetch("http://codes.haetek.com:6677/blue", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      ...data,
-      ...{ extradata: Object.assign(data.extradata, param) }
-    })
-  });
-  return await response.json();
-}
