@@ -9,19 +9,15 @@ import BackgroundImageSwitch from "../components/BackgroundImageSwitch";
 const JoinTemplate = ({ images, jobList, filterJobs }) => {
   const [jobfilter, setJobfilter] = useState(jobList);
   const jobFilterEvent = e => {
-    setJobfilter(
-      jobList.filter(i => {
-        return (
-          (i.date.replace(/\s/g, "").split("|")[0] === e.address ||
-            e.address === filterJobs.address[0].value ||
-            !e.address) &&
-          (i.date.replace(/\s/g, "").split("|")[1] === e.position ||
-            e.position === filterJobs.position[0].value ||
-            !e.position) &&
-          (i.heading.includes(e.job) || !e.job)
-        );
-      })
-    );
+    const objConcate = (a, c) => {
+      const [address, position] = c.date.replace(/\s/g, "").split("|");
+      return a.concat([
+        Object.assign({ address, position, job: c.heading }, c)
+      ]);
+    };
+    const jobListMap = jobList.reduce(objConcate, []);
+    const filterMethod = ([key, value] = ["", ""]) => o => o[key] === value;
+    setJobfilter(jobListMap.filter(filterMethod(Object.entries(e)[0])));
   };
   return (
     <div className="join">

@@ -24,13 +24,16 @@ const AboutUsTemplate = ({ image, intro }) => {
                 </h3>
               </div>
               <br className="is-hidden-mobile" />
-              {intro.description.split(/\s{2}|\\/).map((o, i) => (
-                <p
-                  className="company-para has-text-dark is-size-7-mobile"
-                  key={i}
-                  dangerouslySetInnerHTML={{ __html: o }}
-                ></p>
-              ))}
+              {intro.description &&
+                intro.description
+                  .split(/\s{2}|\\/)
+                  .map((o, i) => (
+                    <p
+                      className="company-para has-text-dark is-size-7-mobile"
+                      key={i}
+                      dangerouslySetInnerHTML={{ __html: o }}
+                    ></p>
+                  ))}
             </div>
           </div>
           <AboutFeatures features={intro.blurbs} />
