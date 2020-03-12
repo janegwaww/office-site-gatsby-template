@@ -5,7 +5,7 @@ import { useMediaQuery } from "react-responsive";
 
 function ProductTitle({ info = {} }) {
   const { formatMessage } = useIntl();
-  const isMobile = useMediaQuery({ query: "(max-width:767px)" });
+  const isMobile = useMediaQuery({ query: "(max-width:1224px)" });
   return (
     <div className="product-title">
       <div className="columns is-mobile">

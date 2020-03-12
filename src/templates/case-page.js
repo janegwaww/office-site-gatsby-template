@@ -20,7 +20,10 @@ const CaseTemplate = ({ images, heading, cases }) => {
           <div className="case-container">
             <div className="columns is-multiline">
               {cases.map((o, i) => (
-                <div className="column is-4" key={i}>
+                <div
+                  className="column is-one-thirds-desktop is-half-tablet-only"
+                  key={i}
+                >
                   <CaseCard info={o} key={i} />
                 </div>
               ))}

@@ -1,27 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { navigate } from "gatsby-plugin-intl";
 import LinesEllipsis from "react-lines-ellipsis";
+import { useMediaQuery } from "react-responsive";
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 
 const CaseCard = ({ info = {} }) => {
-  const [maxLine, setMaxLine] = useState("");
-  const [headimg, setHeadimg] = useState({ image: "", alt: "" });
+  const isTabletOrMobile = useMediaQuery({ maxWidth: 1224 });
+  const headimg = isTabletOrMobile
+    ? { ...info, image: info.image2 }
+    : { ...info, image: info.image1 };
   const cardHandle = e => {
     e.preventDefault();
     navigate("/detail/", {
       state: { title: info.head, content: info.content }
     });
   };
-  useEffect(() => {
-    if (window.innerWidth <= 768) {
-      setHeadimg({ ...info, image: info.image2 });
-      setMaxLine("3");
-    } else {
-      setHeadimg({ ...info, image: info.image1 });
-      setMaxLine("6");
-    }
-  }, []);
   return (
     <div className="case-card" onClick={cardHandle}>
       <div className="has-background-grey-lighter">
@@ -36,7 +30,7 @@ const CaseCard = ({ info = {} }) => {
         <div className="is-size-6-5 has-text-gray-666">
           <LinesEllipsis
             text={`${info.content}`}
-            maxLine={maxLine}
+            maxLine={`${isTabletOrMobile ? 3 : 6}`}
             ellipsis="..."
             style={{
               lineHeight: "26px",
