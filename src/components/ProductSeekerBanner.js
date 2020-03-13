@@ -32,7 +32,10 @@ const ProductSeekerBanner = ({ bannerInfo }) => {
         <div className="h-slider-container">
           <Slider {...slider}>
             {seekerslider.map((o, i) => (
-              <figure className="image is-681x383 is-240x140-mobile" key={i}>
+              <figure
+                className="image is-681x383 is-240x140-mobile is-340x240-tablet-only"
+                key={i}
+              >
                 <PreviewCompatibleImage
                   imageInfo={{ ...o, style: { borderRadius: 0 } }}
                   key={i}

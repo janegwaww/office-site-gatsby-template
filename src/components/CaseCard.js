@@ -6,7 +6,7 @@ import { useMediaQuery } from "react-responsive";
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 
 const CaseCard = ({ info = {} }) => {
-  const isTabletOrMobile = useMediaQuery({ maxWidth: 1224 });
+  const isTabletOrMobile = useMediaQuery({ maxWidth: 1024 });
   const headimg = isTabletOrMobile
     ? { ...info, image: info.image2 }
     : { ...info, image: info.image1 };

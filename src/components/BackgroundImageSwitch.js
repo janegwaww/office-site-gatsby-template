@@ -7,7 +7,7 @@ const BackgroundImageSwitch = ({ images, children, switchHeight }) => {
   const [tableImage, mobileImage] = images;
   return (
     <div>
-      <MediaQuery minDeviceWidth={1224}>
+      <MediaQuery minWidth={1024}>
         <div
           className="full-width-image margin-top-0"
           style={{
@@ -24,7 +24,7 @@ const BackgroundImageSwitch = ({ images, children, switchHeight }) => {
           {children}
         </div>
       </MediaQuery>
-      <MediaQuery maxDeviceWidth={1223}>
+      <MediaQuery maxWidth={1023}>
         <div
           className="full-width-image margin-top-0"
           style={{

@@ -33,29 +33,24 @@ const StudyDirection = ({ dirInfo = [] }) => {
   const { formatMessage } = useIntl();
   const blurbs = [
     {
-      image1: "/img/college/study1.png",
-      image2: "/img/college/study1-chosen.png",
-      alt: "direction",
+      image1: { image: "/img/college/study1.png", alt: "dir" },
+      image2: { image: "/img/college/study1-chosen.png", alt: "dir" },
       heading: formatMessage({ id: "college.nnac" })
     },
     {
-      image1: "/img/college/study2.png",
-      image2: "/img/college/study2-chosen.png",
-      alt: "direction",
+      image1: { image: "/img/college/study2.png", alt: "dir" },
+      image2: { image: "/img/college/study2-chosen.png", alt: "dir" },
       heading: formatMessage({ id: "college.inforintel" })
     },
     {
-      image1: "/img/college/study3.png",
-      image2: "/img/college/study3-chosen.png",
-      alt: "direction",
+      image1: { image: "/img/college/study3.png", alt: "dir" },
+      image2: { image: "/img/college/study3-chosen.png", alt: "dir" },
       heading: formatMessage({ id: "college.infeengine" })
     }
   ];
   const _getTabs = index =>
     blurbs.map((o, i) => ({
-      image: i === index ? o.image2 : o.image1,
-      alt: o.alt,
-      heading: o.heading,
+      ...o,
       className: i === index ? "is-active" : ""
     }));
   const [tabs, setTabs] = useState(_getTabs(0));
@@ -63,6 +58,17 @@ const StudyDirection = ({ dirInfo = [] }) => {
   const tabSelect = index => {
     setTabs(_getTabs(index));
     setArticle(dirInfo[index]);
+  };
+  const tabIconShow = o => i => {
+    const status = n => k =>
+      [
+        ["block", "none"],
+        ["none", "block"]
+      ][n][k];
+    return {
+      ...o[`image${i}`],
+      ...{ style: { display: status(!o.className ? 0 : 1)(i - 1) } }
+    };
   };
   return (
     <div className="columns study-direction">
@@ -86,7 +92,8 @@ const StudyDirection = ({ dirInfo = [] }) => {
                       className="image is-80x80 is-48x48-mobile"
                       style={{ margin: "auto" }}
                     >
-                      <PreviewCompatibleImage imageInfo={o} />
+                      <PreviewCompatibleImage imageInfo={tabIconShow(o)(1)} />
+                      <PreviewCompatibleImage imageInfo={tabIconShow(o)(2)} />
                     </div>
                     <br className="is-hidden-mobile" />
                     <a style={{ width: "7.5em" }} className="is-size-7-mobile">

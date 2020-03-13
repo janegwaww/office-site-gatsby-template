@@ -21,7 +21,7 @@ const Banner = ({ info = {} }) => {
                 <div className={`column is-two-fifths-tablet is-7-mobile`}>
                   <div className="banner-title">
                     <div className="content">
-                      <p className="is-size-5-5-mobile is-size-2-tablet is-size-2-widescreen has-text-white">
+                      <p className="is-size-5-5-mobile is-size-5-tablet is-size-2-widescreen has-text-white">
                         {`${info.heading}`}
                       </p>
                     </div>
