@@ -20,7 +20,7 @@ const FooterMobile = () => (
         &ensp;&ensp;|&ensp;&ensp;
         <span
           className="tooltip has-tooltip-top"
-          data-tooltip="+86 139-4005-0863"
+          data-tooltip="+86 156-4233-6090"
         >
           <FormattedMessage id="footer.marketingphone" />
         </span>
