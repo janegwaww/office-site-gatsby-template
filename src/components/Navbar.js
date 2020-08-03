@@ -18,6 +18,11 @@ const Navbar = class extends React.Component {
           message: "navbar.home"
         },
         {
+          index: "kengine",
+          address: "http://kengine.haetek.com",
+          message: "navbar.kengine"
+        },
+        {
           index: "productcenter",
           address: "/productcenter/",
           message: "navbar.productcenter"
@@ -122,16 +127,30 @@ const Navbar = class extends React.Component {
             className={`navbar-menu ${this.state.navBarActiveClass}`}
           >
             <div className="navbar-start has-text-centered">
-              {menuItems.map(o => (
-                <Link
-                  className="navbar-item is-tab"
-                  to={o.address}
-                  activeClassName={activeNav[o.index]}
-                  key={o.index}
-                >
-                  <FormattedMessage id={`${o.message}`} />
-                </Link>
-              ))}
+              {menuItems.map(o => {
+                if (o.index === "kengine") {
+                  return (
+                    <a
+                      href={`${o.address}`}
+                      className="navbar-item is-tab"
+                      target="_blank"
+                      rel="noopener norefferer"
+                    >
+                      <FormattedMessage id={`${o.message}`} />
+                    </a>
+                  );
+                }
+                return (
+                  <Link
+                    className="navbar-item is-tab"
+                    to={o.address}
+                    activeClassName={activeNav[o.index]}
+                    key={o.index}
+                  >
+                    <FormattedMessage id={`${o.message}`} />
+                  </Link>
+                );
+              })}
             </div>
             <div className="navbar-end has-text-centered">
               <div className="navbar-item">
