@@ -5,7 +5,7 @@ import SearchInput from "../components/SearchInput";
 import SearchResult from "../components/SearchResult";
 import curcle from "../img/curcle.svg";
 
-const SEARCHURL = "http://codes.haetek.com:6677/blue";
+const SEARCHURL = "https://codes.haetek.com:6677/blue";
 const composePromises = (...ms) => ms.reduce((f, g) => x => g(x).then(f));
 const extractItems = data => Promise.resolve(data.resultdata.slice(1) || []);
 const extractResponse = response => Promise.resolve(response.json());
