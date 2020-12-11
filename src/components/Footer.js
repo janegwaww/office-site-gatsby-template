@@ -56,7 +56,7 @@ const FooterBottom = ({ intl }) => {
                         <img src={gov} alt="gov" />
                       </span>
                       <a
-                        className="bd-notification is-primary has-text-grey"
+                        className="bd-notification is-primary"
                         href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702002640"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -65,9 +65,14 @@ const FooterBottom = ({ intl }) => {
                       </a>
                     </div>
                     <div>
-                      <span className="bd-notification is-primary has-text-grey">
-                        粤ICP备19120979号-1
-                      </span>
+                      <a
+                        className="bd-notification is-primary"
+                        href="https://beian.miit.gov.cn/#/Integrated/index"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        粤ICP备19120979号
+                      </a>
                     </div>
                   </div>
                 ) : null}
@@ -91,41 +96,41 @@ const Footer = ({ intl }) => {
     {
       index: "mobile",
       src: mobile,
-      content: formatMessage({ id: "footer.mobile" })
+      content: formatMessage({ id: "footer.mobile" }),
     },
     {
       index: "wechat",
       src: wechat,
-      content: "haetek_20190801"
+      content: "haetek_20190801",
     },
     {
       index: "mail",
       src: mail,
-      content: "peizhengqi@kc-group.com.cn"
+      content: "peizhengqi@kc-group.com.cn",
     },
     {
       index: "address",
       src: address,
-      content: formatMessage({ id: "footer.address" })
-    }
+      content: formatMessage({ id: "footer.address" }),
+    },
   ];
   const intro = [
     {
       index: "help",
-      name: formatMessage({ id: "footer.helpcenter" })
+      name: formatMessage({ id: "footer.helpcenter" }),
     },
     {
       index: "zhongkeyuan",
-      name: formatMessage({ id: "footer.ict" })
+      name: formatMessage({ id: "footer.ict" }),
     },
     {
       index: "aliyun",
-      name: formatMessage({ id: "footer.alicloud" })
+      name: formatMessage({ id: "footer.alicloud" }),
     },
     {
       index: "tensentclound",
-      name: formatMessage({ id: "footer.qcloud" })
-    }
+      name: formatMessage({ id: "footer.qcloud" }),
+    },
   ];
   return (
     <footer className="footer has-background-dark has-text-white-ter">
