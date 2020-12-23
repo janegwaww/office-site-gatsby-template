@@ -1,0 +1,29 @@
+.dropdown
+  &.h-dropdown
+    width: 100%
+    .dropdown-trigger
+      width: 100%
+    button
+      &:focus
+        outline: none !important
+        box-shadow: none
+      &.button
+        border: unset
+        border-bottom: 1px solid #bbbbbb
+        border-radius: 0
+        justify-content: flex-start
+        padding-left: 0
+        color: #bbbbbb
+    .dropdown-menu
+      padding-top: 0
+      width: 100%
+      min-width: unset
+      .dropdown-content
+        background-color: #f0f2f5
+        border-radius: 0 0 4px 4px
+        box-shadow: none
+        border-bottom: 1px solid #bbbbbb
+        border-left: 1px solid #bbbbbb
+        border-right: 1px solid #bbbbbb
+        .dropdown-item.is-active
+          background-color: #badcff

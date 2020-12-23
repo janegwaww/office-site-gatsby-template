@@ -1,0 +1,43 @@
+.button
+  &.is-opacity
+    background-color: rgba(216,216,216,0.2)
+    color: white
+    &:hover
+      color: $brand-color
+      background-color: white
+  &.is-white-blue
+    padding: 19px 26px 19px 26px
+    color: #999999
+    &:hover
+      color: $brand-color
+      border-color: $brand-color
+  &.is-blue
+    border: unset
+    padding: 19px 26px
+    color: white
+    background-color: $brand-color
+    &:hover
+      color: white
+      background-color: #1758C6
+  &.is-transparent
+    background-color: transparent
+    color: white
+
++mobile
+  .button
+    &.is-opacity
+      border-radius: 2px
+    &.is-blue
+      padding: 16px 20px
+      border-radius: 2px
+    &.is-white-blue
+      background-color: rgba(12,102,255,1)
+      color: white
+      border: unset
+      padding: 16px 20px
+      bordere-radius: 2px
+      &:hover
+        color: white
+    &.is-transparent
+      padding: 5px 11px
+      background: rgba(216,216,216,0.2)

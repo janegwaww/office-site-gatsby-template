@@ -1,0 +1,49 @@
+.tabs
+  &.is-around
+    a
+      padding-left: 0
+      padding-right: 0
+      border-bottom-width: 2px
+      border-bottom-color: transparent
+      font-size: 1.125rem
+      -webkit-tap-highlight-color: transparent
+    ul
+      justify-content: space-around
+    li
+      -webkit-tap-highlight-color: rgba(0,0,0,0)
+      &.is-active
+        a
+          border-bottom-width: 2px
+  &.is-left
+    a
+      color: white
+      border-bottom-color: transparent
+      padding-left: 0
+      padding-right: 0
+      border-bottom-width: 2px
+      border-bottom-color: transparent
+      font-size: 1rem
+      -webkit-tap-highlight-color: transparent
+    ul
+      border-bottom-color: transparent
+      li:not(:last-child)
+        margin-right: 60px
+
++mobile
+  .tabs
+    &.is-around-mobile
+      a
+        padding-left: 0
+        padding-right: 0
+        border-bottom-width: 2px
+        border-bottom-color: transparent
+        font-size: 1.125rem
+        -webkit-tap-highlight-color: transparent
+      ul
+        justify-content: space-around
+      li
+        -webkit-tap-highlight-color: rgba(0,0,0,0)
+        margin-right: unset !important
+        &.is-active
+          a
+            border-bottom-width: 2px
