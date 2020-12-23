@@ -1,0 +1,234 @@
+@import 'columns'
+
+.button
+  &.is-opacity
+    background-color: rgba(216,216,216,0.2)
+    color: white
+    &:hover
+      color: $brand-color
+      background-color: white
+  &.is-white-blue
+    padding: 19px 26px 19px 26px
+    color: #999999
+    &:hover
+      color: $brand-color
+      border-color: $brand-color
+  &.is-blue
+    border: unset
+    padding: 19px 26px
+    color: white
+    background-color: $brand-color
+    &:hover
+      color: white
+      background-color: #1758C6
+  &.is-transparent
+    background-color: transparent
+    color: white
+
+.tabs
+  &.is-around
+    a
+      padding-left: 0
+      padding-right: 0
+      border-bottom-width: 2px
+      border-bottom-color: transparent
+      font-size: 1.125rem
+      -webkit-tap-highlight-color: transparent
+    ul
+      justify-content: space-around
+    li
+      -webkit-tap-highlight-color: rgba(0,0,0,0)
+      &.is-active
+        a
+          border-bottom-width: 2px
+  &.is-left
+    a
+      color: white
+      border-bottom-color: transparent
+      padding-left: 0
+      padding-right: 0
+      border-bottom-width: 2px
+      border-bottom-color: transparent
+      font-size: 1rem
+      -webkit-tap-highlight-color: transparent
+    ul
+      border-bottom-color: transparent
+      li:not(:last-child)
+        margin-right: 60px
+.image
+  &.is-20x20
+    width: 20px
+    height: 20px
+  &.is-60x60
+    width: 60px
+    height: 60px
+  &.is-80x80
+    width: 80px
+    height: 80px
+  &.is-110x110
+    width: 110px
+    height: 110px
+  &.is-143x40
+    width: 143px
+    height: 40px
+
+
+.input
+  &.h-input
+    border: unset
+    box-shadow: unset
+    border-radius: unset
+    border-bottom: 1px solid #BBBBBB
+    padding-left: 0
+
+.select
+  &.h-select
+    padding-right: 1rem
+    select
+      text-rendering: auto !important
+      border: unset
+      border-radius: unset
+      border-bottom: solid 1px #bbbbbb
+      padding-left: 0
+      color: #bbbbbb
+      &:focus
+        outline: none !important
+        box-shadow: none
+        border-color: #bbbbbb
+    &:not(.is-multiple):not(.is-loading)::after
+      border-radius: 0
+      border-color: #666666
+      border-bottom-width: 2px
+      border-left-width: 2px
+    option
+      background-color: #F0F2F5
+
+.dropdown
+  &.h-dropdown
+    width: 100%
+    .dropdown-trigger
+      width: 100%
+    button
+      &:focus
+        outline: none !important
+        box-shadow: none
+      &.button
+        border: unset
+        border-bottom: 1px solid #bbbbbb
+        border-radius: 0
+        justify-content: flex-start
+        padding-left: 0
+        color: #bbbbbb
+    .dropdown-menu
+      padding-top: 0
+      width: 100%
+      min-width: unset
+      .dropdown-content
+        background-color: #f0f2f5
+        border-radius: 0 0 4px 4px
+        box-shadow: none
+        border-bottom: 1px solid #bbbbbb
+        border-left: 1px solid #bbbbbb
+        border-right: 1px solid #bbbbbb
+        .dropdown-item.is-active
+          background-color: #badcff
+
+.section
+  &.h-section
+    padding: 3.75rem 1.5rem
+
+.link
+  &.h-link
+    text-decoration: underline
+    color: $brand-color
+    &:hover
+      color: #1758c6
+
+.content .taglist
+  list-style: none
+  margin-bottom: 0
+  margin-left: 0
+  margin-right: 1.5rem
+  margin-top: 1.5rem
+  display: flex
+  flex-wrap: wrap
+  justify-content: left
+  align-items: center
+  li
+    padding: 0 2rem 1rem 0
+    margin-bottom: 1.5rem
+    margin-top: 0
+
++mobile
+  .tabs
+    &.is-around-mobile
+      a
+        padding-left: 0
+        padding-right: 0
+        border-bottom-width: 2px
+        border-bottom-color: transparent
+        font-size: 1.125rem
+        -webkit-tap-highlight-color: transparent
+      ul
+        justify-content: space-around
+      li
+        -webkit-tap-highlight-color: rgba(0,0,0,0)
+        margin-right: unset !important
+        &.is-active
+          a
+            border-bottom-width: 2px
+
+  .button
+    &.is-opacity
+      border-radius: 2px
+    &.is-blue
+      padding: 16px 20px
+      border-radius: 2px
+    &.is-white-blue
+      background-color: rgba(12,102,255,1)
+      color: white
+      border: unset
+      padding: 16px 20px
+      bordere-radius: 2px
+      &:hover
+        color: white
+    &.is-transparent
+      padding: 5px 11px
+      background: rgba(216,216,216,0.2)
+
+  .image
+    &.is-10x10-mobile
+      width: 10px
+      height: 10px
+    &.is-13x13-mobile
+      width: 13px
+      height: 13px
+    &.is-30x30-mobile
+      width: 30px
+      height: 30px
+    &.is-42x42-mobile
+      width: 42px
+      height: 42px
+    &.is-48x48-mobile
+      width: 48px
+      height: 48px
+    &.is-50x50-mobile
+      width: 50px
+      height: 50px
+    &.is-96x96-mobile
+      width: 96px
+      height: 96px
+    &.is-100x28-mobile
+      width: 100px
+      height: 28px
+    &.is-200x150-mobile
+      width: 200px
+      height: 150px
+
+  .select
+    &.haetek-select
+      padding-right: 0
+
+  .section
+    &.h-section
+      padding: 1.875rem 1.875rem

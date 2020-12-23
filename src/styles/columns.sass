@@ -1,0 +1,38 @@
+.columns
+  .column
+    &.is-one-quarter-tablet
+      flex: none
+      width: 25%
+    &.is-one-thirds-tablet
+      flex: none
+      width: 33%
+    &.is-one-sixth-tablet
+      flex: none
+      width: 16.666667%
+    &.is-two-fifths-tablet
+      flex: none
+      width: 40%
+    +desktop
+      &.is-one-thirds-desktop
+        flex: none
+        width: 33%
+    +tablet-only
+      &.is-half-tablet-only
+        flex: none
+        width: 50%
+    +mobile
+      &.is-half-mobile
+        flex: none
+        width: 50%
+      &.is-one-fifth-mobile
+        flex: none
+        width: 20%
+      &.is-7-mobile
+        flex: none
+        width: 58.33333%
+    &.is-variable
+      &.is-2-tablet
+        --columnGap: 0.5rem
+      +mobile
+        &.is-1-mobile
+          --columnGap: 0.25rem
