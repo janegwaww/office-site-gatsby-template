@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { useIntl } from "gatsby-plugin-intl";
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
+import SectionTitle from "./SectionTitle";
 
 const Article = ({ article = [] }) => {
   const [para1, para2] = article;
@@ -33,34 +34,34 @@ const StudyDirection = ({ dirInfo = [] }) => {
   const { formatMessage } = useIntl();
   const blurbs = [
     {
-      image1: { image: "/img/college/study1.png", alt: "dir" },
-      image2: { image: "/img/college/study1-chosen.png", alt: "dir" },
+      image1: { image: "/img/college/study1.svg", alt: "dir" },
+      image2: { image: "/img/college/study1-chosen.svg", alt: "dir" },
       heading: formatMessage({ id: "college.nnac" })
     },
     {
-      image1: { image: "/img/college/study2.png", alt: "dir" },
-      image2: { image: "/img/college/study2-chosen.png", alt: "dir" },
+      image1: { image: "/img/college/study2.svg", alt: "dir" },
+      image2: { image: "/img/college/study2-chosen.svg", alt: "dir" },
       heading: formatMessage({ id: "college.inforintel" })
     },
     {
-      image1: { image: "/img/college/study3.png", alt: "dir" },
-      image2: { image: "/img/college/study3-chosen.png", alt: "dir" },
+      image1: { image: "/img/college/study3.svg", alt: "dir" },
+      image2: { image: "/img/college/study3-chosen.svg", alt: "dir" },
       heading: formatMessage({ id: "college.infeengine" })
     }
   ];
-  const _getTabs = index =>
+  const _getTabs = (index) =>
     blurbs.map((o, i) => ({
       ...o,
       className: i === index ? "is-active" : ""
     }));
   const [tabs, setTabs] = useState(_getTabs(0));
   const [article, setArticle] = useState(dirInfo[0]);
-  const tabSelect = index => {
+  const tabSelect = (index) => {
     setTabs(_getTabs(index));
     setArticle(dirInfo[index]);
   };
-  const tabIconShow = o => i => {
-    const status = n => k =>
+  const tabIconShow = (o) => (i) => {
+    const status = (n) => (k) =>
       [
         ["block", "none"],
         ["none", "block"]
@@ -73,9 +74,10 @@ const StudyDirection = ({ dirInfo = [] }) => {
   return (
     <div className="columns study-direction">
       <div className="column is-10 is-offset-1 has-text-centered is-paddingless-mobile">
-        <h3 className="is-size-3 is-size-5-mobile">
-          {formatMessage({ id: "college.researchdirection" })}
-        </h3>
+        <SectionTitle
+          title={formatMessage({ id: "college.researchdirection" })}
+          subtitle={"RESEARCH DIRECTION"}
+        />
         <br className="is-hidden-tablet" />
         <div className="section is-small is-paddingless-mobile">
           <div className="tabs is-around">
