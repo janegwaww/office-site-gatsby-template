@@ -38,14 +38,14 @@ const Navbar = class extends React.Component {
           message: "navbar.case"
         },
         {
-          index: "aboutus",
-          address: "/aboutus/",
-          message: "navbar.aboutus"
-        },
-        {
           index: "college",
           address: "/college/",
           message: "navbar.college"
+        },
+        {
+          index: "aboutus",
+          address: "/aboutus/",
+          message: "navbar.aboutus"
         },
         {
           index: "join",
