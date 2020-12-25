@@ -23,19 +23,9 @@ const Navbar = class extends React.Component {
           message: "navbar.kengine"
         },
         {
-          index: "productcenter",
-          address: "/productcenter/",
-          message: "navbar.productcenter"
-        },
-        {
-          index: "bluesearch",
-          address: "/bluesearch/",
-          message: "navbar.bluesearch"
-        },
-        {
-          index: "case",
-          address: "/case/",
-          message: "navbar.case"
+          index: "coretech",
+          address: "#",
+          message: "navbar.coretech"
         },
         {
           index: "college",
@@ -58,10 +48,7 @@ const Navbar = class extends React.Component {
 
   componentDidMount() {
     this._activeNavHandle(
-      globalHistory.location.pathname
-        .replace(/\/$/, "")
-        .split("/")
-        .pop()
+      globalHistory.location.pathname.replace(/\/$/, "").split("/").pop()
     );
   }
 
@@ -85,7 +72,7 @@ const Navbar = class extends React.Component {
     );
   };
 
-  _activeNavHandle = nav => {
+  _activeNavHandle = (nav) => {
     const languages = ["en", "zh"];
     const path = !nav || languages.includes(nav) ? "home" : nav;
     this.setState({
@@ -100,10 +87,9 @@ const Navbar = class extends React.Component {
 
     return (
       <nav
-        className="navbar is-fixed-top has-shadow is-transparent"
+        className="navbar is-fixed-top is-transparent"
         role="navigation"
         aria-label="main navigation"
-        style={{ boxShadow: "0px 2px 10px 0px rgba(0,0,0,0.1)" }}
       >
         <div className="container">
           <div className="navbar-brand">
@@ -122,22 +108,36 @@ const Navbar = class extends React.Component {
               <span />
             </div>
           </div>
+
           <div
             id="navMenu"
             className={`navbar-menu ${this.state.navBarActiveClass}`}
           >
-            <div className="navbar-start has-text-centered">
-              {menuItems.map(o => {
+            <div className="navbar-end has-text-centered">
+              {menuItems.map((o) => {
                 if (o.index === "kengine") {
                   return (
                     <a
                       href={`${o.address}`}
                       className="navbar-item is-tab"
                       target="_blank"
-                      rel="noopener norefferer"
+                      rel="noopener noreferrer"
                     >
                       <FormattedMessage id={`${o.message}`} />
                     </a>
+                  );
+                }
+                if (o.index === "coretech") {
+                  return (
+                    <div className="navbar-item has-dropdown is-hoverable">
+                      <a className="navbar-link is-arrowless">
+                        <FormattedMessage id={o.message} />
+                      </a>
+                      <div className="navbar-dropdown">
+                        <a class="navbar-item">Overview</a>
+                        <a class="navbar-item">Elements</a>
+                      </div>
+                    </div>
                   );
                 }
                 return (
@@ -152,6 +152,7 @@ const Navbar = class extends React.Component {
                 );
               })}
             </div>
+
             <div className="navbar-end has-text-centered">
               <div className="navbar-item">
                 <LanguageSwitch />
