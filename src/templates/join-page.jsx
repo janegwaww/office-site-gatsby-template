@@ -8,7 +8,7 @@ import BackgroundImageSwitch from "../components/BackgroundImageSwitch";
 
 const JoinTemplate = ({ images, jobList, filterJobs }) => {
   const [jobfilter, setJobfilter] = useState(jobList);
-  const jobFilterEvent = e => {
+  const jobFilterEvent = (e) => {
     const objConcate = (a, c) => {
       const [address, position] = c.date.replace(/\s/g, "").split("|");
       return a.concat([
@@ -16,9 +16,10 @@ const JoinTemplate = ({ images, jobList, filterJobs }) => {
       ]);
     };
     const jobListMap = jobList.reduce(objConcate, []);
-    const filterMethod = ([key, value] = ["", ""]) => o => o[key] === value;
+    const filterMethod = ([key, value] = ["", ""]) => (o) => o[key] === value;
     setJobfilter(jobListMap.filter(filterMethod(Object.entries(e)[0])));
   };
+
   return (
     <div className="join">
       <BackgroundImageSwitch images={images} switchHeight={["450px", "160px"]}>
@@ -37,7 +38,7 @@ const JoinTemplate = ({ images, jobList, filterJobs }) => {
           </div>
         </div>
       </div>
-      <div className="join-jobs section has-background-white-ter">
+      <div className="join-jobs section">
         <div className="container has-text-left">
           <div className="columns">
             <div className="column is-10 is-offset-1">

@@ -7,45 +7,59 @@ import searchImg from "../img/search.png";
 const JoinInput = ({ filter, selectOptions }) => {
   const { formatMessage } = useIntl();
   const [search, setSearch] = useState({});
-  const handleChange = e => {
+  const handleChange = (e) => {
     setSearch({ ...search, [e.target.name]: e.value });
     filter({ ...search, [e.target.name]: e.value });
   };
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     filter(search);
   };
 
   return (
-    <form name="search" onSubmit={handleSubmit}>
-      <div className="columns is-mobile">
+    <form name="search" onSubmit={handleSubmit} className="join-input-form">
+      <div className="columns is-mobile is-variable is-5">
         <div className="column is-4">
-          <div className="control is-expanded has-icons-right">
-            <Dropdown onChange={handleChange} options={selectOptions.address} />
+          <div className="box">
+            <div className="control is-expanded has-icons-right">
+              <Dropdown
+                onChange={handleChange}
+                options={selectOptions.address}
+              />
+            </div>
           </div>
         </div>
         <div className="column is-4">
           <div className="control is-expanded has-icons-right">
-            <Dropdown
-              onChange={handleChange}
-              options={selectOptions.position}
-            />
+            <div className="box">
+              <Dropdown
+                onChange={handleChange}
+                options={selectOptions.position}
+              />
+            </div>
           </div>
         </div>
         <div className="search-input column is-4">
-          <div className="control is-expanded has-icons-right">
-            <input
-              name="job"
-              className="input h-input is-size-7-mobile"
-              type="text"
-              placeholder={formatMessage({ id: "join.searchjob" })}
-              onChange={handleChange}
-            />
-            <span className="icon is-small is-right" onClick={handleSubmit}>
-              <i className="image is-20x20 is-13x13-mobile">
-                <img alt="search-icon" src={searchImg} width="20" height="20" />
-              </i>
-            </span>
+          <div className="box">
+            <div className="control is-expanded has-icons-right">
+              <input
+                name="job"
+                className="input h-input is-size-7-mobile"
+                type="text"
+                placeholder={formatMessage({ id: "join.searchjob" })}
+                onChange={handleChange}
+              />
+              <span className="icon is-small is-right" onClick={handleSubmit}>
+                <i className="image is-20x20 is-13x13-mobile">
+                  <img
+                    alt="search-icon"
+                    src={searchImg}
+                    width="20"
+                    height="20"
+                  />
+                </i>
+              </span>
+            </div>
           </div>
         </div>
       </div>

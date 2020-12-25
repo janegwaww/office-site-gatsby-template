@@ -4,12 +4,13 @@ import { navigate } from "gatsby-plugin-intl";
 import LinesEllipsis from "react-lines-ellipsis";
 
 function JobCard({ info = {} }) {
-  const handleClick = e => {
+  const handleClick = (e) => {
     e.preventDefault();
     navigate("/detail/", {
       state: { title: info.heading, content: info.description }
     });
   };
+
   return (
     <div className="job-card box" onClick={handleClick}>
       <div style={{ marginBottom: "6px" }}>
