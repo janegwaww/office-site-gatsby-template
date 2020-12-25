@@ -152,7 +152,6 @@ const Navbar = class extends React.Component {
                 );
               })}
             </div>
-
             <div className="navbar-end has-text-centered">
               <div className="navbar-item">
                 <LanguageSwitch />
