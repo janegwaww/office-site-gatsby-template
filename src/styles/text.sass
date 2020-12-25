@@ -1,4 +1,6 @@
 .text
+  user-select: none
+
   &.section-title
     color: black
     font-size: 2.25rem
@@ -13,8 +15,13 @@
       display: flex
       justify-content: center
       align-items: center
+    +mobile
+      margin-bottom: 0
+
   &.section-subtitle
     color: $assist-third-color
     font-size: 1rem
     line-height: 21px
     letter-spacing: 12px
+    +mobile
+      letter-spacing: 6px

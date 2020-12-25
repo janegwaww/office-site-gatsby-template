@@ -5,12 +5,24 @@
     &:hover
       color: $brand-color
       background-color: white
+    +mobile
+      border-radius: 2px
+
   &.is-white-blue
     padding: 19px 26px 19px 26px
     color: #999999
     &:hover
       color: $brand-color
       border-color: $brand-color
+    +mobile
+      background-color: rgba(12,102,255,1)
+      color: white
+      border: unset
+      padding: 16px 20px
+      bordere-radius: 2px
+      &:hover
+        color: white
+
   &.is-blue
     border: unset
     padding: 19px 26px
@@ -19,9 +31,17 @@
     &:hover
       color: white
       background-color: #1758C6
+    +mobile
+      padding: 16px 20px
+      border-radius: 2px
+
   &.is-transparent
     background-color: transparent
     color: white
+    +mobile
+      padding: 5px 11px
+      background: rgba(216,216,216,0.2)
+
   &.is-blue-border
     color: $brand-color
     border: 1px solid $brand-color
@@ -32,22 +52,7 @@
     &:hover
       color: white
       background-color: $brand-color
-
-+mobile
-  .button
-    &.is-opacity
-      border-radius: 2px
-    &.is-blue
-      padding: 16px 20px
-      border-radius: 2px
-    &.is-white-blue
-      background-color: rgba(12,102,255,1)
-      color: white
-      border: unset
-      padding: 16px 20px
-      bordere-radius: 2px
-      &:hover
-        color: white
-    &.is-transparent
-      padding: 5px 11px
-      background: rgba(216,216,216,0.2)
+    +mobile
+      padding: 16px 40px
+      font-size: 1rem
+      border-radius: 4px

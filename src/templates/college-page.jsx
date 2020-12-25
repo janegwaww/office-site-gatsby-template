@@ -12,14 +12,14 @@ const CollegeTemplate = ({ images, background, direction }) => {
     <div className="college">
       <BackgroundImageSwitch images={images} height={["600px", "180px"]}>
         <div className="has-text-centered" style={{ lineHeight: 3 }}>
-          <h2 className="has-text-white is-size-3 is-size-5-tablet is-size-6-mobile is-size-3-desktop">
+          <h2 className="has-text-white is-size-3 is-size-5-tablet is-size-6-mobile is-size-3-desktop text">
             黑顿研究院
           </h2>
           <div style={{ lineHeight: 1.2, fontSize: "50px" }}>
-            <h1 className="has-text-white is-size-6-mobile is-size-5-tablet is-size-1-desktop">
+            <h1 className="has-text-white is-size-6-mobile is-size-5-tablet is-size-1-desktop text">
               HAETEK Institute of Machine Intelligence,
             </h1>
-            <h1 className="has-text-white is-size-6-mobile is-size-5-tablet is-size-1-desktop">
+            <h1 className="has-text-white is-size-6-mobile is-size-5-tablet is-size-1-desktop text">
               Shenzhen, China.
             </h1>
           </div>
