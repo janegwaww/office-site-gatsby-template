@@ -11,6 +11,9 @@ const LanguageSwitch = ({ intl }) => {
       <IntlContextConsumer>
         {({ languages, language: currentLocale }) => (
           <>
+            <span className="icon">
+              <i className="h-icon haetek-globe" />
+            </span>
             <a
               className={`${currentLocale === "zh" ? "is-active" : ""}`}
               name="zh"

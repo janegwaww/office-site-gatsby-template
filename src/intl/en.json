@@ -15,6 +15,17 @@
     "joinus": "Join Us",
     "coretech": "Core Technology"
   },
+  "navbar.coretech": {
+    "kfec": "Knowledge Filling/Error Correction",
+    "vcc": "Video Cover Composition",
+    "sfs": "Semantic Fuzzy Search",
+    "eoltc": "Extraction of Long Text Context",
+    "tf": "Text Fluency(Transformer Language Model)",
+    "tss": "Text Semantic Similarity",
+    "ekm": "Encyclopedia Knowledge Map",
+    "cfs": "Semantic Fuzzy Search",
+    "cmcu": "Cross Model Content Understanding"
+  },
   "footer": {
     "guidance": "User's Guidance",
     "contactus": "Contact Us",

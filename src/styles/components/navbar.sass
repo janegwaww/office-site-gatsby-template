@@ -1,34 +1,96 @@
 .navbar
   background-color: rgba(0,0,0,0)
   color: white
-  &:hover
-    box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.1)
+  transition: all 0.2s
+  +mobile
     background-color: white
     color: #4a4a4a
+
+  +tablet
+    & .h-icon.haetek-logo
+      background-color: white
+    & .h-icon.haetek-globe
+      background-color: white
+
+    &:hover, &.hover
+      box-shadow: 0px 4px 0px 0px whitesmoke
+      background-color: white
+      color: #4a4a4a
+      & .h-icon.haetek-logo
+        background-color: black
+      & .h-icon.haetek-globe
+        background-color: black
+      & .navbar-item.is-active
+        color: $brand-color
+      & .navbar-item.is-tab.is-active
+        border-bottom-color: $brand-color
 
   .navbar-menu
     box-shadow: none !important
   .navbar-item
-    margin-right: 50px
     color: inherit
-    &.is-tab
-      padding-left: 0
-      padding-right: 0
-  .language a
-    user-select: none
-    &.is-active
-      pointer-events: none;
-      color: #363636
-      cursor: unset
+    +tablet
+      &.is-active
+        color: white
+      &.is-tab
+        padding-left: 1.875rem
+        padding-right: 1.875rem
+        &.is-active
+          border-bottom-color: white
+    +mobile
+      &.has-dropdown
+        & > .navbar-item
+          position: relative
+          &:after
+            position: absolute
+            top: 5px
+            content: '\1431'
+            color: $brand-color
+            font-weight: bolder
+            padding: 4px
+          &.flat:after
+            content: '\142f'
+
+        & > .navbar-item.flat + .navbar-dropdown
+          visibility: visible
+          height: 400px
+
+  .navbar-dropdown
+    +mobile
+      height: 0
+      visibility: hidden
+      overflow-y: scroll
+      padding-bottom: 0
+      padding-top: 0
+      transition: all 0.2s
+      .navbar-item
+        display: flex
+        padding-left: 2.4rem
+
+  .language
+    display: inline-flex
+    .icon
+      padding: 2.6px
+      margin-right: 8px
+    a
+      user-select: none
+      &.is-active
+        pointer-events: none;
+        color: inherit
+        cursor: unset
+
+  .navbar-icon
+    margin: 2px 8px
+    width: 30px
+    height: 22px
+    img
+      height: 100%
+      width: 100%
 
 // Override for use of svg's from https://simpleicons.org/
 .icon svg
   width: 1.5rem
   height: 1.5rem
   fill: currentColor
-.navbar-brand
-  .navbar-item
-    &.logo
-      padding: 0 1rem
-    Img
-      max-height: unset
+
+.h-navbar-dropdown

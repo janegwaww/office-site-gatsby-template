@@ -11,7 +11,7 @@ const TemplateWrapper = ({ children }) => {
   return (
     <div>
       <Helmet>
-        <html lang="en" />
+        <html lang="en" className="has-navbar-fixed-top-mobile" />
         <title>{formatMessage({ id: "title" })}</title>
         <meta name="keywords" content={formatMessage({ id: "keywords" })} />
         <meta

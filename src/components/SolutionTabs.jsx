@@ -4,12 +4,12 @@ import Slider from "react-slick";
 import SolutionCard from "../components/SolutionCard";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import "../styles/solution-tabs.sass";
+import "../styles/components/solution-tabs.sass";
 
-const SampleNextArrow = props => {
+const SampleNextArrow = (props) => {
   const { className, currentSlide, slideCount, onClick } = props;
   const [arrow, setArrow] = useState("/img/solutions/right.png");
-  const mouseAct = e => {
+  const mouseAct = (e) => {
     if (e.type === "mouseover") {
       setArrow("/img/solutions/right-chosen.png");
     } else {
@@ -40,10 +40,10 @@ const SampleNextArrow = props => {
   );
 };
 
-const SamplePrevArrow = props => {
+const SamplePrevArrow = (props) => {
   const { className, currentSlide, onClick } = props;
   const [arrow, setArrow] = useState("/img/solutions/left.png");
-  const mouseAct = e => {
+  const mouseAct = (e) => {
     if (e.type === "mouseover") {
       setArrow("/img/solutions/left-chosen.png");
     } else {
@@ -86,7 +86,7 @@ class SolutionTabs extends Component {
     };
   }
 
-  _tabSelect = key => {
+  _tabSelect = (key) => {
     this.setState({
       items: this.state.items.map((o, i) =>
         i === key ? { ...o, className: "is-active" } : { ...o, className: "" }
@@ -153,7 +153,7 @@ class SolutionTabs extends Component {
           className="container"
           style={mobile ? { margin: "0 0 0 -3em" } : {}}
         >
-          <Slider ref={e => (this.sliderRef = e)} {...slider}>
+          <Slider ref={(e) => (this.sliderRef = e)} {...slider}>
             {[...items].map((o, i) => (
               <div key={`item-${i}`} style={{ width: 300 }}>
                 <SolutionCard info={o} />

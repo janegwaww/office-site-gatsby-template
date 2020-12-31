@@ -1,0 +1,78 @@
+[
+  {
+    "index": "home",
+    "address": "/",
+    "message": "navbar.home"
+  },
+  {
+    "index": "kengine",
+    "address": "http://kengine.haetek.com",
+    "message": "navbar.kengine"
+  },
+  {
+    "index": "coretech",
+    "address": "#",
+    "message": "navbar.coretech",
+    "child": [{
+      "index": "kfec",
+      "address": "/coretech/kfec/",
+      "message": "navbar.coretech.kfec",
+      "icon": "/img/icon/kfec.svg"
+    },{
+      "index": "vcc",
+      "address": "/coretech/vcc/",
+      "message": "navbar.coretech.vcc",
+      "icon": "/img/icon/vcc.svg"
+    },{
+      "index": "sfs",
+      "address": "/coretech/sfs/",
+      "message": "navbar.coretech.sfs",
+      "icon": "/img/icon/sfs.svg"
+    },{
+      "index": "eoltc",
+      "address": "/coretech/eoltc/",
+      "message": "navbar.coretech.eoltc",
+      "icon": "/img/icon/eoltc.svg"
+    },{
+      "index": "tf",
+      "address": "/coretech/tf/",
+      "message": "navbar.coretech.tf",
+      "icon": "/img/icon/tf.svg"
+    },{
+      "index": "tss",
+      "address": "/coretech/tss/",
+      "message": "navbar.coretech.tss",
+      "icon": "/img/icon/tss.svg"
+    },{
+      "index": "ekm",
+      "address": "/coretech/ekm/",
+      "message": "navbar.coretech.ekm",
+      "icon": "/img/icon/ekm.svg"
+    },{
+      "index": "cfs",
+      "address": "/coretech/cfs/",
+      "message": "navbar.coretech.cfs",
+      "icon": "/img/icon/cfs.svg"
+    },{
+      "index": "cmcu",
+      "address": "/coretech/cmcu/",
+      "message": "navbar.coretech.cmcu",
+      "icon": "/img/icon/cmcu.svg"
+    }]
+  },
+  {
+    "index": "college",
+    "address": "/college/",
+    "message": "navbar.college"
+  },
+  {
+    "index": "aboutus",
+    "address": "/aboutus/",
+    "message": "navbar.aboutus"
+  },
+  {
+    "index": "join",
+    "address": "/join/",
+    "message": "navbar.joinus"
+  }
+]

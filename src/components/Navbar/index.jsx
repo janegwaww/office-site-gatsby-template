@@ -1,8 +1,9 @@
 import React from "react";
 import { globalHistory } from "@reach/router";
 import { Link, FormattedMessage } from "gatsby-plugin-intl";
-import LanguageSwitch from "../components/LanguageSwitch";
-import logo from "../img/logo.png";
+import LanguageSwitch from "../LanguageSwitch";
+import NavbarDropdown from "../NavbarDropdown";
+import Menu from "./Navbar.json";
 
 const Navbar = class extends React.Component {
   constructor(props) {
@@ -11,45 +12,35 @@ const Navbar = class extends React.Component {
       active: false,
       navBarActiveClass: "",
       activeNav: {},
-      menuItems: [
-        {
-          index: "home",
-          address: "/",
-          message: "navbar.home"
-        },
-        {
-          index: "kengine",
-          address: "http://kengine.haetek.com",
-          message: "navbar.kengine"
-        },
-        {
-          index: "coretech",
-          address: "#",
-          message: "navbar.coretech"
-        },
-        {
-          index: "college",
-          address: "/college/",
-          message: "navbar.college"
-        },
-        {
-          index: "aboutus",
-          address: "/aboutus/",
-          message: "navbar.aboutus"
-        },
-        {
-          index: "join",
-          address: "/join/",
-          message: "navbar.joinus"
-        }
-      ]
+      menuItems: Menu,
+      hover: "",
+      subNav: ""
     };
+
+    this.navbarTransparent = this.navbarTransparent.bind(this);
   }
 
   componentDidMount() {
-    this._activeNavHandle(
-      globalHistory.location.pathname.replace(/\/$/, "").split("/").pop()
-    );
+    const nav = globalHistory.location.pathname
+      .replace(/^\/|\/$|en\/|zh\//g, "")
+      .split("/");
+    this.setState({ subNav: nav[1] });
+    this._activeNavHandle(nav.shift());
+    window.addEventListener("scroll", this.navbarTransparent);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.navbarTransparent);
+  }
+
+  navbarTransparent() {
+    this.setState((prev, props) => {
+      if (window.pageYOffset > 20) {
+        return { hover: "hover" };
+      } else {
+        return { hover: "" };
+      }
+    });
   }
 
   toggleHamburger = () => {
@@ -73,8 +64,7 @@ const Navbar = class extends React.Component {
   };
 
   _activeNavHandle = (nav) => {
-    const languages = ["en", "zh"];
-    const path = !nav || languages.includes(nav) ? "home" : nav;
+    const path = !nav ? "home" : nav;
     this.setState({
       activeNav: {
         [path]: "is-active"
@@ -83,11 +73,11 @@ const Navbar = class extends React.Component {
   };
 
   render() {
-    const { activeNav, menuItems } = this.state;
+    const { activeNav, menuItems, hover, subNav } = this.state;
 
     return (
       <nav
-        className="navbar is-fixed-top is-transparent"
+        className={`navbar is-fixed-top is-transparent ${hover}`}
         role="navigation"
         aria-label="main navigation"
       >
@@ -95,7 +85,7 @@ const Navbar = class extends React.Component {
           <div className="navbar-brand">
             <Link to="/" className="navbar-item logo" title="Logo">
               <figure className="image is-143x40 is-100x28-mobile">
-                <img src={logo} alt="Haetek" />
+                <span className="h-icon haetek-logo" />
               </figure>
             </Link>
             <div
@@ -122,6 +112,7 @@ const Navbar = class extends React.Component {
                       className="navbar-item is-tab"
                       target="_blank"
                       rel="noopener noreferrer"
+                      key={o.index}
                     >
                       <FormattedMessage id={`${o.message}`} />
                     </a>
@@ -129,15 +120,12 @@ const Navbar = class extends React.Component {
                 }
                 if (o.index === "coretech") {
                   return (
-                    <div className="navbar-item has-dropdown is-hoverable">
-                      <a className="navbar-link is-arrowless">
-                        <FormattedMessage id={o.message} />
-                      </a>
-                      <div className="navbar-dropdown">
-                        <a class="navbar-item">Overview</a>
-                        <a class="navbar-item">Elements</a>
-                      </div>
-                    </div>
+                    <NavbarDropdown
+                      menu={o}
+                      active={activeNav[o.index]}
+                      subNav={subNav}
+                      key={o.index}
+                    />
                   );
                 }
                 return (

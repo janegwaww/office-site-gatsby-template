@@ -46,6 +46,30 @@ exports.createPages = ({ actions, graphql }) => {
       });
     });
 
+    //core tech pages
+    let coretech = [
+      "kfec",
+      "vcc",
+      "sfs",
+      "eoltc",
+      "tf",
+      "tss",
+      "ekm",
+      "cfs",
+      "cmcu"
+    ];
+    coretech.forEach(tech => {
+      const techPath = `/coretech/${_.kebabCase(tech)}/`;
+
+      createPage({
+        path: techPath,
+        component: path.resolve(`src/templates/coretech-page.jsx`),
+        context: {
+          tech
+        }
+      });
+    });
+
     // Tag pages:
     let tags = [];
     // Iterate through each post, putting all found tags into `tags`
