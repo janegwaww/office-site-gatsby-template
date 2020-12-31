@@ -1,11 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { injectIntl, FormattedMessage } from "gatsby-plugin-intl";
-import qr from "../img/qrcode.png";
-import mobile from "../img/mobile-icon.svg";
-import wechat from "../img/wechat-icon.svg";
-import mail from "../img/mail-icon.svg";
-import address from "../img/address-icon.svg";
-import gov from "../img/gov.png";
 
 const FooterMobile = () => (
   <div className="footer-mobile content is-hidden-tablet is-size-7-mobile has-text-centered">
@@ -43,7 +37,7 @@ const FooterBottom = ({ intl }) => {
     }
   }, []);
   return (
-    <div className="footer-bottom content has-background-black is-size-6 has-text-grey">
+    <div className="footer-bottom content has-background-grey-darker is-size-6 has-text-grey">
       <div className="container">
         <div className={`columns is-mobile ${center}`}>
           <div className={`column ${side}`}>
@@ -53,7 +47,7 @@ const FooterBottom = ({ intl }) => {
                   <div className="gov-code">
                     <div style={{ display: "flex", alignItems: "center" }}>
                       <span className="gov-icon image is-20x20 is-10x10-mobile">
-                        <img src={gov} alt="gov" />
+                        <img src="/img/icon/gov.png" alt="gov" />
                       </span>
                       <a
                         className="bd-notification is-primary"
@@ -95,48 +89,48 @@ const Footer = ({ intl }) => {
   const contantUsObj = [
     {
       index: "mobile",
-      src: mobile,
-      content: formatMessage({ id: "footer.mobile" }),
+      src: "/img/icon/mobile-icon.svg",
+      content: formatMessage({ id: "footer.mobile" })
     },
     {
       index: "wechat",
-      src: wechat,
-      content: "haetek_20190801",
+      src: "/img/icon/wechat-icon.svg",
+      content: "haetek_20190801"
     },
     {
       index: "mail",
-      src: mail,
-      content: "peizhengqi@kc-group.com.cn",
+      src: "/img/icon/mail-icon.svg",
+      content: "peizhengqi@kc-group.com.cn"
     },
     {
       index: "address",
-      src: address,
-      content: formatMessage({ id: "footer.address" }),
-    },
+      src: "/img/icon/address-icon.svg",
+      content: formatMessage({ id: "footer.address" })
+    }
   ];
   const intro = [
     {
       index: "help",
-      name: formatMessage({ id: "footer.helpcenter" }),
+      name: formatMessage({ id: "footer.helpcenter" })
     },
     {
       index: "zhongkeyuan",
-      name: formatMessage({ id: "footer.ict" }),
+      name: formatMessage({ id: "footer.ict" })
     },
     {
       index: "aliyun",
-      name: formatMessage({ id: "footer.alicloud" }),
+      name: formatMessage({ id: "footer.alicloud" })
     },
     {
       index: "tensentclound",
-      name: formatMessage({ id: "footer.qcloud" }),
-    },
+      name: formatMessage({ id: "footer.qcloud" })
+    }
   ];
   return (
-    <footer className="footer has-background-dark has-text-white-ter">
+    <footer className="footer has-text-black has-background-white-ter">
       <FooterMobile />
-      <div className="content footer-above has-text-centered has-background-dark has-text-white-ter is-hidden-mobile">
-        <div className="container has-background-dark has-text-white-ter">
+      <div className="content footer-above has-text-centered is-hidden-mobile">
+        <div className="container">
           <div className="columns is-mobile">
             <div className="column is-10 is-offset-1">
               {/* hidden in mobile */}
@@ -150,7 +144,7 @@ const Footer = ({ intl }) => {
                           <FormattedMessage id="footer.guidance" />
                         </p>
                       </li>
-                      {intro.map(o => (
+                      {intro.map((o) => (
                         <li key={o.index}>
                           <a className="h-navbar-item">{o.name}</a>
                         </li>
@@ -167,7 +161,7 @@ const Footer = ({ intl }) => {
                           <FormattedMessage id="footer.contactus" />
                         </p>
                       </li>
-                      {contantUsObj.map(o => (
+                      {contantUsObj.map((o) => (
                         <li key={o.index}>
                           <a className="h-navbar-item">
                             <div>
@@ -185,15 +179,13 @@ const Footer = ({ intl }) => {
                 </div>
                 <div className="column is-3 has-text-right">
                   <div className="has-text-centered">
+                    <span className="h-icon haetek-logo has-margin-bottom-15" />
                     <div
-                      className="image is-128x128"
+                      className="image is-144x144"
                       style={{ margin: "auto" }}
                     >
-                      <img src={qr} alt="heatex-qrcode" />
+                      <img src="/img/icon/qrcode.png" alt="heatex-qrcode" />
                     </div>
-                    <p style={{ padding: "10px 0" }}>
-                      <FormattedMessage id="footer.codetitle" />
-                    </p>
                   </div>
                 </div>
               </div>
