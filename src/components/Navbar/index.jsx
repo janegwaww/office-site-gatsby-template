@@ -34,13 +34,11 @@ const Navbar = class extends React.Component {
   }
 
   navbarTransparent() {
-    this.setState((prev, props) => {
-      if (window.pageYOffset > 20) {
-        return { hover: "hover" };
-      } else {
-        return { hover: "" };
-      }
-    });
+    if (window.pageYOffset > 20) {
+      this.setState({ hover: "hover" });
+    } else {
+      this.setState({ hover: "" });
+    }
   }
 
   toggleHamburger = () => {
