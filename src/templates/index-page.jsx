@@ -3,11 +3,11 @@ import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import Banner from "../components/Banner";
 import Layout from "../components/Layout";
-import SeekerTabs from "../components/SeekerTabs";
 import BusinessIcon from "../components/BusinessIcon";
-import SolutionTabs from "../components/SolutionTabs";
 import ContactUs from "../components/ContactUs";
 import CompetitiveAdvantages from "../components/CompetitiveAdvantages";
+import CoreTechList from "../components/CoreTechList";
+import SolutionSlides from "../components/SolutionSlides";
 
 export function IndexPageTemplate({
   header,
@@ -20,26 +20,27 @@ export function IndexPageTemplate({
   return (
     <div className="home">
       <Banner info={header} />
+      <div className="home-banner-bottom-crossbar is-hidden-mobile" />
       <section className="section section--gradient is-paddingless-mobile">
         <div className="container">
           <div className="columns">
             <div className="column is-10 is-offset-1">
-              <SeekerTabs scrollItems={features} language={language} />
+              <CoreTechList />
             </div>
           </div>
         </div>
       </section>
-      <section className="section section--gradient has-background-white-ter is-paddingless-mobile">
+      <section className="section section--gradient is-paddingless-mobile has-background-white-ter">
         <div className="container">
           <div className="columns">
             <div className="column is-10 is-offset-1">
-              <SolutionTabs solutionItems={solution} language={language} />
+              <SolutionSlides />
             </div>
           </div>
         </div>
       </section>
       <CompetitiveAdvantages />
-      <section className="business-icon-section section section--gradient">
+      <section className="section section--gradient">
         <div className="container">
           <div className="columns">
             <div className="column is-10 is-offset-1">

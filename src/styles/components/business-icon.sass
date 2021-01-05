@@ -1,0 +1,19 @@
+// business card start
+.business-icon
+  .columns
+    .icon-image
+      box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.1)
+      border-radius: 4px
+    +mobile
+      .column
+        display: none
+        &:nth-child(-n+10)
+          display: block
+        .icon-image
+          border-radius: 2px
+
+  .tab-content .tab-item
+      display: none
+      &.is-active
+        display: block
+// business card end
