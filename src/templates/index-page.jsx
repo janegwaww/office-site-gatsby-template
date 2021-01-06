@@ -5,9 +5,9 @@ import Banner from "../components/Banner";
 import Layout from "../components/Layout";
 import BusinessIcon from "../components/BusinessIcon";
 import ContactUs from "../components/ContactUs";
-import CompetitiveAdvantages from "../components/CompetitiveAdvantages";
 import CoreTechList from "../components/CoreTechList";
 import SolutionSlides from "../components/SolutionSlides";
+import DoublePanelLayer from "../components/DoublePanelLayer";
 
 export function IndexPageTemplate({
   header,
@@ -30,7 +30,7 @@ export function IndexPageTemplate({
           </div>
         </div>
       </section>
-      <section className="section section--gradient is-paddingless-mobile has-background-white-ter">
+      <section className="section section--gradient is-paddingless-mobile">
         <div className="container">
           <div className="columns">
             <div className="column is-10 is-offset-1">
@@ -39,7 +39,7 @@ export function IndexPageTemplate({
           </div>
         </div>
       </section>
-      <CompetitiveAdvantages />
+      <DoublePanelLayer title="竞争优势" subtitle="COMPETITIVE EDGE" />
       <section className="section section--gradient">
         <div className="container">
           <div className="columns">
