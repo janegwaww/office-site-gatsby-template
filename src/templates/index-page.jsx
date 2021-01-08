@@ -8,6 +8,7 @@ import ContactUs from "../components/ContactUs";
 import CoreTechList from "../components/CoreTechList";
 import SolutionSlides from "../components/SolutionSlides";
 import DoublePanelLayer from "../components/DoublePanelLayer";
+import tabs from "../components/SolutionSlides/SolutionSlides.json";
 
 export function IndexPageTemplate({
   header,
@@ -34,7 +35,7 @@ export function IndexPageTemplate({
         <div className="container">
           <div className="columns">
             <div className="column is-10 is-offset-1">
-              <SolutionSlides />
+              <SolutionSlides tabs={tabs} />
             </div>
           </div>
         </div>

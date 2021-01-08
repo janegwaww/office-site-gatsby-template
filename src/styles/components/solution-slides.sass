@@ -1,0 +1,54 @@
+.solution-slides
+  .slides
+    background-color: #f7f7f7
+
+  .slides-head
+    display: flex
+    flex-direction: column
+    justify-content: center
+    .image
+      margin-left: 2rem
+
+  .v-tab-content
+    background: $brand-color
+    overflow: hidden
+    display: flex
+    align-items: center
+    justify-content: flex-start
+
+  .right-arrow
+    height: 40px
+    width: 36px
+    border-left: 18px solid white
+    border-top: 20px solid transparent
+    border-bottom: 20px solid transparent
+    border-right: 40px solid transparent
+    z-index: 2
+
+  .tab-items
+    display: flex
+    flex-direction: row
+    width: max-content
+    margin-left: -58px
+
+  .tab-item
+    width: 893px
+    min-height: 370px
+    &.is-active
+      order: -1
+    .name
+      background: url(/img/icon/scen.png) top left / cover no-repeat $brand-color
+      display: flex
+      flex-direction: column
+      justify-content: space-around
+      height: 100%
+      +mobile
+        flex-direction: row
+        align-items: flex-start
+    .img
+      max-height: 400px
+      overflow: hidden
+      display: flex
+      & > img
+        object-fit: cover
+        height: 100%

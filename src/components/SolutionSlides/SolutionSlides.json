@@ -1,0 +1,22 @@
+[
+  {
+    "name": "智慧物流",
+    "subname": ["更多  更快  更准"],
+    "src": "/img/icon/scen1.png"
+  },
+  {
+    "name": "智慧家居",
+    "subname": ["我们先来，未来才来"],
+    "src": "/img/icon/scen2.png"
+  },
+  {
+    "name": "智慧教育",
+    "subname": ["让教育赢在起跑线上"],
+    "src": "/img/icon/scen3.png"
+  },
+  {
+    "name": "智慧医疗",
+    "subname": ["为生命与健康", "争取更多可能"],
+    "src": "/img/icon/scen4.png"
+  }
+]
