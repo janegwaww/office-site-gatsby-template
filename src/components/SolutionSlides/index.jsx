@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import SectionTitle from "./SectionTitle";
+import SectionTitle from "../SectionTitle";
 
 const SolutionSlides = ({ tabs = [] }) => {
   const [activeTab, setActiveTab] = useState(0);

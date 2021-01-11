@@ -2,7 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
-import AboutFeatures from "../components/AboutFeatures";
+import ContactUs from "../components/ContactUs";
+import History from "../components/AboutUs/History";
+import Address from "../components/AboutUs/Address";
 import BackgroundImageSwitch from "../components/BackgroundImageSwitch";
 
 const AboutUsTemplate = ({ image, intro }) => {
@@ -10,35 +12,19 @@ const AboutUsTemplate = ({ image, intro }) => {
     <div className="about-us">
       <BackgroundImageSwitch
         images={[{ image: image }, { image: image }]}
-        switchHeight={["500px", "160px"]}
+        switchHeight={["800px", "160px"]}
       />
+      <History />
       <div className="about-us-content section section--gradient">
         <div className="container">
           <div className="columns">
             <div className="column is-10 is-offset-1">
-              <div>
-                <h3 className="about-us-content-head has-text-black is-size-3 has-text-centered is-size-5-5-mobile">
-                  <span className="is-hidden-mobile"></span>
-                  {intro.heading}
-                  <span className="is-hidden-mobile"></span>
-                </h3>
-              </div>
-              <br className="is-hidden-mobile" />
-              {intro.description &&
-                intro.description
-                  .split(/\s{2}|\\/)
-                  .map((o, i) => (
-                    <p
-                      className="company-para has-text-dark is-size-7-mobile"
-                      key={i}
-                      dangerouslySetInnerHTML={{ __html: o }}
-                    ></p>
-                  ))}
+              <Address />
             </div>
           </div>
-          <AboutFeatures features={intro.blurbs} />
         </div>
       </div>
+      <ContactUs />
     </div>
   );
 };
