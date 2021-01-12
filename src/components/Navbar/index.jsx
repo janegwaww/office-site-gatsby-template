@@ -101,7 +101,7 @@ const Navbar = class extends React.Component {
             id="navMenu"
             className={`navbar-menu ${this.state.navBarActiveClass}`}
           >
-            <div className="navbar-end has-text-centered">
+            <div className="navbar-end">
               {menuItems.map((o) => {
                 if (o.index === "kengine") {
                   return (
@@ -138,7 +138,7 @@ const Navbar = class extends React.Component {
                 );
               })}
             </div>
-            <div className="navbar-end has-text-centered">
+            <div className="navbar-end">
               <div className="navbar-item">
                 <LanguageSwitch />
               </div>

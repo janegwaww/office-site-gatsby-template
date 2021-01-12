@@ -49,7 +49,10 @@ const SolutionSlides = ({ tabs = [] }) => {
                       </div>
                       <div>
                         {o.subname.map((n) => (
-                          <div className="is-size-4 has-text-white has-margin-left-40">
+                          <div
+                            className="is-size-4 has-text-white has-margin-left-40"
+                            key={n}
+                          >
                             {n}
                           </div>
                         ))}
