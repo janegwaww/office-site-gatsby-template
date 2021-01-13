@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import SectionTitle from "../SectionTitle";
+import PreviewCompatibleImage from "../PreviewCompatibleImage";
 
 const SolutionSlides = ({ tabs = [] }) => {
   const [activeTab, setActiveTab] = useState(0);
@@ -26,7 +27,7 @@ const SolutionSlides = ({ tabs = [] }) => {
                   onClick={() => handleTab(i)}
                   className={`${activeTab === i ? "is-active" : ""}`}
                 >
-                  <a>{o.name}</a>
+                  <a>{o.title}</a>
                 </li>
               ))}
             </ul>
@@ -45,10 +46,10 @@ const SolutionSlides = ({ tabs = [] }) => {
                   <div className="column is-two-fifths">
                     <div className="name">
                       <div className="is-size-2-5 has-text-white has-margin-left-40">
-                        {o.name}
+                        {o.title}
                       </div>
                       <div>
-                        {o.subname.map((n) => (
+                        {o.subtitle.map((n) => (
                           <div
                             className="is-size-4 has-text-white has-margin-left-40"
                             key={n}
@@ -60,7 +61,9 @@ const SolutionSlides = ({ tabs = [] }) => {
                     </div>
                   </div>
                   <div className="img column is-three-fifths">
-                    <img src={o.src} alt={o.name} />
+                    <div className="image">
+                      <PreviewCompatibleImage imageInfo={o} />
+                    </div>
                   </div>
                 </div>
               </div>

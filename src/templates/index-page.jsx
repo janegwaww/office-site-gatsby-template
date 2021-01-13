@@ -11,22 +11,21 @@ import DoublePanelLayer from "../components/DoublePanelLayer";
 import tabs from "../components/SolutionSlides/SolutionSlides.json";
 
 export function IndexPageTemplate({
-  header,
-  features,
+  coretech,
   solution,
   business,
-  rate,
+  compet,
   language
 }) {
   return (
     <div className="home">
-      <Banner info={header} />
+      <Banner />
       <div className="home-banner-bottom-crossbar is-hidden-mobile" />
       <section className="section section--gradient is-paddingless-mobile">
         <div className="container">
           <div className="columns">
             <div className="column is-10 is-offset-1">
-              <CoreTechList />
+              <CoreTechList items={coretech} />
             </div>
           </div>
         </div>
@@ -35,12 +34,16 @@ export function IndexPageTemplate({
         <div className="container">
           <div className="columns">
             <div className="column is-10 is-offset-1">
-              <SolutionSlides tabs={tabs} />
+              <SolutionSlides tabs={solution} />
             </div>
           </div>
         </div>
       </section>
-      <DoublePanelLayer title="竞争优势" subtitle="COMPETITIVE EDGE" />
+      <DoublePanelLayer
+        title="竞争优势"
+        subtitle="COMPETITIVE EDGE"
+        items={compet}
+      />
       <section className="section section--gradient">
         <div className="container">
           <div className="columns">
@@ -57,13 +60,10 @@ export function IndexPageTemplate({
 
 IndexPageTemplate.propTypes = {
   header: PropTypes.object,
-  features: PropTypes.array,
-  solution: PropTypes.shape({
-    heading: PropTypes.string,
-    blurbs: PropTypes.array
-  }),
+  coretech: PropTypes.array,
+  solution: PropTypes.array,
   business: PropTypes.array,
-  rate: PropTypes.array
+  compet: PropTypes.array
 };
 
 const IndexPage = ({
@@ -78,11 +78,10 @@ const IndexPage = ({
   return (
     <Layout>
       <IndexPageTemplate
-        header={content.header}
-        features={content.features.blurbs}
+        coretech={content.coretech}
         solution={content.solution}
-        business={frontmatter.business.blurbs}
-        rate={content.rate.blurbs}
+        business={frontmatter.business}
+        compet={content.compet}
         language={language}
       />
     </Layout>
@@ -104,68 +103,49 @@ export const pageQuery = graphql`
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
         business {
-          blurbs {
-            image {
-              childImageSharp {
-                fluid(maxWidth: 240, quality: 64) {
-                  ...GatsbyImageSharpFluid
-                }
+          alt
+          type
+          image {
+            childImageSharp {
+              fluid(maxWidth: 480, quality: 100) {
+                ...GatsbyImageSharpFluid
               }
             }
           }
         }
         version {
-          header {
-            heading
-            description
-          }
-          features {
-            blurbs {
-              image {
-                childImageSharp {
-                  fluid(maxWidth: 1000, quality: 100) {
-                    ...GatsbyImageSharpFluid
-                  }
+          coretech {
+            title
+            context
+            href
+            image {
+              childImageSharp {
+                fluid(maxWidth: 600, quality: 100) {
+                  ...GatsbyImageSharpFluid
                 }
               }
-              heading
-              subHeading
-              description
             }
           }
           solution {
-            heading
-            blurbs {
-              heading
-              image1 {
-                childImageSharp {
-                  fluid(maxWidth: 1024, quality: 100) {
-                    ...GatsbyImageSharpFluid
-                  }
+            title
+            subtitle
+            image {
+              childImageSharp {
+                fluid(maxWidth: 1000, quality: 100) {
+                  ...GatsbyImageSharpFluid
                 }
               }
-              image2 {
-                childImageSharp {
-                  fluid(maxWidth: 1024, quality: 100) {
-                    ...GatsbyImageSharpFluid
-                  }
-                }
-              }
-              image3 {
-                childImageSharp {
-                  fluid(maxWidth: 1024, quality: 100) {
-                    ...GatsbyImageSharpFluid
-                  }
-                }
-              }
-              alt
-              description
             }
           }
-          rate {
-            blurbs {
-              heading
-              description
+          compet {
+            title
+            context
+            image {
+              childImageSharp {
+                fluid(maxWidth: 600, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
             }
           }
         }
