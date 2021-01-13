@@ -18,7 +18,12 @@ const ContactUs = () => {
                   </div>
                 </div>
                 <div>
-                  <button className="button is-blue-border">联系我们</button>
+                  <a
+                    href="mailto:haetek_20190801@outlook.com"
+                    className="button is-blue-border"
+                  >
+                    联系我们
+                  </a>
                 </div>
               </div>
             </div>

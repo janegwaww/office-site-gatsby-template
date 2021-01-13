@@ -17,7 +17,7 @@ const LanguageSwitch = ({ intl }) => {
             <a
               className={`${currentLocale === "zh" ? "is-active" : ""}`}
               name="zh"
-              onClick={() => changeLocale("zh")}
+              onClick={() => "zh"}
             >
               中
             </a>
@@ -32,7 +32,7 @@ const LanguageSwitch = ({ intl }) => {
             <a
               className={`${currentLocale === "en" ? "is-active" : ""}`}
               name="en"
-              onClick={() => changeLocale("en")}
+              onClick={() => "en"}
             >
               EN
             </a>
