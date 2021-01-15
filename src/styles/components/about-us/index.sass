@@ -9,8 +9,18 @@
   .history
     background-color: #f7f7f7
     height: 582px
-    padding: 60px 0
+    padding: 60px 20px
     background: url(/img/history-background.svg) top center / contain no-repeat
+    .tabs
+      & > ul
+        border-bottom-color: transparent
+      & li a
+        border-bottom-color: transparent
+        padding-left: 0
+        padding-right: 0
+        margin-right: 60px
+      & li.is-active a
+        border-bottom-color: $brand-color
 
   .address-text
     display: flex
