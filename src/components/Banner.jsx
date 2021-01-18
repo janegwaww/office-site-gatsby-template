@@ -8,7 +8,7 @@ const Banner = ({ info = {} }) => {
   return (
     <div className="index-banner">
       <BackgroundImageSwitch
-        switchHeight={["570px", "190px"]}
+        switchHeight={["1000px", "190px"]}
         images={[
           { image: "/img/index-banner.png" },
           { image: "/img/index-banner-mobile.png" }

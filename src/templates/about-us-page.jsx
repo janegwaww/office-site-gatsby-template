@@ -5,15 +5,13 @@ import Layout from "../components/Layout";
 import ContactUs from "../components/ContactUs";
 import History from "../components/AboutUs/History";
 import Address from "../components/AboutUs/Address";
-import BackgroundImageSwitch from "../components/BackgroundImageSwitch";
+import Banner from "../components/AboutUs/Banner";
 
 const AboutUsTemplate = ({ image, intro }) => {
+  console.log(intro);
   return (
     <div className="about-us">
-      <BackgroundImageSwitch
-        images={[{ image: image }, { image: image }]}
-        switchHeight={["800px", "160px"]}
-      />
+      <Banner image={image} intro={intro} />
       <History />
       <div className="about-us-content section section--gradient">
         <div className="container">
@@ -70,18 +68,10 @@ export const aboutUsQuery = graphql`
         }
         version {
           heading
-          description
-          blurbs {
-            image {
-              childImageSharp {
-                fluid(maxWidth: 240, quality: 64) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            alt
-            heading
-            text
+          descriptions
+          subdescription {
+            title
+            content
           }
         }
       }

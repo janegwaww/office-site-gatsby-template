@@ -38,4 +38,29 @@
       color: #a5a5a5
     +mobile
       flex-direction: column
+
+  .sub-description
+    display: flex
+    justify-content: space-between
+    .item-1
+      background: url(/img/icon/aboutus-item1.png) top left / cover no-repeat
+      flex-grow: 1
+      padding: 28px 10px
+      margin-bottom: 18px
+      .name
+        &:before
+          content: ''
+          background: url(/img/icon/to-right.png) center / contain no-repeat
+          padding: 6px
+          margin-right: 10px
+        &:after
+          background: url(/img/icon/to-left.png) center / contain no-repeat
+          content: ''
+          padding: 6px
+          margin-left: 10px
+    .item-2
+      background: url(/img/icon/aboutus-item2.png) bottom right / cover no-repeat
+      padding: 28px 10px
+      flex-grow: 1
+      margin-top: 18px
 /* -------about us end--------

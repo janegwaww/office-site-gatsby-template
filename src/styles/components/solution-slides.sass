@@ -11,31 +11,19 @@
 
   .v-tab-content
     background: $brand-color
-    overflow: hidden
     display: flex
     align-items: center
     justify-content: flex-start
 
-  .right-arrow
-    height: 40px
-    width: 36px
-    border-left: 18px solid white
-    border-top: 20px solid transparent
-    border-bottom: 20px solid transparent
-    border-right: 40px solid transparent
-    z-index: 2
-
   .tab-items
+    width: 100%
     display: flex
-    flex-direction: row
-    width: max-content
+    flex-direction: column
     margin-left: -58px
-
   .tab-item
-    width: 893px
-    min-height: 370px
+    display: none
     &.is-active
-      order: -1
+      display: block
     .name
       background: url(/img/icon/scen.png) top left / cover no-repeat $brand-color
       display: flex

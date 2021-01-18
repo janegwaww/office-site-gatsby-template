@@ -109,11 +109,3 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     });
   }
 };
-
-exports.onCreateWebpackConfig = ({ stage, actions: { setWebpackConfig } }) => {
-  setWebpackConfig({
-    externals: {
-      BMap: "BMap"
-    }
-  });
-};

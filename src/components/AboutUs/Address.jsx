@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import BMap from "BMap";
 
 class Address extends Component {
   componentDidMount() {
-    if (typeof BMap !== undefined) {
+    if (typeof window !== undefined) {
+      const BMap = window.BMap;
       // 创建地图实例
       var map = new BMap.Map("bmap-container");
       // 创建点坐标

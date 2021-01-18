@@ -5,6 +5,7 @@ import HJSON from "./History.json";
 
 const History = () => {
   const [x, setX] = useState(100);
+  const [select, setSelect] = useState(["is-active", ""]);
 
   const marginChange = (v) => {
     setX((prev) => {
@@ -18,6 +19,17 @@ const History = () => {
     });
   };
 
+  const handleTab = (value) => {
+    setSelect((prev) =>
+      prev.map((o, i) => {
+        if (i === value) {
+          return "is-active";
+        }
+        return "";
+      })
+    );
+  };
+
   useEffect(() => {
     moving("h-timeline-id", marginChange);
   }, []);
@@ -26,12 +38,12 @@ const History = () => {
     <div className="history">
       <SectionTitle title="发展历程" subtitle="DEVELOPMENT HISTORY" />
       <div className="events">
-        <div className="tabs">
+        <div className="tabs content">
           <ul>
-            <li className="is-active">
+            <li className={`${select[0]}`} onClick={() => handleTab(0)}>
               <a>2019</a>
             </li>
-            <li>
+            <li className={`${select[1]}`} onClick={() => handleTab(1)}>
               <a>2020</a>
             </li>
           </ul>

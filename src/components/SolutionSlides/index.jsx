@@ -35,7 +35,7 @@ const SolutionSlides = ({ tabs = [] }) => {
         </div>
 
         <div className="v-tab-content column is-four-fifths">
-          <div className="right-arrow" />
+          <div className="h-icon right-arrow" />
           <div className="tab-items">
             {tabs.map((o, i) => (
               <div

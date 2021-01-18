@@ -6,7 +6,7 @@ exports.onRenderBody = ({ setHeadComponents }, pluginOptions) => {
     <script
       key="bmap"
       type="text/javascript"
-      src="http://api.map.baidu.com/api?v=2.0&ak=o1WCRcoZ2GM6LGdsMgYxkfuKkdjPmlOK"
+      src="https://api.map.baidu.com/api?v=2.0&ak=o1WCRcoZ2GM6LGdsMgYxkfuKkdjPmlOK"
     />
   ]);
 };
