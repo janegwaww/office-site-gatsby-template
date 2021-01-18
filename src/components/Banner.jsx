@@ -1,7 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { FormattedMessage } from "gatsby-plugin-intl";
-import LinesEllipsis from "react-lines-ellipsis";
 import BackgroundImageSwitch from "../components/BackgroundImageSwitch";
 
 const Banner = ({ info = {} }) => {
@@ -18,30 +16,18 @@ const Banner = ({ info = {} }) => {
           <div className="columns is-mobile">
             <div className="column is-10 is-offset-1">
               <div className="columns is-mobile">
-                <div className={`column is-two-fifths-tablet is-7-mobile`}>
+                <div className={`column is-10 is-offset-1`}>
                   <div className="banner-title">
                     <div className="content">
-                      <p className="is-size-5-5-mobile is-size-5-tablet is-size-2-widescreen has-text-white">
-                        {`${info.heading}`}
+                      <p className="is-size-5-5-mobile is-size-5-tablet is-size-0 has-text-white has-text-centered head text">
+                        助力产业AI <span className="h-icon down-white" />{" "}
+                        迈向智能新纪元
                       </p>
                     </div>
                     <div className="content">
-                      <LinesEllipsis
-                        className="is-size-7-mobile is-size-5-tablet is-size-5-widescreen has-text-white"
-                        text={`${info.description}`}
-                        maxLine="3"
-                        style={{ hyphens: "auto", whiteSpace: "pre-wrap" }}
-                      />
-                    </div>
-                    <div className="content">
-                      <a
-                        href="http://seeker.haetek.com/#/"
-                        className="button is-opacity is-size-7-5-mobile"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <FormattedMessage id="home.learnseeker" />
-                      </a>
+                      <p className="is-size-7-mobile is-size-5-tablet is-size-3-widescreen has-text-white has-text-centered sub-head text">
+                        Help industry AI , Towards a new era of intelligence
+                      </p>
                     </div>
                   </div>
                 </div>
