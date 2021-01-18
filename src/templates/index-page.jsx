@@ -19,7 +19,7 @@ export function IndexPageTemplate({
   return (
     <div className="home">
       <Banner />
-      <div className="home-banner-bottom-crossbar is-hidden-mobile" />
+      <div className="home-banner-bottom-crossbar" />
       <section className="section section--gradient is-paddingless-mobile">
         <div className="container">
           <div className="columns">

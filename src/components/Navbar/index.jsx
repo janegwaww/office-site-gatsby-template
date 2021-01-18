@@ -71,11 +71,17 @@ const Navbar = class extends React.Component {
   };
 
   render() {
-    const { activeNav, menuItems, hover, subNav } = this.state;
+    const {
+      activeNav,
+      menuItems,
+      hover,
+      subNav,
+      navBarActiveClass
+    } = this.state;
 
     return (
       <nav
-        className={`navbar is-fixed-top is-transparent ${hover}`}
+        className={`navbar is-fixed-top is-transparent ${hover} ${navBarActiveClass}`}
         role="navigation"
         aria-label="main navigation"
       >
@@ -87,7 +93,7 @@ const Navbar = class extends React.Component {
               </figure>
             </Link>
             <div
-              className={`navbar-burger burger ${this.state.navBarActiveClass}`}
+              className={`navbar-burger burger ${navBarActiveClass}`}
               data-target="navMenu"
               onClick={() => this.toggleHamburger()}
             >
@@ -97,10 +103,7 @@ const Navbar = class extends React.Component {
             </div>
           </div>
 
-          <div
-            id="navMenu"
-            className={`navbar-menu ${this.state.navBarActiveClass}`}
-          >
+          <div id="navMenu" className={`navbar-menu ${navBarActiveClass}`}>
             <div className="navbar-end">
               {menuItems.map((o) => {
                 if (o.index === "kengine") {
