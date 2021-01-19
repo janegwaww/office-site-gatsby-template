@@ -32,7 +32,7 @@ function BusinessIcon({ iconItems = [] }) {
                 o.type === "business" && (
                   <div
                     key={i}
-                    className={`column is-one-fifth-mobile is-one-sixth-tablet`}
+                    className={`column is-one-sixth-tablet is-one-third-mobile`}
                   >
                     <div className="icon-image">
                       <PreviewCompatibleImage imageInfo={{ ...o }} />
@@ -49,7 +49,7 @@ function BusinessIcon({ iconItems = [] }) {
                 o.type === "academic" && (
                   <div
                     key={i}
-                    className={`column is-one-fifth-mobile is-one-sixth-tablet`}
+                    className={`column is-one-sixth-tablet is-one-third-mobile`}
                   >
                     <div className="icon-image">
                       <PreviewCompatibleImage imageInfo={{ ...o }} />

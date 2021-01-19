@@ -1,17 +1,18 @@
 .columns
   .column
-    &.is-one-quarter-tablet
-      flex: none
-      width: 25%
-    &.is-one-thirds-tablet
-      flex: none
-      width: 33%
-    &.is-one-sixth-tablet
-      flex: none
-      width: 16.666667%
-    &.is-two-fifths-tablet
-      flex: none
-      width: 40%
+    +tablet
+      &.is-one-quarter-tablet
+        flex: none
+        width: 25%
+      &.is-one-thirds-tablet
+        flex: none
+        width: 33%
+      &.is-one-sixth-tablet
+        flex: none
+        width: 16.666667%
+      &.is-two-fifths-tablet
+        flex: none
+        width: 40%
     +desktop
       &.is-one-thirds-desktop
         flex: none
