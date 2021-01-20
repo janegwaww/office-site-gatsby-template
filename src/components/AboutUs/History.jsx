@@ -9,6 +9,7 @@ const History = () => {
 
   const marginChange = (v) => {
     setX((prev) => {
+      setSelect(prev + v < -980 ? ["", "is-active"] : ["is-active", ""]);
       if (prev > 100) {
         return v <= 0 ? prev + v : prev;
       }
@@ -22,6 +23,11 @@ const History = () => {
   const handleTab = (value) => {
     setSelect((prev) =>
       prev.map((o, i) => {
+        if (value === 1) {
+          setX(-980);
+        } else {
+          setX(100);
+        }
         if (i === value) {
           return "is-active";
         }
@@ -57,8 +63,12 @@ const History = () => {
             <div className="h-timeline-item" key={i}>
               <div className="h-timeline-marker"></div>
               <div className="h-timeline-content">
-                <p className="heading text is-size-3-5">{o.date}</p>
-                <p className="text">{o.content}</p>
+                <p className="heading text is-size-3-5-touch has-text-white-touch is-size-6-touch">
+                  {o.date}
+                </p>
+                <p className="text has-text-white-touch is-size-6-touch">
+                  {o.content}
+                </p>
               </div>
             </div>
           ))}

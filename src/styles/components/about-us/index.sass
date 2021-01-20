@@ -9,8 +9,24 @@
   .history
     background-color: #f7f7f7
     height: 582px
-    padding: 60px 20px
-    background: url(/img/history-background.svg) top center / contain no-repeat
+    padding: 60px 0
+    background-image: url(/img/history-background.png)
+    background-position: top center
+    background-size: auto 100%
+    background-repeat: no-repeat
+    overflow: hidden
+    +touch
+      background-image: url(/img/history-background-m.png)
+      background-color: $brand-color
+      .section-title
+        color: white
+        &:before
+          background: url(/img/icon/down-white.png) center / contain no-repeat
+          padding: 6px
+          content: ''
+          margin-right: 14px
+      .section-subtitle
+        color: white
     .tabs
       & > ul
         border-bottom-color: transparent
@@ -19,8 +35,18 @@
         padding-left: 0
         padding-right: 0
         margin-right: 60px
+        color: rgba(255,255,255,0.6)
       & li.is-active a
         border-bottom-color: $brand-color
+        +touch
+          color: white
+          border-bottom-color: white
+    .h-timeline
+      +touch
+        .h-timeline-item
+          border-top-color: white
+        .h-timeline-marker:before
+          background: radial-gradient(circle at center, white 0, rgba(255,255,255,0.2), rgba(255,255,255,0.2) 100%)
 
   .address-text
     display: flex
@@ -31,17 +57,27 @@
     font-size: 1.75rem
     margin-bottom: 30px
     .company-address:before
-      content: url(/img/icon/marker.svg)
+      content: ''
+      background: url(/img/icon/marker.svg) center / contain no-repeat
       padding: 10px
+      margin-right: 8px
+      +touch
+        padding: 8px
     .longgang
       font-size: 1.125rem
       color: #a5a5a5
     +mobile
       flex-direction: column
 
+  .description
+    +touch
+      display: none
+
   .sub-description
     display: flex
     justify-content: space-between
+    +touch
+      display: none
     .item-1
       background: url(/img/icon/aboutus-item1.png) top left / cover no-repeat
       flex-grow: 1
@@ -63,4 +99,10 @@
       padding: 28px 10px
       flex-grow: 1
       margin-top: 18px
+
+  .vision
+    .name
+      border-left: 2px solid $brand-color
+      padding: 2px 10px
+      margin-bottom: 18px
 /* -------about us end--------

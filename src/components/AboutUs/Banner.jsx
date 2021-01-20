@@ -11,12 +11,15 @@ const Banner = ({ intro, image }) => {
         <div className="columns">
           <div className="column is-10 is-offset-1">
             <div className="banner-content">
-              <p className="has-text-white has-text-centered is-size-2-5">
+              <p className="has-text-white has-text-centered is-size-5-mobile is-hidden-tablet">
+                关于黑顿
+              </p>
+              <p className="has-text-white has-text-centered is-size-2-5-tablet is-size-5-mobile">
                 {intro.heading}
               </p>
-              <br />
+              <br className="is-hidden-touch" />
               {intro.descriptions.map((o, i) => (
-                <div>
+                <div className="description" key={i}>
                   <p
                     className="has-text-white has-text-centered is-size-6"
                     key={i}
@@ -29,8 +32,8 @@ const Banner = ({ intro, image }) => {
             </div>
           </div>
         </div>
-        <br />
-        <br />
+        <br className="is-hidden-touch" />
+        <br className="is-hidden-touch" />
         <div className="sub-description">
           {intro.subdescription.map((o, i) => (
             <div

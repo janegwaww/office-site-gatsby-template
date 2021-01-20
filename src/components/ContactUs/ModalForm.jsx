@@ -7,7 +7,7 @@ const ModalForm = ({ active, handleModal }) => {
       <div className="modal-content">
         <div className="content">
           <p className="is-size-4 has-text-centered heading">联系我们</p>
-          <p className="is-size-6 has-text-centered has-text-white-ter">
+          <p className="is-size-6 has-text-centered has-text-grey-light">
             专注于人工智能算法研发，致力于成为最能读懂这个世界的科技公司
           </p>
           <br />

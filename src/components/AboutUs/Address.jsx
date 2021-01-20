@@ -20,10 +20,10 @@ class Address extends Component {
     return (
       <div>
         <div className="address-text">
-          <span>公司地址</span>
-          <span className="company-address">
+          <span className="is-size-6-touch">公司地址</span>
+          <span className="company-address is-size-6-touch">
             深圳市{" "}
-            <span className="longgang">
+            <span className="longgang is-size-7-touch">
               广东省深圳市龙岗区龙翔大道7188号万科大厦3109
             </span>
           </span>

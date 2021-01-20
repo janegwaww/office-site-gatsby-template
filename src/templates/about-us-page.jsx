@@ -6,12 +6,15 @@ import ContactUs from "../components/ContactUs";
 import History from "../components/AboutUs/History";
 import Address from "../components/AboutUs/Address";
 import Banner from "../components/AboutUs/Banner";
+import Introduction from "../components/AboutUs/Introduction";
+import Vision from "../components/AboutUs/Vision";
 
 const AboutUsTemplate = ({ image, intro }) => {
-  console.log(intro);
   return (
     <div className="about-us">
       <Banner image={image} intro={intro} />
+      <Introduction intro={intro} />
+      <Vision intro={intro} />
       <History />
       <div className="about-us-content section section--gradient">
         <div className="container">
