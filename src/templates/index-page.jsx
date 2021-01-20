@@ -29,7 +29,7 @@ export function IndexPageTemplate({
           </div>
         </div>
       </section>
-      <section className="section section--gradient ">
+      <section className="section section--gradient is-paddingless-mobile">
         <div className="container">
           <div className="columns">
             <div className="column is-10 is-offset-1">
