@@ -126,19 +126,27 @@ version:
             href: /coretech/cmcu/
       solution:
           - title: 智慧物流
-            image: /img/icon/scen1.png
+            images:
+                - image: /img/scen/scen1.png
+                - image: /img/scen/scen1-m.png
             subtitle:
                 - 更多  更快  更准
           - title: 智慧家居
-            image: /img/icon/scen2.png
+            images:
+                - image: /img/scen/scen2.png
+                - image: /img/scen/scen2-m.png
             subtitle:
                 - 我们先来，未来才来
           - title: 智慧教育
-            image: /img/icon/scen3.png
+            images:
+                - image: /img/scen/scen3.png
+                - image: /img/scen/scen3-m.png
             subtitle:
                 - 让教育赢在起跑线上
           - title: 智慧医疗
-            image: /img/icon/scen4.png
+            images:
+                - image: /img/scen/scen4.png
+                - image: /img/scen/scen4-m.png
             subtitle:
                 - 为生命与健康
                 - 争取更多可能

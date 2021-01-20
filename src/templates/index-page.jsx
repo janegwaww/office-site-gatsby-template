@@ -29,7 +29,7 @@ export function IndexPageTemplate({
           </div>
         </div>
       </section>
-      <section className="section section--gradient is-paddingless-mobile">
+      <section className="section section--gradient ">
         <div className="container">
           <div className="columns">
             <div className="column is-10 is-offset-1">
@@ -128,10 +128,12 @@ export const pageQuery = graphql`
           solution {
             title
             subtitle
-            image {
-              childImageSharp {
-                fluid(maxWidth: 1000, quality: 100) {
-                  ...GatsbyImageSharpFluid
+            images {
+              image {
+                childImageSharp {
+                  fluid(maxWidth: 1000, quality: 100) {
+                    ...GatsbyImageSharpFluid
+                  }
                 }
               }
             }

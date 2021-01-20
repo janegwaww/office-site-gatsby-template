@@ -1,6 +1,9 @@
 .solution-slides
-  .slides
+  .slides-tablet
+    display: flex
     background-color: #f7f7f7
+    +touch
+      display: none
 
   .slides-head
     display: flex
@@ -42,3 +45,12 @@
       & > img
         object-fit: cover
         height: 100%
+
+
+  .slides-mobile
+    display: none
+    +touch
+      display: block
+      margin-bottom: 60px
+    .slides-item
+      padding: 8px
