@@ -18,8 +18,8 @@ const JoinInput = ({ filter, selectOptions }) => {
 
   return (
     <form name="search" onSubmit={handleSubmit} className="join-input-form">
-      <div className="columns is-mobile is-variable is-5">
-        <div className="column is-4">
+      <div className="columns is-mobile is-variable is-5 is-multiline">
+        <div className="column is-one-third-tablet is-half-mobile">
           <div className="box">
             <div className="control is-expanded has-icons-right">
               <Dropdown
@@ -29,7 +29,7 @@ const JoinInput = ({ filter, selectOptions }) => {
             </div>
           </div>
         </div>
-        <div className="column is-4">
+        <div className="column is-one-third-tablet is-half-mobile">
           <div className="control is-expanded has-icons-right">
             <div className="box">
               <Dropdown
@@ -39,7 +39,7 @@ const JoinInput = ({ filter, selectOptions }) => {
             </div>
           </div>
         </div>
-        <div className="search-input column is-4">
+        <div className="search-input column is-one-third-tablet is-full-mobile">
           <div className="box">
             <div className="control is-expanded has-icons-right">
               <input

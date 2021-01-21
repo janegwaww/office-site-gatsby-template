@@ -10,7 +10,7 @@ const CollegeTemplate = ({ images, background, direction }) => {
   const bakPara = background.split(/\s{2}|\\/);
   return (
     <div className="college">
-      <BackgroundImageSwitch images={images} height={["600px", "180px"]}>
+      <BackgroundImageSwitch images={images} switchHeight={["600px", "300px"]}>
         <div className="has-text-centered" style={{ lineHeight: 3 }}>
           <h2 className="has-text-white is-size-3 is-size-5-tablet is-size-6-mobile is-size-3-desktop text">
             黑顿研究院

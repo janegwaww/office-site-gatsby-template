@@ -5,6 +5,11 @@ footer
     background-color: transparent
     .footer-above
       margin-bottom: 1.8rem
+      .qr-code-column .image
+        margin: auto
+      .is-divider
+        margin-bottom: 1rem
+
     .footer-bottom
       .gov-code
         display: flex
@@ -20,6 +25,7 @@ footer
           color: rgb(110, 120, 124)
           &:hover
             color: rgb(60, 111, 194)
+
     .menu-list
       margin-top: 0
       margin-left: 0
@@ -36,8 +42,10 @@ footer
   +mobile
     .level-left + .level-right
       margin-top: 0.55rem
+
     &.footer
       padding: 0rem 0rem 0rem
+
       .footer-mobile.content
         color: #999999
         padding: 0.75rem 0 0
@@ -45,4 +53,15 @@ footer
           margin-bottom: 0.55rem
         .container span
           text-decoration: underline
+
+    .footer-above .qr-code-column
+      margin-top: 20px
+      order: -1
+      & .qr-code-content
+        display: flex
+        justify-content: space-between
+        & .image
+          margin: unset
+          height: 48px
+          width: 48px
 /* ------footer end-----------
