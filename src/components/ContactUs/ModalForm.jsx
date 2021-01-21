@@ -1,6 +1,30 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 const ModalForm = ({ active, handleModal }) => {
+  const [disabled, setDisabled] = useState(true);
+  const [formValue, setFormValue] = useState({});
+
+  const handleChange = (e) => {
+    const target = e.target;
+    const value = target.value;
+    const name = target.name;
+    setFormValue((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    //todo submit
+    handleModal();
+  };
+
+  useEffect(() => {
+    if (formValue.username && formValue.phone) {
+      setDisabled(false);
+    } else {
+      setDisabled(true);
+    }
+  }, [formValue]);
+
   return (
     <div className={`modal ${active}`}>
       <div className="modal-background" onClick={handleModal}></div>
@@ -11,18 +35,23 @@ const ModalForm = ({ active, handleModal }) => {
             专注于人工智能算法研发，致力于成为最能读懂这个世界的科技公司
           </p>
           <br />
-          <div className="modal-form">
+          <form className="modal-form" onSubmit={handleSubmit}>
             <div className="field is-horizontal">
               <div className="field-label is-normal">
-                <label className="label">联系人</label>
+                <label className="label">
+                  <span className="h-icon form-star" />
+                  联系人
+                </label>
               </div>
               <div className="field-body">
                 <div className="field">
                   <div className="control">
                     <input
+                      name="username"
                       className="input"
                       type="text"
                       placeholder="请输入联系人姓名"
+                      onChange={handleChange}
                     />
                   </div>
                 </div>
@@ -32,15 +61,20 @@ const ModalForm = ({ active, handleModal }) => {
             <br />
             <div className="field is-horizontal">
               <div className="field-label is-normal">
-                <label className="label">联系电话</label>
+                <label className="label">
+                  <span className="h-icon form-star" />
+                  联系电话
+                </label>
               </div>
               <div className="field-body">
                 <div className="field">
                   <div className="control">
                     <input
+                      name="phone"
                       className="input"
                       type="text"
                       placeholder="请输入联系人手机号码"
+                      onChange={handleChange}
                     />
                   </div>
                 </div>
@@ -56,9 +90,11 @@ const ModalForm = ({ active, handleModal }) => {
                 <div className="field">
                   <div className="control">
                     <input
+                      name="email"
                       className="input"
-                      type="text"
+                      type="email"
                       placeholder="请输入联系人邮箱"
+                      onChange={handleChange}
                     />
                   </div>
                 </div>
@@ -74,8 +110,10 @@ const ModalForm = ({ active, handleModal }) => {
                 <div className="field">
                   <div className="control">
                     <textarea
+                      name="ask"
                       className="textarea"
                       placeholder="请描述您的应用场景和技术能力要求"
+                      onChange={handleChange}
                     ></textarea>
                   </div>
                 </div>
@@ -84,11 +122,15 @@ const ModalForm = ({ active, handleModal }) => {
 
             <br />
             <div className="control">
-              <button className="button is-link" disabled>
+              <button
+                className="button is-link"
+                type="submit"
+                disabled={disabled}
+              >
                 提交
               </button>
             </div>
-          </div>
+          </form>
         </div>
       </div>
       <button
