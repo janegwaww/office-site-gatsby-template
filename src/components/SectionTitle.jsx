@@ -8,7 +8,7 @@ export default function SectionTitle({ title = "", subtitle = "" }) {
       ) : null}
       {subtitle ? (
         <span className="text section-subtitle is-size-7-5-mobile">
-          {subtitle}
+          {subtitle.toUpperCase()}
         </span>
       ) : null}
     </div>
