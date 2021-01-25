@@ -32,37 +32,41 @@ const SlidesTablet = ({ tabs = [] }) => {
       <div className="v-tab-content column is-four-fifths">
         <div className="h-icon right-arrow" />
         <div className="tab-items">
-          {tabs.map((o, i) => (
-            <div
-              className={`tab-item ${activeTab === i ? "is-active" : ""}`}
-              key={i}
-            >
-              <div className="columns  is-gapless">
-                <div className="column is-two-fifths">
-                  <div className="name">
-                    <div className="is-size-2-5 has-text-white has-margin-left-40">
-                      {o.title}
-                    </div>
-                    <div>
-                      {o.subtitle.map((n) => (
-                        <div
-                          className="is-size-4 has-text-white has-margin-left-40"
-                          key={n}
-                        >
-                          {n}
-                        </div>
-                      ))}
+          {tabs.map((o, i) => {
+            const { title, subtitle, images } = o;
+            const [image] = images || [{}];
+            return (
+              <div
+                className={`tab-item ${activeTab === i ? "is-active" : ""}`}
+                key={i}
+              >
+                <div className="columns  is-gapless">
+                  <div className="column is-two-fifths">
+                    <div className="name">
+                      <div className="is-size-2-5 has-text-white has-margin-left-40">
+                        {title}
+                      </div>
+                      <div>
+                        {subtitle.map((n) => (
+                          <div
+                            className="is-size-4 has-text-white has-margin-left-40"
+                            key={n}
+                          >
+                            {n}
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div className="img column is-three-fifths">
-                  <div className="image">
-                    <PreviewCompatibleImage imageInfo={o.images[0]} />
+                  <div className="img column is-three-fifths">
+                    <div className="image">
+                      <PreviewCompatibleImage imageInfo={image} />
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </div>

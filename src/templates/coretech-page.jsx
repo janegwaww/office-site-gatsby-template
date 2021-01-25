@@ -14,7 +14,7 @@ class CoretechTemplate extends Component {
       subtitle,
       description,
       image,
-      intro,
+      intro = {},
       features,
       scena
     } = this.props;
@@ -99,6 +99,13 @@ export const coreTechQuery = graphql`
           intro {
             title
             context
+            image {
+              childImageSharp {
+                fluid(maxWidth: 1170, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
           description
           features {
@@ -115,14 +122,8 @@ export const coreTechQuery = graphql`
           scena {
             title
             image
-            description {
-              title
-              context
-            }
-            advance {
-              title
-              contexts
-            }
+            description
+            advance
           }
         }
       }

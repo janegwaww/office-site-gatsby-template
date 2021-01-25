@@ -17,14 +17,18 @@ const SlidesMobile = ({ tabs = [] }) => {
   return (
     <div className="slides-mobile">
       <Slider {...slider}>
-        {tabs.map((o, i) => (
-          <div key={o.title} className="content slides-item">
-            <p>{i + 1}</p>
-            <p>{o.title}</p>
-            <p>{o.subtitle}</p>
-            <PreviewCompatibleImage imageInfo={o.images[1]} />
-          </div>
-        ))}
+        {tabs.map((o, i) => {
+          const { title, subtitle, images } = o;
+          const [image] = images || [{}];
+          return (
+            <div key={title} className="content slides-item">
+              <p>{i + 1}</p>
+              <p>{title}</p>
+              <p>{subtitle}</p>
+              <PreviewCompatibleImage imageInfo={image} />
+            </div>
+          );
+        })}
       </Slider>
     </div>
   );

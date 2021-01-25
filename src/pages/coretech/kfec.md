@@ -9,6 +9,7 @@ version:
       intro:
           title: 知识填充/纠错
           context: 主要用于教育场景（写作纠错、机器阅卷等）及中文输入法、文本编辑软件等产品的搭建。
+          image: /img/coretech/kfec-bn.png
       description: >
           不同于市面常见的针对语言习惯和语法层面的文本纠错，知识解析技术可提供知识层面的解析，主要分为知识纠错（对文本中存在的常识/知识型错误进行纠正）和知识填充（结合上下文语境对文本中空缺的知识点进行填充）两种模式。
       features:
@@ -24,24 +25,32 @@ version:
       scena:
           - title: 知识纠错
             image: image
-            description:
-                title: 应用说明
-                context: 利用知识解析技术提供知识层面的解析，结合上下文语境对文本中空缺的知识点进行填充。
+            description: 利用知识解析技术提供知识层面的解析，并从中选取错误文本，对文本中存在的常识/知识型错误进行纠正。
             advance:
-                title: 产品优势
-                contexts:
-                    - 机器理解能力更强，实现所想即有。
-                    - 提升搜索内容的准确度，通过理解问题意图，确定最匹配的答案，让输入法变得更智能。
-                    - 更快构建领域知识或世界知识。
+                - 更准理解客户用途，大大提升准确率和使用率，更大提升教育行业的工作效率。
+                - 提升搜索内容的准确度，通过理解问题意图，确定最匹配的答案，让输入法变得更智能。
+                - 降低用户创作的时间成本，提升视频封面及内容质量，更大提升工作效率。
           - title: 知识填充
             image: image
-            description:
-                title: tit
-                context: con
+            description: 利用知识解析技术提供知识层面的解析，结合上下文语境对文本中空缺的知识点进行填充。
             advance:
-                title: tit
-                contexts:
-                    - con
+                - 机器理解能力更强，实现所想即有。
+                - 提升搜索内容的准确度，通过理解问题意图，确定最匹配的答案，让输入法变得更智能。
+                - 更快构建领域知识或世界知识。
     - locale: en
-      description: asdf
+      intro:
+          title: todo
+          context: todo
+          image: /img/coretech/kfec-bn.png
+      description: todo
+      features:
+          - title: todo
+            context: todo
+            image: /img/coretech/features/kfec1.png
+      scena:
+          - title: todo
+            image: todo
+            description: todo
+            advance:
+                - todo
 ---
