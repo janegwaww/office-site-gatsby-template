@@ -3,7 +3,7 @@ import SectionTitle from "../SectionTitle";
 
 const Introduction = ({ intro }) => {
   return (
-    <div className="haetek-introduction is-hidden-tablet has-background-white-ter">
+    <div className="haetek-introduction is-hidden-desktop has-background-white-ter">
       <section className="section">
         <SectionTitle title="黑顿简介" subtitle="HAETEK INTRODUCTION" />
 

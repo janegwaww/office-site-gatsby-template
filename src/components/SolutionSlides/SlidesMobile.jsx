@@ -22,7 +22,7 @@ const SlidesMobile = ({ tabs = [] }) => {
           const [image] = images || [{}];
           return (
             <div key={title} className="content slides-item">
-              <p>{i + 1}</p>
+              <p>{`0${i + 1}`}</p>
               <p>{title}</p>
               <p>{subtitle}</p>
               <PreviewCompatibleImage imageInfo={image} />

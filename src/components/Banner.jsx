@@ -19,7 +19,7 @@ const Banner = ({ info = {} }) => {
                 <div className={`column is-10 is-offset-1`}>
                   <div className="banner-title">
                     <div className="content">
-                      <p className="is-size-5-mobile is-size-3-tablet is-size-1-desktop is-size-0-widescreen has-text-white has-text-centered head text">
+                      <p className="is-size-5-mobile is-size-3-tablet is-size-1-desktop is-size-0-fullhd has-text-white has-text-centered head text">
                         助力产业AI <span className="h-icon down-white" />{" "}
                         迈向智能新纪元
                       </p>

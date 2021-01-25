@@ -12,11 +12,14 @@
     &::before
       content: url(/img/icon/down.svg)
       padding: 14px
+      padding-left: 0
       display: flex
       justify-content: center
       align-items: center
     +mobile
       margin-bottom: 0
+      &::before
+        padding-right: 8px
 
   &.section-subtitle
     color: $assist-third-color

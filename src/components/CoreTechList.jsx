@@ -12,7 +12,7 @@ const CoreTechList = ({ items = [] }) => {
         {items.map((i) => (
           <div
             key={i.title}
-            className="column is-one-third-tablet is-half-mobile"
+            className="column is-one-third-widescreen is-half-until-widescreen"
           >
             <div className="h-card core-tech">
               <div className="avatar is-image">

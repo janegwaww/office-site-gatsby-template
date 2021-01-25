@@ -85,6 +85,10 @@ const Navbar = class extends React.Component {
         role="navigation"
         aria-label="main navigation"
       >
+        <div
+          className="navbar-menu-background"
+          onClick={this.toggleHamburger}
+        />
         <div className="container">
           <div className="navbar-brand">
             <Link to="/" className="navbar-item logo" title="Logo">
@@ -141,7 +145,7 @@ const Navbar = class extends React.Component {
                 );
               })}
             </div>
-            <div className="navbar-end">
+            <div className="navbar-end is-hidden">
               <div className="navbar-item">
                 <LanguageSwitch />
               </div>

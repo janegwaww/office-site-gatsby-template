@@ -1,17 +1,29 @@
 .navbar
-  background-color: rgba(0,0,0,0)
-  color: white
-  transition: all 0.2s
+  background-color: transparent
+  &.is-active
+    bottom: 0
+  +desktop
+    color: white
+    &:hover, &.hover, &.is-active
+      box-shadow: 0px 4px 0px 0px whitesmoke
+      background-color: white
+      color: #4a4a4a
+
+  & .navbar-brand
+    background-color: rgba(0,0,0,0)
+    color: white
   & .h-icon.haetek-logo
     background-color: white
   & .h-icon.haetek-globe
     background-color: white
   & .navbar-burger
     color: white
+
   &:hover, &.hover, &.is-active
-    box-shadow: 0px 4px 0px 0px whitesmoke
-    background-color: white
-    color: #4a4a4a
+    & .navbar-brand
+      box-shadow: 0px 4px 0px 0px whitesmoke
+      background-color: white
+      color: #4a4a4a
     & .h-icon.haetek-logo
       background-color: black
     & .h-icon.haetek-globe
@@ -93,10 +105,16 @@
       height: 100%
       width: 100%
 
+  &.is-active .navbar-menu-background
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background-color: rgba(0,0,0,0.4)
+
 // Override for use of svg's from https://simpleicons.org/
 .icon svg
   width: 1.5rem
   height: 1.5rem
   fill: currentColor
-
-.h-navbar-dropdown

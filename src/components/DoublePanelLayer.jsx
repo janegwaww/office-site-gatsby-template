@@ -16,7 +16,7 @@ const DoublePanelLayer = ({ title = "", subtitle = "", items = [] }) => {
                 <div className="columns is-multiline is-variable is-5-tablet is-2-mobile is-mobile">
                   {items.map((o, i) => (
                     <div
-                      className="column is-one-third-touch is-half-mobile"
+                      className="column is-one-third-tablet is-half-mobile"
                       key={i}
                     >
                       <div className="h-card panel-card">

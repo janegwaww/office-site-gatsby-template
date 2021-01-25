@@ -3,7 +3,7 @@ import SectionTitle from "../SectionTitle";
 
 const Vision = ({ intro }) => {
   return (
-    <section className="section is-hidden-tablet vision">
+    <section className="section is-hidden-desktop vision">
       <SectionTitle title="使命与愿景" subtitle="MISSION&VISION" />
       <br />
       <div>

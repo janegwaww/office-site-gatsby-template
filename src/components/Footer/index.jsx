@@ -98,7 +98,7 @@ const Footer = ({ intl }) => {
                 </div>
                 <div className="column is-3-tablet has-text-right qr-code-column is-full-mobile">
                   <div className="has-text-centered qr-code-content">
-                    <div className="h-icon haetek-logo has-margin-bottom-15" />
+                    <div className="h-icon haetek-logo has-margin-bottom-15-tablet" />
                     <div className="image is-144x144">
                       <img src="/img/icon/qrcode.png" alt="heatex-qrcode" />
                     </div>

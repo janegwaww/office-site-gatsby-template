@@ -20,7 +20,7 @@ const ContactUs = () => {
                     联系我们
                   </div>
                   <div className="has-margin-bottom-20 has-margin-bottom-10-mobile" />
-                  <div className="is-size-4 is-size-7-mobile has-text-6f text">
+                  <div className="is-size-4 is-size-7-mobile has-text-6f text has-padding-8-mobile">
                     专注于人工智能算法研发，致力于成为最能读懂这个世界的科技公司
                   </div>
                 </div>
