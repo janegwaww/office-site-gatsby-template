@@ -24,7 +24,7 @@ const SlidesMobile = ({ tabs = [] }) => {
             <div key={title} className="content slides-item">
               <p>{`0${i + 1}`}</p>
               <p>{title}</p>
-              <p>{subtitle}</p>
+              <p className="has-text-grey">{subtitle}</p>
               <PreviewCompatibleImage imageInfo={image} />
             </div>
           );

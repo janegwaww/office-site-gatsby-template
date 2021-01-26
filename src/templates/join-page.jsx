@@ -24,7 +24,7 @@ const JoinTemplate = ({ images, jobList, filterJobs }) => {
     <div className="join">
       <BackgroundImageSwitch images={images} switchHeight={["450px", "300px"]}>
         <div className="has-text-centered">
-          <h2 className="has-text-white is-size-3 is-size-5-5-mobile">
+          <h2 className="has-text-white is-size-1 is-size-4-mobile">
             Power Humanity with AI
           </h2>
         </div>

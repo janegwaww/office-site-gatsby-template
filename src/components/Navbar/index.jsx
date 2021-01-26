@@ -145,6 +145,7 @@ const Navbar = class extends React.Component {
                 );
               })}
             </div>
+            {/* 暂时隐藏多语言选项 */}
             <div className="navbar-end is-hidden">
               <div className="navbar-item">
                 <LanguageSwitch />

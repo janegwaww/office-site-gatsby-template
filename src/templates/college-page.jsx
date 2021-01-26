@@ -17,7 +17,7 @@ const CollegeTemplate = ({ images, background, direction }) => {
           </h2>
           <div style={{ lineHeight: 1.2, fontSize: "50px" }}>
             <h1 className="has-text-white is-size-6-mobile is-size-5-tablet is-size-1-desktop text">
-              HAETEK Institute of Machine Intelligence,
+              Haetek Institute of Machine Intelligence,
             </h1>
             <h1 className="has-text-white is-size-6-mobile is-size-5-tablet is-size-1-desktop text">
               Shenzhen, China.
