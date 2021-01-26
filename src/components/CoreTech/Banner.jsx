@@ -21,7 +21,7 @@ const Banner = ({ image, intro = {} }) => {
                 <div className="column is-three-fifths-tablet is-8-mobile">
                   <div className="banner-title">
                     <div className="content">
-                      <p className="is-size-5-5-mobile is-size-5-tablet is-size-2-widescreen has-text-white">
+                      <p className="is-size-5-5-mobile is-size-5-tablet is-size-2-widescreen has-text-white nowrap">
                         {intro.title}
                       </p>
                     </div>
