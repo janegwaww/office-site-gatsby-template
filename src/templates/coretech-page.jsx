@@ -6,6 +6,7 @@ import DoublePanelLayer from "../components/DoublePanelLayer";
 import SectionTitle from "../components/SectionTitle";
 import Banner from "../components/CoreTech/Banner";
 import Scenarios from "../components/CoreTech/Scenarios";
+import Cooperater from "../components/CoreTech/Cooperater";
 
 class CoretechTemplate extends Component {
   render() {
@@ -39,11 +40,7 @@ class CoretechTemplate extends Component {
           items={features}
         />
         <Scenarios scen={scena} />
-        <section className="section">
-          <div className="container">
-            <SectionTitle title="合作案例" subtitle="Cooperation cases" />
-          </div>
-        </section>
+        <Cooperater />
       </div>
     );
   }

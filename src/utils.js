@@ -36,9 +36,36 @@ export function moving(id, callback) {
     }
   };
 
+  const handleTouchStart = e => {
+    e.preventDefault();
+    isMoving = true;
+    const touch = e.changedTouches[0];
+    x = touch.pageX;
+  };
+
+  const handleTouchMove = e => {
+    e.preventDefault();
+    const touch = e.changedTouches[0];
+    if (isMoving === true) {
+      const diff = touch.pageX - x;
+      callback(diff);
+      x = touch.pageX;
+    }
+  };
+
+  const handleTouchEnd = e => {
+    if (isMoving === true) {
+      isMoving = false;
+      x = 0;
+    }
+  };
+
   mvEle.addEventListener("wheel", handleWheel, false);
   mvEle.addEventListener("mousedown", handleDown, false);
   mvEle.addEventListener("mousemove", handleMove, false);
-  mvEle.addEventListener("mouseout", handleOut, false);
+  // mvEle.addEventListener("mouseout", handleOut, false);
+  mvEle.addEventListener("touchstart", handleTouchStart, false);
+  mvEle.addEventListener("touchmove", handleTouchMove, false);
+  mvEle.addEventListener("touchend", handleTouchEnd, false);
   document.addEventListener("mouseup", handleUp, false);
 }

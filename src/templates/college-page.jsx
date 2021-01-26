@@ -33,7 +33,7 @@ const CollegeTemplate = ({ images, background, direction }) => {
         </div>
       </div>
       <div className="college-study-section section section--gradient">
-        <div className="container" style={{}}>
+        <div className="container" style={{ marginBottom: "20px" }}>
           <StudyDirection dirInfo={direction} />
         </div>
       </div>
