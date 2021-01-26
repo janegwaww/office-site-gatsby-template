@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from "react";
 import SectionTitle from "../SectionTitle";
 import { moving } from "../../utils";
-import HJSON from "./History.json";
 
 const History = () => {
   const [x, setX] = useState(100);
   const [select, setSelect] = useState(["is-active", ""]);
 
   const marginChange = (v) => {
+    const width = document.getElementById("h-timeline-id").clientWidth - 700;
     setX((prev) => {
       setSelect(prev + v < -980 ? ["", "is-active"] : ["is-active", ""]);
       if (prev > 100) {
         return v <= 0 ? prev + v : prev;
       }
-      if (prev < -2300) {
+      if (prev < -width) {
         return v >= 0 ? prev + v : prev;
       }
       return prev + v;
@@ -58,21 +58,7 @@ const History = () => {
           id="h-timeline-id"
           className="h-timeline"
           style={{ marginLeft: `${x}px` }}
-        >
-          {HJSON.map((o, i) => (
-            <div className="h-timeline-item" key={i}>
-              <div className="h-timeline-marker"></div>
-              <div className="h-timeline-content">
-                <p className="heading text is-size-3-5-touch has-text-white-touch is-size-6-touch">
-                  {o.date}
-                </p>
-                <p className="text has-text-white-touch is-size-6-touch">
-                  {o.content}
-                </p>
-              </div>
-            </div>
-          ))}
-        </section>
+        ></section>
       </div>
     </div>
   );

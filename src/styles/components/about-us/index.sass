@@ -8,7 +8,6 @@
 
   .history
     background-color: #f7f7f7
-    height: 582px
     padding: 60px 0
     background-image: url(/img/history-background.png)
     background-position: top center
@@ -45,11 +44,12 @@
           color: white
           border-bottom-color: white
     .h-timeline
+      background: url(/img/history.svg) top left / contain no-repeat
+      height: 200px
+      width: 4140px
       +touch
-        .h-timeline-item
-          border-top-color: white
-        .h-timeline-marker:before
-          background: radial-gradient(circle at center, white 0, rgba(255,255,255,0.2), rgba(255,255,255,0.2) 100%)
+        width: 2430px
+        background: url(/img/history-m.svg) top left / contain no-repeat
 
   .address-text
     display: flex
