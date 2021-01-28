@@ -24,31 +24,31 @@ version:
             image: /img/coretech/features/cmcu3.png
       scena:
           - title: 媒体资源检索
-            image: image
+            image: /img/coretech/cmcu-bn.png
             description: 通过准确丰富的视频标签体系，对视频、图像、文本等媒体文件进行内容编目，支持通过关键词或便签文本对素材库中的内容进行快速检索，提升视频资源检索效率与准确性。
             advance:
                 - 为多模态内容检索、分发、赋能。
                 - 实现对视频、音频、图片、文本等多种模态信息分析技术，提升检索效率和体验。
           - title: 个性化内容推荐
-            image: image
+            image: /img/coretech/cmcu-bn.png
             description: 根据媒体文件内容标签，结合用户信息、行为数据及用户画像分析，进行内容精准匹配，实现视频个性化推荐，解决推荐冷启动问题，提升推荐准确率。
             advance:
                 - 省去了用户在海量信息中进行提取和搜寻的环节。在一定程度上为用户去除了部分无用信息，缩短搜索时间，提高了用户的阅读效率。
                 - 通过算法进行用户感兴趣的内容的精准推荐，帮助用户快捷发现感兴趣的内容，增加用户粘性，提高用户体验。
           - title: 智能化广告投放
-            image: image
+            image: /img/coretech/cmcu-bn.png
             description: 根据媒体文件多模态内容分析以及视频标签结果，自动识别广告位，与广告资源库内容进行匹配，实现广告智能投放，精准触达受众人群，提升广告转化率。
             advance:
                 - 利用算法、大数据实现在不同模态下相互检索，在最短时间内，最科学地满足广告精准定位需求。
                 - 与广告资源实现自动匹配，并在智能优化算法下最大程度提升了广告效果。
           - title: 社交网络实体匹配
-            image: image
+            image: /img/coretech/cmcu-bn.png
             description: 通过图像和相关文字注释对个体进行分类分组。
             advance:
                 - 层次分类粒度更细，更符合垂直领域的用户的实际需求。
                 - 依托海量数据完成模型建立，并不断迭代提升整体精度，且覆盖领域广。
           - title: 标题党检测
-            image: image
+            image: /img/coretech/cmcu-bn.png
             description: 将图像、标题和文字描述输入模型来判断是否是标题党。
             advance:
                 - 在智能硬件、教育培训、写作助手、教育类软件应用等多个领域检测自身客户是否是标题党。

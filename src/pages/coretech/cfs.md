@@ -30,31 +30,31 @@ version:
             image: /img/coretech/features/cfs5.png
       scena:
           - title: 简历解析
-            image: image
+            image: /img/coretech/cfs-bn.png
             description: 将不同格式的简历统一解析转化为标准结构化字段，帮助 HR 准确且快速的 了解应聘人，构建人才画像。
             advance:
                 - 快速对简历进行关键信息提取，将不同格式的简历统一解析转化为标准结构化字段。
                 - 帮助HR准确且快速的了解应聘人，构建人才画像。
           - title: 简历格式转换
-            image: image
+            image: /img/coretech/cfs-bn.png
             description: 纸质版、扫描版简历转换成在线简历。
             advance:
                 - 打破简历文件格式限制。
                 - 提升HR与求职者双方使用体验。
           - title: 自动生成简历
-            image: image
+            image: /img/coretech/cfs-bn.png
             description: 填写简历基本信息 + 挑选简历模板 --> 自动生成精美的简历（不用再去下载简历模板，然后再修改模板填写个人信息）。
             advance:
                 - 能够实现不同细分技术工种下所需的简历技能，满足用户需求。
                 - 基于深层次的语义及语序特征对简历信息进行特征提取。
           - title: 合同信息抽取
-            image: image
+            image: /img/coretech/cfs-bn.png
             description: 对合同信息进行格式化的抽取。
             advance:
                 - 内置常见合同要素（如买方信息、合同总价等）抽取能力。
                 - 可基于客户场景，从通用到可定制的数据处理方案，满足不同颗粒度的信息抽取需求。
           - title: 合同风险规避
-            image: image
+            image: /img/coretech/cfs-bn.png
             description: 通过对风险要素识别和解析，应用知识图谱推理能力对合同风险点进行归纳、判断和计算；可识别事实倾向型风险点和数值计算型风险点等，例如交付地点约定不明、合同总价款不一致、重要条款缺失等风险点。
             advance:
                 - 有效对合同主体进行实时跟踪预警。

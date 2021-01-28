@@ -27,13 +27,13 @@ version:
             image: /img/coretech/features/sfs4.png
       scena:
           - title: 问答系统
-            image: image
+            image: /img/coretech/sfs.png
             description: 对用户的提问进行自动处理生成合适的检索语句（query），并在预存的知识库中进行模 糊/语义搜索，得到问题答案。
             advance:
                 - 卓越的语义联想，使得系统能够更好的理解用户的问题，使得回答更加智能化。
                 - 对知识库进行句向量预处理，保证了问答的快速响应，提升用户体验/节省用户时间成本。
           - title: 信息检索
-            image: image
+            image: /img/coretech/sfs.png
             description: 用户可基于此搭建专属的搜索引擎，挖掘到 因为字符级或句级的差异导致难以察觉的目标文本，从而大幅度提升召回率。
             advance:
                 - 句级深度学习语言模型有效解决了信息库过大带来的搜索延迟，有效提升了搜索效率。

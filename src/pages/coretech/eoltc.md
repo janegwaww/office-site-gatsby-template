@@ -24,27 +24,27 @@ version:
             image: /img/coretech/features/eoltc3.png
       scena:
           - title: 思维导图
-            image: image
+            image: /img/coretech/eoltc.png
             description: 兼自动为书籍整体及其各个章节分别生成思维导图，提升读者用户对书籍的理解程度。
             advance:
                 - 借助先进的自然语义理解算法对输入文本进行精准理解。
                 - 优化互动体验，高效输出最优解，提升用户满意度。
           - title: 文本摘要
-            image: image
+            image: /img/coretech/eoltc.png
             description: 针对长文本自动生成结构化的“摘要”，并展现各个文本单元之间的句法关系， 给用户提供更多的应用空间。
             advance:
                 - 经过内外部丰富业务场景及海量数据的大规模应用验证，识别准确率高，业内领先。
                 - 对内容编写平台增加文本纠错功能，降低用户创作的时间成本，提升编写内容质量。
                 - 支持用户自定义配置，适配性强，可提供高并发、稳定可靠的服务保障。
           - title: 写作辅导
-            image: image
+            image: /img/coretech/eoltc.png
             description: 可实时获取文本脉络，协助创作者随时掌控文章撰写情况。
             advance:
                 - 对用户输入的检索文本进行纠错并提示，从而提升搜索内容的准确度。
                 - 对内容编写平台增加文本纠错功能，降低用户创作的时间成本，提升编写内容质量。
                 - 在语音识别纠错方面，可对语音识别生成的文本进行文本纠错，使识别出的文本内容更精准，提升用户使用语音识别功能的体验。
           - title: 阅读理解
-            image: image
+            image: /img/coretech/eoltc.png
             description: 针对长文本生成结构化的信息导图，便于对文本涵盖的知识内容进行深度推 衍及解析。
             advance:
                 - 有效识别过滤媒体生产标题、正文文字内容中出现的不合规的文本信息。

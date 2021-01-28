@@ -21,14 +21,14 @@ version:
             image: /img/coretech/features/vcc2.png
       scena:
           - title: 视频平台搭建
-            image: image
+            image: /img/coretech/vcc-bn.png
             description: 针对用户上传的视频，自动生成符合该视频内容且兼顾其画面美学的视频封面，提升用户视觉体验；支持用户自定义封面生成的风 格倾向（稳重型、噱头型、美学型等等）。
             advance:
                 - 使用视频封面生成服务，迅速为视频选出高质封面，响应速度快，提升用户的视觉体验。
                 - 生成内容更智能简便且兼顾美学的视频封面，有效提升视频点击率。
                 - 降低用户创作的时间成本，提升视频封面及内容质量，更大提升工作效率。
           - title: 动态封面
-            image: image
+            image: /img/coretech/vcc-bn.png
             description: 自动选取特征帧，生成能够代表视频核心脉络的动态封面，支持用户自定义动图时长及风格倾向。
             advance:
                 - 动态逐帧封面，能迅速生成代表视频核心脉 络的动态封面，吸引用户点击。

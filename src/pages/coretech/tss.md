@@ -24,13 +24,13 @@ version:
             image: /img/coretech/features/tss3.png
       scena:
           - title: 搜索引擎
-            image: image
+            image: /img/coretech/tss-bn.png
             description: 通过匹配输入文本和候选文本的语义相似度，实现信息检索的功能。
             advance:
                 - 实现信息与需求的高度匹配，提高信息检索效率。
                 - 使用用户反馈数据为相似度计算，从而提供了海量的指导信息，且模型效果优于已公开的主流算法。
           - title: 智能推荐
-            image: image
+            image: /img/coretech/tss-bn.png
             description: 计算搜索浏览历史和其他信息的语义相似度，为用户推荐相关信息，比如写作素材推荐、新闻浏览推荐等。
             advance:
                 - 既有传统的计算短文本相似度的方法，又有最前沿的基于深度学习的相似度计算方法。

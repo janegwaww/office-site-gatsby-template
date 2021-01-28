@@ -24,14 +24,14 @@ version:
             image: /img/coretech/features/kfec3.png
       scena:
           - title: 知识纠错
-            image: image
+            image: /img/coretech/kfec-bn.png
             description: 利用知识解析技术提供知识层面的解析，并从中选取错误文本，对文本中存在的常识/知识型错误进行纠正。
             advance:
                 - 更准理解客户用途，大大提升准确率和使用率，更大提升教育行业的工作效率。
                 - 提升搜索内容的准确度，通过理解问题意图，确定最匹配的答案，让输入法变得更智能。
                 - 降低用户创作的时间成本，提升视频封面及内容质量，更大提升工作效率。
           - title: 知识填充
-            image: image
+            image: /img/coretech/kfec-bn.png
             description: 利用知识解析技术提供知识层面的解析，结合上下文语境对文本中空缺的知识点进行填充。
             advance:
                 - 机器理解能力更强，实现所想即有。

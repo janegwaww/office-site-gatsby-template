@@ -24,30 +24,30 @@ version:
             image: /img/coretech/features/ekm3.png
       scena:
           - title: 推荐系统
-            image: image
+            image: /img/coretech/ekm-bn.png
             description: 收集处理用户所输入的关键信息，与知识图谱的相关实体节点进行匹配，同时获取该实体所有其他相关属性，和所针对的实体节点，构建用户需求画像，推荐相关联的实体信息。（e.g.，用户输入“张国荣”，则推荐系统可根据知识图谱中“张国荣”各 类属性关系，推荐他主演过的电影《霸王别姬》，或者他的经典歌曲《我》）
             advance:
                 - 基于用户行为大数据，并对其进行测试和验证，从而客户能够快速捕捉关键信息。
                 - 百科知识图谱服务支持海量数据的信息抽取、知识融合，功能、效率稳定可靠。
           - title: 知识问答系统
-            image: image
+            image: /img/coretech/ekm-bn.png
             description: 根据海量实体构建的图谱，处理用户所输入的相关问题，迅速匹配相应答案。
             advance:
                 - 多种实体识别链接算法可供选择，保证高精度的实体识别链接。
                 - 可快速通过上下文信息对用户问题进行理解，支持进一步引导用户。
           - title: 智能输入法
-            image: image
+            image: /img/coretech/ekm-bn.png
             description: 针对用户所输入的半结构化文本数据，迅速与知识图谱进行匹配，可对文本进行事实 性内容检测、纠错，以及填充。
             advance:
                 - 更准确的补全，更快速的纠错，让输入更得心应手。
                 - 丰富的知识资源库，让你能表达比你知道的更多。
           - title: 智能验证码
-            image: image
+            image: /img/coretech/ekm-bn.png
             description: 随机生成千变万化的，带有特定答案的常识性问题，来区分人类和机器。
             advance:
                 - 更有趣的人机区分验证，提升交互体验。
           - title: 智能门诊
-            image: image
+            image: /img/coretech/ekm-bn.png
             description: 根据用户所输入的病症，提供可视化知识表征，寻找可能对应的疾病，以及治疗方式与药物。
             advance:
                 - 提供可视化服务，通过人机交互方式，可以快速的查询可用信息。

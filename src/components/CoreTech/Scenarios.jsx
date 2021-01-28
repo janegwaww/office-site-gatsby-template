@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import SectionTitle from "../SectionTitle";
+import PreviewCompatibleImage from "../PreviewCompatibleImage";
 
 const Scenarios = ({ scen = [] }) => {
   const [active, setActive] = useState(0);
@@ -36,7 +37,9 @@ const Scenarios = ({ scen = [] }) => {
                   key={o.title}
                 >
                   <div className="columns">
-                    <div className="column is-half tab-item-left">image</div>
+                    <div className="column is-half tab-item-left">
+                      <PreviewCompatibleImage imageInfo={o} />
+                    </div>
                     <div className="column is-half content">
                       <p>应用说明</p>
                       <p className="is-size-7 has-text-grey">{o.description}</p>
