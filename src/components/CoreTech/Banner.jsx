@@ -31,7 +31,7 @@ const Banner = ({ image, intro = {} }) => {
                     <br />
                     <div className="content">
                       <a
-                        href="http://seeker.haetek.com/#/"
+                        href="http://haetek.com/productcenter/advisory/"
                         className="button is-blue is-size-7-5-mobile"
                         target="_blank"
                         rel="noopener noreferrer"
