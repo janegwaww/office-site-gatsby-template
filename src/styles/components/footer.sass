@@ -1,0 +1,68 @@
+/* --------footer start---------
+footer
+  &.footer
+    padding: 3rem 0rem 0rem
+    background-color: transparent
+    .footer-above
+      margin-bottom: 1.8rem
+      .qr-code-column .image
+        margin: auto
+      .is-divider
+        margin-bottom: 1rem
+
+    .footer-bottom
+      .gov-code
+        display: flex
+        justify-content: space-between
+        flex-wrap: wrap
+        @include tablet
+          min-width: 450px
+        .gov-icon
+          margin-right: 10px
+          @include mobile
+            margin-right: 5px
+        & a
+          color: rgb(110, 120, 124)
+          &:hover
+            color: rgb(60, 111, 194)
+
+    .menu-list
+      margin-top: 0
+      margin-left: 0
+      .menu-label-f
+        padding-bottom: .78em
+      .h-navbar-item
+        color: #999999;
+        padding-left: 0em;
+        &:hover
+          color: #999999 !important
+        &>div
+          display: flex
+          align-items: center
+  +mobile
+    .level-left + .level-right
+      margin-top: 0.55rem
+
+    &.footer
+      padding: 0rem 0rem 0rem
+
+      .footer-mobile.content
+        color: #999999
+        padding: 0.75rem 0 0
+        & p:not(:last-child)
+          margin-bottom: 0.55rem
+        .container span
+          text-decoration: underline
+
+    .footer-above .qr-code-column
+      margin-top: 20px
+      order: -1
+      & .qr-code-content
+        display: flex
+        justify-content: space-between
+        align-items: center
+        & .image
+          margin: unset
+          height: 48px
+          width: 48px
+/* ------footer end-----------

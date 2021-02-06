@@ -1,0 +1,34 @@
+.text
+  user-select: none
+
+  &.section-title
+    color: black
+    font-size: 2.25rem
+    line-height: 48px
+    display: flex
+    align-items: center
+    justify-content: center
+    margin-bottom: 8px
+    white-space: nowrap
+    &::before
+      content: url(/img/icon/down.svg)
+      padding: 14px
+      padding-left: 0
+      display: flex
+      justify-content: center
+      align-items: center
+    +mobile
+      margin-bottom: 0
+      &::before
+        padding-right: 8px
+
+  &.section-subtitle
+    color: $assist-third-color
+    font-size: 1rem
+    line-height: 21px
+    letter-spacing: 12px
+    display: flex
+    justify-content: center
+    align-items: center
+    +mobile
+      letter-spacing: 6px

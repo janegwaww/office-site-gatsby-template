@@ -12,7 +12,19 @@
     "case": "客户案例",
     "aboutus": "关于黑顿",
     "college": "黑顿研究院",
-    "joinus": "加入我们"
+    "joinus": "加入我们",
+    "coretech": "核心技术"
+  },
+  "navbar.coretech": {
+    "kfec": "知识填充/知识纠错",
+    "vcc": "视频封面合成",
+    "sfs": "语义模糊搜索",
+    "eoltc": "长文本脉络摘取",
+    "tf": "文本流畅度（Transformer语言模型）",
+    "tss": "文本语义相似度",
+    "ekm": "百科知识图谱",
+    "cfs": "合同/简历智能解析",
+    "cmcu": "跨模态内容解析"
   },
   "footer": {
     "guidance": "使用指南",
@@ -27,7 +39,7 @@
     "address": "广东省深圳市龙岗区龙翔大道7188号万科大厦3109",
     "officialaccount": "黑顿科技公众号",
     "marketingphone": "市场部联系电话",
-    "copyright": "版权所有@黑顿科技有限公司 2020 保留一切权利",
+    "copyright": "版权所有@黑顿科技有限公司 2021 保留一切权利",
     "codetitle": "黑顿科技"
   },
   "join": {

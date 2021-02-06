@@ -12,7 +12,19 @@
     "case": "Case",
     "aboutus": "About Us",
     "college": "Research",
-    "joinus": "Join Us"
+    "joinus": "Join Us",
+    "coretech": "Core Technology"
+  },
+  "navbar.coretech": {
+    "kfec": "Knowledge Filling/Error Correction",
+    "vcc": "Video Cover Composition",
+    "sfs": "Semantic Fuzzy Search",
+    "eoltc": "Extraction of Long Text Context",
+    "tf": "Text Fluency(Transformer Language Model)",
+    "tss": "Text Semantic Similarity",
+    "ekm": "Encyclopedia Knowledge Map",
+    "cfs": "Semantic Fuzzy Search",
+    "cmcu": "Cross Model Content Understanding"
   },
   "footer": {
     "guidance": "User's Guidance",
@@ -27,7 +39,7 @@
     "address": "Longgang District, China Shenzhen, No.7188 Longxiang Road, 3109 Vanke building",
     "officialaccount": "Wechat Official Account",
     "marketingphone": "Marketing Phone",
-    "copyright": "Copyright@Haetek Technology Co., Ltd. 2020, All Rights Reserved",
+    "copyright": "Copyright@Haetek Technology Co., Ltd. 2021, All Rights Reserved",
     "codetitle": "HAETEK"
   },
   "join": {

@@ -1,0 +1,26 @@
+.select
+  &.h-select
+    padding-right: 1rem
+    select
+      text-rendering: auto !important
+      border: unset
+      border-radius: unset
+      border-bottom: solid 1px #bbbbbb
+      padding-left: 0
+      color: #bbbbbb
+      &:focus
+        outline: none !important
+        box-shadow: none
+        border-color: #bbbbbb
+    &:not(.is-multiple):not(.is-loading)::after
+      border-radius: 0
+      border-color: #666666
+      border-bottom-width: 2px
+      border-left-width: 2px
+    option
+      background-color: #F0F2F5
+
++mobile
+  .select
+    &.haetek-select
+      padding-right: 0

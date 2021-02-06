@@ -1,0 +1,122 @@
+.navbar
+  background-color: transparent
+  &.is-active
+    bottom: 0
+  +desktop
+    color: white
+    &:hover, &.hover, &.is-active
+      box-shadow: 0px 4px 0px 0px whitesmoke
+      background-color: white
+      color: #4a4a4a
+
+  & .navbar-brand
+    background-color: rgba(0,0,0,0)
+    color: white
+  & .h-icon.haetek-logo
+    background-color: white
+  & .h-icon.haetek-globe
+    background-color: white
+  & .navbar-burger
+    color: white
+
+  &:hover, &.hover, &.is-active
+    & .navbar-brand
+      box-shadow: 0px 4px 0px 0px whitesmoke
+      background-color: white
+      color: #4a4a4a
+    & .h-icon.haetek-logo
+      background-color: black
+    & .h-icon.haetek-globe
+      background-color: black
+    & .navbar-item.is-active
+      color: $brand-color !important
+    & .navbar-item.is-tab.is-active
+      border-bottom-color: $brand-color !important
+    & .navbar-burger
+      color: #4a4a4a
+
+  .navbar-menu
+    box-shadow: none !important
+    .navbar-item
+      color: inherit
+      +desktop
+        &.is-active
+          color: white
+        &.is-tab
+          margin-left: 1.875rem
+          margin-right: 1.875rem
+          padding-left: 0
+          padding-right: 0
+          &.is-active
+            border-bottom-color: white
+      +touch
+        display: flex
+        justify-content: space-between
+        align-items: center
+        border-top: 0.3px solid #e1e1e1
+        &.is-active
+          border-bottom-color: transparent
+        &.has-dropdown
+          display: block
+          border-top: unset
+          & > .navbar-item
+            &:after
+              content: url(/img/icon/hidden.svg)
+              padding: 10px
+              transform: scale(0.3)
+            &.flat:after
+              content: url(/img/icon/show.svg)
+          & > .navbar-item.flat + .navbar-dropdown
+            visibility: visible
+            height: 400px
+
+  .navbar-dropdown
+    +touch
+      height: 0
+      visibility: hidden
+      overflow-y: scroll
+      padding-bottom: 0
+      padding-top: 0
+      transition: all 0.2s
+      background-color: #f7f7f7
+      .navbar-item
+        border-top: unset
+        display: flex
+        padding-left: 0.4rem
+        justify-content: flex-start
+        &:not(:last-child)
+          border-bottom: 0.3px solid #e1e1e1
+
+  .language
+    display: inline-flex
+    .icon
+      padding: 2.6px
+      margin-right: 8px
+    a
+      user-select: none
+      &.is-active
+        pointer-events: none;
+        color: inherit
+        cursor: unset
+
+  .navbar-icon
+    margin: 2px 8px
+    width: 30px
+    height: 22px
+    img
+      height: 100%
+      width: 100%
+
+  &.is-active .navbar-menu-background
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background-color: rgba(0,0,0,0.4)
+
+// Override for use of svg's from https://simpleicons.org/
+.icon svg
+  width: 1.5rem
+  height: 1.5rem
+  fill: currentColor

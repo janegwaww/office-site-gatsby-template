@@ -1,0 +1,39 @@
+.h-icon
+  &.haetek-logo
+    width: 143px
+    height: 40px
+    mask: url(/img/logo-black.svg)
+    display: inline-block
+    background-color: black
+    mask-size: cover
+    +mobile
+      width: 100px
+      height: 28px
+
+  &.haetek-globe
+    mask: url(/img/icon/haetek-globe.svg)
+    background-color: black
+    mask-size: cover
+    display: inline-block
+    width: 100%
+    height: 100%
+
+  &.right-arrow
+    height: 40px
+    width: 36px
+    border-left: 18px solid white
+    border-top: 20px solid transparent
+    border-bottom: 20px solid transparent
+    border-right: 40px solid transparent
+    z-index: 2
+
+  &.down-white
+    background: url(/img/icon/down-white.png) center / cover no-repeat
+    padding: 10px
+    +mobile
+      padding: 4px
+
+  &.form-star:before
+    content: '*'
+    color: red
+    padding: 0 8px

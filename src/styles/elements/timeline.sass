@@ -1,0 +1,26 @@
+.h-timeline
+  display: flex
+  flex-direction: row
+  width: max-content
+  cursor: grab
+  padding: 30px 10px
+  &:active
+    cursor: grabbing
+  .h-timeline-item
+    width: 320px
+    padding: 30px 80px 30px 0
+    border-top: 1px solid #222222
+    +touch
+      width: 220px
+  .h-timeline-marker
+    position: relative
+    &:before
+      content: ''
+      position: absolute
+      background: radial-gradient(circle at center, black 0, rgba(0,0,0,0.2), rgba(0,0,0,0.2) 100%)
+      width: 20px
+      height: 20px
+      border-radius: 50%
+      top: -40px
+      left: -10px
+  .h-timeline-content

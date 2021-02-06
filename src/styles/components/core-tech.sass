@@ -1,0 +1,36 @@
+.core-tech
+  .coretech-banner
+    position: relative
+    .banner-background
+      position: absolute
+      top: 0
+      right: 0
+      bottom: 0
+      left: 0
+
+  .scenarios
+    .tab-content .tab-item
+      display: none
+      &.is-active
+        display: block
+
+      & .tab-item-left
+        background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c)
+
+  .cooperater
+    .coop-icons
+      display: flex
+      justify-content: center
+      .coop-img
+        box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.1);
+        padding: 33px 27px
+        &:not(:last-child)
+          margin-right: 40px
+        img
+          width: 126px
+          height: 34px
+      +mobile
+        .coop-img
+          padding: 28px 20px
+          &:not(:last-child)
+            margin-right: 20px

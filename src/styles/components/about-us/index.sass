@@ -1,0 +1,111 @@
+/* ------about us start-------
+.about-us
+  .about-us-content.section
+    padding: 100px 1.5rem
+  +mobile
+    .about-us-content.section
+      padding: 1.875em 1.875em
+
+  .history
+    background-color: #f7f7f7
+    padding: 60px 0
+    background-image: url(/img/history-background.png)
+    background-position: top center
+    background-size: auto 100%
+    background-repeat: no-repeat
+    overflow: hidden
+    +touch
+      background-image: url(/img/history-background-m.png)
+      background-color: $brand-color
+      .section-title
+        color: white
+        &:before
+          background: url(/img/icon/down-white.png) center / contain no-repeat
+          padding: 6px
+          content: ''
+          margin-right: 14px
+      .section-subtitle
+        color: white
+    .tabs
+      & > ul
+        border-bottom-color: transparent
+      & li a
+        border-bottom-color: transparent
+        padding-left: 0
+        padding-right: 0
+        margin-right: 60px
+        color: #6f6f6f
+        +touch
+          color: rgba(255,255,255,0.6)
+      & li.is-active a
+        border-bottom-color: $brand-color
+        color: black
+        +touch
+          color: white
+          border-bottom-color: white
+    .h-timeline
+      background: url(/img/history.svg) top left / contain no-repeat
+      height: 200px
+      width: 4140px
+      +touch
+        width: 2430px
+        background: url(/img/history-m.svg) top left / contain no-repeat
+
+  .address-text
+    display: flex
+    justify-content: space-between
+    align-items: baseline
+    line-height: 38px
+    color: #444444
+    font-size: 1.75rem
+    margin-bottom: 30px
+    .company-address:before
+      content: ''
+      background: url(/img/icon/marker.svg) center / contain no-repeat
+      padding: 10px
+      margin-right: 8px
+      +touch
+        padding: 8px
+    .longgang
+      font-size: 1.125rem
+      color: #a5a5a5
+    +mobile
+      flex-direction: column
+
+  .description
+    +touch
+      display: none
+
+  .sub-description
+    display: flex
+    justify-content: space-between
+    +touch
+      display: none
+    .item-1
+      background: url(/img/icon/aboutus-item1.png) top left / cover no-repeat
+      flex-grow: 1
+      padding: 28px 10px
+      margin-bottom: 18px
+      .name
+        &:before
+          content: ''
+          background: url(/img/icon/to-right.png) center / contain no-repeat
+          padding: 6px
+          margin-right: 10px
+        &:after
+          background: url(/img/icon/to-left.png) center / contain no-repeat
+          content: ''
+          padding: 6px
+          margin-left: 10px
+    .item-2
+      background: url(/img/icon/aboutus-item2.png) bottom right / cover no-repeat
+      padding: 28px 10px
+      flex-grow: 1
+      margin-top: 18px
+
+  .vision
+    .name
+      border-left: 2px solid $brand-color
+      padding: 2px 10px
+      margin-bottom: 18px
+/* -------about us end--------

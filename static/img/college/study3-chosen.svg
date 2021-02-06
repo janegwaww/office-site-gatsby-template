@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="62px" height="62px" viewBox="0 0 62 62" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>编组 2备份 3</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="5.17879199%" y1="50%" x2="95.2452076%" y2="50%" id="linearGradient-1">
+            <stop stop-color="#0C66FF" offset="0%"></stop>
+            <stop stop-color="#D8D8D8" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="官网web" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="研究方向" transform="translate(-1417.000000, -1447.000000)">
+            <g id="编组-2备份-3" transform="translate(1408.000000, 1438.000000)">
+                <rect id="矩形备份-23" fill="url(#linearGradient-1)" x="24.0593809" y="43.6820224" width="30.1886792" height="12.0754717" rx="6.03773585"></rect>
+                <ellipse id="椭圆形" stroke="#0C66FF" stroke-width="2" transform="translate(40.000000, 40.000000) rotate(45.000000) translate(-40.000000, -40.000000) " cx="40" cy="40" rx="38.245283" ry="15.6037736"></ellipse>
+                <circle id="椭圆形备份-14" fill="#0C66FF" cx="51.2291922" cy="28.5876828" r="3.77358491"></circle>
+                <circle id="椭圆形备份-15" fill="#0C66FF" cx="28.5876828" cy="50.4744752" r="3.77358491"></circle>
+                <ellipse id="椭圆形" stroke="#0C66FF" stroke-width="2" transform="translate(40.000000, 40.000000) scale(-1, 1) rotate(45.000000) translate(-40.000000, -40.000000) " cx="40" cy="40" rx="38.245283" ry="15.6037736"></ellipse>
+                <circle id="椭圆形备份-17" stroke="#0C66FF" stroke-width="2" fill="#FFFFFF" cx="50.2291922" cy="51.4744752" r="2.77358491"></circle>
+                <circle id="椭圆形备份-32" stroke="#0C66FF" stroke-width="2" fill="#FFFFFF" cx="28.7735849" cy="28.7735849" r="2.77358491"></circle>
+            </g>
+        </g>
+    </g>
+</svg>
